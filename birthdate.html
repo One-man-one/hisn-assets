@@ -1,0 +1,364 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>تاريخ الميلاد</title>
+<script src="https://telegram.org/js/telegram-web-app.js"></script>
+<style>
+/* ============================================================
+   الألوان من themeParams الذي يمرّره تيليجرام، مع بدائل ثابتة
+   ============================================================
+   ⚠️ كل لون له بديل مكتوب: الصفحة تُفتح أحياناً خارج تيليجرام (اختبار،
+   متصفّح عادي، عميل قديم لا يمرّر themeParams) — وبلا البدائل تُرسم بيضاء
+   على بيضاء. */
+:root{
+  --bg:#ffffff;
+  --text:#000000;
+  --hint:#999999;
+  --link:#2481cc;
+  --button:#2481cc;
+  --button-text:#ffffff;
+  --section:#f4f4f5;
+  --danger:#d14343;
+  --item:56px;
+}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html,body{height:100%}
+body{
+  margin:0;background:var(--bg);color:var(--text);
+  font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',
+              'Noto Naskh Arabic','Segoe UI Historic',Tahoma,sans-serif;
+  display:flex;flex-direction:column;
+  justify-content:center;align-items:center;
+  padding:16px;gap:14px;
+  -webkit-font-smoothing:antialiased;
+}
+h1{font-size:17px;font-weight:600;margin:0;text-align:center}
+.sub{font-size:13px;color:var(--hint);margin:0;text-align:center;min-height:1.4em}
+
+/* ---------- العجلة ---------- */
+.wheel{
+  position:relative;display:flex;gap:6px;width:100%;max-width:420px;
+  background:var(--section);border-radius:14px;padding:0 10px;
+  touch-action:pan-y;
+}
+.band{
+  position:absolute;inset-inline:10px;top:calc(var(--item) * 2);height:var(--item);
+  pointer-events:none;border-radius:8px;
+  background:color-mix(in srgb,var(--button) 12%,transparent);
+}
+.col{
+  flex:1 1 0;min-width:0;height:calc(var(--item) * 5);
+  overflow-y:scroll;scroll-snap-type:y mandatory;
+  scrollbar-width:none;-webkit-overflow-scrolling:touch;
+  -webkit-mask-image:linear-gradient(180deg,transparent 0,#000 32%,#000 68%,transparent 100%);
+          mask-image:linear-gradient(180deg,transparent 0,#000 32%,#000 68%,transparent 100%);
+}
+.col::-webkit-scrollbar{display:none}
+.col:focus-visible{outline:2px solid var(--button);outline-offset:-2px;border-radius:10px}
+.col.year{flex:1.35 1 0}
+.pad{height:calc(var(--item) * 2)}
+.opt{
+  height:var(--item);display:flex;align-items:center;justify-content:center;
+  scroll-snap-align:center;font-size:19px;white-space:nowrap;
+  font-variant-numeric:tabular-nums;
+}
+.opt.sel{font-weight:600}
+.opt .sub{font-size:12px;color:var(--hint);margin-inline-start:6px}
+
+/* ---------- الأزرار ---------- */
+.actions{display:flex;gap:10px;width:100%;max-width:420px}
+button{
+  flex:1;font:inherit;font-size:16px;font-weight:600;padding:14px;
+  border:none;border-radius:12px;cursor:pointer;
+}
+#confirm{background:var(--button);color:var(--button-text)}
+#confirm:disabled{opacity:.45;cursor:not-allowed}
+#cancel{background:var(--section);color:var(--text)}
+button:focus-visible{outline:2px solid var(--button);outline-offset:2px}
+.err{color:var(--danger)}
+@media (prefers-reduced-motion: reduce){*{scroll-behavior:auto !important}}
+</style>
+</head>
+<body>
+
+<h1 id="title">اختر تاريخ ميلادك</h1>
+<div class="wheel" id="wheel"><div class="band"></div></div>
+<p class="sub" id="status">&nbsp;</p>
+<div class="actions">
+  <button id="cancel" type="button">إلغاء</button>
+  <button id="confirm" type="button">تأكيد</button>
+</div>
+
+<script>
+(function(){
+  'use strict';
+
+  // ============================================================
+  // ⚠️ عقد الحمولة — مكتوب في موضعين ويجب أن يبقيا متطابقين
+  // ============================================================
+  // المفتاح 'birth_date' هنا يقابل PAYLOAD_DATE_KEY في utils/birthdate.py،
+  // والحدّان أدناه يقابلان MIN_AGE/MAX_AGE في config.py. تغيير أيّها في
+  // موضع دون الآخر يجعل البوت يرفض ما تقبله الصفحة — والمستخدم يرى رفضاً
+  // بلا سبب مفهوم.
+  //
+  // ✅ الحقل 'age' يُرسل للعرض والسجلّ فقط: البوت **لا يقرؤه** ويعيد حسابه
+  // من التاريخ، لأن الحمولة تصل رسالةَ خدمة من المستخدم ويمكن تلفيقها.
+  var MIN_AGE = 18, MAX_AGE = 80;
+
+  var tg = (window.Telegram && window.Telegram.WebApp) ? window.Telegram.WebApp : null;
+
+  // ---------- اللغة ----------
+  // ⚠️ من الرابط أولاً: البوت يمرّر اللغة التي اختارها المستخدم *داخل البوت*،
+  // وهي ليست لغة عميل تيليجرام (language_code) التي كثيراً ما تخالفها.
+  var L = {
+    ar:{dir:'rtl',order:['day','month','year'],title:'اختر تاريخ ميلادك',
+        cancel:'إلغاء',confirm:'تأكيد',yr:'سنة',day:'اليوم',month:'الشهر',year:'السنة',
+        tooYoung:'الحدّ الأدنى ١٨ سنة',tooOld:'الحدّ الأقصى ٨٠ سنة',hint:'حرّك العجلة ثم اضغط تأكيد'},
+    en:{dir:'ltr',order:['month','day','year'],title:'Select your birth date',
+        cancel:'Cancel',confirm:'Confirm',yr:'yrs',day:'Day',month:'Month',year:'Year',
+        tooYoung:'Minimum age is 18',tooOld:'Maximum age is 80',hint:'Scroll, then tap Confirm'},
+    fa:{dir:'rtl',order:['day','month','year'],title:'تاریخ تولد خود را انتخاب کنید',
+        cancel:'لغو',confirm:'تأیید',yr:'سال',day:'روز',month:'ماه',year:'سال',
+        tooYoung:'حداقل سن ۱۸ سال است',tooOld:'حداکثر سن ۸۰ سال است',hint:'بچرخانید و تأیید را بزنید'},
+    id:{dir:'ltr',order:['day','month','year'],title:'Pilih tanggal lahir Anda',
+        cancel:'Batal',confirm:'Konfirmasi',yr:'thn',day:'Tanggal',month:'Bulan',year:'Tahun',
+        tooYoung:'Usia minimum 18 tahun',tooOld:'Usia maksimum 80 tahun',hint:'Geser, lalu tekan Konfirmasi'}
+  };
+
+  function pickLang(){
+    var m = /[?&]lang=([a-z]{2})/i.exec(window.location.search);
+    if (m && L[m[1].toLowerCase()]) return m[1].toLowerCase();
+    var c = tg && tg.initDataUnsafe && tg.initDataUnsafe.user && tg.initDataUnsafe.user.language_code;
+    if (c && L[String(c).slice(0,2)]) return String(c).slice(0,2);
+    return 'ar';
+  }
+  var lang = pickLang(), T = L[lang];
+
+  // ---------- التقويم ----------
+  // ⚠️ التقويم الميلادي مفروض صراحةً (-u-ca-gregory): بلا هذا القسر تُعيد
+  // Intl للفارسية أسماء الأشهر الشمسية (فروردین…) بينما القيمة المرسَلة
+  // ميلادية — فيختار المستخدم شهراً ويصل البوت شهرٌ آخر.
+  //
+  // ⚠️ والأرقام غربية في اللغات الأربع (-u-nu-latn) عمداً: السنة رقم واحد
+  // لا يحتمل تأويلين، وتوحيدها يمنع اختلاف شكل الرقم بين الصفحة والبطاقة.
+  function monthNames(){
+    var out = [], i;
+    for (i = 0; i < 12; i++){
+      try{
+        out.push(new Intl.DateTimeFormat(lang + '-u-ca-gregory-nu-latn',
+                  {month:'long', timeZone:'UTC'}).format(Date.UTC(2021, i, 15)));
+      }catch(e){ out.push(String(i + 1)); }
+    }
+    return out;
+  }
+  function daysIn(y, m){ return new Date(y, m + 1, 0).getDate(); }
+
+  var TODAY = new Date();
+  var CY = TODAY.getFullYear();
+  var YEARS = [], y;
+  for (y = CY - MAX_AGE; y <= CY - MIN_AGE; y++) YEARS.push(y);
+
+  function exactAge(yy, mm, dd){
+    var a = TODAY.getFullYear() - yy;
+    if (TODAY.getMonth() < mm || (TODAY.getMonth() === mm && TODAY.getDate() < dd)) a--;
+    return a;
+  }
+
+  // البداية على منتصف المدى تقريباً — أقرب إلى أعمار المستخدمين الفعلية من
+  // أوّل القائمة (٨٠ سنة) أو آخرها (١٨ سنة).
+  var sel = { year: CY - 28, month: TODAY.getMonth(), day: 15 };
+
+  var wheel = document.getElementById('wheel');
+  var statusEl = document.getElementById('status');
+  var confirmBtn = document.getElementById('confirm');
+
+  // ---------- عمود ----------
+  function buildColumn(key, values, labels, index, onCommit){
+    var col = document.createElement('div');
+    col.className = 'col' + (key === 'year' ? ' year' : '');
+    col.tabIndex = 0;
+    col.setAttribute('role', 'listbox');
+    col.setAttribute('aria-label', T[key]);
+
+    var H = col.getBoundingClientRect().height / 5 || 56;
+    var top = document.createElement('div'); top.className = 'pad';
+    var bot = document.createElement('div'); bot.className = 'pad';
+    col.appendChild(top);
+    labels.forEach(function(label, i){
+      var o = document.createElement('div');
+      o.className = 'opt';
+      o.innerHTML = label;
+      o.setAttribute('role', 'option');
+      o.addEventListener('click', function(){ goto(col, i, true); });
+      col.appendChild(o);
+    });
+    col.appendChild(bot);
+
+    var raf = null, timer = null;
+    function paint(){
+      var c = col.scrollTop / col._H, opts = col.querySelectorAll('.opt'), i, d;
+      for (i = 0; i < opts.length; i++){
+        d = Math.abs(i - c);
+        opts[i].style.opacity = String(Math.max(0.25, 1 - d * 0.34));
+        opts[i].classList.toggle('sel', d < 0.5);
+      }
+      raf = null;
+    }
+    col.addEventListener('scroll', function(){
+      if (raf === null) raf = requestAnimationFrame(paint);
+      clearTimeout(timer);
+      timer = setTimeout(function(){
+        // ⚠️ عمود أُزيل من الصفحة لا يحقّ له تغيير الاختيار: إعادة البناء
+        // تُطلق تمريراً، فتُطلق ردّاً، فتُطلق بناءً — حلقة لا تنتهي بلا هذا
+        // الحارس مع شرط "لم تتغيّر القيمة" أدناه.
+        if (col._dead) return;
+        var i = Math.max(0, Math.min(values.length - 1, Math.round(col.scrollTop / col._H)));
+        onCommit(values[i]);
+      }, 130);
+    });
+    col.addEventListener('keydown', function(e){
+      if (e.key !== 'ArrowDown' && e.key !== 'ArrowUp') return;
+      e.preventDefault();
+      var cur = Math.round(col.scrollTop / col._H);
+      goto(col, Math.max(0, Math.min(values.length - 1, cur + (e.key === 'ArrowDown' ? 1 : -1))), true);
+    });
+
+    col._paint = paint;
+    col._H = H;
+    wheel.appendChild(col);
+    // القياس بعد الإلحاق: العمود خارج الصفحة ارتفاعه صفر، فتقسم على صفر.
+    col._H = col.getBoundingClientRect().height / 5 || 56;
+    requestAnimationFrame(function(){ goto(col, index, false); });
+    return col;
+  }
+
+  function goto(col, i, smooth){
+    var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    col.scrollTo({ top: i * col._H, behavior: (smooth && !reduce) ? 'smooth' : 'auto' });
+    requestAnimationFrame(col._paint);
+  }
+
+  // ---------- بناء العجلة ----------
+  function render(){
+    var olds = wheel.querySelectorAll('.col'), i;
+    for (i = 0; i < olds.length; i++){ olds[i]._dead = true; olds[i].remove(); }
+
+    var months = monthNames(), cols = {};
+
+    cols.year = buildColumn('year', YEARS, YEARS.map(function(v){
+      return v + '<span class="sub">' + (CY - v) + ' ' + T.yr + '</span>';
+    }), YEARS.indexOf(sel.year), function(v){
+      if (v === sel.year) return;
+      var before = daysIn(sel.year, sel.month);
+      sel.year = v;
+      if (sel.day > daysIn(sel.year, sel.month)) sel.day = daysIn(sel.year, sel.month);
+      if (daysIn(sel.year, sel.month) !== before) render();
+      update();
+    });
+
+    var mVals = [], k;
+    for (k = 0; k < 12; k++) mVals.push(k);
+    cols.month = buildColumn('month', mVals, months, sel.month, function(v){
+      if (v === sel.month) return;
+      var before = daysIn(sel.year, sel.month);
+      sel.month = v;
+      if (sel.day > daysIn(sel.year, sel.month)) sel.day = daysIn(sel.year, sel.month);
+      if (daysIn(sel.year, sel.month) !== before) render();
+      update();
+    });
+
+    var dm = daysIn(sel.year, sel.month), dVals = [], dLabels = [], d;
+    for (d = 1; d <= dm; d++){ dVals.push(d); dLabels.push(String(d)); }
+    cols.day = buildColumn('day', dVals, dLabels, sel.day - 1, function(v){
+      if (v === sel.day) return;
+      sel.day = v; update();
+    });
+
+    // ترتيب الأعمدة لغويّ لا ثابت: العربية والفارسية يوم·شهر·سنة،
+    // والإنجليزية شهر·يوم·سنة.
+    T.order.forEach(function(key){ wheel.appendChild(cols[key]); });
+  }
+
+  // ---------- الحالة ----------
+  function iso(){
+    return sel.year + '-' +
+           String(sel.month + 1).padStart(2, '0') + '-' +
+           String(sel.day).padStart(2, '0');
+  }
+
+  function update(){
+    var age = exactAge(sel.year, sel.month, sel.day), ok = true, msg;
+    if (age < MIN_AGE){ ok = false; msg = T.tooYoung; }
+    else if (age > MAX_AGE){ ok = false; msg = T.tooOld; }
+    else { msg = T.hint; }
+
+    // ⚠️ الفحص هنا نسخة من الحارس في utils/birthdate.py لا بديل عنه: هذه
+    // الصفحة تحسّن الرسالة للمستخدم، والبوت هو من يرفض فعلاً.
+    statusEl.textContent = msg;
+    statusEl.classList.toggle('err', !ok);
+    confirmBtn.disabled = !ok;
+
+    if (tg && tg.MainButton){
+      tg.MainButton.setText(T.confirm);
+      if (ok) tg.MainButton.enable(); else tg.MainButton.disable();
+    }
+  }
+
+  function send(){
+    if (confirmBtn.disabled) return;
+    var payload = JSON.stringify({
+      birth_date: iso(),
+      age: exactAge(sel.year, sel.month, sel.day)
+    });
+    if (tg && typeof tg.sendData === 'function'){
+      // ⚠️ sendData تُغلق النافذة بنفسها وتعمل مرّة واحدة لكل جلسة، ولا
+      // تعمل إطلاقاً إن فُتحت الصفحة من زر إنلاين بدل زر لوحة الردّ.
+      tg.sendData(payload);
+    } else {
+      // خارج تيليجرام (فتح مباشر للاختبار) — لا نافذة تُغلق ولا بوت يستقبل.
+      statusEl.textContent = payload;
+      statusEl.classList.remove('err');
+    }
+  }
+
+  // ---------- التهيئة ----------
+  document.documentElement.lang = lang;
+  document.documentElement.dir = T.dir;
+  document.getElementById('title').textContent = T.title;
+  document.getElementById('cancel').textContent = T.cancel;
+  confirmBtn.textContent = T.confirm;
+
+  confirmBtn.addEventListener('click', send);
+  document.getElementById('cancel').addEventListener('click', function(){
+    if (tg && typeof tg.close === 'function') tg.close();
+  });
+
+  if (tg){
+    try{
+      tg.ready();
+      tg.expand();
+      var p = tg.themeParams || {};
+      var map = {
+        '--bg':p.bg_color, '--text':p.text_color, '--hint':p.hint_color,
+        '--link':p.link_color, '--button':p.button_color,
+        '--button-text':p.button_text_color, '--section':p.secondary_bg_color
+      };
+      Object.keys(map).forEach(function(k){
+        if (map[k]) document.documentElement.style.setProperty(k, map[k]);
+      });
+      if (tg.MainButton){
+        tg.MainButton.setText(T.confirm);
+        tg.MainButton.onClick(send);
+        tg.MainButton.show();
+      }
+    }catch(e){ /* عميل قديم لا يعرف بعض الدوال — الصفحة تبقى صالحة بأزرارها */ }
+  }
+
+  render();
+  update();
+})();
+</script>
+</body>
+</html>
