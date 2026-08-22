@@ -1,0 +1,388 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>حصن الزواج — بوت التعارف بغرض الزواج على تليجرام</title>
+  <meta name="description" content="منصّة تعارف بغرض الزواج على تليجرام: سجّل مواصفاتك، تصفّح الملفات المطابقة، وتواصل داخل البوت بعد موافقة الطرفين. صورتك مموّهة حتى تأذن أنت.">
+  <meta name="keywords" content="بوت زواج, زواج تليجرام, تعارف بغرض الزواج, زواج شرعي, بوت تعارف, البحث عن شريك حياة, حصن الزواج">
+  <link rel="canonical" href="https://one-man-one.github.io/hisn-assets/">
+  <link rel="alternate" hreflang="ar" href="https://one-man-one.github.io/hisn-assets/">
+  <link rel="alternate" hreflang="en" href="https://one-man-one.github.io/hisn-assets/en/">
+  <link rel="alternate" hreflang="fa" href="https://one-man-one.github.io/hisn-assets/fa/">
+  <link rel="alternate" hreflang="id" href="https://one-man-one.github.io/hisn-assets/id/">
+  <link rel="alternate" hreflang="x-default" href="https://one-man-one.github.io/hisn-assets/">
+  <meta name="robots" content="index,follow,max-image-preview:large">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="حصن الزواج">
+  <meta property="og:locale" content="ar_AR">
+  <meta property="og:title" content="حصن الزواج — بوت التعارف بغرض الزواج على تليجرام">
+  <meta property="og:description" content="منصّة تعارف بغرض الزواج على تليجرام: سجّل مواصفاتك، تصفّح الملفات المطابقة، وتواصل داخل البوت بعد موافقة الطرفين. صورتك مموّهة حتى تأذن أنت.">
+  <meta property="og:url" content="https://one-man-one.github.io/hisn-assets/">
+  <meta property="og:image" content="https://one-man-one.github.io/hisn-assets/og.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="theme-color" content="#ce5c8a">
+  <link rel="icon" href="icon.png" type="image/png">
+  <link rel="apple-touch-icon" href="icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap">
+  <style>
+*,*::before,*::after{box-sizing:border-box}
+:root{
+  --rose:#ce5c8a; --rose-deep:#a8416b; --rose-soft:#fdf0f5;
+  --blue:#25557c; --ink:#241a1f; --body:#4a3f45; --muted:#8a7b82;
+  --bg:#fffaf9; --card:#ffffff; --line:#f0dde5; --shadow:14px 22px 48px;
+}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0; background:var(--bg); color:var(--body);
+  font-family:'Cairo',system-ui,-apple-system,'Segoe UI',sans-serif;
+  font-size:17px; line-height:1.85; -webkit-font-smoothing:antialiased;
+}
+h1,h2,h3{color:var(--ink); line-height:1.35; margin:0 0 .6em; font-weight:700}
+h1{font-size:clamp(1.9rem,5.2vw,3.05rem); letter-spacing:-.01em}
+h2{font-size:clamp(1.45rem,3.6vw,2.05rem)}
+h3{font-size:1.1rem; margin-bottom:.35em}
+p{margin:0 0 1em}
+a{color:var(--rose-deep)}
+.wrap{max-width:1080px; margin:0 auto; padding:0 22px}
+section{padding:clamp(48px,7vw,84px) 0}
+
+/* ── الترويسة ── */
+.top{
+  display:flex; align-items:center; justify-content:space-between; gap:16px;
+  padding:18px 0; border-bottom:1px solid var(--line);
+}
+.top .mark{display:flex; align-items:center; gap:10px; font-weight:700;
+  color:var(--ink); text-decoration:none; font-size:1.06rem}
+.top .mark img{width:34px; height:34px; object-fit:contain}
+.langs{display:flex; gap:6px; flex-wrap:wrap; list-style:none; margin:0; padding:0}
+.langs a{
+  display:block; padding:5px 11px; border-radius:999px; font-size:.86rem;
+  text-decoration:none; color:var(--body); border:1px solid var(--line);
+}
+.langs a[aria-current]{background:var(--rose); border-color:var(--rose); color:#fff}
+
+/* ── البطل ── */
+.hero{
+  padding:clamp(52px,8vw,96px) 0 clamp(44px,6vw,76px);
+  background:
+    radial-gradient(120% 90% at 82% -10%, #fce7ef 0%, rgba(252,231,239,0) 62%),
+    radial-gradient(100% 80% at 6% 0%, #eaf1f8 0%, rgba(234,241,248,0) 55%);
+}
+.kicker{
+  display:inline-block; font-size:.82rem; font-weight:600; letter-spacing:.06em;
+  text-transform:uppercase; color:var(--rose-deep); background:#fff;
+  border:1px solid var(--line); border-radius:999px; padding:5px 14px;
+  margin-bottom:20px;
+}
+.hero p.lead{font-size:clamp(1.02rem,2.1vw,1.18rem); max-width:62ch; color:var(--body)}
+.btn{
+  display:inline-block; margin-top:12px; padding:15px 34px; border-radius:14px;
+  background:var(--rose); color:#fff; text-decoration:none; font-weight:700;
+  font-size:1.06rem; box-shadow:0 10px 26px rgba(206,92,138,.32);
+}
+.btn:hover{background:var(--rose-deep)}
+.note{font-size:.9rem; color:var(--muted); margin:14px 0 0}
+
+/* ── الشبكات ── */
+.grid{display:grid; gap:18px; margin-top:34px}
+.g3{grid-template-columns:repeat(auto-fit,minmax(272px,1fr))}
+.g4{grid-template-columns:repeat(auto-fit,minmax(232px,1fr))}
+.card{
+  background:var(--card); border:1px solid var(--line); border-radius:16px;
+  padding:26px 24px;
+}
+.card p{margin:0; font-size:.97rem}
+.step .n{
+  display:grid; place-items:center; width:34px; height:34px; border-radius:10px;
+  background:var(--rose-soft); color:var(--rose-deep); font-weight:700;
+  margin-bottom:14px;
+}
+.card .ico{font-size:1.6rem; line-height:1; display:block; margin-bottom:12px}
+
+/* ── الخصوصية ── */
+.privacy{background:var(--blue); color:#dfe9f2}
+.privacy h2{color:#fff}
+.privacy p{max-width:70ch; color:#cfdded}
+.privacy p:last-child{margin-bottom:0}
+
+/* ── الأسئلة ── */
+.faq{max-width:820px; margin-top:30px}
+.faq h3{margin-top:0}
+.qa{border-bottom:1px solid var(--line); padding:22px 0}
+.qa:first-child{border-top:1px solid var(--line)}
+.qa p{margin:0; font-size:.97rem}
+
+/* ── الخاتمة ── */
+.end{text-align:center; background:var(--rose-soft)}
+.end p{max-width:52ch; margin-inline:auto}
+footer{border-top:1px solid var(--line); padding:30px 0 44px; font-size:.9rem;
+  color:var(--muted)}
+.flinks{display:flex; gap:22px; flex-wrap:wrap; margin:0 0 14px; padding:0;
+  list-style:none}
+
+@media (max-width:560px){ body{font-size:16px} .card{padding:22px 20px} }
+</style>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "حصن الزواج",
+  "alternateName": "Hisn Alzawaj",
+  "url": "https://one-man-one.github.io/hisn-assets/",
+  "applicationCategory": "SocialNetworkingApplication",
+  "operatingSystem": "Telegram",
+  "inLanguage": [
+    "ar",
+    "en",
+    "fa",
+    "id"
+  ],
+  "description": "منصّة تعارف بغرض الزواج على تليجرام: سجّل مواصفاتك، تصفّح الملفات المطابقة، وتواصل داخل البوت بعد موافقة الطرفين. صورتك مموّهة حتى تأذن أنت.",
+  "image": "https://one-man-one.github.io/hisn-assets/og.png",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "sameAs": [
+    "https://t.me/HisnAlzawaj_bot",
+    "https://t.me/Hisn_Alzawaj",
+    "https://github.com/One-man-one/HisnAlzawaj_bot"
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "inLanguage": "ar",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "هل البوت مجاني؟",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "نعم. التسجيل والبحث والمطابقة والدردشة بعد الإعجاب المتبادل كلّها مجانية. وهناك عضوية مميّزة اختيارية تفتح مزايا إضافية، تُدفع بنجوم تليجرام أو بالعملات الرقمية."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "هل يرى الآخرون صورتي؟",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "لا. صورتك مموّهة افتراضياً للجميع، ولا تُكشف إلا إذا طلب الطرف الآخر ووافقتَ أنت صراحةً، للمدّة التي تختارها، ويمكنك سحب الإذن في أي وقت."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "هل يحصل الطرف الآخر على رقم هاتفي أو معرّفي؟",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "لا. المراسلة تمرّ داخل البوت نفسه، فلا يتبادل الطرفان رقماً ولا معرّفاً إلا إذا قرّرا ذلك بأنفسهما."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "كيف تُحسب درجة التوافق؟",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "من التفضيلات المتبادلة: مواصفات كلٍّ منكما مقابل ما يبحث عنه الآخر، لا من طرف واحد. ومن عُرض عليك مرّة لا يُعرض ثانية."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "هل التعارف هنا بغرض الزواج وحده؟",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "نعم. الخدمة مخصّصة للتعارف بغرض الزواج، وعلى كل ملف زرّ بلاغ يصل إلى مراجعة بشرية، ومن يخرج عن ذلك يُحظر."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "بأي لغات يعمل؟",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "العربية والإنجليزية والفارسية والإندونيسية. الواجهة كاملة في اللغات الأربع، وتبدّلها متى شئت من داخل البوت."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "كيف أبدأ؟",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "افتح البوت على تليجرام واضغط «ابدأ». المحادثة تأخذك خطوة خطوة، وحالتها محفوظة فلا تفقد ما أدخلته إن توقّفت وعدت."
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="wrap top">
+  <a class="mark" href="https://one-man-one.github.io/hisn-assets/">
+    <img src="icon.png" alt="" width="34" height="34">
+    <span>حصن الزواج</span>
+  </a>
+  <nav aria-label="اللغة">
+    <ul class="langs">
+      <li><a href="https://one-man-one.github.io/hisn-assets/" aria-current="true" lang="ar" hreflang="ar">العربية</a></li>
+      <li><a href="https://one-man-one.github.io/hisn-assets/en/" lang="en" hreflang="en">English</a></li>
+      <li><a href="https://one-man-one.github.io/hisn-assets/fa/" lang="fa" hreflang="fa">فارسی</a></li>
+      <li><a href="https://one-man-one.github.io/hisn-assets/id/" lang="id" hreflang="id">Indonesia</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+
+  <section class="hero">
+    <div class="wrap">
+      <span class="kicker">بوت تليجرام</span>
+      <h1>تعارف بغرض الزواج — داخل تليجرام وحده</h1>
+      <p class="lead">سجّل بياناتك والمواصفات التي تريدها في شريك حياتك، فيعرض لك البوت الملفات المطابقة. لا تبادُل أرقام ولا معرّفات: المراسلة تجري داخل البوت بعد موافقة الطرفين.</p>
+      <a class="btn" href="https://t.me/HisnAlzawaj_bot" rel="noopener">ابدأ على تليجرام</a>
+      <p class="note">مجاني للبدء · بالعربية والإنجليزية والفارسية والإندونيسية</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <h2>كيف يعمل</h2>
+      <div class="grid g4">
+      <article class="card step">
+        <div class="n">1</div>
+        <h3>سجّل بياناتك</h3>
+        <p>محادثة تأخذك خطوة خطوة: البيانات الأساسية، المظهر، نمط الحياة، نوع الزواج المطلوب، ثم المواصفات التي تبحث عنها في الشريك. الحالة محفوظة، فلا تفقد ما أدخلته إن توقّفت وعدت.</p>
+      </article>
+      <article class="card step">
+        <div class="n">2</div>
+        <h3>تصفّح المطابق</h3>
+        <p>درجة توافق محسوبة من تفضيلات الطرفين معاً لا من طرف واحد. ومن عُرض عليك مرّة لا يعود إليك ثانية.</p>
+      </article>
+      <article class="card step">
+        <div class="n">3</div>
+        <h3>إعجاب متبادل</h3>
+        <p>لا تُفتح المراسلة إلا حين يُعجَب كلٌّ منكما بالآخر. قبل ذلك لا يصلك شيء ولا يصله.</p>
+      </article>
+      <article class="card step">
+        <div class="n">4</div>
+        <h3>تراسلا داخل البوت</h3>
+        <p>الرسائل تمرّ عبر البوت نفسه، فلا يرى أحدكما رقم الآخر ولا معرّفه ما لم تقرّرا ذلك بأنفسكما.</p>
+      </article>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <h2>ما الذي يقدّمه</h2>
+      <div class="grid g3">
+      <article class="card">
+        <span class="ico" aria-hidden="true">🎯</span>
+        <h3>مطابقة بدرجة توافق</h3>
+        <p>الدرجة تُحسب من تفضيلاتكما المتبادلة: ما تريده أنت فيه وما يريده هو فيك — لا قائمة عامّة تُعرض على الجميع.</p>
+      </article>
+      <article class="card">
+        <span class="ico" aria-hidden="true">🌫️</span>
+        <h3>خصوصية الصورة</h3>
+        <p>صورتك مموّهة افتراضياً للجميع. الكشف يحتاج طلباً صريحاً وموافقةً منك، لمدّة تختارها، وتسحبها متى شئت.</p>
+      </article>
+      <article class="card">
+        <span class="ico" aria-hidden="true">🛡️</span>
+        <h3>توثيق اختياري</h3>
+        <p>تحدٍّ مصوَّر يؤكّد أن خلف الملف إنساناً حقيقياً، ويظهر أثره للطرف الآخر. اختياري بالكامل.</p>
+      </article>
+      <article class="card">
+        <span class="ico" aria-hidden="true">💬</span>
+        <h3>دردشة داخل البوت</h3>
+        <p>لا تبادُل معرّفات ولا أرقام هواتف. المحادثة تبقى داخل البوت ما دمت تريد ذلك.</p>
+      </article>
+      <article class="card">
+        <span class="ico" aria-hidden="true">🔎</span>
+        <h3>بحث بمعاييرك</h3>
+        <p>بحث سريع، أو بمعيار واحد، أو بحث شامل متعدّد المعايير — إن كنت تعرف بالضبط ما تبحث عنه.</p>
+      </article>
+      <article class="card">
+        <span class="ico" aria-hidden="true">🌍</span>
+        <h3>أربع لغات</h3>
+        <p>العربية والإنجليزية والفارسية والإندونيسية، بواجهة كاملة لا ترجمة جزئية، تبدّلها من داخل البوت.</p>
+      </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="privacy">
+    <div class="wrap">
+      <h2>الخصوصية وضعٌ افتراضي لا إعداد تبحث عنه</h2>
+      <p>صورتك مموّهة للجميع من اللحظة الأولى. ليس ثمّة خيارٌ تنساه فتنكشف صورتك؛ العكس هو الصحيح: لا تُكشف إلا بطلب من الطرف الآخر وموافقة صريحة منك، لمدّة تختارها — خمس دقائق أو يوم أو دائم — وتسحب الإذن في أي وقت.</p>
+      <p>الملفات التي تُنشر على قناتنا وصفحاتنا تحمل الاسم الأول وصورة أفتار رسومية. لا تُنشر صورة مستخدم حقيقية أبداً.</p>
+      <p>تعدّل بياناتك أو تخفي ملفك كلّه في أي لحظة، وعلى كل ملف زرّ بلاغ يصل إلى مراجعة بشرية.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <h2>أسئلة شائعة</h2>
+      <div class="faq">
+      <div class="qa">
+        <h3>هل البوت مجاني؟</h3>
+        <p>نعم. التسجيل والبحث والمطابقة والدردشة بعد الإعجاب المتبادل كلّها مجانية. وهناك عضوية مميّزة اختيارية تفتح مزايا إضافية، تُدفع بنجوم تليجرام أو بالعملات الرقمية.</p>
+      </div>
+      <div class="qa">
+        <h3>هل يرى الآخرون صورتي؟</h3>
+        <p>لا. صورتك مموّهة افتراضياً للجميع، ولا تُكشف إلا إذا طلب الطرف الآخر ووافقتَ أنت صراحةً، للمدّة التي تختارها، ويمكنك سحب الإذن في أي وقت.</p>
+      </div>
+      <div class="qa">
+        <h3>هل يحصل الطرف الآخر على رقم هاتفي أو معرّفي؟</h3>
+        <p>لا. المراسلة تمرّ داخل البوت نفسه، فلا يتبادل الطرفان رقماً ولا معرّفاً إلا إذا قرّرا ذلك بأنفسهما.</p>
+      </div>
+      <div class="qa">
+        <h3>كيف تُحسب درجة التوافق؟</h3>
+        <p>من التفضيلات المتبادلة: مواصفات كلٍّ منكما مقابل ما يبحث عنه الآخر، لا من طرف واحد. ومن عُرض عليك مرّة لا يُعرض ثانية.</p>
+      </div>
+      <div class="qa">
+        <h3>هل التعارف هنا بغرض الزواج وحده؟</h3>
+        <p>نعم. الخدمة مخصّصة للتعارف بغرض الزواج، وعلى كل ملف زرّ بلاغ يصل إلى مراجعة بشرية، ومن يخرج عن ذلك يُحظر.</p>
+      </div>
+      <div class="qa">
+        <h3>بأي لغات يعمل؟</h3>
+        <p>العربية والإنجليزية والفارسية والإندونيسية. الواجهة كاملة في اللغات الأربع، وتبدّلها متى شئت من داخل البوت.</p>
+      </div>
+      <div class="qa">
+        <h3>كيف أبدأ؟</h3>
+        <p>افتح البوت على تليجرام واضغط «ابدأ». المحادثة تأخذك خطوة خطوة، وحالتها محفوظة فلا تفقد ما أدخلته إن توقّفت وعدت.</p>
+      </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="end">
+    <div class="wrap">
+      <h2>ابدأ الآن</h2>
+      <p>التسجيل داخل تليجرام، ولا يحتاج تطبيقاً آخر ولا حساباً جديداً.</p>
+      <a class="btn" href="https://t.me/HisnAlzawaj_bot" rel="noopener">ابدأ على تليجرام</a>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <ul class="flinks">
+      <li><a href="https://t.me/HisnAlzawaj_bot" rel="noopener">@HisnAlzawaj_bot</a></li>
+      <li><a href="https://t.me/Hisn_Alzawaj" rel="noopener">قناة الملفات على تليجرام</a></li>
+      <li><a href="https://github.com/One-man-one/HisnAlzawaj_bot" rel="noopener">الشيفرة المصدرية</a></li>
+    </ul>
+    <p>© حصن الزواج</p>
+  </div>
+</footer>
+
+</body>
+</html>
