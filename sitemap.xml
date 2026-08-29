@@ -37,4 +37,40 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://one-man-one.github.io/hisn-assets/"/>
     <changefreq>weekly</changefreq>
   </url>
+  <url>
+    <loc>https://one-man-one.github.io/hisn-assets/privacy.html</loc>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://one-man-one.github.io/hisn-assets/privacy.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://one-man-one.github.io/hisn-assets/en/privacy.html"/>
+    <xhtml:link rel="alternate" hreflang="fa" href="https://one-man-one.github.io/hisn-assets/fa/privacy.html"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://one-man-one.github.io/hisn-assets/id/privacy.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://one-man-one.github.io/hisn-assets/privacy.html"/>
+    <changefreq>yearly</changefreq>
+  </url>
+  <url>
+    <loc>https://one-man-one.github.io/hisn-assets/en/privacy.html</loc>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://one-man-one.github.io/hisn-assets/privacy.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://one-man-one.github.io/hisn-assets/en/privacy.html"/>
+    <xhtml:link rel="alternate" hreflang="fa" href="https://one-man-one.github.io/hisn-assets/fa/privacy.html"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://one-man-one.github.io/hisn-assets/id/privacy.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://one-man-one.github.io/hisn-assets/privacy.html"/>
+    <changefreq>yearly</changefreq>
+  </url>
+  <url>
+    <loc>https://one-man-one.github.io/hisn-assets/fa/privacy.html</loc>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://one-man-one.github.io/hisn-assets/privacy.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://one-man-one.github.io/hisn-assets/en/privacy.html"/>
+    <xhtml:link rel="alternate" hreflang="fa" href="https://one-man-one.github.io/hisn-assets/fa/privacy.html"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://one-man-one.github.io/hisn-assets/id/privacy.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://one-man-one.github.io/hisn-assets/privacy.html"/>
+    <changefreq>yearly</changefreq>
+  </url>
+  <url>
+    <loc>https://one-man-one.github.io/hisn-assets/id/privacy.html</loc>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://one-man-one.github.io/hisn-assets/privacy.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://one-man-one.github.io/hisn-assets/en/privacy.html"/>
+    <xhtml:link rel="alternate" hreflang="fa" href="https://one-man-one.github.io/hisn-assets/fa/privacy.html"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://one-man-one.github.io/hisn-assets/id/privacy.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://one-man-one.github.io/hisn-assets/privacy.html"/>
+    <changefreq>yearly</changefreq>
+  </url>
 </urlset>

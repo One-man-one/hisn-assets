@@ -1,0 +1,269 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>سياسة الخصوصية — حصن الزواج</title>
+  <meta name="description" content="ما نجمعه من بياناتك في بوت حصن الزواج، ولماذا، ومن يطّلع عليه، وكم يبقى، وكيف تمحوه كلّه بضغطة.">
+  <link rel="canonical" href="https://one-man-one.github.io/hisn-assets/privacy.html">
+  <link rel="alternate" hreflang="ar" href="https://one-man-one.github.io/hisn-assets/privacy.html">
+  <link rel="alternate" hreflang="en" href="https://one-man-one.github.io/hisn-assets/en/privacy.html">
+  <link rel="alternate" hreflang="fa" href="https://one-man-one.github.io/hisn-assets/fa/privacy.html">
+  <link rel="alternate" hreflang="id" href="https://one-man-one.github.io/hisn-assets/id/privacy.html">
+  <link rel="alternate" hreflang="x-default" href="https://one-man-one.github.io/hisn-assets/privacy.html">
+  <meta name="robots" content="index,follow">
+  <meta name="google-site-verification" content="PZJUV_-inCgSV00em7TFB2Vp03PtsSfxsREUZm9Bjq8">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="حصن الزواج">
+  <meta property="og:locale" content="ar_AR">
+  <meta property="og:title" content="سياسة الخصوصية — حصن الزواج">
+  <meta property="og:description" content="ما نجمعه من بياناتك في بوت حصن الزواج، ولماذا، ومن يطّلع عليه، وكم يبقى، وكيف تمحوه كلّه بضغطة.">
+  <meta property="og:url" content="https://one-man-one.github.io/hisn-assets/privacy.html">
+  <meta name="theme-color" content="#ce5c8a">
+  <link rel="icon" href="icon.png" type="image/png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap">
+  <style>
+*,*::before,*::after{box-sizing:border-box}
+:root{
+  --rose:#ce5c8a; --rose-deep:#a8416b; --rose-soft:#fdf0f5;
+  --blue:#25557c; --ink:#241a1f; --body:#4a3f45; --muted:#8a7b82;
+  --bg:#fffaf9; --card:#ffffff; --line:#f0dde5; --shadow:14px 22px 48px;
+}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0; background:var(--bg); color:var(--body);
+  font-family:'Cairo',system-ui,-apple-system,'Segoe UI',sans-serif;
+  font-size:17px; line-height:1.85; -webkit-font-smoothing:antialiased;
+}
+h1,h2,h3{color:var(--ink); line-height:1.35; margin:0 0 .6em; font-weight:700}
+h1{font-size:clamp(1.9rem,5.2vw,3.05rem); letter-spacing:-.01em}
+h2{font-size:clamp(1.45rem,3.6vw,2.05rem)}
+h3{font-size:1.1rem; margin-bottom:.35em}
+p{margin:0 0 1em}
+a{color:var(--rose-deep)}
+.wrap{max-width:1080px; margin:0 auto; padding:0 22px}
+section{padding:clamp(48px,7vw,84px) 0}
+
+/* ── الترويسة ── */
+.top{
+  display:flex; align-items:center; justify-content:space-between; gap:16px;
+  padding:18px 0; border-bottom:1px solid var(--line);
+}
+.top .mark{display:flex; align-items:center; gap:10px; font-weight:700;
+  color:var(--ink); text-decoration:none; font-size:1.06rem}
+.top .mark img{width:34px; height:34px; object-fit:contain}
+.langs{display:flex; gap:6px; flex-wrap:wrap; list-style:none; margin:0; padding:0}
+.langs a{
+  display:block; padding:5px 11px; border-radius:999px; font-size:.86rem;
+  text-decoration:none; color:var(--body); border:1px solid var(--line);
+}
+.langs a[aria-current]{background:var(--rose); border-color:var(--rose); color:#fff}
+
+/* ── البطل ── */
+.hero{
+  padding:clamp(52px,8vw,96px) 0 clamp(44px,6vw,76px);
+  background:
+    radial-gradient(120% 90% at 82% -10%, #fce7ef 0%, rgba(252,231,239,0) 62%),
+    radial-gradient(100% 80% at 6% 0%, #eaf1f8 0%, rgba(234,241,248,0) 55%);
+}
+.kicker{
+  display:inline-block; font-size:.82rem; font-weight:600; letter-spacing:.06em;
+  text-transform:uppercase; color:var(--rose-deep); background:#fff;
+  border:1px solid var(--line); border-radius:999px; padding:5px 14px;
+  margin-bottom:20px;
+}
+.hero p.lead{font-size:clamp(1.02rem,2.1vw,1.18rem); max-width:62ch; color:var(--body)}
+.btn{
+  display:inline-block; margin-top:12px; padding:15px 34px; border-radius:14px;
+  background:var(--rose); color:#fff; text-decoration:none; font-weight:700;
+  font-size:1.06rem; box-shadow:0 10px 26px rgba(206,92,138,.32);
+}
+.btn:hover{background:var(--rose-deep)}
+.note{font-size:.9rem; color:var(--muted); margin:14px 0 0}
+
+/* ── الشبكات ── */
+.grid{display:grid; gap:18px; margin-top:34px}
+.g3{grid-template-columns:repeat(auto-fit,minmax(272px,1fr))}
+.g4{grid-template-columns:repeat(auto-fit,minmax(232px,1fr))}
+.card{
+  background:var(--card); border:1px solid var(--line); border-radius:16px;
+  padding:26px 24px;
+}
+.card p{margin:0; font-size:.97rem}
+.step .n{
+  display:grid; place-items:center; width:34px; height:34px; border-radius:10px;
+  background:var(--rose-soft); color:var(--rose-deep); font-weight:700;
+  margin-bottom:14px;
+}
+.card .ico{font-size:1.6rem; line-height:1; display:block; margin-bottom:12px}
+
+/* ── الخصوصية ── */
+.privacy{background:var(--blue); color:#dfe9f2}
+.privacy h2{color:#fff}
+.privacy p{max-width:70ch; color:#cfdded}
+.privacy p:last-child{margin-bottom:0}
+
+/* ── الأسئلة ── */
+.faq{max-width:820px; margin-top:30px}
+.faq h3{margin-top:0}
+.qa{border-bottom:1px solid var(--line); padding:22px 0}
+.qa:first-child{border-top:1px solid var(--line)}
+.qa p{margin:0; font-size:.97rem}
+
+/* ── الخاتمة ── */
+.end{text-align:center; background:var(--rose-soft)}
+.end p{max-width:52ch; margin-inline:auto}
+footer{border-top:1px solid var(--line); padding:30px 0 44px; font-size:.9rem;
+  color:var(--muted)}
+.flinks{display:flex; gap:22px; flex-wrap:wrap; margin:0 0 14px; padding:0;
+  list-style:none}
+
+/* ── وثيقة السياسة ──
+   ⚠️ عرضٌ بوحدة ch لا px: الوثيقة نصٌّ متّصل يُقرأ سطراً سطراً، وقياس
+   السطر المريح عدد حروفٍ لا عدد بكسلات — والفرق يظهر في الفارسية
+   والعربية حيث الحرف أضيق من اللاتيني بالبكسل نفسه. */
+.doc{max-width:74ch; margin-inline:auto}
+.doc .updated{font-size:.9rem; color:var(--muted); margin:0 0 26px}
+.doc .lead{font-size:1.05rem; color:var(--body); margin-bottom:34px}
+.doc h2{font-size:clamp(1.15rem,2.4vw,1.42rem); margin-top:38px;
+  padding-top:22px; border-top:1px solid var(--line)}
+.doc h2:first-of-type{border-top:0; padding-top:0; margin-top:0}
+.doc ul{margin:0 0 1em; padding-inline-start:1.35em}
+.doc li{margin-bottom:.45em}
+.doc .back{display:inline-block; margin-top:38px; font-weight:600}
+
+@media (max-width:560px){ body{font-size:16px} .card{padding:22px 20px} }
+</style>
+</head>
+<body>
+
+<header class="wrap top">
+  <a class="mark" href="https://one-man-one.github.io/hisn-assets/">
+    <img src="icon.png" alt="" width="34" height="34">
+    <span>حصن الزواج</span>
+  </a>
+  <nav aria-label="اللغة">
+    <ul class="langs">
+      <li><a href="https://one-man-one.github.io/hisn-assets/privacy.html" aria-current="true" lang="ar" hreflang="ar">العربية</a></li>
+      <li><a href="https://one-man-one.github.io/hisn-assets/en/privacy.html" lang="en" hreflang="en">English</a></li>
+      <li><a href="https://one-man-one.github.io/hisn-assets/fa/privacy.html" lang="fa" hreflang="fa">فارسی</a></li>
+      <li><a href="https://one-man-one.github.io/hisn-assets/id/privacy.html" lang="id" hreflang="id">Indonesia</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+  <section>
+    <div class="wrap doc">
+      <h1>سياسة الخصوصية</h1>
+      <p class="updated">آخر تحديث: ٢٩ أغسطس ٢٠٢٦</p>
+      <p class="lead">هذه الوثيقة تصف ما يجمعه بوت «حصن الزواج» من بياناتك، ولماذا يجمعه، ومن يطّلع عليه، وكم يبقى، وكيف تحذفه. كُتبت لتُقرأ لا لتُوقَّع: بلا صياغة قانونية ملتوية، وبلا وعدٍ لا يقابله سلوكٌ في الخدمة نفسها.</p>
+      <h2>من نحن وما الذي تغطّيه هذه الوثيقة</h2>
+      <p>حصن الزواج خدمة للتعارف بغرض الزواج الشرعي، تعمل بالكامل داخل تطبيق تيليجرام عبر البوت @HisnAlzawaj_bot.</p>
+      <p>تغطّي هذه الوثيقة البوت وهذه الصفحة التعريفية. ولا تغطّي تيليجرام نفسه — فهو منصّة مستقلّة لها سياستها، ويحكم ما تفعله بحسابك هناك.</p>
+      <h2>ما تعطينا إيّاه بنفسك</h2>
+      <p>التسجيل يسألك — وكلّ جوابٍ تكتبه أنت، وتعدّله أو تمحوه متى شئت من «تعديل بياناتي»:</p>
+      <ul>
+        <li>الاسم، وتاريخ الميلاد، والجنس.</li>
+        <li>الجنسية والبلد والمدينة.</li>
+        <li>الدين والمذهب.</li>
+        <li>التعليم والعمل ومستوى الدخل.</li>
+        <li>الحالة الاجتماعية والأولاد ونوع الزواج المقبول.</li>
+        <li>الوصف الجسدي، والتدخين، والحجاب، واللغات التي تتحدّثها.</li>
+        <li>نبذةً عن نفسك، ومواصفات الشريك الذي تبحث عنه.</li>
+      </ul>
+      <p>ولك أن تترك الاختياري فارغاً — يخفّ ظهورك في نتائج البحث، ولا يُمنع عنك شيء.</p>
+      <h2>ما يصلنا من تيليجرام، وما لا يصلنا</h2>
+      <p>يعطينا تيليجرام ثلاثة أشياء عن حسابك: معرّفك الرقمي، واسم المستخدم إن كان لك واحد، ولغة تطبيقك.</p>
+      <p>ولا يصلنا رقم هاتفك ولا جهات اتصالك ولا قائمة محادثاتك. تيليجرام لا يعطي البوتات شيئاً من ذلك، فلا نملكه أصلاً حتى لو أردناه.</p>
+      <h2>ما ينشأ من استعمالك للخدمة</h2>
+      <p>وقت آخر نشاط لك، وإعجاباتك وتطابقاتك، وما تُرسله من بلاغات أو يصلنا عنك، ورسائل الدردشة داخل البوت — وهذه الأخيرة تُحذف آلياً بعد ٣٠ يوماً، والتفصيل أدناه.</p>
+      <h2>صورتك — مموّهة حتى تأذن أنت</h2>
+      <p>صورتك لا تظهر واضحةً لأحد حتى تأذن له أنت، طلباً بطلب. الافتراضي نسخةٌ مموّهة يراها الجميع.</p>
+      <p>وللإذن أن يكون مؤقتاً بنافذة مشاهدة تبدأ من أوّل فتحٍ فعلي لا من لحظة موافقتك — فموافقةٌ في الثالثة فجراً والطالب نائم لا تنقضي قبل أن يراها. والصور المعروضة بنافذة مؤقتة تُحذف من محادثة من رآها بعد انقضائها.</p>
+      <p>ولك سحب الإذن متى شئت. وتغييرك لصورتك يُبطل كلّ الأذون السابقة دفعةً واحدة بلا أن تطلب ذلك.</p>
+      <h2>توثيق الهوية — الفيديو لا يُحفظ إطلاقاً</h2>
+      <p>التوثيق اختياري بالكامل. تُرسل فيديو قصيراً تؤدّي فيه إشارةً وتُظهر رمزاً يُعطى لك لحظتها.</p>
+      <p>والفيديو لا يُخزَّن عندنا بأي صورة: يُنزَّل إلى ذاكرة التشغيل، ويُرسل للتحليل الآلي، ثمّ يُفلَت. لا الفيديو ولا معرّفه لدى تيليجرام يُكتب في قاعدة بياناتنا.</p>
+      <p>ما يبقى هو الحكم وحده: نُقبل أم نُحيل إلى مراجعة بشرية أم نرفض، وسبب ذلك، ووقته.</p>
+      <h2>البطاقة التي تُنشر على صفحاتنا</h2>
+      <p>لنساعدك على الوصول إلى شريك أسرع، ننشر بطاقةً تعريفية عنك على قناتنا وصفحاتنا الرسمية. وفيها:</p>
+      <ul>
+        <li>اسمك الأوّل وحده — بلا اسم العائلة.</li>
+        <li>بيانات ملفك المعلنة: العمر والجنسية والحالة الاجتماعية ونحوها.</li>
+        <li>صورة تمثيلية عامّة حسب جنسك — وليست صورتك أبداً، ولا نسخةً مموّهة منها.</li>
+      </ul>
+      <p>ولا يُنشر لك رقمٌ ولا حساب تواصل: من أراد التعرّف إليك يمرّ بالبوت وحده.</p>
+      <p>والنشر مفعَّل افتراضياً لمن أكمل تسجيله، ولك إيقافه عن نفسك في أي لحظة من شاشة «ملفي». وإن أوقفتَه أو حذفت حسابك، أزلنا ما نُشر. وبعض المنصّات لا تتيح الحذف برمجياً، فيُحذف يدوياً وقد يتأخّر قليلاً.</p>
+      <h2>رسائل الدردشة</h2>
+      <p>الرسائل بين الطرفين تمرّ عبر البوت وتُحفظ عندنا ٣٠ يوماً، ثمّ تُحذف آلياً. ليست أرشيفاً دائماً، ولا يُحتفظ بها بعد المدّة لأي غرض.</p>
+      <p>وسبب الحفظ واحد لا غير: النظر في البلاغات. من ادّعى أن أحداً أساء إليه لا يمكن إنصافه إن لم يبقَ للكلام أثر. ولا تُقرأ إلّا عند بلاغٍ أو شبهة إساءة.</p>
+      <p>ولهذا كانت المدّة ٣٠ يوماً لا أكثر: من أُسيء إليه يبلّغ خلال أيام، فحفظُها أطول من ذلك يزيد ما يمكن أن يُفقد لو أصابنا اختراق، ولا يزيد ما يُنصِف أحداً.</p>
+      <h2>المدفوعات</h2>
+      <p>العضوية المميّزة تُدفع بنجوم تيليجرام أو بعملة رقمية، وكلاهما يتمّ خارج بوتنا لدى مزوّده.</p>
+      <p>فلا نرى ولا نخزّن أي بيانات بطاقة أو محفظة. يبقى لدينا معرّف العملية والمبلغ واسم المزوّد وتاريخه — وهو أقلّ ما يلزم لتفعيل عضويتك ولطلب استرداد إن لزم.</p>
+      <h2>من يطّلع على بياناتك</h2>
+      <ul>
+        <li>المستخدمون الآخرون: ما يظهر في ملفك وفي نتائج البحث.</li>
+        <li>مشرفو الخدمة: عند بلاغٍ أو مراجعة توثيق أو شكوى.</li>
+        <li>تيليجرام: المنصّة التي تعمل عليها الخدمة كلّها.</li>
+        <li>Google: تحليل فيديو التوثيق آلياً — بلا حفظٍ عندنا كما سبق.</li>
+        <li>خدمة ترجمة آلية: ترجمة نبذتك حين يعرضها أحدهم بلغةٍ أخرى.</li>
+        <li>مزوّد استضافة سحابية: تشغيل الخادم وقاعدة البيانات.</li>
+        <li>منصّات النشر — تيليجرام وفيسبوك وإنستجرام وثريدز ويوتيوب وتيك توك: البطاقة الموصوفة أعلاه وحدها، ولمن لم يوقف النشر عن نفسه.</li>
+      </ul>
+      <p>ولا نبيع بياناتك لأحد، ولا نسلّمها لمعلنين، ولا نبني عليها إعلاناً موجَّهاً. ولا يُطلب منك شيءٌ من هذا مقابل استعمال الخدمة.</p>
+      <p>وسمّينا Google هنا وحدها من بين مزوّدي التشغيل، لأن فيديو التوثيق أحسّ ما يمرّ بنا — ووعدٌ بألّا يُحفظ لا يُصدَّق إن لم يُعرف من يستلمه. ولمن سأل عن أسماء البقية أن يراسلنا.</p>
+      <h2>كم تبقى بياناتك</h2>
+      <p>تبقى ما دام حسابك قائماً — لأن الخدمة نفسها هي عرض ملفك على من يوافق مواصفاتك.</p>
+      <p>وتبقى بعد الحذف سجلّاتٌ محدودة: قيود المراجعة الإدارية وسجلّ المدفوعات، بالقدر الذي يلزم للمحاسبة ولمنع من حُظر من العودة فوراً بحسابٍ جديد.</p>
+      <h2>حذفك لحسابك — محوٌ لا إخفاء</h2>
+      <p>الأمر /delete، أو زرّ «حذف حسابي» في شاشة ملفك. وبعد تأكيدك يُمحى فوراً:</p>
+      <ul>
+        <li>ملفك كلّه بما فيه صورتك ونبذتك.</li>
+        <li>إعجاباتك وتطابقاتك ومحادثاتك ورسائلها.</li>
+        <li>أذون صورتك الممنوحة والمطلوبة.</li>
+        <li>إشعاراتك المعلّقة وطابور التصفّح الخاص بك.</li>
+      </ul>
+      <p>ويُسحب في الوقت نفسه ما نُشر عنك على قناتنا وصفحاتنا — فحذف الحساب سحبٌ للموافقة، لا يصحّ أن تبقى بعده بطاقة من طلب المحو معروضةً للعموم.</p>
+      <h2>حقوقك، وكيف تمارسها بنفسك</h2>
+      <ul>
+        <li>الاطّلاع والتصحيح: «تعديل بياناتي» في القائمة.</li>
+        <li>الحذف الكامل: الأمر /delete.</li>
+        <li>إيقاف النشر على صفحاتنا: من شاشة «ملفي».</li>
+        <li>إيقاف رسائل التذكير: من الرسالة نفسها.</li>
+        <li>سحب إذن صورتك: من شاشة خصوصية الصورة.</li>
+        <li>سؤالٌ أو شكوى أو طلبٌ لا يفي به ما سبق: راسلنا.</li>
+      </ul>
+      <p>ولا يُشترط لأيٍّ من هذه أن تراسلنا أو تنتظر ردّاً — أُتيحت كلّها بضغطةٍ داخل البوت عمداً.</p>
+      <h2>السنّ</h2>
+      <p>الخدمة لمن أتمّ الثامنة عشرة. ومن نكتشف أنه دونها يُحذف حسابه.</p>
+      <h2>الأمن — وما لا نعدك به</h2>
+      <p>الاتصال بخوادمنا مشفّر، والوصول الإداري إلى البيانات محصورٌ بمن يحتاجه لعمله.</p>
+      <p>ولا نظام محصَّنٌ تماماً، فلا نعدك بما لا نضمنه. وما نضمنه أمران: ألّا نجمع ما لا نحتاجه، وأن يبقى أخطرُ ما يمرّ بنا — فيديو توثيقك — بلا حفظٍ أصلاً.</p>
+      <h2>تغيّر هذه الوثيقة</h2>
+      <p>إن تغيّر ما نفعله، غيّرنا هذه الوثيقة وحدّثنا تاريخها أعلاها. والتغيير الجوهري يُعلَن في قناتنا لا يُدسّ هنا بصمت.</p>
+      <h2>التواصل</h2>
+      <p>راسلنا داخل البوت @HisnAlzawaj_bot — وهو أسرع طريق، لأن حسابك معروفٌ فيه فلا تحتاج إثبات شيء.</p>
+      <p>وتجدنا كذلك على قناتنا @Hisn_Alzawaj.</p>
+      <a class="back" href="https://one-man-one.github.io/hisn-assets/">العودة إلى الصفحة الرئيسية</a>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <ul class="flinks">
+      <li><a href="https://t.me/HisnAlzawaj_bot" rel="noopener">@HisnAlzawaj_bot</a></li>
+      <li><a href="https://t.me/Hisn_Alzawaj" rel="noopener">قناة الملفات على تليجرام</a></li>
+      <li><a href="https://one-man-one.github.io/hisn-assets/">العودة إلى الصفحة الرئيسية</a></li>
+    </ul>
+    <p>© حصن الزواج</p>
+  </div>
+</footer>
+
+</body>
+</html>

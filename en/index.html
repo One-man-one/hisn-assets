@@ -127,6 +127,20 @@ footer{border-top:1px solid var(--line); padding:30px 0 44px; font-size:.9rem;
 .flinks{display:flex; gap:22px; flex-wrap:wrap; margin:0 0 14px; padding:0;
   list-style:none}
 
+/* ── وثيقة السياسة ──
+   ⚠️ عرضٌ بوحدة ch لا px: الوثيقة نصٌّ متّصل يُقرأ سطراً سطراً، وقياس
+   السطر المريح عدد حروفٍ لا عدد بكسلات — والفرق يظهر في الفارسية
+   والعربية حيث الحرف أضيق من اللاتيني بالبكسل نفسه. */
+.doc{max-width:74ch; margin-inline:auto}
+.doc .updated{font-size:.9rem; color:var(--muted); margin:0 0 26px}
+.doc .lead{font-size:1.05rem; color:var(--body); margin-bottom:34px}
+.doc h2{font-size:clamp(1.15rem,2.4vw,1.42rem); margin-top:38px;
+  padding-top:22px; border-top:1px solid var(--line)}
+.doc h2:first-of-type{border-top:0; padding-top:0; margin-top:0}
+.doc ul{margin:0 0 1em; padding-inline-start:1.35em}
+.doc li{margin-bottom:.45em}
+.doc .back{display:inline-block; margin-top:38px; font-weight:600}
+
 @media (max-width:560px){ body{font-size:16px} .card{padding:22px 20px} }
 </style>
   <script type="application/ld+json">
@@ -153,8 +167,7 @@ footer{border-top:1px solid var(--line); padding:30px 0 44px; font-size:.9rem;
   },
   "sameAs": [
     "https://t.me/HisnAlzawaj_bot",
-    "https://t.me/Hisn_Alzawaj",
-    "https://github.com/One-man-one/HisnAlzawaj_bot"
+    "https://t.me/Hisn_Alzawaj"
   ]
 }
 </script>
@@ -379,7 +392,7 @@ footer{border-top:1px solid var(--line); padding:30px 0 44px; font-size:.9rem;
     <ul class="flinks">
       <li><a href="https://t.me/HisnAlzawaj_bot" rel="noopener">@HisnAlzawaj_bot</a></li>
       <li><a href="https://t.me/Hisn_Alzawaj" rel="noopener">Profiles channel on Telegram</a></li>
-      <li><a href="https://github.com/One-man-one/HisnAlzawaj_bot" rel="noopener">Source code</a></li>
+      <li><a href="https://one-man-one.github.io/hisn-assets/en/privacy.html">Privacy</a></li>
     </ul>
     <p>© Hisn Alzawaj</p>
   </div>
