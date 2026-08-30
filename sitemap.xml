@@ -73,4 +73,40 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://one-man-one.github.io/hisn-assets/privacy.html"/>
     <changefreq>yearly</changefreq>
   </url>
+  <url>
+    <loc>https://one-man-one.github.io/hisn-assets/terms.html</loc>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://one-man-one.github.io/hisn-assets/terms.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://one-man-one.github.io/hisn-assets/en/terms.html"/>
+    <xhtml:link rel="alternate" hreflang="fa" href="https://one-man-one.github.io/hisn-assets/fa/terms.html"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://one-man-one.github.io/hisn-assets/id/terms.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://one-man-one.github.io/hisn-assets/terms.html"/>
+    <changefreq>yearly</changefreq>
+  </url>
+  <url>
+    <loc>https://one-man-one.github.io/hisn-assets/en/terms.html</loc>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://one-man-one.github.io/hisn-assets/terms.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://one-man-one.github.io/hisn-assets/en/terms.html"/>
+    <xhtml:link rel="alternate" hreflang="fa" href="https://one-man-one.github.io/hisn-assets/fa/terms.html"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://one-man-one.github.io/hisn-assets/id/terms.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://one-man-one.github.io/hisn-assets/terms.html"/>
+    <changefreq>yearly</changefreq>
+  </url>
+  <url>
+    <loc>https://one-man-one.github.io/hisn-assets/fa/terms.html</loc>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://one-man-one.github.io/hisn-assets/terms.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://one-man-one.github.io/hisn-assets/en/terms.html"/>
+    <xhtml:link rel="alternate" hreflang="fa" href="https://one-man-one.github.io/hisn-assets/fa/terms.html"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://one-man-one.github.io/hisn-assets/id/terms.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://one-man-one.github.io/hisn-assets/terms.html"/>
+    <changefreq>yearly</changefreq>
+  </url>
+  <url>
+    <loc>https://one-man-one.github.io/hisn-assets/id/terms.html</loc>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://one-man-one.github.io/hisn-assets/terms.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://one-man-one.github.io/hisn-assets/en/terms.html"/>
+    <xhtml:link rel="alternate" hreflang="fa" href="https://one-man-one.github.io/hisn-assets/fa/terms.html"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://one-man-one.github.io/hisn-assets/id/terms.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://one-man-one.github.io/hisn-assets/terms.html"/>
+    <changefreq>yearly</changefreq>
+  </url>
 </urlset>
