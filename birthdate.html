@@ -124,7 +124,13 @@ button:focus-visible{outline:2px solid var(--button);outline-offset:2px}
         tooYoung:'حداقل سن ۱۸ سال است',tooOld:'حداکثر سن ۸۰ سال است',hint:'بچرخانید و تأیید را بزنید'},
     id:{dir:'ltr',order:['day','month','year'],title:'Pilih tanggal lahir Anda',
         cancel:'Batal',confirm:'Konfirmasi',yr:'thn',day:'Tanggal',month:'Bulan',year:'Tahun',
-        tooYoung:'Usia minimum 18 tahun',tooOld:'Usia maksimum 80 tahun',hint:'Geser, lalu tekan Konfirmasi'}
+        tooYoung:'Usia minimum 18 tahun',tooOld:'Usia maksimum 80 tahun',hint:'Geser, lalu tekan Konfirmasi'},
+    fr:{dir:'ltr',order:['day','month','year'],title:'Choisissez votre date de naissance',
+        cancel:'Annuler',confirm:'Confirmer',yr:'ans',day:'Jour',month:'Mois',year:'Année',
+        tooYoung:'Âge minimum : 18 ans',tooOld:'Âge maximum : 80 ans',hint:'Faites défiler, puis appuyez sur Confirmer'},
+    es:{dir:'ltr',order:['day','month','year'],title:'Elige tu fecha de nacimiento',
+        cancel:'Cancelar',confirm:'Confirmar',yr:'años',day:'Día',month:'Mes',year:'Año',
+        tooYoung:'La edad mínima es 18 años',tooOld:'La edad máxima es 80 años',hint:'Desliza y pulsa Confirmar'}
   };
 
   function pickLang(){
@@ -141,7 +147,7 @@ button:focus-visible{outline:2px solid var(--button);outline-offset:2px}
   // Intl للفارسية أسماء الأشهر الشمسية (فروردین…) بينما القيمة المرسَلة
   // ميلادية — فيختار المستخدم شهراً ويصل البوت شهرٌ آخر.
   //
-  // ⚠️ والأرقام غربية في اللغات الأربع (-u-nu-latn) عمداً: السنة رقم واحد
+  // ⚠️ والأرقام غربية في اللغات الستّ (-u-nu-latn) عمداً: السنة رقم واحد
   // لا يحتمل تأويلين، وتوحيدها يمنع اختلاف شكل الرقم بين الصفحة والبطاقة.
   function monthNames(){
     var out = [], i;
