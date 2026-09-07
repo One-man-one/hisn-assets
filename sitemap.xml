@@ -2,111 +2,147 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://one-man-one.github.io/hisn-assets/</loc>
-    <xhtml:link rel="alternate" hreflang="ar" href="https://one-man-one.github.io/hisn-assets/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://one-man-one.github.io/hisn-assets/en/"/>
-    <xhtml:link rel="alternate" hreflang="fa" href="https://one-man-one.github.io/hisn-assets/fa/"/>
-    <xhtml:link rel="alternate" hreflang="id" href="https://one-man-one.github.io/hisn-assets/id/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://one-man-one.github.io/hisn-assets/"/>
+    <loc>https://hisnalzawaj.com/</loc>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://hisnalzawaj.com/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://hisnalzawaj.com/en/"/>
+    <xhtml:link rel="alternate" hreflang="fa" href="https://hisnalzawaj.com/fa/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://hisnalzawaj.com/id/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://hisnalzawaj.com/"/>
     <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>https://one-man-one.github.io/hisn-assets/en/</loc>
-    <xhtml:link rel="alternate" hreflang="ar" href="https://one-man-one.github.io/hisn-assets/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://one-man-one.github.io/hisn-assets/en/"/>
-    <xhtml:link rel="alternate" hreflang="fa" href="https://one-man-one.github.io/hisn-assets/fa/"/>
-    <xhtml:link rel="alternate" hreflang="id" href="https://one-man-one.github.io/hisn-assets/id/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://one-man-one.github.io/hisn-assets/"/>
+    <loc>https://hisnalzawaj.com/en/</loc>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://hisnalzawaj.com/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://hisnalzawaj.com/en/"/>
+    <xhtml:link rel="alternate" hreflang="fa" href="https://hisnalzawaj.com/fa/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://hisnalzawaj.com/id/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://hisnalzawaj.com/"/>
     <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>https://one-man-one.github.io/hisn-assets/fa/</loc>
-    <xhtml:link rel="alternate" hreflang="ar" href="https://one-man-one.github.io/hisn-assets/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://one-man-one.github.io/hisn-assets/en/"/>
-    <xhtml:link rel="alternate" hreflang="fa" href="https://one-man-one.github.io/hisn-assets/fa/"/>
-    <xhtml:link rel="alternate" hreflang="id" href="https://one-man-one.github.io/hisn-assets/id/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://one-man-one.github.io/hisn-assets/"/>
+    <loc>https://hisnalzawaj.com/fa/</loc>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://hisnalzawaj.com/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://hisnalzawaj.com/en/"/>
+    <xhtml:link rel="alternate" hreflang="fa" href="https://hisnalzawaj.com/fa/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://hisnalzawaj.com/id/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://hisnalzawaj.com/"/>
     <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>https://one-man-one.github.io/hisn-assets/id/</loc>
-    <xhtml:link rel="alternate" hreflang="ar" href="https://one-man-one.github.io/hisn-assets/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://one-man-one.github.io/hisn-assets/en/"/>
-    <xhtml:link rel="alternate" hreflang="fa" href="https://one-man-one.github.io/hisn-assets/fa/"/>
-    <xhtml:link rel="alternate" hreflang="id" href="https://one-man-one.github.io/hisn-assets/id/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://one-man-one.github.io/hisn-assets/"/>
+    <loc>https://hisnalzawaj.com/id/</loc>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://hisnalzawaj.com/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://hisnalzawaj.com/en/"/>
+    <xhtml:link rel="alternate" hreflang="fa" href="https://hisnalzawaj.com/fa/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://hisnalzawaj.com/id/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://hisnalzawaj.com/"/>
     <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>https://one-man-one.github.io/hisn-assets/privacy.html</loc>
-    <xhtml:link rel="alternate" hreflang="ar" href="https://one-man-one.github.io/hisn-assets/privacy.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://one-man-one.github.io/hisn-assets/en/privacy.html"/>
-    <xhtml:link rel="alternate" hreflang="fa" href="https://one-man-one.github.io/hisn-assets/fa/privacy.html"/>
-    <xhtml:link rel="alternate" hreflang="id" href="https://one-man-one.github.io/hisn-assets/id/privacy.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://one-man-one.github.io/hisn-assets/privacy.html"/>
+    <loc>https://hisnalzawaj.com/guide.html</loc>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://hisnalzawaj.com/guide.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://hisnalzawaj.com/en/guide.html"/>
+    <xhtml:link rel="alternate" hreflang="fa" href="https://hisnalzawaj.com/fa/guide.html"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://hisnalzawaj.com/id/guide.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://hisnalzawaj.com/guide.html"/>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://hisnalzawaj.com/en/guide.html</loc>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://hisnalzawaj.com/guide.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://hisnalzawaj.com/en/guide.html"/>
+    <xhtml:link rel="alternate" hreflang="fa" href="https://hisnalzawaj.com/fa/guide.html"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://hisnalzawaj.com/id/guide.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://hisnalzawaj.com/guide.html"/>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://hisnalzawaj.com/fa/guide.html</loc>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://hisnalzawaj.com/guide.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://hisnalzawaj.com/en/guide.html"/>
+    <xhtml:link rel="alternate" hreflang="fa" href="https://hisnalzawaj.com/fa/guide.html"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://hisnalzawaj.com/id/guide.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://hisnalzawaj.com/guide.html"/>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://hisnalzawaj.com/id/guide.html</loc>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://hisnalzawaj.com/guide.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://hisnalzawaj.com/en/guide.html"/>
+    <xhtml:link rel="alternate" hreflang="fa" href="https://hisnalzawaj.com/fa/guide.html"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://hisnalzawaj.com/id/guide.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://hisnalzawaj.com/guide.html"/>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://hisnalzawaj.com/privacy.html</loc>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://hisnalzawaj.com/privacy.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://hisnalzawaj.com/en/privacy.html"/>
+    <xhtml:link rel="alternate" hreflang="fa" href="https://hisnalzawaj.com/fa/privacy.html"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://hisnalzawaj.com/id/privacy.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://hisnalzawaj.com/privacy.html"/>
     <changefreq>yearly</changefreq>
   </url>
   <url>
-    <loc>https://one-man-one.github.io/hisn-assets/en/privacy.html</loc>
-    <xhtml:link rel="alternate" hreflang="ar" href="https://one-man-one.github.io/hisn-assets/privacy.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://one-man-one.github.io/hisn-assets/en/privacy.html"/>
-    <xhtml:link rel="alternate" hreflang="fa" href="https://one-man-one.github.io/hisn-assets/fa/privacy.html"/>
-    <xhtml:link rel="alternate" hreflang="id" href="https://one-man-one.github.io/hisn-assets/id/privacy.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://one-man-one.github.io/hisn-assets/privacy.html"/>
+    <loc>https://hisnalzawaj.com/en/privacy.html</loc>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://hisnalzawaj.com/privacy.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://hisnalzawaj.com/en/privacy.html"/>
+    <xhtml:link rel="alternate" hreflang="fa" href="https://hisnalzawaj.com/fa/privacy.html"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://hisnalzawaj.com/id/privacy.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://hisnalzawaj.com/privacy.html"/>
     <changefreq>yearly</changefreq>
   </url>
   <url>
-    <loc>https://one-man-one.github.io/hisn-assets/fa/privacy.html</loc>
-    <xhtml:link rel="alternate" hreflang="ar" href="https://one-man-one.github.io/hisn-assets/privacy.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://one-man-one.github.io/hisn-assets/en/privacy.html"/>
-    <xhtml:link rel="alternate" hreflang="fa" href="https://one-man-one.github.io/hisn-assets/fa/privacy.html"/>
-    <xhtml:link rel="alternate" hreflang="id" href="https://one-man-one.github.io/hisn-assets/id/privacy.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://one-man-one.github.io/hisn-assets/privacy.html"/>
+    <loc>https://hisnalzawaj.com/fa/privacy.html</loc>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://hisnalzawaj.com/privacy.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://hisnalzawaj.com/en/privacy.html"/>
+    <xhtml:link rel="alternate" hreflang="fa" href="https://hisnalzawaj.com/fa/privacy.html"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://hisnalzawaj.com/id/privacy.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://hisnalzawaj.com/privacy.html"/>
     <changefreq>yearly</changefreq>
   </url>
   <url>
-    <loc>https://one-man-one.github.io/hisn-assets/id/privacy.html</loc>
-    <xhtml:link rel="alternate" hreflang="ar" href="https://one-man-one.github.io/hisn-assets/privacy.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://one-man-one.github.io/hisn-assets/en/privacy.html"/>
-    <xhtml:link rel="alternate" hreflang="fa" href="https://one-man-one.github.io/hisn-assets/fa/privacy.html"/>
-    <xhtml:link rel="alternate" hreflang="id" href="https://one-man-one.github.io/hisn-assets/id/privacy.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://one-man-one.github.io/hisn-assets/privacy.html"/>
+    <loc>https://hisnalzawaj.com/id/privacy.html</loc>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://hisnalzawaj.com/privacy.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://hisnalzawaj.com/en/privacy.html"/>
+    <xhtml:link rel="alternate" hreflang="fa" href="https://hisnalzawaj.com/fa/privacy.html"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://hisnalzawaj.com/id/privacy.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://hisnalzawaj.com/privacy.html"/>
     <changefreq>yearly</changefreq>
   </url>
   <url>
-    <loc>https://one-man-one.github.io/hisn-assets/terms.html</loc>
-    <xhtml:link rel="alternate" hreflang="ar" href="https://one-man-one.github.io/hisn-assets/terms.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://one-man-one.github.io/hisn-assets/en/terms.html"/>
-    <xhtml:link rel="alternate" hreflang="fa" href="https://one-man-one.github.io/hisn-assets/fa/terms.html"/>
-    <xhtml:link rel="alternate" hreflang="id" href="https://one-man-one.github.io/hisn-assets/id/terms.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://one-man-one.github.io/hisn-assets/terms.html"/>
+    <loc>https://hisnalzawaj.com/terms.html</loc>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://hisnalzawaj.com/terms.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://hisnalzawaj.com/en/terms.html"/>
+    <xhtml:link rel="alternate" hreflang="fa" href="https://hisnalzawaj.com/fa/terms.html"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://hisnalzawaj.com/id/terms.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://hisnalzawaj.com/terms.html"/>
     <changefreq>yearly</changefreq>
   </url>
   <url>
-    <loc>https://one-man-one.github.io/hisn-assets/en/terms.html</loc>
-    <xhtml:link rel="alternate" hreflang="ar" href="https://one-man-one.github.io/hisn-assets/terms.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://one-man-one.github.io/hisn-assets/en/terms.html"/>
-    <xhtml:link rel="alternate" hreflang="fa" href="https://one-man-one.github.io/hisn-assets/fa/terms.html"/>
-    <xhtml:link rel="alternate" hreflang="id" href="https://one-man-one.github.io/hisn-assets/id/terms.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://one-man-one.github.io/hisn-assets/terms.html"/>
+    <loc>https://hisnalzawaj.com/en/terms.html</loc>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://hisnalzawaj.com/terms.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://hisnalzawaj.com/en/terms.html"/>
+    <xhtml:link rel="alternate" hreflang="fa" href="https://hisnalzawaj.com/fa/terms.html"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://hisnalzawaj.com/id/terms.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://hisnalzawaj.com/terms.html"/>
     <changefreq>yearly</changefreq>
   </url>
   <url>
-    <loc>https://one-man-one.github.io/hisn-assets/fa/terms.html</loc>
-    <xhtml:link rel="alternate" hreflang="ar" href="https://one-man-one.github.io/hisn-assets/terms.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://one-man-one.github.io/hisn-assets/en/terms.html"/>
-    <xhtml:link rel="alternate" hreflang="fa" href="https://one-man-one.github.io/hisn-assets/fa/terms.html"/>
-    <xhtml:link rel="alternate" hreflang="id" href="https://one-man-one.github.io/hisn-assets/id/terms.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://one-man-one.github.io/hisn-assets/terms.html"/>
+    <loc>https://hisnalzawaj.com/fa/terms.html</loc>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://hisnalzawaj.com/terms.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://hisnalzawaj.com/en/terms.html"/>
+    <xhtml:link rel="alternate" hreflang="fa" href="https://hisnalzawaj.com/fa/terms.html"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://hisnalzawaj.com/id/terms.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://hisnalzawaj.com/terms.html"/>
     <changefreq>yearly</changefreq>
   </url>
   <url>
-    <loc>https://one-man-one.github.io/hisn-assets/id/terms.html</loc>
-    <xhtml:link rel="alternate" hreflang="ar" href="https://one-man-one.github.io/hisn-assets/terms.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://one-man-one.github.io/hisn-assets/en/terms.html"/>
-    <xhtml:link rel="alternate" hreflang="fa" href="https://one-man-one.github.io/hisn-assets/fa/terms.html"/>
-    <xhtml:link rel="alternate" hreflang="id" href="https://one-man-one.github.io/hisn-assets/id/terms.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://one-man-one.github.io/hisn-assets/terms.html"/>
+    <loc>https://hisnalzawaj.com/id/terms.html</loc>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://hisnalzawaj.com/terms.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://hisnalzawaj.com/en/terms.html"/>
+    <xhtml:link rel="alternate" hreflang="fa" href="https://hisnalzawaj.com/fa/terms.html"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://hisnalzawaj.com/id/terms.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://hisnalzawaj.com/terms.html"/>
     <changefreq>yearly</changefreq>
   </url>
 </urlset>

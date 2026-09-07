@@ -1,0 +1,272 @@
+<!doctype html>
+<html lang="id" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Hisn Alzawaj — Panduan Pengguna</title>
+  <meta name="description" content="Panduan langkah demi langkah Hisn Alzawaj: pendaftaran, pencarian dan skor kecocokan, obrolan di dalam bot, privasi foto, verifikasi, pelaporan, keanggotaan premium dan penghapusan akun.">
+  <link rel="canonical" href="https://hisnalzawaj.com/id/guide.html">
+  <link rel="alternate" hreflang="ar" href="https://hisnalzawaj.com/guide.html">
+  <link rel="alternate" hreflang="en" href="https://hisnalzawaj.com/en/guide.html">
+  <link rel="alternate" hreflang="fa" href="https://hisnalzawaj.com/fa/guide.html">
+  <link rel="alternate" hreflang="id" href="https://hisnalzawaj.com/id/guide.html">
+  <link rel="alternate" hreflang="x-default" href="https://hisnalzawaj.com/guide.html">
+  <meta name="robots" content="index,follow">
+  <meta name="google-site-verification" content="PZJUV_-inCgSV00em7TFB2Vp03PtsSfxsREUZm9Bjq8">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Hisn Alzawaj">
+  <meta property="og:locale" content="id_ID">
+  <meta property="og:title" content="Hisn Alzawaj — Panduan Pengguna">
+  <meta property="og:description" content="Panduan langkah demi langkah Hisn Alzawaj: pendaftaran, pencarian dan skor kecocokan, obrolan di dalam bot, privasi foto, verifikasi, pelaporan, keanggotaan premium dan penghapusan akun.">
+  <meta property="og:url" content="https://hisnalzawaj.com/id/guide.html">
+  <meta name="theme-color" content="#ce5c8a">
+  <link rel="icon" href="../icon.png" type="image/png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap">
+  <style>
+*,*::before,*::after{box-sizing:border-box}
+:root{
+  --rose:#ce5c8a; --rose-deep:#a8416b; --rose-soft:#fdf0f5;
+  --blue:#25557c; --ink:#241a1f; --body:#4a3f45; --muted:#8a7b82;
+  --bg:#fffaf9; --card:#ffffff; --line:#f0dde5; --shadow:14px 22px 48px;
+}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0; background:var(--bg); color:var(--body);
+  font-family:'Inter',system-ui,-apple-system,'Segoe UI',sans-serif;
+  font-size:17px; line-height:1.85; -webkit-font-smoothing:antialiased;
+}
+h1,h2,h3{color:var(--ink); line-height:1.35; margin:0 0 .6em; font-weight:700}
+h1{font-size:clamp(1.9rem,5.2vw,3.05rem); letter-spacing:-.01em}
+h2{font-size:clamp(1.45rem,3.6vw,2.05rem)}
+h3{font-size:1.1rem; margin-bottom:.35em}
+p{margin:0 0 1em}
+a{color:var(--rose-deep)}
+.wrap{max-width:1080px; margin:0 auto; padding:0 22px}
+section{padding:clamp(48px,7vw,84px) 0}
+
+/* ── الترويسة ── */
+.top{
+  display:flex; align-items:center; justify-content:space-between; gap:16px;
+  padding:18px 0; border-bottom:1px solid var(--line);
+}
+.top .mark{display:flex; align-items:center; gap:10px; font-weight:700;
+  color:var(--ink); text-decoration:none; font-size:1.06rem}
+.top .mark img{width:34px; height:34px; object-fit:contain}
+.langs{display:flex; gap:6px; flex-wrap:wrap; list-style:none; margin:0; padding:0}
+.langs a{
+  display:block; padding:5px 11px; border-radius:999px; font-size:.86rem;
+  text-decoration:none; color:var(--body); border:1px solid var(--line);
+}
+.langs a[aria-current]{background:var(--rose); border-color:var(--rose); color:#fff}
+/* ⚠️ التنقّل بين الصفحات لا بين اللغات — قائمتان في ترويسةٍ واحدة،
+   ولكلٍّ منهما aria-label تفرّقها عن الأخرى لقارئ الشاشة. */
+.pages{display:flex; gap:4px; flex-wrap:wrap; list-style:none; margin:0; padding:0}
+.pages a{
+  display:block; padding:5px 10px; border-radius:8px; font-size:.92rem;
+  text-decoration:none; color:var(--body);
+}
+.pages a:hover{background:var(--rose-soft); color:var(--rose-deep)}
+.pages a[aria-current]{color:var(--rose-deep); font-weight:600}
+.top .navs{display:flex; align-items:center; gap:14px; flex-wrap:wrap}
+/* ⚠️ الترويسة تنكسر عمودياً على الضيّق لا تُزاحَم: العلامة واسمُها
+   `Hisn Alzawaj` تلتفّ على سطرين إن بقيت تتقاسم السطر مع قائمتين —
+   والاسم هو ما يُقاس عليه قبول المنصّة، فلا يُترك ملتوياً. */
+@media (max-width:680px){
+  .top{flex-direction:column; align-items:flex-start; gap:10px}
+  .top .navs{gap:8px}
+  .pages a{padding:4px 9px}
+}
+
+/* ── البطل ── */
+.hero{
+  padding:clamp(52px,8vw,96px) 0 clamp(44px,6vw,76px);
+  background:
+    radial-gradient(120% 90% at 82% -10%, #fce7ef 0%, rgba(252,231,239,0) 62%),
+    radial-gradient(100% 80% at 6% 0%, #eaf1f8 0%, rgba(234,241,248,0) 55%);
+}
+.kicker{
+  display:inline-block; font-size:.82rem; font-weight:600; letter-spacing:.06em;
+  text-transform:uppercase; color:var(--rose-deep); background:#fff;
+  border:1px solid var(--line); border-radius:999px; padding:5px 14px;
+  margin-bottom:20px;
+}
+.hero p.lead{font-size:clamp(1.02rem,2.1vw,1.18rem); max-width:62ch; color:var(--body)}
+.btn{
+  display:inline-block; margin-top:12px; padding:15px 34px; border-radius:14px;
+  background:var(--rose); color:#fff; text-decoration:none; font-weight:700;
+  font-size:1.06rem; box-shadow:0 10px 26px rgba(206,92,138,.32);
+}
+.btn:hover{background:var(--rose-deep)}
+.note{font-size:.9rem; color:var(--muted); margin:14px 0 0}
+
+/* ── الشبكات ── */
+.grid{display:grid; gap:18px; margin-top:34px}
+.g3{grid-template-columns:repeat(auto-fit,minmax(272px,1fr))}
+.g4{grid-template-columns:repeat(auto-fit,minmax(232px,1fr))}
+.card{
+  background:var(--card); border:1px solid var(--line); border-radius:16px;
+  padding:26px 24px;
+}
+.card p{margin:0; font-size:.97rem}
+.step .n{
+  display:grid; place-items:center; width:34px; height:34px; border-radius:10px;
+  background:var(--rose-soft); color:var(--rose-deep); font-weight:700;
+  margin-bottom:14px;
+}
+.card .ico{font-size:1.6rem; line-height:1; display:block; margin-bottom:12px}
+
+/* ── الخصوصية ── */
+.privacy{background:var(--blue); color:#dfe9f2}
+.privacy h2{color:#fff}
+.privacy p{max-width:70ch; color:#cfdded}
+.privacy p:last-child{margin-bottom:0}
+
+/* ── الأسئلة ── */
+.faq{max-width:820px; margin-top:30px}
+.faq h3{margin-top:0}
+.qa{border-bottom:1px solid var(--line); padding:22px 0}
+.qa:first-child{border-top:1px solid var(--line)}
+.qa p{margin:0; font-size:.97rem}
+
+/* ── الخاتمة ── */
+.end{text-align:center; background:var(--rose-soft)}
+.end p{max-width:52ch; margin-inline:auto}
+footer{border-top:1px solid var(--line); padding:30px 0 44px; font-size:.9rem;
+  color:var(--muted)}
+.flinks{display:flex; gap:22px; flex-wrap:wrap; margin:0 0 14px; padding:0;
+  list-style:none}
+
+/* ── وثيقة السياسة ──
+   ⚠️ عرضٌ بوحدة ch لا px: الوثيقة نصٌّ متّصل يُقرأ سطراً سطراً، وقياس
+   السطر المريح عدد حروفٍ لا عدد بكسلات — والفرق يظهر في الفارسية
+   والعربية حيث الحرف أضيق من اللاتيني بالبكسل نفسه. */
+.doc{max-width:74ch; margin-inline:auto}
+.doc .updated{font-size:.9rem; color:var(--muted); margin:0 0 26px}
+.doc .lead{font-size:1.05rem; color:var(--body); margin-bottom:34px}
+.doc h2{font-size:clamp(1.15rem,2.4vw,1.42rem); margin-top:38px;
+  padding-top:22px; border-top:1px solid var(--line)}
+.doc h2:first-of-type{border-top:0; padding-top:0; margin-top:0}
+.doc ul{margin:0 0 1em; padding-inline-start:1.35em}
+.doc li{margin-bottom:.45em}
+.doc .back{display:inline-block; margin-top:38px; font-weight:600}
+
+@media (max-width:560px){ body{font-size:16px} .card{padding:22px 20px} }
+</style>
+</head>
+<body>
+
+<header class="wrap top">
+  <a class="mark" href="https://hisnalzawaj.com/id/">
+    <img src="../icon.png" alt="" width="34" height="34">
+    <span>Hisn Alzawaj</span>
+  </a>
+  <div class="navs">
+    <nav aria-label="Halaman situs">
+      <ul class="pages">
+        <li><a href="https://hisnalzawaj.com/id/">Beranda</a></li>
+        <li><a href="https://hisnalzawaj.com/id/guide.html" aria-current="page">Panduan</a></li>
+        <li><a href="https://hisnalzawaj.com/id/privacy.html">Privasi</a></li>
+        <li><a href="https://hisnalzawaj.com/id/terms.html">Ketentuan</a></li>
+      </ul>
+    </nav>
+    <nav aria-label="Bahasa">
+      <ul class="langs">
+      <li><a href="https://hisnalzawaj.com/guide.html" lang="ar" hreflang="ar">العربية</a></li>
+      <li><a href="https://hisnalzawaj.com/en/guide.html" lang="en" hreflang="en">English</a></li>
+      <li><a href="https://hisnalzawaj.com/fa/guide.html" lang="fa" hreflang="fa">فارسی</a></li>
+      <li><a href="https://hisnalzawaj.com/id/guide.html" aria-current="true" lang="id" hreflang="id">Indonesia</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section>
+    <div class="wrap doc">
+      <h1>Panduan Pengguna</h1>
+      <p class="updated">Terakhir diperbarui: 4 September 2026</p>
+      <p class="lead">Halaman ini menjelaskan layanan sebagaimana pengguna menemuinya: apa yang terjadi di setiap langkah, apa yang Anda putuskan sendiri, dan apa yang tidak kami lakukan terhadap data Anda. Ini menggambarkan apa yang berjalan hari ini, bukan rencana.</p>
+      <h2>Sebelum memulai</h2>
+      <p>Hisn Alzawaj adalah bot yang berjalan di dalam Telegram dan tidak di tempat lain. Tidak ada aplikasi yang perlu dipasang, tidak ada akun baru yang perlu dibuat, dan tidak ada pendaftaran di situs ini — halaman ini bersifat perkenalan, dan layanannya ada di sana.</p>
+      <p>Layanan ini untuk usia 18 tahun ke atas, hingga 80 tahun. Tujuannya satu dan dinyatakan terbuka: perkenalan untuk tujuan pernikahan. Apa pun di luar itu dapat dilaporkan dan akan ditinjau.</p>
+      <p>Antarmukanya tersedia dalam empat bahasa — Arab, Inggris, Persia dan Indonesia. Anda memilih satu di layar pertama dan dapat menggantinya kapan saja dari pengaturan; seluruh layar ikut berubah.</p>
+      <h2>Pendaftaran — percakapan, bukan formulir</h2>
+      <p>Anda membuka bot dan menekan Mulai. Ia menanyakan satu hal per layar dan menyimpan jawaban Anda sebelum lanjut. Jika Anda menutup Telegram di tengah jalan lalu kembali sehari kemudian, Anda melanjutkan dari titik berhenti — yang sudah dijawab tidak ditanyakan lagi.</p>
+      <p>Yang ditanyakan, berurutan:</p>
+      <ul>
+        <li>Dasar: nama, tanggal lahir, jenis kelamin, negara tempat tinggal dan kewarganegaraan.</li>
+        <li>Penampilan: tinggi, berat, warna kulit dan sejenisnya.</li>
+        <li>Gaya hidup: status pernikahan, pendidikan, pekerjaan, komitmen keagamaan, merokok.</li>
+        <li>Jenis pernikahan yang Anda cari.</li>
+        <li>Lalu kriteria yang Anda inginkan pada pasangan — ini separuh dari skor kecocokan, jadi jangan dilewati terburu-buru.</li>
+      </ul>
+      <p>Tanggal lahir dipilih dari roda, bukan diketik. Tanggal yang diketik mudah keliru, dan tahun yang salah diam-diam mengeluarkan Anda dari hasil pencarian orang yang mencari Anda.</p>
+      <h2>Kartu Anda — apa yang orang lain lihat</h2>
+      <p>Setelah pendaftaran selesai, data Anda menjadi kartu yang dilihat pihak lain ketika Anda muncul di hasil mereka. Di dalamnya ada atribut yang Anda isi dan skor kecocokan antara kalian berdua.</p>
+      <p>Yang tidak ada di dalamnya adalah keputusan, bukan kelalaian: foto asli Anda, nomor telepon Anda, dan nama pengguna Telegram Anda. Tidak satu pun ditampilkan kepada siapa pun.</p>
+      <p>Anda dapat menyunting setiap kolom kapan saja dari pengaturan profil, atau menyembunyikan profil sepenuhnya sehingga tidak muncul di hasil siapa pun — dan ia tetap tersimpan sampai Anda menampilkannya lagi.</p>
+      <h2>Pencarian dan skor kecocokan</h2>
+      <p>Ada tiga cara mencari, tergantung seberapa jelas Anda tahu apa yang Anda inginkan:</p>
+      <ul>
+        <li>Pencarian cepat — profil yang cocok dengan kriteria yang sudah Anda daftarkan.</li>
+        <li>Pencarian satu kriteria — ketika satu syarat itulah yang penting bagi Anda.</li>
+        <li>Pencarian multi-kriteria — ketika Anda tahu persis apa yang dicari.</li>
+      </ul>
+      <p>Skor kecocokan dihitung dari kedua sisi sekaligus: atribut Anda terhadap apa yang dia cari, dan atributnya terhadap apa yang Anda cari. Karena itu sepasang profil bisa bernilai berbeda bagi masing-masing — ini bukan penilaian terhadap seseorang, melainkan pengukuran jarak antara dua keinginan.</p>
+      <p>Siapa pun yang sudah pernah ditampilkan kepada Anda tidak ditampilkan lagi, agar pencarian tidak berputar pada wajah yang sama.</p>
+      <h2>Ketertarikan timbal balik dan obrolan</h2>
+      <p>Ketika sebuah profil menarik bagi Anda, Anda menyatakannya. Pihak lain tidak diberi tahu kecuali dia juga sudah menyatakan tertarik kepada Anda — dan saat itulah obrolan terbuka untuk kalian berdua sekaligus. Ia tidak pernah terbuka atas kehendak satu pihak saja.</p>
+      <p>Pesan berjalan melalui bot itu sendiri: ia mengantar pesan Anda kepadanya dan pesannya kepada Anda. Tidak ada yang melihat nomor, nama pengguna, atau akun Telegram yang lain — kecuali kalian berdua memutuskan menuliskannya sendiri dalam pesan.</p>
+      <p>Pesan obrolan dihapus 30 hari setelah dikirim, dan masing-masing pihak dapat mengakhiri percakapan kapan saja.</p>
+      <p>Setiap percakapan memiliki tombol laporan, sebagaimana setiap kartu.</p>
+      <h2>Privasi foto — bawaan, bukan pengaturan yang harus dicari</h2>
+      <p>Foto Anda diburamkan bagi semua orang sejak awal. Tidak ada sakelar yang bisa Anda lupakan lalu terekspos: buram adalah aturannya, dan terbuka adalah pengecualian yang terjadi dengan permintaan tegas darinya dan persetujuan tegas dari Anda.</p>
+      <p>Ketika seseorang meminta melihat foto Anda, permintaan itu sampai kepada Anda, dan Anda menolak atau menyetujui — dan Anda sendiri yang memilih berapa lama persetujuan itu berlaku:</p>
+      <ul>
+        <li>Jendela singkat: 5 menit, dihitung sejak dia membukanya, bukan sejak Anda menyetujui.</li>
+        <li>Satu hari penuh.</li>
+        <li>Atau persetujuan tanpa batas waktu.</li>
+      </ul>
+      <p>Apa pun yang Anda pilih, Anda dapat menariknya kapan saja dan foto kembali buram baginya.</p>
+      <p>Profil yang diterbitkan ke saluran dan halaman sosial kami tidak pernah memuat foto asli: hanya nama depan dan avatar gambar. Bagi yang tidak menginginkan itu pun, ada tombol penonaktifan di pengaturan.</p>
+      <h2>Verifikasi identitas — opsional, dan hasilnya terlihat</h2>
+      <p>Anda dapat membuktikan bahwa ada orang sungguhan di balik profil melalui tantangan foto: bot meminta gambar dengan pose tertentu yang ditentukan saat itu juga, lalu peninjau manusia memeriksanya.</p>
+      <p>Hasilnya tampil pada kartu Anda untuk dilihat pihak lain, dan itulah gunanya. Foto tantangan itu sendiri tidak pernah diterbitkan dan tidak dilihat siapa pun selain peninjau.</p>
+      <p>Verifikasi sepenuhnya opsional; melewatkannya tetap meninggalkan seluruh layanan tersedia bagi Anda apa adanya.</p>
+      <h2>Keamanan dan pelaporan</h2>
+      <p>Setiap kartu dan setiap percakapan memiliki tombol laporan yang sampai ke peninjau manusia, bukan penyaring otomatis. Anda tidak perlu membuktikan apa pun untuk melapor.</p>
+      <p>Pelanggaran dijawab dengan peringatan yang sampai kepada pelakunya, dan setelah 3 peringatan akun diblokir. Kasus berat diblokir sejak pelanggaran pertama tanpa tahapan.</p>
+      <p>Yang paling cepat dapat Anda lakukan sendiri: akhiri percakapan, lalu laporkan. Jangan bagikan nomor atau akun Anda di tempat lain sebelum Anda merasa tenang — bot tidak pernah memintanya, dan siapa pun yang mendesak Anda sedang mengatakan sesuatu tentang dirinya.</p>
+      <p>Kami tidak pernah meminta kata sandi atau kode masuk Telegram Anda, dan tidak pernah meminta uang di luar layar pembayaran di dalam bot.</p>
+      <h2>Keanggotaan premium</h2>
+      <p>Layanan intinya gratis: pendaftaran, pencarian, pencocokan dan obrolan setelah ketertarikan timbal balik, semuanya tanpa biaya.</p>
+      <p>Ada keanggotaan premium opsional yang membuka fitur tambahan, dibayar dengan Telegram Stars atau mata uang kripto. Ia bukan syarat untuk dicocokkan atau berkirim pesan.</p>
+      <p>Langganan Stars yang diperpanjang otomatis ditagih oleh Telegram, bukan oleh kami, dan dibatalkan dari pengaturan Telegram sendiri — keanggotaan Anda tetap aktif sampai akhir periode yang sudah Anda bayar.</p>
+      <h2>Data Anda, dan menghapus akun</h2>
+      <p>Menyunting data dan menyembunyikan profil selalu tersedia dari pengaturan dan tidak melewati kami.</p>
+      <p>Menghapus akun menghapus apa yang menjadi milik Anda secara berantai: profil, pesan, permintaan foto dan persetujuan yang melekat padanya — dan menarik kartu Anda yang sudah diterbitkan dari saluran kami bila memang sudah terbit. Ini bukan sekadar disembunyikan dengan nama lain.</p>
+      <p>Akun yang lama tidak dipakai akan terhapus dengan sendirinya setelah jangka waktu tertentu, sehingga data orang yang meninggalkan layanan tidak tinggal selamanya.</p>
+      <p>Apa yang kami kumpulkan, mengapa, dan berapa lama ia tersimpan dijelaskan di Kebijakan Privasi; hak dan kewajiban Anda ada di Ketentuan Layanan. Keduanya tertaut di kaki halaman ini.</p>
+      <a class="back" href="https://hisnalzawaj.com/id/">Kembali ke halaman utama</a>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <ul class="flinks">
+      <li><a href="https://t.me/HisnAlzawaj_bot" rel="noopener">@HisnAlzawaj_bot</a></li>
+      <li><a href="https://t.me/Hisn_Alzawaj" rel="noopener">Kanal profil di Telegram</a></li>
+      <li><a href="https://hisnalzawaj.com/id/privacy.html">Privasi</a></li>
+      <li><a href="https://hisnalzawaj.com/id/terms.html">Ketentuan</a></li>
+      <li><a href="https://hisnalzawaj.com/id/">Kembali ke halaman utama</a></li>
+    </ul>
+    <p>© Hisn Alzawaj</p>
+  </div>
+</footer>
+
+</body>
+</html>

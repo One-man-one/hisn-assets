@@ -1,0 +1,272 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Hisn Alzawaj — راهنمای استفاده</title>
+  <meta name="description" content="راهنمای گام‌به‌گام حصن الزواج: ثبت‌نام، جست‌وجو و امتیاز تناسب، گفت‌وگو درون ربات، حریم عکس، احراز هویت، گزارش تخلف، عضویت ویژه و حذف حساب.">
+  <link rel="canonical" href="https://hisnalzawaj.com/fa/guide.html">
+  <link rel="alternate" hreflang="ar" href="https://hisnalzawaj.com/guide.html">
+  <link rel="alternate" hreflang="en" href="https://hisnalzawaj.com/en/guide.html">
+  <link rel="alternate" hreflang="fa" href="https://hisnalzawaj.com/fa/guide.html">
+  <link rel="alternate" hreflang="id" href="https://hisnalzawaj.com/id/guide.html">
+  <link rel="alternate" hreflang="x-default" href="https://hisnalzawaj.com/guide.html">
+  <meta name="robots" content="index,follow">
+  <meta name="google-site-verification" content="PZJUV_-inCgSV00em7TFB2Vp03PtsSfxsREUZm9Bjq8">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Hisn Alzawaj">
+  <meta property="og:locale" content="fa_IR">
+  <meta property="og:title" content="Hisn Alzawaj — راهنمای استفاده">
+  <meta property="og:description" content="راهنمای گام‌به‌گام حصن الزواج: ثبت‌نام، جست‌وجو و امتیاز تناسب، گفت‌وگو درون ربات، حریم عکس، احراز هویت، گزارش تخلف، عضویت ویژه و حذف حساب.">
+  <meta property="og:url" content="https://hisnalzawaj.com/fa/guide.html">
+  <meta name="theme-color" content="#ce5c8a">
+  <link rel="icon" href="../icon.png" type="image/png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;600;700&display=swap">
+  <style>
+*,*::before,*::after{box-sizing:border-box}
+:root{
+  --rose:#ce5c8a; --rose-deep:#a8416b; --rose-soft:#fdf0f5;
+  --blue:#25557c; --ink:#241a1f; --body:#4a3f45; --muted:#8a7b82;
+  --bg:#fffaf9; --card:#ffffff; --line:#f0dde5; --shadow:14px 22px 48px;
+}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0; background:var(--bg); color:var(--body);
+  font-family:'Vazirmatn',system-ui,-apple-system,'Segoe UI',sans-serif;
+  font-size:17px; line-height:1.85; -webkit-font-smoothing:antialiased;
+}
+h1,h2,h3{color:var(--ink); line-height:1.35; margin:0 0 .6em; font-weight:700}
+h1{font-size:clamp(1.9rem,5.2vw,3.05rem); letter-spacing:-.01em}
+h2{font-size:clamp(1.45rem,3.6vw,2.05rem)}
+h3{font-size:1.1rem; margin-bottom:.35em}
+p{margin:0 0 1em}
+a{color:var(--rose-deep)}
+.wrap{max-width:1080px; margin:0 auto; padding:0 22px}
+section{padding:clamp(48px,7vw,84px) 0}
+
+/* ── الترويسة ── */
+.top{
+  display:flex; align-items:center; justify-content:space-between; gap:16px;
+  padding:18px 0; border-bottom:1px solid var(--line);
+}
+.top .mark{display:flex; align-items:center; gap:10px; font-weight:700;
+  color:var(--ink); text-decoration:none; font-size:1.06rem}
+.top .mark img{width:34px; height:34px; object-fit:contain}
+.langs{display:flex; gap:6px; flex-wrap:wrap; list-style:none; margin:0; padding:0}
+.langs a{
+  display:block; padding:5px 11px; border-radius:999px; font-size:.86rem;
+  text-decoration:none; color:var(--body); border:1px solid var(--line);
+}
+.langs a[aria-current]{background:var(--rose); border-color:var(--rose); color:#fff}
+/* ⚠️ التنقّل بين الصفحات لا بين اللغات — قائمتان في ترويسةٍ واحدة،
+   ولكلٍّ منهما aria-label تفرّقها عن الأخرى لقارئ الشاشة. */
+.pages{display:flex; gap:4px; flex-wrap:wrap; list-style:none; margin:0; padding:0}
+.pages a{
+  display:block; padding:5px 10px; border-radius:8px; font-size:.92rem;
+  text-decoration:none; color:var(--body);
+}
+.pages a:hover{background:var(--rose-soft); color:var(--rose-deep)}
+.pages a[aria-current]{color:var(--rose-deep); font-weight:600}
+.top .navs{display:flex; align-items:center; gap:14px; flex-wrap:wrap}
+/* ⚠️ الترويسة تنكسر عمودياً على الضيّق لا تُزاحَم: العلامة واسمُها
+   `Hisn Alzawaj` تلتفّ على سطرين إن بقيت تتقاسم السطر مع قائمتين —
+   والاسم هو ما يُقاس عليه قبول المنصّة، فلا يُترك ملتوياً. */
+@media (max-width:680px){
+  .top{flex-direction:column; align-items:flex-start; gap:10px}
+  .top .navs{gap:8px}
+  .pages a{padding:4px 9px}
+}
+
+/* ── البطل ── */
+.hero{
+  padding:clamp(52px,8vw,96px) 0 clamp(44px,6vw,76px);
+  background:
+    radial-gradient(120% 90% at 82% -10%, #fce7ef 0%, rgba(252,231,239,0) 62%),
+    radial-gradient(100% 80% at 6% 0%, #eaf1f8 0%, rgba(234,241,248,0) 55%);
+}
+.kicker{
+  display:inline-block; font-size:.82rem; font-weight:600; letter-spacing:.06em;
+  text-transform:uppercase; color:var(--rose-deep); background:#fff;
+  border:1px solid var(--line); border-radius:999px; padding:5px 14px;
+  margin-bottom:20px;
+}
+.hero p.lead{font-size:clamp(1.02rem,2.1vw,1.18rem); max-width:62ch; color:var(--body)}
+.btn{
+  display:inline-block; margin-top:12px; padding:15px 34px; border-radius:14px;
+  background:var(--rose); color:#fff; text-decoration:none; font-weight:700;
+  font-size:1.06rem; box-shadow:0 10px 26px rgba(206,92,138,.32);
+}
+.btn:hover{background:var(--rose-deep)}
+.note{font-size:.9rem; color:var(--muted); margin:14px 0 0}
+
+/* ── الشبكات ── */
+.grid{display:grid; gap:18px; margin-top:34px}
+.g3{grid-template-columns:repeat(auto-fit,minmax(272px,1fr))}
+.g4{grid-template-columns:repeat(auto-fit,minmax(232px,1fr))}
+.card{
+  background:var(--card); border:1px solid var(--line); border-radius:16px;
+  padding:26px 24px;
+}
+.card p{margin:0; font-size:.97rem}
+.step .n{
+  display:grid; place-items:center; width:34px; height:34px; border-radius:10px;
+  background:var(--rose-soft); color:var(--rose-deep); font-weight:700;
+  margin-bottom:14px;
+}
+.card .ico{font-size:1.6rem; line-height:1; display:block; margin-bottom:12px}
+
+/* ── الخصوصية ── */
+.privacy{background:var(--blue); color:#dfe9f2}
+.privacy h2{color:#fff}
+.privacy p{max-width:70ch; color:#cfdded}
+.privacy p:last-child{margin-bottom:0}
+
+/* ── الأسئلة ── */
+.faq{max-width:820px; margin-top:30px}
+.faq h3{margin-top:0}
+.qa{border-bottom:1px solid var(--line); padding:22px 0}
+.qa:first-child{border-top:1px solid var(--line)}
+.qa p{margin:0; font-size:.97rem}
+
+/* ── الخاتمة ── */
+.end{text-align:center; background:var(--rose-soft)}
+.end p{max-width:52ch; margin-inline:auto}
+footer{border-top:1px solid var(--line); padding:30px 0 44px; font-size:.9rem;
+  color:var(--muted)}
+.flinks{display:flex; gap:22px; flex-wrap:wrap; margin:0 0 14px; padding:0;
+  list-style:none}
+
+/* ── وثيقة السياسة ──
+   ⚠️ عرضٌ بوحدة ch لا px: الوثيقة نصٌّ متّصل يُقرأ سطراً سطراً، وقياس
+   السطر المريح عدد حروفٍ لا عدد بكسلات — والفرق يظهر في الفارسية
+   والعربية حيث الحرف أضيق من اللاتيني بالبكسل نفسه. */
+.doc{max-width:74ch; margin-inline:auto}
+.doc .updated{font-size:.9rem; color:var(--muted); margin:0 0 26px}
+.doc .lead{font-size:1.05rem; color:var(--body); margin-bottom:34px}
+.doc h2{font-size:clamp(1.15rem,2.4vw,1.42rem); margin-top:38px;
+  padding-top:22px; border-top:1px solid var(--line)}
+.doc h2:first-of-type{border-top:0; padding-top:0; margin-top:0}
+.doc ul{margin:0 0 1em; padding-inline-start:1.35em}
+.doc li{margin-bottom:.45em}
+.doc .back{display:inline-block; margin-top:38px; font-weight:600}
+
+@media (max-width:560px){ body{font-size:16px} .card{padding:22px 20px} }
+</style>
+</head>
+<body>
+
+<header class="wrap top">
+  <a class="mark" href="https://hisnalzawaj.com/fa/">
+    <img src="../icon.png" alt="" width="34" height="34">
+    <span>Hisn Alzawaj</span>
+  </a>
+  <div class="navs">
+    <nav aria-label="صفحه‌های سایت">
+      <ul class="pages">
+        <li><a href="https://hisnalzawaj.com/fa/">صفحهٔ اصلی</a></li>
+        <li><a href="https://hisnalzawaj.com/fa/guide.html" aria-current="page">راهنما</a></li>
+        <li><a href="https://hisnalzawaj.com/fa/privacy.html">حریم خصوصی</a></li>
+        <li><a href="https://hisnalzawaj.com/fa/terms.html">شرایط</a></li>
+      </ul>
+    </nav>
+    <nav aria-label="زبان">
+      <ul class="langs">
+      <li><a href="https://hisnalzawaj.com/guide.html" lang="ar" hreflang="ar">العربية</a></li>
+      <li><a href="https://hisnalzawaj.com/en/guide.html" lang="en" hreflang="en">English</a></li>
+      <li><a href="https://hisnalzawaj.com/fa/guide.html" aria-current="true" lang="fa" hreflang="fa">فارسی</a></li>
+      <li><a href="https://hisnalzawaj.com/id/guide.html" lang="id" hreflang="id">Indonesia</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section>
+    <div class="wrap doc">
+      <h1>راهنمای استفاده</h1>
+      <p class="updated">آخرین به‌روزرسانی: ۴ سپتامبر ۲۰۲۶</p>
+      <p class="lead">این صفحه سرویس را همان‌گونه که کاربر می‌بیند شرح می‌دهد: در هر گام چه می‌گذرد، چه چیزی را خودتان تصمیم می‌گیرید، و با داده‌های شما چه نمی‌کنیم. این توصیف چیزی است که امروز کار می‌کند، نه وعدهٔ آینده.</p>
+      <h2>پیش از شروع</h2>
+      <p>حصن الزواج رباتی است که تنها درون تلگرام کار می‌کند. نه برنامه‌ای برای نصب هست، نه حساب تازه‌ای برای ساختن، و نه ثبت‌نامی در این وب‌سایت — این صفحه معرفی است و خود سرویس آنجاست.</p>
+      <p>استفاده برای ۱۸ سال به بالا و تا ۸۰ سال است. هدف یکی است و اعلام‌شده: آشنایی به قصد ازدواج. هر چه بیرون از این باشد گزارش‌پذیر است و بررسی می‌شود.</p>
+      <p>رابط کاربری به چهار زبان است — عربی، انگلیسی، فارسی و اندونزیایی. در نخستین صفحه یکی را برمی‌گزینید و هر وقت بخواهید از تنظیمات عوضش می‌کنید؛ همهٔ صفحه‌ها با آن عوض می‌شوند.</p>
+      <h2>ثبت‌نام — گفت‌وگو، نه فرم</h2>
+      <p>ربات را باز می‌کنید و «شروع» را می‌زنید. در هر صفحه یک پرسش می‌پرسد و پاسخ شما را پیش از رفتن به بعدی ذخیره می‌کند. اگر تلگرام را نیمه‌کاره ببندید و روز بعد برگردید، از همان‌جا ادامه می‌دهید — آنچه پاسخ داده‌اید دوباره پرسیده نمی‌شود.</p>
+      <p>آنچه پرسیده می‌شود، به ترتیب:</p>
+      <ul>
+        <li>پایه: نام، تاریخ تولد، جنسیت، کشور محل زندگی و ملیت.</li>
+        <li>ظاهر: قد، وزن، رنگ پوست و مانند آن.</li>
+        <li>سبک زندگی: وضعیت تأهل، تحصیلات، کار، پایبندی دینی و سیگار.</li>
+        <li>نوع ازدواجی که می‌خواهید.</li>
+        <li>و سپس ویژگی‌هایی که در همسر آینده می‌جویید — این نیمی از امتیاز تناسب است، پس شتاب‌زده از آن نگذرید.</li>
+      </ul>
+      <p>تاریخ تولد از یک چرخ انتخاب می‌شود نه با تایپ: تاریخِ تایپ‌شده آسان اشتباه می‌شود، و سالِ نادرست شما را بی‌صدا از نتایج کسانی که دنبالتان می‌گردند بیرون می‌برد.</p>
+      <h2>کارت شما — آنچه دیگران از شما می‌بینند</h2>
+      <p>پس از پایان ثبت‌نام، داده‌های شما کارتی می‌شود که طرف مقابل هنگام دیدن شما در نتایجش می‌بیند. ویژگی‌هایی که وارد کرده‌اید و امتیاز تناسب میان شما دو نفر در آن است.</p>
+      <p>و آنچه در آن نیست تصمیم ماست نه غفلت: عکس واقعی شما، شمارهٔ تلفن، و شناسهٔ تلگرامتان. هیچ‌یک به کسی نشان داده نمی‌شود.</p>
+      <p>هر زمینه‌ای را هر وقت بخواهید از تنظیمات پروفایل ویرایش می‌کنید، یا پروفایلتان را یکسره پنهان می‌کنید تا در نتیجهٔ هیچ‌کس نیاید — و ذخیره می‌ماند تا هر وقت خواستید بازش گردانید.</p>
+      <h2>جست‌وجو و امتیاز تناسب</h2>
+      <p>سه راه برای جست‌وجو هست، بسته به اینکه چقدر روشن می‌دانید چه می‌خواهید:</p>
+      <ul>
+        <li>جست‌وجوی سریع — پروفایل‌های منطبق بر معیارهایی که پیش‌تر ثبت کرده‌اید.</li>
+        <li>جست‌وجو با یک معیار — وقتی یک شرط برایتان مهم است.</li>
+        <li>جست‌وجوی چندمعیاره — وقتی دقیقاً می‌دانید دنبال چه هستید.</li>
+      </ul>
+      <p>امتیاز تناسب از هر دو سو با هم حساب می‌شود: ویژگی‌های شما در برابر آنچه او می‌خواهد، و ویژگی‌های او در برابر آنچه شما می‌خواهید. برای همین یک جفت پروفایل ممکن است برای هر یک از شما امتیاز متفاوتی داشته باشد — این نمرهٔ کسی نیست، اندازه‌گیری فاصلهٔ میان دو خواسته است.</p>
+      <p>هر که یک بار به شما نشان داده شد، دوباره نشان داده نمی‌شود تا جست‌وجو گرد چهره‌های تکراری نچرخد.</p>
+      <h2>علاقهٔ دوسویه و گفت‌وگو</h2>
+      <p>وقتی پروفایلی نظرتان را گرفت، علاقه‌تان را اعلام می‌کنید. طرف مقابل باخبر نمی‌شود مگر آنکه او هم به شما علاقه نشان داده باشد — و آن‌گاه گفت‌وگو برای هر دو با هم باز می‌شود. هرگز با خواست یک طرف باز نمی‌شود.</p>
+      <p>پیام‌ها از خود ربات می‌گذرند: او پیام شما را به او و پیام او را به شما می‌رساند. هیچ‌یک شمارهٔ دیگری را نمی‌بیند، نه شناسه و نه حساب تلگرامش — مگر آنکه خودتان تصمیم بگیرید در متن پیام بنویسیدش.</p>
+      <p>پیام‌های گفت‌وگو ۳۰ روز پس از ارسال حذف می‌شوند، و هر یک از دو طرف هر وقت بخواهد گفت‌وگو را پایان می‌دهد.</p>
+      <p>در هر گفت‌وگو دکمهٔ گزارش هست، چنان‌که در هر کارت.</p>
+      <h2>حریم عکس — پیش‌فرض، نه تنظیمی که دنبالش بگردید</h2>
+      <p>عکس شما از نخستین لحظه برای همه محو است. کلیدی نیست که فراموشش کنید و آشکار شوید: اصل، محو بودن است و آشکار شدن استثنایی است که با درخواست صریح او و رضایت صریح شما رخ می‌دهد.</p>
+      <p>وقتی کسی دیدن عکس شما را می‌خواهد، درخواست به شما می‌رسد و رد یا قبول می‌کنید — و مدت رضایتتان را خودتان برمی‌گزینید:</p>
+      <ul>
+        <li>پنجره‌ای کوتاه: ۵ دقیقه، از لحظه‌ای که او بازش می‌کند، نه از لحظهٔ رضایت شما.</li>
+        <li>یک شبانه‌روز کامل.</li>
+        <li>یا رضایت بی‌مدت.</li>
+      </ul>
+      <p>هر کدام را برگزینید، هر وقت بخواهید پسش می‌گیرید و عکس نزد او دوباره محو می‌شود.</p>
+      <p>پروفایل‌هایی که در کانال و صفحه‌های ما منتشر می‌شوند هرگز عکس واقعی ندارند: یک نام کوچک و یک آواتار نقاشی‌شده، همین. و برای کسی که همین را هم نمی‌خواهد، دکمهٔ انصراف در تنظیمات هست.</p>
+      <h2>احراز هویت — اختیاری، و نتیجه‌اش دیده می‌شود</h2>
+      <p>می‌توانید با یک چالش تصویری ثابت کنید که پشت پروفایل انسانی واقعی است: ربات عکسی در حالتی می‌خواهد که همان لحظه تعیین می‌کند، و بازبینی انسانی آن را بررسی می‌کند.</p>
+      <p>نتیجه روی کارت شما برای طرف مقابل پیدا می‌شود، و فایدهٔ کار همین است. خود عکسِ چالش هرگز منتشر نمی‌شود و جز بازبین کسی آن را نمی‌بیند.</p>
+      <p>احراز هویت یکسره اختیاری است؛ نادیده گرفتنش همهٔ سرویس را همان‌گونه که هست در دسترس شما می‌گذارد.</p>
+      <h2>ایمنی و گزارش تخلف</h2>
+      <p>هر کارت و هر گفت‌وگو دکمهٔ گزارشی دارد که به بازبین انسانی می‌رسد نه به فیلتر خودکار. برای گزارش دادن لازم نیست چیزی را ثابت کنید.</p>
+      <p>تخلف با هشداری پاسخ داده می‌شود که به صاحبش می‌رسد، و پس از ۳ هشدار حساب مسدود می‌شود. مورد سنگین از همان بار اول و بی‌درنگ مسدود می‌شود.</p>
+      <p>سریع‌ترین کاری که خودتان می‌توانید بکنید: گفت‌وگو را پایان دهید و گزارش کنید. شماره و حساب‌هایتان در جاهای دیگر را پیش از آنکه خیالتان آسوده شود ندهید — ربات هرگز چنین چیزی از شما نمی‌خواهد، و هر که شتابتان می‌دهد دارد چیزی دربارهٔ خودش می‌گوید.</p>
+      <p>ما هرگز از شما رمز عبور یا کد ورود تلگرام نمی‌خواهیم، و هرگز بیرون از صفحه‌های پرداختِ درون ربات پولی نمی‌طلبیم.</p>
+      <h2>عضویت ویژه</h2>
+      <p>سرویس اصلی رایگان است: ثبت‌نام، جست‌وجو، تطبیق و گفت‌وگو پس از علاقهٔ دوسویه، همه بی‌هزینه.</p>
+      <p>عضویت ویژه‌ای اختیاری هست که امکانات بیشتری باز می‌کند و با استارز تلگرام یا رمزارز پرداخت می‌شود. شرطِ تطبیق شدن یا پیام دادن نیست.</p>
+      <p>اشتراک تمدیدشوندهٔ استارز را تلگرام کسر می‌کند نه ما، و لغوش از تنظیمات خود تلگرام انجام می‌شود — عضویتتان تا پایان دوره‌ای که پرداخته‌اید فعال می‌ماند.</p>
+      <h2>داده‌های شما و حذف حساب</h2>
+      <p>ویرایش داده‌ها و پنهان کردن پروفایل همیشه از تنظیمات در دسترس است و از ما نمی‌گذرد.</p>
+      <p>حذف حساب آنچه از آنِ شماست را زنجیره‌وار پاک می‌کند: پروفایل، پیام‌ها، درخواست‌های عکس و رضایت‌های پیوست به آن‌ها — و کارت منتشرشدهٔ شما را اگر منتشر شده باشد از کانال ما پس می‌کشد. این پنهان‌شدن با نامی دیگر نیست.</p>
+      <p>حسابی که به‌اندازهٔ کافی بی‌استفاده بماند، پس از مدتی معلوم خودبه‌خود حذف می‌شود تا داده‌های کسانی که سرویس را ترک کرده‌اند تا ابد نماند.</p>
+      <p>آنچه گرد می‌آوریم، چرایش و مدت ماندنش در سیاست حریم خصوصی آمده، و حقوق و تعهدات شما در شرایط استفاده — پیوند هر دو در پای همین صفحه است.</p>
+      <a class="back" href="https://hisnalzawaj.com/fa/">بازگشت به صفحهٔ اصلی</a>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <ul class="flinks">
+      <li><a href="https://t.me/HisnAlzawaj_bot" rel="noopener">@HisnAlzawaj_bot</a></li>
+      <li><a href="https://t.me/Hisn_Alzawaj" rel="noopener">کانال پروفایل‌ها در تلگرام</a></li>
+      <li><a href="https://hisnalzawaj.com/fa/privacy.html">حریم خصوصی</a></li>
+      <li><a href="https://hisnalzawaj.com/fa/terms.html">شرایط</a></li>
+      <li><a href="https://hisnalzawaj.com/fa/">بازگشت به صفحهٔ اصلی</a></li>
+    </ul>
+    <p>© حصن الزواج</p>
+  </div>
+</footer>
+
+</body>
+</html>

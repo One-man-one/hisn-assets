@@ -3,24 +3,24 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Hisn Alzawaj — Marriage-Focused Introductions on Telegram</title>
+  <title>Hisn Alzawaj</title>
   <meta name="description" content="A Telegram bot for marriage-focused introductions: set your criteria, browse matching profiles, and talk inside the bot after both sides agree. Your photo stays blurred until you allow it.">
   <meta name="keywords" content="marriage bot, telegram marriage, muslim matrimonial, halal introductions, find a spouse, telegram matchmaking, Hisn Alzawaj">
-  <link rel="canonical" href="https://one-man-one.github.io/hisn-assets/en/">
-  <link rel="alternate" hreflang="ar" href="https://one-man-one.github.io/hisn-assets/">
-  <link rel="alternate" hreflang="en" href="https://one-man-one.github.io/hisn-assets/en/">
-  <link rel="alternate" hreflang="fa" href="https://one-man-one.github.io/hisn-assets/fa/">
-  <link rel="alternate" hreflang="id" href="https://one-man-one.github.io/hisn-assets/id/">
-  <link rel="alternate" hreflang="x-default" href="https://one-man-one.github.io/hisn-assets/">
+  <link rel="canonical" href="https://hisnalzawaj.com/en/">
+  <link rel="alternate" hreflang="ar" href="https://hisnalzawaj.com/">
+  <link rel="alternate" hreflang="en" href="https://hisnalzawaj.com/en/">
+  <link rel="alternate" hreflang="fa" href="https://hisnalzawaj.com/fa/">
+  <link rel="alternate" hreflang="id" href="https://hisnalzawaj.com/id/">
+  <link rel="alternate" hreflang="x-default" href="https://hisnalzawaj.com/">
   <meta name="robots" content="index,follow,max-image-preview:large">
   <meta name="google-site-verification" content="PZJUV_-inCgSV00em7TFB2Vp03PtsSfxsREUZm9Bjq8">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Hisn Alzawaj">
   <meta property="og:locale" content="en_US">
-  <meta property="og:title" content="Hisn Alzawaj — Marriage-Focused Introductions on Telegram">
+  <meta property="og:title" content="Hisn Alzawaj">
   <meta property="og:description" content="A Telegram bot for marriage-focused introductions: set your criteria, browse matching profiles, and talk inside the bot after both sides agree. Your photo stays blurred until you allow it.">
-  <meta property="og:url" content="https://one-man-one.github.io/hisn-assets/en/">
-  <meta property="og:image" content="https://one-man-one.github.io/hisn-assets/og.png">
+  <meta property="og:url" content="https://hisnalzawaj.com/en/">
+  <meta property="og:image" content="https://hisnalzawaj.com/og.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta name="twitter:card" content="summary_large_image">
@@ -67,6 +67,24 @@ section{padding:clamp(48px,7vw,84px) 0}
   text-decoration:none; color:var(--body); border:1px solid var(--line);
 }
 .langs a[aria-current]{background:var(--rose); border-color:var(--rose); color:#fff}
+/* ⚠️ التنقّل بين الصفحات لا بين اللغات — قائمتان في ترويسةٍ واحدة،
+   ولكلٍّ منهما aria-label تفرّقها عن الأخرى لقارئ الشاشة. */
+.pages{display:flex; gap:4px; flex-wrap:wrap; list-style:none; margin:0; padding:0}
+.pages a{
+  display:block; padding:5px 10px; border-radius:8px; font-size:.92rem;
+  text-decoration:none; color:var(--body);
+}
+.pages a:hover{background:var(--rose-soft); color:var(--rose-deep)}
+.pages a[aria-current]{color:var(--rose-deep); font-weight:600}
+.top .navs{display:flex; align-items:center; gap:14px; flex-wrap:wrap}
+/* ⚠️ الترويسة تنكسر عمودياً على الضيّق لا تُزاحَم: العلامة واسمُها
+   `Hisn Alzawaj` تلتفّ على سطرين إن بقيت تتقاسم السطر مع قائمتين —
+   والاسم هو ما يُقاس عليه قبول المنصّة، فلا يُترك ملتوياً. */
+@media (max-width:680px){
+  .top{flex-direction:column; align-items:flex-start; gap:10px}
+  .top .navs{gap:8px}
+  .pages a{padding:4px 9px}
+}
 
 /* ── البطل ── */
 .hero{
@@ -149,7 +167,7 @@ footer{border-top:1px solid var(--line); padding:30px 0 44px; font-size:.9rem;
   "@type": "SoftwareApplication",
   "name": "Hisn Alzawaj",
   "alternateName": "Hisn Alzawaj",
-  "url": "https://one-man-one.github.io/hisn-assets/en/",
+  "url": "https://hisnalzawaj.com/en/",
   "applicationCategory": "SocialNetworkingApplication",
   "operatingSystem": "Telegram",
   "inLanguage": [
@@ -159,7 +177,7 @@ footer{border-top:1px solid var(--line); padding:30px 0 44px; font-size:.9rem;
     "id"
   ],
   "description": "A Telegram bot for marriage-focused introductions: set your criteria, browse matching profiles, and talk inside the bot after both sides agree. Your photo stays blurred until you allow it.",
-  "image": "https://one-man-one.github.io/hisn-assets/og.png",
+  "image": "https://hisnalzawaj.com/og.png",
   "offers": {
     "@type": "Offer",
     "price": "0",
@@ -240,18 +258,28 @@ footer{border-top:1px solid var(--line); padding:30px 0 44px; font-size:.9rem;
 <body>
 
 <header class="wrap top">
-  <a class="mark" href="https://one-man-one.github.io/hisn-assets/en/">
+  <a class="mark" href="https://hisnalzawaj.com/en/">
     <img src="../icon.png" alt="" width="34" height="34">
     <span>Hisn Alzawaj</span>
   </a>
-  <nav aria-label="Language">
-    <ul class="langs">
-      <li><a href="https://one-man-one.github.io/hisn-assets/" lang="ar" hreflang="ar">العربية</a></li>
-      <li><a href="https://one-man-one.github.io/hisn-assets/en/" aria-current="true" lang="en" hreflang="en">English</a></li>
-      <li><a href="https://one-man-one.github.io/hisn-assets/fa/" lang="fa" hreflang="fa">فارسی</a></li>
-      <li><a href="https://one-man-one.github.io/hisn-assets/id/" lang="id" hreflang="id">Indonesia</a></li>
-    </ul>
-  </nav>
+  <div class="navs">
+    <nav aria-label="Site pages">
+      <ul class="pages">
+        <li><a href="https://hisnalzawaj.com/en/" aria-current="page">Home</a></li>
+        <li><a href="https://hisnalzawaj.com/en/guide.html">Guide</a></li>
+        <li><a href="https://hisnalzawaj.com/en/privacy.html">Privacy</a></li>
+        <li><a href="https://hisnalzawaj.com/en/terms.html">Terms</a></li>
+      </ul>
+    </nav>
+    <nav aria-label="Language">
+      <ul class="langs">
+      <li><a href="https://hisnalzawaj.com/" lang="ar" hreflang="ar">العربية</a></li>
+      <li><a href="https://hisnalzawaj.com/en/" aria-current="true" lang="en" hreflang="en">English</a></li>
+      <li><a href="https://hisnalzawaj.com/fa/" lang="fa" hreflang="fa">فارسی</a></li>
+      <li><a href="https://hisnalzawaj.com/id/" lang="id" hreflang="id">Indonesia</a></li>
+      </ul>
+    </nav>
+  </div>
 </header>
 
 <main>
@@ -392,8 +420,9 @@ footer{border-top:1px solid var(--line); padding:30px 0 44px; font-size:.9rem;
     <ul class="flinks">
       <li><a href="https://t.me/HisnAlzawaj_bot" rel="noopener">@HisnAlzawaj_bot</a></li>
       <li><a href="https://t.me/Hisn_Alzawaj" rel="noopener">Profiles channel on Telegram</a></li>
-      <li><a href="https://one-man-one.github.io/hisn-assets/en/privacy.html">Privacy</a></li>
-      <li><a href="https://one-man-one.github.io/hisn-assets/en/terms.html">Terms</a></li>
+      <li><a href="https://hisnalzawaj.com/en/guide.html">Guide</a></li>
+      <li><a href="https://hisnalzawaj.com/en/privacy.html">Privacy</a></li>
+      <li><a href="https://hisnalzawaj.com/en/terms.html">Terms</a></li>
     </ul>
     <p>© Hisn Alzawaj</p>
   </div>

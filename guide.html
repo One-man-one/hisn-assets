@@ -1,0 +1,272 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Hisn Alzawaj — دليل الاستخدام</title>
+  <meta name="description" content="دليل استخدام حصن الزواج خطوةً خطوة: التسجيل، والبحث ودرجة التوافق، والدردشة داخل البوت، وخصوصية الصورة، والتوثيق، والبلاغات، والعضوية المميزة، وحذف الحساب.">
+  <link rel="canonical" href="https://hisnalzawaj.com/guide.html">
+  <link rel="alternate" hreflang="ar" href="https://hisnalzawaj.com/guide.html">
+  <link rel="alternate" hreflang="en" href="https://hisnalzawaj.com/en/guide.html">
+  <link rel="alternate" hreflang="fa" href="https://hisnalzawaj.com/fa/guide.html">
+  <link rel="alternate" hreflang="id" href="https://hisnalzawaj.com/id/guide.html">
+  <link rel="alternate" hreflang="x-default" href="https://hisnalzawaj.com/guide.html">
+  <meta name="robots" content="index,follow">
+  <meta name="google-site-verification" content="PZJUV_-inCgSV00em7TFB2Vp03PtsSfxsREUZm9Bjq8">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Hisn Alzawaj">
+  <meta property="og:locale" content="ar_AR">
+  <meta property="og:title" content="Hisn Alzawaj — دليل الاستخدام">
+  <meta property="og:description" content="دليل استخدام حصن الزواج خطوةً خطوة: التسجيل، والبحث ودرجة التوافق، والدردشة داخل البوت، وخصوصية الصورة، والتوثيق، والبلاغات، والعضوية المميزة، وحذف الحساب.">
+  <meta property="og:url" content="https://hisnalzawaj.com/guide.html">
+  <meta name="theme-color" content="#ce5c8a">
+  <link rel="icon" href="icon.png" type="image/png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap">
+  <style>
+*,*::before,*::after{box-sizing:border-box}
+:root{
+  --rose:#ce5c8a; --rose-deep:#a8416b; --rose-soft:#fdf0f5;
+  --blue:#25557c; --ink:#241a1f; --body:#4a3f45; --muted:#8a7b82;
+  --bg:#fffaf9; --card:#ffffff; --line:#f0dde5; --shadow:14px 22px 48px;
+}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0; background:var(--bg); color:var(--body);
+  font-family:'Cairo',system-ui,-apple-system,'Segoe UI',sans-serif;
+  font-size:17px; line-height:1.85; -webkit-font-smoothing:antialiased;
+}
+h1,h2,h3{color:var(--ink); line-height:1.35; margin:0 0 .6em; font-weight:700}
+h1{font-size:clamp(1.9rem,5.2vw,3.05rem); letter-spacing:-.01em}
+h2{font-size:clamp(1.45rem,3.6vw,2.05rem)}
+h3{font-size:1.1rem; margin-bottom:.35em}
+p{margin:0 0 1em}
+a{color:var(--rose-deep)}
+.wrap{max-width:1080px; margin:0 auto; padding:0 22px}
+section{padding:clamp(48px,7vw,84px) 0}
+
+/* ── الترويسة ── */
+.top{
+  display:flex; align-items:center; justify-content:space-between; gap:16px;
+  padding:18px 0; border-bottom:1px solid var(--line);
+}
+.top .mark{display:flex; align-items:center; gap:10px; font-weight:700;
+  color:var(--ink); text-decoration:none; font-size:1.06rem}
+.top .mark img{width:34px; height:34px; object-fit:contain}
+.langs{display:flex; gap:6px; flex-wrap:wrap; list-style:none; margin:0; padding:0}
+.langs a{
+  display:block; padding:5px 11px; border-radius:999px; font-size:.86rem;
+  text-decoration:none; color:var(--body); border:1px solid var(--line);
+}
+.langs a[aria-current]{background:var(--rose); border-color:var(--rose); color:#fff}
+/* ⚠️ التنقّل بين الصفحات لا بين اللغات — قائمتان في ترويسةٍ واحدة،
+   ولكلٍّ منهما aria-label تفرّقها عن الأخرى لقارئ الشاشة. */
+.pages{display:flex; gap:4px; flex-wrap:wrap; list-style:none; margin:0; padding:0}
+.pages a{
+  display:block; padding:5px 10px; border-radius:8px; font-size:.92rem;
+  text-decoration:none; color:var(--body);
+}
+.pages a:hover{background:var(--rose-soft); color:var(--rose-deep)}
+.pages a[aria-current]{color:var(--rose-deep); font-weight:600}
+.top .navs{display:flex; align-items:center; gap:14px; flex-wrap:wrap}
+/* ⚠️ الترويسة تنكسر عمودياً على الضيّق لا تُزاحَم: العلامة واسمُها
+   `Hisn Alzawaj` تلتفّ على سطرين إن بقيت تتقاسم السطر مع قائمتين —
+   والاسم هو ما يُقاس عليه قبول المنصّة، فلا يُترك ملتوياً. */
+@media (max-width:680px){
+  .top{flex-direction:column; align-items:flex-start; gap:10px}
+  .top .navs{gap:8px}
+  .pages a{padding:4px 9px}
+}
+
+/* ── البطل ── */
+.hero{
+  padding:clamp(52px,8vw,96px) 0 clamp(44px,6vw,76px);
+  background:
+    radial-gradient(120% 90% at 82% -10%, #fce7ef 0%, rgba(252,231,239,0) 62%),
+    radial-gradient(100% 80% at 6% 0%, #eaf1f8 0%, rgba(234,241,248,0) 55%);
+}
+.kicker{
+  display:inline-block; font-size:.82rem; font-weight:600; letter-spacing:.06em;
+  text-transform:uppercase; color:var(--rose-deep); background:#fff;
+  border:1px solid var(--line); border-radius:999px; padding:5px 14px;
+  margin-bottom:20px;
+}
+.hero p.lead{font-size:clamp(1.02rem,2.1vw,1.18rem); max-width:62ch; color:var(--body)}
+.btn{
+  display:inline-block; margin-top:12px; padding:15px 34px; border-radius:14px;
+  background:var(--rose); color:#fff; text-decoration:none; font-weight:700;
+  font-size:1.06rem; box-shadow:0 10px 26px rgba(206,92,138,.32);
+}
+.btn:hover{background:var(--rose-deep)}
+.note{font-size:.9rem; color:var(--muted); margin:14px 0 0}
+
+/* ── الشبكات ── */
+.grid{display:grid; gap:18px; margin-top:34px}
+.g3{grid-template-columns:repeat(auto-fit,minmax(272px,1fr))}
+.g4{grid-template-columns:repeat(auto-fit,minmax(232px,1fr))}
+.card{
+  background:var(--card); border:1px solid var(--line); border-radius:16px;
+  padding:26px 24px;
+}
+.card p{margin:0; font-size:.97rem}
+.step .n{
+  display:grid; place-items:center; width:34px; height:34px; border-radius:10px;
+  background:var(--rose-soft); color:var(--rose-deep); font-weight:700;
+  margin-bottom:14px;
+}
+.card .ico{font-size:1.6rem; line-height:1; display:block; margin-bottom:12px}
+
+/* ── الخصوصية ── */
+.privacy{background:var(--blue); color:#dfe9f2}
+.privacy h2{color:#fff}
+.privacy p{max-width:70ch; color:#cfdded}
+.privacy p:last-child{margin-bottom:0}
+
+/* ── الأسئلة ── */
+.faq{max-width:820px; margin-top:30px}
+.faq h3{margin-top:0}
+.qa{border-bottom:1px solid var(--line); padding:22px 0}
+.qa:first-child{border-top:1px solid var(--line)}
+.qa p{margin:0; font-size:.97rem}
+
+/* ── الخاتمة ── */
+.end{text-align:center; background:var(--rose-soft)}
+.end p{max-width:52ch; margin-inline:auto}
+footer{border-top:1px solid var(--line); padding:30px 0 44px; font-size:.9rem;
+  color:var(--muted)}
+.flinks{display:flex; gap:22px; flex-wrap:wrap; margin:0 0 14px; padding:0;
+  list-style:none}
+
+/* ── وثيقة السياسة ──
+   ⚠️ عرضٌ بوحدة ch لا px: الوثيقة نصٌّ متّصل يُقرأ سطراً سطراً، وقياس
+   السطر المريح عدد حروفٍ لا عدد بكسلات — والفرق يظهر في الفارسية
+   والعربية حيث الحرف أضيق من اللاتيني بالبكسل نفسه. */
+.doc{max-width:74ch; margin-inline:auto}
+.doc .updated{font-size:.9rem; color:var(--muted); margin:0 0 26px}
+.doc .lead{font-size:1.05rem; color:var(--body); margin-bottom:34px}
+.doc h2{font-size:clamp(1.15rem,2.4vw,1.42rem); margin-top:38px;
+  padding-top:22px; border-top:1px solid var(--line)}
+.doc h2:first-of-type{border-top:0; padding-top:0; margin-top:0}
+.doc ul{margin:0 0 1em; padding-inline-start:1.35em}
+.doc li{margin-bottom:.45em}
+.doc .back{display:inline-block; margin-top:38px; font-weight:600}
+
+@media (max-width:560px){ body{font-size:16px} .card{padding:22px 20px} }
+</style>
+</head>
+<body>
+
+<header class="wrap top">
+  <a class="mark" href="https://hisnalzawaj.com/">
+    <img src="icon.png" alt="" width="34" height="34">
+    <span>Hisn Alzawaj</span>
+  </a>
+  <div class="navs">
+    <nav aria-label="صفحات الموقع">
+      <ul class="pages">
+        <li><a href="https://hisnalzawaj.com/">الصفحة الرئيسية</a></li>
+        <li><a href="https://hisnalzawaj.com/guide.html" aria-current="page">الدليل</a></li>
+        <li><a href="https://hisnalzawaj.com/privacy.html">الخصوصية</a></li>
+        <li><a href="https://hisnalzawaj.com/terms.html">الشروط</a></li>
+      </ul>
+    </nav>
+    <nav aria-label="اللغة">
+      <ul class="langs">
+      <li><a href="https://hisnalzawaj.com/guide.html" aria-current="true" lang="ar" hreflang="ar">العربية</a></li>
+      <li><a href="https://hisnalzawaj.com/en/guide.html" lang="en" hreflang="en">English</a></li>
+      <li><a href="https://hisnalzawaj.com/fa/guide.html" lang="fa" hreflang="fa">فارسی</a></li>
+      <li><a href="https://hisnalzawaj.com/id/guide.html" lang="id" hreflang="id">Indonesia</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section>
+    <div class="wrap doc">
+      <h1>دليل الاستخدام</h1>
+      <p class="updated">آخر تحديث: ٤ سبتمبر ٢٠٢٦</p>
+      <p class="lead">هذه الصفحة تشرح الخدمة كما يراها المستخدم: ماذا يحدث في كل خطوة، وما الذي تقرّره أنت، وما الذي لا نفعله ببياناتك. وهي وصفٌ لما يعمل اليوم لا وعدٌ بما سيأتي.</p>
+      <h2>قبل أن تبدأ</h2>
+      <p>حصن الزواج بوت يعمل داخل تطبيق تيليجرام وحده. لا تطبيق تُنزِّله، ولا حساب جديد تُنشئه، ولا موقع تُسجّل فيه — هذه الصفحة تعريفية، والخدمة كلّها هناك.</p>
+      <p>والاستعمال لمن أتمّ ١٨ سنة فأكثر، وحتى ٨٠ سنة. والغرض واحد معلن: التعارف بقصد الزواج. وما خرج عن ذلك يُبلَّغ عنه ويُنظر فيه.</p>
+      <p>والواجهة بأربع لغات — العربية والإنجليزية والفارسية والإندونيسية — تختارها في أول شاشة وتبدّلها متى شئت من الإعدادات، فتتبدّل الشاشات كلّها معها.</p>
+      <h2>التسجيل — محادثة لا استمارة</h2>
+      <p>تفتح البوت وتضغط «ابدأ»، فيسألك سؤالاً واحداً في كل شاشة ويحفظ جوابك قبل السؤال التالي. وإن أغلقت تيليجرام في منتصف الطريق فعُدت بعد يوم، تكمل من حيث وقفت — لا تُعاد عليك الأسئلة التي أجبتها.</p>
+      <p>وما يُسأل عنه، بترتيبه:</p>
+      <ul>
+        <li>البيانات الأساسية: الاسم، وتاريخ الميلاد، والجنس، وبلد الإقامة والجنسية.</li>
+        <li>المظهر: الطول والوزن ولون البشرة وما إليها.</li>
+        <li>نمط الحياة: الحالة الاجتماعية، والتعليم، والعمل، والالتزام الديني، والتدخين.</li>
+        <li>نوع الزواج المطلوب.</li>
+        <li>ثمّ المواصفات التي تريدها في شريك حياتك — وهي نصف درجة التوافق، فلا تمرّ عليها مرور العجلان.</li>
+      </ul>
+      <p>وتاريخ الميلاد يُدخَل من عجلةٍ لا من كتابة يدوية: أخطاء الكتابة في التواريخ كثيرة، وسنةٌ خاطئة تُخرجك من نتائج من يبحث عنك.</p>
+      <h2>بطاقتك — ما يراه الآخرون منك</h2>
+      <p>بعد اكتمال التسجيل تصير بياناتك بطاقةً يراها الطرف الآخر حين تظهر في نتائجه. وفيها ما أدخلته من مواصفات، ودرجة التوافق بينكما.</p>
+      <p>وما ليس فيها بقرارٍ منّا لا بسهو: صورتك الحقيقية، ورقم هاتفك، ومعرّفك على تيليجرام. لا يظهر شيء من ذلك لأحد.</p>
+      <p>ويمكنك تعديل أي حقلٍ في أي وقت من «تعديل بياناتي»، أو إخفاء ملفّك كلّه فلا يظهر في نتائج أحد — ويبقى محفوظاً لك تعيده متى شئت.</p>
+      <h2>البحث ودرجة التوافق</h2>
+      <p>أمامك ثلاث طرق للبحث، تختار منها ما يناسب وضوح ما تريد:</p>
+      <ul>
+        <li>بحث سريع — يعرض الملفات المطابقة لمواصفاتك المسجَّلة.</li>
+        <li>بحث بمعيار واحد — حين يكون في ذهنك شرطٌ واحد يهمّك.</li>
+        <li>بحث متعدّد المعايير — حين تعرف تماماً ما تبحث عنه.</li>
+      </ul>
+      <p>ودرجة التوافق تُحسب من الطرفين معاً: صفاتك أمام ما يطلبه هو، وصفاته أمام ما تطلبه أنت. ولذلك تختلف الدرجة نفسها باختلاف من ينظر إليها — وهي ليست تقييماً لأحد، بل قياس قربٍ بين طلبين.</p>
+      <p>ومن عُرض عليك مرّة لا يُعرض عليك ثانية، حتى لا يدور البحث على الوجوه نفسها.</p>
+      <h2>الاهتمام المتبادل والدردشة</h2>
+      <p>حين يعجبك ملفّ تُبدي اهتمامك به. ولا يُخطَر الطرف الآخر بذلك إلا إن أبدى هو اهتماماً بك أيضاً — فتُفتح الدردشة للاثنين معاً، ولا تُفتح بطرفٍ واحد أبداً.</p>
+      <p>والرسائل تمرّ عبر البوت نفسه: هو من يوصل رسالتك إليه ورسالته إليك. أي أن أحدكما لا يرى رقم الآخر ولا معرّفه ولا حسابه على تيليجرام — إلا إن قرّرتما أنتما مشاركة ذلك في نصّ رسالةٍ بينكما.</p>
+      <p>ورسائل الدردشة تُحذف بعد ٣٠ يوماً من إرسالها. وكلّ طرفٍ يستطيع إنهاء المحادثة متى شاء.</p>
+      <p>وفي كل محادثةٍ زرّ بلاغ، كما في كل بطاقة.</p>
+      <h2>خصوصية الصورة — الوضع الافتراضي لا إعداد تبحث عنه</h2>
+      <p>صورتك مموّهة للجميع من اللحظة الأولى. ليس ثمّة مفتاحٌ تنساه فتنكشف: الأصل هو التمويه، والكشف استثناءٌ يقع بطلبٍ صريح منه وموافقةٍ صريحة منك.</p>
+      <p>وحين يطلب أحدهم رؤية صورتك يصلك الطلب، فترفضه أو توافق — وأنت من يختار مدّة الموافقة:</p>
+      <ul>
+        <li>نافذة قصيرة: يراها ٥ دقائق تبدأ من لحظة فتحه لها هو، لا من لحظة موافقتك أنت.</li>
+        <li>يوم كامل.</li>
+        <li>أو موافقة دائمة.</li>
+      </ul>
+      <p>وأيّها اخترت، تستطيع سحب الموافقة في أي وقت فتعود الصورة مموّهة عنده.</p>
+      <p>وما يُنشر من الملفات في قناتنا وصفحاتنا على المنصّات لا يحمل صورةً حقيقية أبداً: اسمٌ أول وصورة رمزية مرسومة، لا أكثر. ولمن لا يريد حتى ذلك زرُّ إيقافٍ في الإعدادات.</p>
+      <h2>توثيق الهوية — اختياري، ونتيجته ظاهرة</h2>
+      <p>يمكنك أن توثّق أنك شخصٌ حقيقي بتحدٍّ مصوَّر: يطلب منك البوت صورةً بوضعٍ محدَّد لحظتها، فيُراجعها مراجعٌ بشري.</p>
+      <p>والنتيجة تظهر للطرف الآخر على بطاقتك، فتزيد ثقته بها. وصورة التحدّي نفسها لا تُنشر ولا تُعرض على أحد سوى المراجعة.</p>
+      <p>والتوثيق اختياري بالكامل: من تركه يستعمل الخدمة كلّها كما هي.</p>
+      <h2>السلامة والبلاغات</h2>
+      <p>كل بطاقة وكل محادثة تحمل زرّ بلاغ يصل إلى مراجعٍ بشري لا إلى فلترٍ آلي. وأنت لا تحتاج إلى إثبات شيء لتُبلّغ.</p>
+      <p>والمخالفة تُقابَل بتحذيرٍ يصل صاحبه، وبعد ٣ تحذيرات يُحظر الحساب. وما كان جسيماً يُحظر من أوّل مرّة بلا تدرّج.</p>
+      <p>وأسرع ما تفعله بنفسك: أنهِ المحادثة، وأبلغ. ولا تشارك رقمك ولا حسابك على المنصّات الأخرى قبل أن تطمئنّ — البوت لا يطلب منك ذلك، ومن يستعجلك عليه فذاك في نفسه دلالة.</p>
+      <p>ونحن لا نطلب منك كلمة مرورٍ ولا رمز تحقّق تيليجرام أبداً، ولا نطلب مالاً خارج شاشات الدفع داخل البوت.</p>
+      <h2>العضوية المميزة</h2>
+      <p>الخدمة الأساسية مجانية: التسجيل، والبحث، والمطابقة، والدردشة بعد الاهتمام المتبادل — كلّها بلا مقابل.</p>
+      <p>وثمّة عضوية مميزة اختيارية تفتح ميزاتٍ إضافية، تُدفع بنجوم تيليجرام أو بالعملات الرقمية. وليست شرطاً للتعارف ولا للمراسلة.</p>
+      <p>والاشتراك المتجدّد بالنجوم يخصمه تيليجرام لا نحن، وإلغاؤه يقع من إعدادات تيليجرام نفسها — فيبقى اشتراكك ساري المفعول إلى نهاية المدّة المدفوعة.</p>
+      <h2>بياناتك، وحذف حسابك</h2>
+      <p>تعديل بياناتك وإخفاء ملفّك متاحان دائماً من الإعدادات، ولا يمرّان بنا.</p>
+      <p>وحذف الحساب يمحو ما يخصّك محواً متسلسلاً: ملفّك، ورسائلك، وطلبات الصور وموافقاتها، ويسحب بطاقتك المنشورة من قناتنا إن كانت قد نُشرت. وليس إخفاءً باسمٍ آخر.</p>
+      <p>والحساب الذي يطول خموله يُحذف من نفسه بمدّةٍ معلومة، فلا تبقى بيانات من ترك الخدمة إلى الأبد.</p>
+      <p>وتفصيل ما نجمعه ولماذا وكم يبقى في سياسة الخصوصية، وحقوقك والتزاماتك في شروط الاستخدام — ورابطاهما في أسفل هذه الصفحة.</p>
+      <a class="back" href="https://hisnalzawaj.com/">العودة إلى الصفحة الرئيسية</a>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <ul class="flinks">
+      <li><a href="https://t.me/HisnAlzawaj_bot" rel="noopener">@HisnAlzawaj_bot</a></li>
+      <li><a href="https://t.me/Hisn_Alzawaj" rel="noopener">قناة الملفات على تليجرام</a></li>
+      <li><a href="https://hisnalzawaj.com/privacy.html">الخصوصية</a></li>
+      <li><a href="https://hisnalzawaj.com/terms.html">الشروط</a></li>
+      <li><a href="https://hisnalzawaj.com/">العودة إلى الصفحة الرئيسية</a></li>
+    </ul>
+    <p>© حصن الزواج</p>
+  </div>
+</footer>
+
+</body>
+</html>
