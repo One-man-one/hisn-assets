@@ -1,0 +1,304 @@
+<!doctype html>
+<html lang="es" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Hisn Alzawaj — Política de Privacidad</title>
+  <meta name="description" content="Qué recoge Hisn Alzawaj, por qué, quién lo ve, cuánto tiempo se conserva y cómo lo borras todo con una sola acción.">
+  <link rel="canonical" href="https://hisnalzawaj.com/es/privacy.html">
+  <link rel="alternate" hreflang="ar" href="https://hisnalzawaj.com/privacy.html">
+  <link rel="alternate" hreflang="en" href="https://hisnalzawaj.com/en/privacy.html">
+  <link rel="alternate" hreflang="fr" href="https://hisnalzawaj.com/fr/privacy.html">
+  <link rel="alternate" hreflang="es" href="https://hisnalzawaj.com/es/privacy.html">
+  <link rel="alternate" hreflang="id" href="https://hisnalzawaj.com/id/privacy.html">
+  <link rel="alternate" hreflang="fa" href="https://hisnalzawaj.com/fa/privacy.html">
+  <link rel="alternate" hreflang="x-default" href="https://hisnalzawaj.com/privacy.html">
+  <meta name="robots" content="index,follow">
+  <meta name="google-site-verification" content="PZJUV_-inCgSV00em7TFB2Vp03PtsSfxsREUZm9Bjq8">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Hisn Alzawaj">
+  <meta property="og:locale" content="es_ES">
+  <meta property="og:title" content="Hisn Alzawaj — Política de Privacidad">
+  <meta property="og:description" content="Qué recoge Hisn Alzawaj, por qué, quién lo ve, cuánto tiempo se conserva y cómo lo borras todo con una sola acción.">
+  <meta property="og:url" content="https://hisnalzawaj.com/es/privacy.html">
+  <meta name="theme-color" content="#ce5c8a">
+  <link rel="icon" href="../favicon.ico" sizes="any">
+  <link rel="icon" href="../icon.png" type="image/png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap">
+  <style>
+*,*::before,*::after{box-sizing:border-box}
+:root{
+  --rose:#ce5c8a; --rose-deep:#a8416b; --rose-soft:#fdf0f5;
+  --blue:#25557c; --ink:#241a1f; --body:#4a3f45; --muted:#8a7b82;
+  --bg:#fffaf9; --card:#ffffff; --line:#f0dde5; --shadow:14px 22px 48px;
+}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0; background:var(--bg); color:var(--body);
+  font-family:'Inter',system-ui,-apple-system,'Segoe UI',sans-serif;
+  font-size:17px; line-height:1.85; -webkit-font-smoothing:antialiased;
+}
+h1,h2,h3{color:var(--ink); line-height:1.35; margin:0 0 .6em; font-weight:700}
+h1{font-size:clamp(1.9rem,5.2vw,3.05rem); letter-spacing:-.01em}
+h2{font-size:clamp(1.45rem,3.6vw,2.05rem)}
+h3{font-size:1.1rem; margin-bottom:.35em}
+p{margin:0 0 1em}
+a{color:var(--rose-deep)}
+.wrap{max-width:1080px; margin:0 auto; padding:0 22px}
+section{padding:clamp(48px,7vw,84px) 0}
+
+/* ── الترويسة ── */
+.top{
+  display:flex; align-items:center; justify-content:space-between; gap:16px;
+  padding:18px 0; border-bottom:1px solid var(--line);
+}
+.top .mark{display:flex; align-items:center; gap:10px; font-weight:700;
+  color:var(--ink); text-decoration:none; font-size:1.06rem}
+.top .mark img{width:34px; height:34px; object-fit:contain}
+.langs{display:flex; gap:6px; flex-wrap:wrap; list-style:none; margin:0; padding:0}
+.langs a{
+  display:block; padding:5px 11px; border-radius:999px; font-size:.86rem;
+  text-decoration:none; color:var(--body); border:1px solid var(--line);
+}
+.langs a[aria-current]{background:var(--rose); border-color:var(--rose); color:#fff}
+/* ⚠️ التنقّل بين الصفحات لا بين اللغات — قائمتان في ترويسةٍ واحدة،
+   ولكلٍّ منهما aria-label تفرّقها عن الأخرى لقارئ الشاشة. */
+.pages{display:flex; gap:4px; flex-wrap:wrap; list-style:none; margin:0; padding:0}
+.pages a{
+  display:block; padding:5px 10px; border-radius:8px; font-size:.92rem;
+  text-decoration:none; color:var(--body);
+}
+.pages a:hover{background:var(--rose-soft); color:var(--rose-deep)}
+.pages a[aria-current]{color:var(--rose-deep); font-weight:600}
+.top .navs{display:flex; align-items:center; gap:14px; flex-wrap:wrap}
+/* ⚠️ الترويسة تنكسر عمودياً على الضيّق لا تُزاحَم: العلامة واسمُها
+   `Hisn Alzawaj` تلتفّ على سطرين إن بقيت تتقاسم السطر مع قائمتين —
+   والاسم هو ما يُقاس عليه قبول المنصّة، فلا يُترك ملتوياً. */
+@media (max-width:680px){
+  .top{flex-direction:column; align-items:flex-start; gap:10px}
+  .top .navs{gap:8px}
+  .pages a{padding:4px 9px}
+}
+
+/* ── البطل ── */
+.hero{
+  padding:clamp(52px,8vw,96px) 0 clamp(44px,6vw,76px);
+  background:
+    radial-gradient(120% 90% at 82% -10%, #fce7ef 0%, rgba(252,231,239,0) 62%),
+    radial-gradient(100% 80% at 6% 0%, #eaf1f8 0%, rgba(234,241,248,0) 55%);
+}
+.kicker{
+  display:inline-block; font-size:.82rem; font-weight:600; letter-spacing:.06em;
+  text-transform:uppercase; color:var(--rose-deep); background:#fff;
+  border:1px solid var(--line); border-radius:999px; padding:5px 14px;
+  margin-bottom:20px;
+}
+.hero p.lead{font-size:clamp(1.02rem,2.1vw,1.18rem); max-width:62ch; color:var(--body)}
+.btn{
+  display:inline-block; margin-top:12px; padding:15px 34px; border-radius:14px;
+  background:var(--rose); color:#fff; text-decoration:none; font-weight:700;
+  font-size:1.06rem; box-shadow:0 10px 26px rgba(206,92,138,.32);
+}
+.btn:hover{background:var(--rose-deep)}
+.note{font-size:.9rem; color:var(--muted); margin:14px 0 0}
+
+/* ── الشبكات ── */
+.grid{display:grid; gap:18px; margin-top:34px}
+.g3{grid-template-columns:repeat(auto-fit,minmax(272px,1fr))}
+.g4{grid-template-columns:repeat(auto-fit,minmax(232px,1fr))}
+.card{
+  background:var(--card); border:1px solid var(--line); border-radius:16px;
+  padding:26px 24px;
+}
+.card p{margin:0; font-size:.97rem}
+.step .n{
+  display:grid; place-items:center; width:34px; height:34px; border-radius:10px;
+  background:var(--rose-soft); color:var(--rose-deep); font-weight:700;
+  margin-bottom:14px;
+}
+.card .ico{font-size:1.6rem; line-height:1; display:block; margin-bottom:12px}
+
+/* ── الخصوصية ── */
+.privacy{background:var(--blue); color:#dfe9f2}
+.privacy h2{color:#fff}
+.privacy p{max-width:70ch; color:#cfdded}
+.privacy p:last-child{margin-bottom:0}
+
+/* ── الأسئلة ── */
+.faq{max-width:820px; margin-top:30px}
+.faq h3{margin-top:0}
+.qa{border-bottom:1px solid var(--line); padding:22px 0}
+.qa:first-child{border-top:1px solid var(--line)}
+.qa p{margin:0; font-size:.97rem}
+
+/* ── الخاتمة ── */
+.end{text-align:center; background:var(--rose-soft)}
+.end p{max-width:52ch; margin-inline:auto}
+footer{border-top:1px solid var(--line); padding:30px 0 44px; font-size:.9rem;
+  color:var(--muted)}
+.flinks{display:flex; gap:22px; flex-wrap:wrap; margin:0 0 14px; padding:0;
+  list-style:none}
+
+/* ── وثيقة السياسة ──
+   ⚠️ عرضٌ بوحدة ch لا px: الوثيقة نصٌّ متّصل يُقرأ سطراً سطراً، وقياس
+   السطر المريح عدد حروفٍ لا عدد بكسلات — والفرق يظهر في الفارسية
+   والعربية حيث الحرف أضيق من اللاتيني بالبكسل نفسه. */
+.doc{max-width:74ch; margin-inline:auto}
+.doc .updated{font-size:.9rem; color:var(--muted); margin:0 0 26px}
+.doc .lead{font-size:1.05rem; color:var(--body); margin-bottom:34px}
+.doc h2{font-size:clamp(1.15rem,2.4vw,1.42rem); margin-top:38px;
+  padding-top:22px; border-top:1px solid var(--line)}
+.doc h2:first-of-type{border-top:0; padding-top:0; margin-top:0}
+.doc ul{margin:0 0 1em; padding-inline-start:1.35em}
+.doc li{margin-bottom:.45em}
+.doc .back{display:inline-block; margin-top:38px; font-weight:600}
+
+@media (max-width:560px){ body{font-size:16px} .card{padding:22px 20px} }
+</style>
+</head>
+<body>
+
+<header class="wrap top">
+  <a class="mark" href="https://hisnalzawaj.com/es/">
+    <img src="../icon.png" alt="" width="34" height="34">
+    <span>Hisn Alzawaj</span>
+  </a>
+  <div class="navs">
+    <nav aria-label="Páginas del sitio">
+      <ul class="pages">
+        <li><a href="https://hisnalzawaj.com/es/">Inicio</a></li>
+        <li><a href="https://hisnalzawaj.com/es/guide.html">Guía</a></li>
+        <li><a href="https://hisnalzawaj.com/es/privacy.html" aria-current="page">Privacidad</a></li>
+        <li><a href="https://hisnalzawaj.com/es/terms.html">Términos</a></li>
+      </ul>
+    </nav>
+    <nav aria-label="Idioma">
+      <ul class="langs">
+      <li><a href="https://hisnalzawaj.com/privacy.html" lang="ar" hreflang="ar">العربية</a></li>
+      <li><a href="https://hisnalzawaj.com/en/privacy.html" lang="en" hreflang="en">English</a></li>
+      <li><a href="https://hisnalzawaj.com/fr/privacy.html" lang="fr" hreflang="fr">Français</a></li>
+      <li><a href="https://hisnalzawaj.com/es/privacy.html" aria-current="true" lang="es" hreflang="es">Español</a></li>
+      <li><a href="https://hisnalzawaj.com/id/privacy.html" lang="id" hreflang="id">Indonesia</a></li>
+      <li><a href="https://hisnalzawaj.com/fa/privacy.html" lang="fa" hreflang="fa">فارسی</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section>
+    <div class="wrap doc">
+      <h1>Política de Privacidad</h1>
+      <p class="updated">Última actualización: 29 de agosto de 2026</p>
+      <p class="lead">Este documento describe qué recoge el bot Hisn Alzawaj sobre ti, por qué, quién lo ve, cuánto tiempo permanece y cómo lo eliminas. Está escrito para leerse, no para firmarse: sin redacción jurídica retorcida y sin ninguna promesa que el propio servicio no cumpla.</p>
+      <h2>Quiénes somos y qué cubre este documento</h2>
+      <p>Hisn Alzawaj es un servicio para encontrar cónyuge. Funciona por completo dentro de Telegram, a través del bot @HisnAlzawaj_bot.</p>
+      <p>Este documento cubre el bot y esta página de presentación. No cubre Telegram en sí: es una plataforma aparte, con su propia política, que rige lo que ocurre con tu cuenta allí.</p>
+      <h2>Lo que nos das tú mismo</h2>
+      <p>El registro pide lo siguiente. Tú escribes cada respuesta y puedes cambiarla o borrarla en cualquier momento desde «Editar mis datos»:</p>
+      <ul>
+        <li>Nombre, fecha de nacimiento, sexo.</li>
+        <li>Nacionalidad, país, ciudad.</li>
+        <li>Religión y escuela de pensamiento.</li>
+        <li>Estudios, ocupación, nivel de ingresos.</li>
+        <li>Estado civil, hijos, tipos de matrimonio aceptados.</li>
+        <li>Descripción física, tabaco, hiyab, idiomas que hablas.</li>
+        <li>Una breve presentación y las cualidades que buscas en un cónyuge.</li>
+      </ul>
+      <p>Los campos opcionales pueden dejarse en blanco. Aparecerás con menos frecuencia en los resultados de búsqueda; no se te retiene nada más.</p>
+      <h2>Lo que Telegram nos da, y lo que no</h2>
+      <p>Telegram nos transmite tres cosas sobre tu cuenta: tu identificador numérico, tu nombre de usuario si lo tienes y el idioma de tu aplicación.</p>
+      <p>No nos transmite tu número de teléfono, ni tus contactos, ni tu lista de conversaciones. Telegram no da nada de eso a los bots, así que no lo tenemos aunque quisiéramos.</p>
+      <h2>Lo que genera tu uso del servicio</h2>
+      <p>Tu última actividad, tus intereses y emparejamientos, las denuncias que envías o que nos llegan sobre ti, y los mensajes intercambiados dentro del bot: estos últimos se eliminan automáticamente a los 30 días, como se detalla más abajo.</p>
+      <h2>Tu foto: difuminada hasta que la autorices</h2>
+      <p>Tu foto no se muestra con nitidez a nadie mientras no lo autorices para esa persona, solicitud por solicitud. Lo que todo el mundo ve de forma predeterminada es una versión difuminada.</p>
+      <p>La autorización puede ser temporal, con una ventana de visualización que empieza en la primera apertura real y no en el momento en que la concedes: una autorización dada a las 3 de la madrugada mientras quien la pidió duerme no debe caducar antes de que la vea. Las fotos mostradas mediante una ventana temporal se eliminan del chat de quien las mira en cuanto esta termina.</p>
+      <p>Puedes retirar la autorización en cualquier momento. Cambiar de foto revoca de golpe todas las autorizaciones anteriores, sin que tengas que pedirlo.</p>
+      <h2>Verificación de identidad: el vídeo nunca se almacena</h2>
+      <p>La verificación es totalmente opcional. Envías un vídeo corto en el que realizas un gesto y muestras un código que se te entrega en ese momento.</p>
+      <p>El vídeo no se almacena con nosotros de ninguna forma: se descarga en memoria de trabajo, se envía para un análisis automatizado y después se libera. Ni el vídeo ni su identificador de Telegram se escriben en nuestra base de datos.</p>
+      <p>Lo que queda es únicamente la decisión: aprobada, remitida a revisión humana o rechazada, con su motivo y su hora.</p>
+      <h2>La ficha publicada en nuestras páginas</h2>
+      <p>Para ayudarte a encontrar cónyuge antes, publicamos una ficha de presentación sobre ti en nuestro canal y en nuestras páginas oficiales. Lleva:</p>
+      <ul>
+        <li>Solo tu nombre de pila, sin apellidos.</li>
+        <li>Los campos públicos de tu perfil: edad, nacionalidad, estado civil y similares.</li>
+        <li>Una imagen ilustrativa genérica según tu sexo, nunca tu propia foto, ni siquiera una copia difuminada.</li>
+      </ul>
+      <p>No se publica ningún número de teléfono ni identificador de contacto tuyo. Quien quiera llegar a ti pasa por el bot.</p>
+      <p>La publicación está activada de forma predeterminada una vez completado el registro, y puedes desactivarla para ti en cualquier momento desde la pantalla «Mi perfil». Si la desactivas o eliminas tu cuenta, retiramos lo publicado. Algunas plataformas no ofrecen eliminación programática, así que allí la retirada es manual y puede demorarse un poco.</p>
+      <h2>Los mensajes del chat</h2>
+      <p>Los mensajes entre dos partes pasan por el bot y se conservan con nosotros 30 días; después se eliminan automáticamente. No son un archivo permanente y no se guardan más allá de ese periodo con ninguna finalidad.</p>
+      <p>Hay una razón para ello y ninguna otra: la gestión de denuncias. Quien dice haber sido maltratado no puede obtener justicia si no queda nada de lo que se dijo. Los mensajes no se leen salvo ante una denuncia o una sospecha de abuso.</p>
+      <p>Por eso el periodo es de 30 días y no más: quien ha sido maltratado lo denuncia en cuestión de días, de modo que conservar los mensajes más tiempo aumenta lo que podría perderse en una filtración sin aumentar lo que da justicia a nadie.</p>
+      <h2>Los pagos</h2>
+      <p>La membresía premium se paga con Telegram Stars o con criptomonedas. Ambas cosas ocurren fuera de nuestro bot, en el proveedor.</p>
+      <p>Por eso nunca vemos ni almacenamos datos de tarjeta o de monedero. Lo que queda con nosotros es el identificador de la transacción, el importe, el nombre del proveedor y la fecha: lo mínimo necesario para activar tu membresía y para solicitar un reembolso si procede.</p>
+      <h2>Quién ve tus datos</h2>
+      <ul>
+        <li>Otras personas usuarias: lo que aparece en tu perfil y en los resultados de búsqueda.</li>
+        <li>Los moderadores del servicio: ante una denuncia, una revisión de verificación o una reclamación.</li>
+        <li>Telegram: la plataforma sobre la que funciona todo el servicio.</li>
+        <li>Google: el análisis automatizado del vídeo de verificación, sin almacenamiento por nuestra parte, como se describe más arriba.</li>
+        <li>Un servicio de traducción automática: la traducción de tu presentación cuando alguien la consulta en otro idioma, y cuando tu ficha se publica en un destino en inglés.</li>
+        <li>Un proveedor de alojamiento en la nube: la ejecución del servidor y la base de datos.</li>
+        <li>Las plataformas de publicación — Telegram, Facebook, Instagram, Threads, YouTube y TikTok: únicamente la ficha descrita más arriba, y solo para quienes no hayan desactivado la publicación.</li>
+      </ul>
+      <p>No vendemos tus datos, no los entregamos a anunciantes y no construimos publicidad dirigida con ellos. Nada de eso se te pide a cambio de usar el servicio.</p>
+      <p>Google es el único proveedor operativo que nombramos aquí, porque el vídeo de verificación es lo más sensible que pasa por nosotros, y una promesa de no almacenarlo no resulta creíble si no sabes quién lo recibe. Quien pregunte por el nombre de los demás puede escribirnos.</p>
+      <h2>Cuánto tiempo permanecen tus datos</h2>
+      <p>Permanecen mientras exista tu cuenta, porque el servicio consiste precisamente en mostrar tu perfil a quienes coinciden con lo que buscas.</p>
+      <p>Algunos registros limitados sobreviven a la eliminación: las entradas de moderación y el registro de pagos, en la medida necesaria para la contabilidad y para impedir que una cuenta expulsada regrese de inmediato bajo otra.</p>
+      <h2>Eliminar tu cuenta: borrado, no ocultación</h2>
+      <p>Usa /delete, o el botón «Eliminar mi cuenta» en la pantalla de tu perfil. Cuando confirmas, se borra de golpe lo siguiente:</p>
+      <ul>
+        <li>Todo tu perfil, foto y presentación incluidas.</li>
+        <li>Tus intereses, emparejamientos, conversaciones y sus mensajes.</li>
+        <li>Las autorizaciones de foto que concediste y solicitaste.</li>
+        <li>Tus notificaciones pendientes y tu cola de navegación.</li>
+      </ul>
+      <p>Al mismo tiempo se retira todo lo publicado sobre ti en nuestro canal y nuestras páginas: eliminar la cuenta es una retirada del consentimiento, y la ficha de quien pidió ser borrado no debe seguir expuesta en público.</p>
+      <h2>Tus derechos, ejercidos por ti</h2>
+      <ul>
+        <li>Acceso y rectificación: «Editar mis datos» en el menú.</li>
+        <li>Eliminación completa: el comando /delete.</li>
+        <li>Dejar de publicar en nuestras páginas: la pantalla «Mi perfil».</li>
+        <li>Dejar de recibir mensajes de recordatorio: desde el propio mensaje.</li>
+        <li>Retirar una autorización de foto: la pantalla de privacidad de la foto.</li>
+        <li>Una pregunta, una reclamación o una solicitud que lo anterior no cubra: escríbenos.</li>
+      </ul>
+      <p>Ninguno de estos derechos exige escribirnos ni esperar una respuesta. Todos se han puesto a una sola acción dentro del bot, deliberadamente.</p>
+      <h2>Edad</h2>
+      <p>El servicio es para personas de 18 años en adelante. Cualquier cuenta que constatemos que pertenece a alguien más joven se elimina.</p>
+      <h2>Seguridad, y lo que no prometemos</h2>
+      <p>Las conexiones a nuestros servidores están cifradas, y el acceso administrativo a los datos se limita a quienes lo necesitan para su trabajo.</p>
+      <p>Ningún sistema es perfectamente seguro, así que no prometeremos lo que no podemos garantizar. Lo que sí garantizamos es doble: no recogemos lo que no necesitamos, y lo más sensible que pasa por nosotros — tu vídeo de verificación — no se almacena en ningún momento.</p>
+      <h2>Cambios en este documento</h2>
+      <p>Si cambia lo que hacemos, cambiamos este documento y actualizamos la fecha de su encabezado. Un cambio sustancial se anuncia en nuestro canal, no se cuela aquí en silencio.</p>
+      <h2>Contacto</h2>
+      <p>Escríbenos dentro del bot @HisnAlzawaj_bot: es la vía más rápida, ya que allí tu cuenta ya es conocida y no tienes que demostrar nada.</p>
+      <p>También nos encontrarás en nuestro canal @Hisn_Alzawaj.</p>
+      <a class="back" href="https://hisnalzawaj.com/es/">Volver a la página de inicio</a>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <ul class="flinks">
+      <li><a href="https://t.me/HisnAlzawaj_bot?start=ad_xb79tj" rel="noopener">@HisnAlzawaj_bot</a></li>
+      <li><a href="https://t.me/Hisn_Alzawaj" rel="noopener">Canal de perfiles en Telegram</a></li>
+      <li><a href="https://hisnalzawaj.com/es/guide.html">Guía</a></li>
+      <li><a href="https://hisnalzawaj.com/es/terms.html">Términos</a></li>
+      <li><a href="https://hisnalzawaj.com/es/">Volver a la página de inicio</a></li>
+    </ul>
+    <p>© Hisn Alzawaj</p>
+  </div>
+</footer>
+
+</body>
+</html>

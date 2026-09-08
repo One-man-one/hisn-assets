@@ -1,0 +1,277 @@
+<!doctype html>
+<html lang="es" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Hisn Alzawaj — Guía de uso</title>
+  <meta name="description" content="Una guía paso a paso de Hisn Alzawaj: el registro, la búsqueda y la puntuación de compatibilidad, el chat dentro del bot, la privacidad de la foto, la verificación, la denuncia, la membresía premium y la eliminación de tu cuenta.">
+  <link rel="canonical" href="https://hisnalzawaj.com/es/guide.html">
+  <link rel="alternate" hreflang="ar" href="https://hisnalzawaj.com/guide.html">
+  <link rel="alternate" hreflang="en" href="https://hisnalzawaj.com/en/guide.html">
+  <link rel="alternate" hreflang="fr" href="https://hisnalzawaj.com/fr/guide.html">
+  <link rel="alternate" hreflang="es" href="https://hisnalzawaj.com/es/guide.html">
+  <link rel="alternate" hreflang="id" href="https://hisnalzawaj.com/id/guide.html">
+  <link rel="alternate" hreflang="fa" href="https://hisnalzawaj.com/fa/guide.html">
+  <link rel="alternate" hreflang="x-default" href="https://hisnalzawaj.com/guide.html">
+  <meta name="robots" content="index,follow">
+  <meta name="google-site-verification" content="PZJUV_-inCgSV00em7TFB2Vp03PtsSfxsREUZm9Bjq8">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Hisn Alzawaj">
+  <meta property="og:locale" content="es_ES">
+  <meta property="og:title" content="Hisn Alzawaj — Guía de uso">
+  <meta property="og:description" content="Una guía paso a paso de Hisn Alzawaj: el registro, la búsqueda y la puntuación de compatibilidad, el chat dentro del bot, la privacidad de la foto, la verificación, la denuncia, la membresía premium y la eliminación de tu cuenta.">
+  <meta property="og:url" content="https://hisnalzawaj.com/es/guide.html">
+  <meta name="theme-color" content="#ce5c8a">
+  <link rel="icon" href="../favicon.ico" sizes="any">
+  <link rel="icon" href="../icon.png" type="image/png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap">
+  <style>
+*,*::before,*::after{box-sizing:border-box}
+:root{
+  --rose:#ce5c8a; --rose-deep:#a8416b; --rose-soft:#fdf0f5;
+  --blue:#25557c; --ink:#241a1f; --body:#4a3f45; --muted:#8a7b82;
+  --bg:#fffaf9; --card:#ffffff; --line:#f0dde5; --shadow:14px 22px 48px;
+}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0; background:var(--bg); color:var(--body);
+  font-family:'Inter',system-ui,-apple-system,'Segoe UI',sans-serif;
+  font-size:17px; line-height:1.85; -webkit-font-smoothing:antialiased;
+}
+h1,h2,h3{color:var(--ink); line-height:1.35; margin:0 0 .6em; font-weight:700}
+h1{font-size:clamp(1.9rem,5.2vw,3.05rem); letter-spacing:-.01em}
+h2{font-size:clamp(1.45rem,3.6vw,2.05rem)}
+h3{font-size:1.1rem; margin-bottom:.35em}
+p{margin:0 0 1em}
+a{color:var(--rose-deep)}
+.wrap{max-width:1080px; margin:0 auto; padding:0 22px}
+section{padding:clamp(48px,7vw,84px) 0}
+
+/* ── الترويسة ── */
+.top{
+  display:flex; align-items:center; justify-content:space-between; gap:16px;
+  padding:18px 0; border-bottom:1px solid var(--line);
+}
+.top .mark{display:flex; align-items:center; gap:10px; font-weight:700;
+  color:var(--ink); text-decoration:none; font-size:1.06rem}
+.top .mark img{width:34px; height:34px; object-fit:contain}
+.langs{display:flex; gap:6px; flex-wrap:wrap; list-style:none; margin:0; padding:0}
+.langs a{
+  display:block; padding:5px 11px; border-radius:999px; font-size:.86rem;
+  text-decoration:none; color:var(--body); border:1px solid var(--line);
+}
+.langs a[aria-current]{background:var(--rose); border-color:var(--rose); color:#fff}
+/* ⚠️ التنقّل بين الصفحات لا بين اللغات — قائمتان في ترويسةٍ واحدة،
+   ولكلٍّ منهما aria-label تفرّقها عن الأخرى لقارئ الشاشة. */
+.pages{display:flex; gap:4px; flex-wrap:wrap; list-style:none; margin:0; padding:0}
+.pages a{
+  display:block; padding:5px 10px; border-radius:8px; font-size:.92rem;
+  text-decoration:none; color:var(--body);
+}
+.pages a:hover{background:var(--rose-soft); color:var(--rose-deep)}
+.pages a[aria-current]{color:var(--rose-deep); font-weight:600}
+.top .navs{display:flex; align-items:center; gap:14px; flex-wrap:wrap}
+/* ⚠️ الترويسة تنكسر عمودياً على الضيّق لا تُزاحَم: العلامة واسمُها
+   `Hisn Alzawaj` تلتفّ على سطرين إن بقيت تتقاسم السطر مع قائمتين —
+   والاسم هو ما يُقاس عليه قبول المنصّة، فلا يُترك ملتوياً. */
+@media (max-width:680px){
+  .top{flex-direction:column; align-items:flex-start; gap:10px}
+  .top .navs{gap:8px}
+  .pages a{padding:4px 9px}
+}
+
+/* ── البطل ── */
+.hero{
+  padding:clamp(52px,8vw,96px) 0 clamp(44px,6vw,76px);
+  background:
+    radial-gradient(120% 90% at 82% -10%, #fce7ef 0%, rgba(252,231,239,0) 62%),
+    radial-gradient(100% 80% at 6% 0%, #eaf1f8 0%, rgba(234,241,248,0) 55%);
+}
+.kicker{
+  display:inline-block; font-size:.82rem; font-weight:600; letter-spacing:.06em;
+  text-transform:uppercase; color:var(--rose-deep); background:#fff;
+  border:1px solid var(--line); border-radius:999px; padding:5px 14px;
+  margin-bottom:20px;
+}
+.hero p.lead{font-size:clamp(1.02rem,2.1vw,1.18rem); max-width:62ch; color:var(--body)}
+.btn{
+  display:inline-block; margin-top:12px; padding:15px 34px; border-radius:14px;
+  background:var(--rose); color:#fff; text-decoration:none; font-weight:700;
+  font-size:1.06rem; box-shadow:0 10px 26px rgba(206,92,138,.32);
+}
+.btn:hover{background:var(--rose-deep)}
+.note{font-size:.9rem; color:var(--muted); margin:14px 0 0}
+
+/* ── الشبكات ── */
+.grid{display:grid; gap:18px; margin-top:34px}
+.g3{grid-template-columns:repeat(auto-fit,minmax(272px,1fr))}
+.g4{grid-template-columns:repeat(auto-fit,minmax(232px,1fr))}
+.card{
+  background:var(--card); border:1px solid var(--line); border-radius:16px;
+  padding:26px 24px;
+}
+.card p{margin:0; font-size:.97rem}
+.step .n{
+  display:grid; place-items:center; width:34px; height:34px; border-radius:10px;
+  background:var(--rose-soft); color:var(--rose-deep); font-weight:700;
+  margin-bottom:14px;
+}
+.card .ico{font-size:1.6rem; line-height:1; display:block; margin-bottom:12px}
+
+/* ── الخصوصية ── */
+.privacy{background:var(--blue); color:#dfe9f2}
+.privacy h2{color:#fff}
+.privacy p{max-width:70ch; color:#cfdded}
+.privacy p:last-child{margin-bottom:0}
+
+/* ── الأسئلة ── */
+.faq{max-width:820px; margin-top:30px}
+.faq h3{margin-top:0}
+.qa{border-bottom:1px solid var(--line); padding:22px 0}
+.qa:first-child{border-top:1px solid var(--line)}
+.qa p{margin:0; font-size:.97rem}
+
+/* ── الخاتمة ── */
+.end{text-align:center; background:var(--rose-soft)}
+.end p{max-width:52ch; margin-inline:auto}
+footer{border-top:1px solid var(--line); padding:30px 0 44px; font-size:.9rem;
+  color:var(--muted)}
+.flinks{display:flex; gap:22px; flex-wrap:wrap; margin:0 0 14px; padding:0;
+  list-style:none}
+
+/* ── وثيقة السياسة ──
+   ⚠️ عرضٌ بوحدة ch لا px: الوثيقة نصٌّ متّصل يُقرأ سطراً سطراً، وقياس
+   السطر المريح عدد حروفٍ لا عدد بكسلات — والفرق يظهر في الفارسية
+   والعربية حيث الحرف أضيق من اللاتيني بالبكسل نفسه. */
+.doc{max-width:74ch; margin-inline:auto}
+.doc .updated{font-size:.9rem; color:var(--muted); margin:0 0 26px}
+.doc .lead{font-size:1.05rem; color:var(--body); margin-bottom:34px}
+.doc h2{font-size:clamp(1.15rem,2.4vw,1.42rem); margin-top:38px;
+  padding-top:22px; border-top:1px solid var(--line)}
+.doc h2:first-of-type{border-top:0; padding-top:0; margin-top:0}
+.doc ul{margin:0 0 1em; padding-inline-start:1.35em}
+.doc li{margin-bottom:.45em}
+.doc .back{display:inline-block; margin-top:38px; font-weight:600}
+
+@media (max-width:560px){ body{font-size:16px} .card{padding:22px 20px} }
+</style>
+</head>
+<body>
+
+<header class="wrap top">
+  <a class="mark" href="https://hisnalzawaj.com/es/">
+    <img src="../icon.png" alt="" width="34" height="34">
+    <span>Hisn Alzawaj</span>
+  </a>
+  <div class="navs">
+    <nav aria-label="Páginas del sitio">
+      <ul class="pages">
+        <li><a href="https://hisnalzawaj.com/es/">Inicio</a></li>
+        <li><a href="https://hisnalzawaj.com/es/guide.html" aria-current="page">Guía</a></li>
+        <li><a href="https://hisnalzawaj.com/es/privacy.html">Privacidad</a></li>
+        <li><a href="https://hisnalzawaj.com/es/terms.html">Términos</a></li>
+      </ul>
+    </nav>
+    <nav aria-label="Idioma">
+      <ul class="langs">
+      <li><a href="https://hisnalzawaj.com/guide.html" lang="ar" hreflang="ar">العربية</a></li>
+      <li><a href="https://hisnalzawaj.com/en/guide.html" lang="en" hreflang="en">English</a></li>
+      <li><a href="https://hisnalzawaj.com/fr/guide.html" lang="fr" hreflang="fr">Français</a></li>
+      <li><a href="https://hisnalzawaj.com/es/guide.html" aria-current="true" lang="es" hreflang="es">Español</a></li>
+      <li><a href="https://hisnalzawaj.com/id/guide.html" lang="id" hreflang="id">Indonesia</a></li>
+      <li><a href="https://hisnalzawaj.com/fa/guide.html" lang="fa" hreflang="fa">فارسی</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section>
+    <div class="wrap doc">
+      <h1>Guía de uso</h1>
+      <p class="updated">Última actualización: 4 de septiembre de 2026</p>
+      <p class="lead">Esta página explica el servicio tal como lo encuentra una persona usuaria: qué ocurre en cada paso, qué decides tú y qué no hacemos con tus datos. Describe lo que funciona hoy, no lo que está previsto.</p>
+      <h2>Antes de empezar</h2>
+      <p>Hisn Alzawaj es un bot que funciona dentro de Telegram y en ningún otro sitio. No hay aplicación que instalar, ni cuenta nueva que crear, ni nada que contratar en este sitio web: esta página es introductoria, y el servicio en sí vive allí.</p>
+      <p>Es para personas de 18 años en adelante, hasta los 80. La finalidad es declarada y única: presentaciones con fines matrimoniales. Todo lo que se salga de ahí puede denunciarse y se revisa.</p>
+      <p>La interfaz existe en seis idiomas: árabe, inglés, francés, español, indonesio y persa. Eliges uno en la primera pantalla y puedes cambiarlo en cualquier momento desde los ajustes; todas las pantallas lo siguen.</p>
+      <h2>El registro: una conversación, no un formulario</h2>
+      <p>Abres el bot y pulsas Iniciar. Hace una pregunta por pantalla y guarda tu respuesta antes de continuar. Si cierras Telegram a mitad de camino y vuelves un día después, sigues donde lo dejaste: nada de lo que ya respondiste se vuelve a preguntar.</p>
+      <p>Lo que se te pide, en orden:</p>
+      <ul>
+        <li>Datos básicos: nombre, fecha de nacimiento, sexo, país de residencia y nacionalidad.</li>
+        <li>Apariencia: estatura, peso, tez y similares.</li>
+        <li>Estilo de vida: estado civil, estudios, trabajo, práctica religiosa, tabaco.</li>
+        <li>El tipo de matrimonio que buscas.</li>
+        <li>Y después los criterios que deseas en un cónyuge: esto es la mitad de la puntuación de compatibilidad, así que merece tu tiempo.</li>
+      </ul>
+      <p>La fecha de nacimiento se elige en una rueda en lugar de escribirse. Las fechas escritas son fáciles de equivocar, y un año erróneo te retira en silencio de los resultados de quienes te buscan.</p>
+      <h2>Tu ficha: lo que los demás ven de ti</h2>
+      <p>Una vez completado el registro, tus datos se convierten en una ficha que la otra parte ve cuando apareces en sus resultados. Lleva los atributos que introdujiste y la puntuación de compatibilidad entre vosotros.</p>
+      <p>Lo que no lleva es una decisión, no un descuido: tu foto real, tu número de teléfono y tu nombre de usuario de Telegram. Ninguno de ellos se muestra a nadie.</p>
+      <p>Puedes editar cualquier campo en cualquier momento desde los ajustes de tu perfil, u ocultar tu perfil por completo para que no aparezca en los resultados de nadie: queda guardado hasta que decidas restablecerlo.</p>
+      <h2>La búsqueda y la puntuación de compatibilidad</h2>
+      <p>Hay tres formas de buscar, según lo claro que tengas lo que quieres:</p>
+      <ul>
+        <li>Búsqueda rápida: los perfiles que coinciden con los criterios que ya registraste.</li>
+        <li>Búsqueda por un solo criterio: cuando una sola condición es lo que te importa.</li>
+        <li>Búsqueda por varios criterios: cuando sabes exactamente qué buscas.</li>
+      </ul>
+      <p>La puntuación de compatibilidad se calcula desde ambos lados a la vez: tus atributos frente a lo que la otra persona busca, y sus atributos frente a lo que buscas tú. Por eso el mismo par de perfiles puede obtener una puntuación distinta para cada uno: no califica a nadie, mide la distancia entre dos conjuntos de deseos.</p>
+      <p>Un perfil que se te ha mostrado una vez no vuelve a mostrarse, así que la búsqueda no da vueltas sobre las mismas caras.</p>
+      <h2>Interés mutuo y chat</h2>
+      <p>Cuando un perfil te interesa, lo indicas. La otra parte no recibe aviso salvo que también haya manifestado interés por ti, y entonces el chat se abre para ambos a la vez. Nunca se abre por el deseo de un solo lado.</p>
+      <p>Los mensajes viajan a través del bot mismo: lleva los tuyos a la otra persona y los suyos a ti. Ninguno de los dos ve el número, el nombre de usuario ni la cuenta de Telegram del otro, salvo que ambos decidáis escribirlo vosotros mismos en un mensaje.</p>
+      <p>Los mensajes del chat se eliminan 30 días después de enviarse, y cualquiera de las dos partes puede terminar la conversación en cualquier momento.</p>
+      <p>Cada conversación lleva un botón de denuncia, igual que cada ficha.</p>
+      <h2>Privacidad de la foto: lo predeterminado, no un ajuste que haya que buscar</h2>
+      <p>Tu foto está difuminada para todos desde el primer momento. No hay ningún interruptor que puedas olvidar y que te deje expuesto: difuminar es la regla, y mostrar es la excepción, que exige una solicitud explícita de la otra parte y un consentimiento explícito tuyo.</p>
+      <p>Cuando alguien pide ver tu foto, la solicitud te llega, y la rechazas o la aceptas; y eliges cuánto dura tu consentimiento:</p>
+      <ul>
+        <li>Una ventana corta: 5 minutos, contados desde que la otra persona la abre, no desde que aceptaste.</li>
+        <li>Un día entero.</li>
+        <li>O un consentimiento sin límite de tiempo.</li>
+      </ul>
+      <p>Elijas lo que elijas, puedes revocarlo en cualquier momento y la foto vuelve a estar difuminada para esa persona.</p>
+      <p>Los perfiles publicados en nuestro canal y en nuestras páginas sociales nunca llevan una foto real: un nombre de pila y un avatar dibujado, y nada más. Para quien no quiera ni eso, hay una exclusión en los ajustes.</p>
+      <h2>Verificación de identidad: opcional, y su resultado es visible</h2>
+      <p>Puedes demostrar que hay una persona real detrás del perfil mediante un desafío fotográfico: el bot pide una imagen en una postura concreta, solicitada en ese momento, y un moderador humano la revisa.</p>
+      <p>El resultado aparece en tu ficha para que la otra parte lo vea, que es su razón de ser. La foto del desafío en sí nunca se publica y no la ve nadie más que el moderador.</p>
+      <p>La verificación es totalmente opcional; omitirla te deja todo el servicio tal como está.</p>
+      <h2>Seguridad y denuncias</h2>
+      <p>Cada ficha y cada conversación lleva un botón de denuncia que llega a un moderador humano, no a un filtro automático. No necesitas demostrar nada para denunciar.</p>
+      <p>Una infracción recibe una advertencia que llega a la persona, y tras 3 advertencias la cuenta queda expulsada. Los casos graves se expulsan a la primera, sin pasos graduales.</p>
+      <p>Lo más rápido que está en tu mano: terminar la conversación y denunciar. No compartas tu número ni tus cuentas de otros servicios antes de sentirte cómodo: el bot nunca te lo pide, y quien te apremia a hacerlo te está diciendo algo sobre sí mismo.</p>
+      <p>Nunca te pediremos una contraseña ni un código de acceso de Telegram, y nunca te pediremos dinero fuera de las pantallas de pago que están dentro del bot.</p>
+      <h2>Membresía premium</h2>
+      <p>El servicio esencial es gratuito: registrarse, buscar, ser emparejado y conversar tras el interés mutuo no cuesta nada.</p>
+      <p>Existe una membresía premium opcional que desbloquea funciones adicionales y se paga con Telegram Stars o con criptomonedas. No es condición para ser emparejado ni para enviar mensajes.</p>
+      <p>Una suscripción renovable de Stars la cobra Telegram, no nosotros, y se cancela desde los ajustes del propio Telegram: tu membresía sigue entonces activa hasta el final del periodo que ya pagaste.</p>
+      <h2>Tus datos y la eliminación de tu cuenta</h2>
+      <p>Editar tus datos y ocultar tu perfil están siempre disponibles desde los ajustes y no pasan por nosotros.</p>
+      <p>Eliminar tu cuenta borra en cascada lo que te pertenece: tu perfil, tus mensajes, las solicitudes de foto y los consentimientos ligados a ellas; y retira de nuestro canal tu ficha publicada, si lo había sido. No es un cambio de nombre para desaparecer.</p>
+      <p>Una cuenta que queda inactiva el tiempo suficiente se elimina por sí sola tras un periodo conocido, para que los datos de quienes dejaron el servicio no permanezcan para siempre.</p>
+      <p>Qué recogemos, por qué y cuánto tiempo permanece se expone en la Política de Privacidad; tus derechos y obligaciones están en los Términos de Uso. Ambos están enlazados al pie de esta página.</p>
+      <a class="back" href="https://hisnalzawaj.com/es/">Volver a la página de inicio</a>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <ul class="flinks">
+      <li><a href="https://t.me/HisnAlzawaj_bot?start=ad_xb79tj" rel="noopener">@HisnAlzawaj_bot</a></li>
+      <li><a href="https://t.me/Hisn_Alzawaj" rel="noopener">Canal de perfiles en Telegram</a></li>
+      <li><a href="https://hisnalzawaj.com/es/privacy.html">Privacidad</a></li>
+      <li><a href="https://hisnalzawaj.com/es/terms.html">Términos</a></li>
+      <li><a href="https://hisnalzawaj.com/es/">Volver a la página de inicio</a></li>
+    </ul>
+    <p>© Hisn Alzawaj</p>
+  </div>
+</footer>
+
+</body>
+</html>
