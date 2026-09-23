@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Hisn Alzawaj</title>
-  <meta name="description" content="Un bot de Telegram para conocer personas con fines matrimoniales: define tus criterios, explora los perfiles compatibles y conversa dentro del bot cuando ambas partes estén de acuerdo. Tu foto permanece difuminada hasta que tú lo autorices.">
+  <meta name="description" content="Una plataforma para conocer personas con fines matrimoniales en Telegram y en la web: define tus criterios, explora los perfiles compatibles y conversa dentro de la plataforma cuando ambas partes estén de acuerdo. Tu foto permanece difuminada hasta que tú lo autorices.">
   <meta name="keywords" content="bot matrimonio, matrimonio telegram, matrimonio musulmán, presentación halal, encontrar esposo, emparejamiento telegram, Hisn Alzawaj">
   <link rel="canonical" href="https://hisnalzawaj.com/es/">
   <link rel="alternate" hreflang="ar" href="https://hisnalzawaj.com/">
@@ -20,7 +20,7 @@
   <meta property="og:site_name" content="Hisn Alzawaj">
   <meta property="og:locale" content="es_ES">
   <meta property="og:title" content="Hisn Alzawaj">
-  <meta property="og:description" content="Un bot de Telegram para conocer personas con fines matrimoniales: define tus criterios, explora los perfiles compatibles y conversa dentro del bot cuando ambas partes estén de acuerdo. Tu foto permanece difuminada hasta que tú lo autorices.">
+  <meta property="og:description" content="Una plataforma para conocer personas con fines matrimoniales en Telegram y en la web: define tus criterios, explora los perfiles compatibles y conversa dentro de la plataforma cuando ambas partes estén de acuerdo. Tu foto permanece difuminada hasta que tú lo autorices.">
   <meta property="og:url" content="https://hisnalzawaj.com/es/">
   <meta property="og:image" content="https://hisnalzawaj.com/og.png">
   <meta property="og:image:width" content="1200">
@@ -59,8 +59,6 @@ body{
   margin:0; color:var(--body); background:var(--bg);
   font-family:'Inter',system-ui,-apple-system,'Segoe UI',sans-serif;
   font-size:17px; line-height:1.85; -webkit-font-smoothing:antialiased;
-  /* زخرفةٌ هندسية خفيفة — نجمةٌ ثمانية مرسومة لنا، لا منقولة. */
-  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140' viewBox='0 0 140 140'%3E%3Cg fill='none' stroke='%23ce5c8a' stroke-opacity='.07' stroke-width='1'%3E%3Crect x='42' y='42' width='56' height='56'/%3E%3Crect x='42' y='42' width='56' height='56' transform='rotate(45 70 70)'/%3E%3Ccircle cx='70' cy='70' r='18'/%3E%3C/g%3E%3C/svg%3E");
 }
 h1,h2,h3{color:var(--ink); line-height:1.3; margin:0 0 .6em; font-weight:700;
   font-family:'Playfair Display','Inter',serif}
@@ -159,9 +157,6 @@ section{padding:clamp(56px,8vw,96px) 0; position:relative}
 .kicker::before{content:''; width:7px; height:7px; border-radius:50%;
   background:var(--rose-hi); box-shadow:0 0 0 4px rgba(236,143,178,.18)}
 .hero p.lead{font-size:clamp(1.04rem,2.1vw,1.2rem); max-width:62ch}
-.rosette{position:absolute; z-index:0; width:min(92vw,620px); aspect-ratio:1;
-  top:50%; left:50%; transform:translate(-50%,-50%); color:var(--rose);
-  opacity:.16; pointer-events:none}
 .btn{
   display:inline-block; padding:15px 34px; border-radius:14px;
   background:var(--rose); color:#fff; text-decoration:none; font-weight:700;
@@ -289,15 +284,52 @@ footer{border-top:1px solid var(--line); background:#0f0a0d;
 .doc strong{color:var(--ink)}
 .doc .back{display:inline-block; margin-top:38px; font-weight:600}
 
+/* ── أغصان الورد ──
+   ⚠️ مرسومةٌ لنا في `build.py` (`_branch`) — لا صورةٌ ولا خطّ أيقونات،
+   وحلّت محلّ الزخرفة المربّعة بطلب صاحب المشروع (٢٣ سبتمبر ٢٠٢٦):
+   «الخلفية المربّعة غير مريحة». ثابتةٌ خلف المحتوى لا تلتقط نقرة، وكلُّ
+   ما فوقها في `main` و`footer` بطبقةٍ أعلى.
+
+   ⚠️ والغصن مرسومٌ من الزاوية العليا اليسرى، فيُعكس بـ`scaleX(-1)` في
+   الاتجاه من اليمين: بلا ذلك ينبت الغصن في العربية والفارسية من الزاوية
+   المقابلة للنصّ، فيبدو مقلوباً عن الصفحة. */
+main,footer{position:relative; z-index:1}
+/* ⚠️ عرضٌ صغير وشفافيةٌ خافتة بقرار: الغصن زينةُ زاوية لا لوحة. كان
+   بعرض ٤٤٠px وشفافية .5 فمرّت وردةٌ فوق سطور الشروط وبجوار العنوان —
+   والنصّ هنا يُقرأ لا يُزيَّن. */
+.branch{position:fixed; z-index:0; pointer-events:none;
+  width:min(22vw,290px); height:auto; opacity:.4}
+.branch.b1{top:56px; left:0}
+.branch.b2{bottom:0; right:0; transform:rotate(180deg)}
+[dir=rtl] .branch.b1{left:auto; right:0; transform:scaleX(-1)}
+[dir=rtl] .branch.b2{right:auto; left:0; transform:rotate(180deg) scaleX(-1)}
+.branch .sway{transform-box:view-box; transform-origin:0 0}
+.branch .bloom{transform-box:fill-box; transform-origin:center}
+@media (max-width:680px){ .branch{width:46vw; opacity:.24} }
+
+/* البتلات المتساقطة — مخفيّةٌ إلا حيث تُسمح الحركة (أسفل). */
+.petals{display:none; position:fixed; inset:0; z-index:0; overflow:hidden;
+  pointer-events:none}
+.petal{position:absolute; top:-6vh; left:var(--x); width:13px; height:17px;
+  border-radius:70% 0 70% 0; opacity:.55;
+  background:radial-gradient(circle at 30% 30%, #f4b3cb, #ce5c8a 70%)}
+
 /* ── الحركة ──
    ⚠️ كلُّها داخل `prefers-reduced-motion:no-preference`، لا خارجها ثم
    تُلغى: من طلب من جهازه تقليل الحركة (دوارٌ أو صداع) لا يرى أوّل إطار
    منها أصلاً. وبلا جافاسكربت: الظهور عند التمرير بـ`animation-timeline`
    حيث يُدعم، وحيث لا يُدعم يظهر المحتوى ثابتاً كما هو — لا يختفي. */
 @keyframes rise{from{opacity:0; transform:translateY(22px)} to{opacity:1; transform:none}}
-@keyframes spin{to{transform:translate(-50%,-50%) rotate(360deg)}}
 @keyframes glow{0%,100%{box-shadow:0 12px 30px var(--rose-glow)}
   50%{box-shadow:0 12px 44px rgba(206,92,138,.6)}}
+@keyframes sway{0%,100%{transform:rotate(-1.6deg)} 50%{transform:rotate(1.8deg)}}
+@keyframes breathe{0%,100%{transform:scale(1)} 50%{transform:scale(1.06)}}
+@keyframes fall{
+  0%{transform:translate(0,0) rotate(0); opacity:0}
+  8%{opacity:.55}
+  50%{transform:translate(9vw,55vh) rotate(200deg)}
+  92%{opacity:.45}
+  100%{transform:translate(-4vw,112vh) rotate(400deg); opacity:0}}
 @keyframes drift{0%,100%{transform:translateY(0)} 50%{transform:translateY(-6px)}}
 @media (prefers-reduced-motion:no-preference){
   .hero .kicker,.hero h1,.hero .lead,.hero .ctas,.hero .note,.hero .badges{
@@ -307,7 +339,11 @@ footer{border-top:1px solid var(--line); background:#0f0a0d;
   .hero .ctas{animation-delay:.28s}
   .hero .note{animation-delay:.36s}
   .hero .badges{animation-delay:.44s}
-  .rosette{animation:spin 140s linear infinite}
+  .branch .sway{animation:sway 11s ease-in-out infinite}
+  .branch.b2 .sway{animation-duration:13s; animation-delay:-4s}
+  .branch .bloom{animation:breathe 6s ease-in-out infinite}
+  .petals{display:block}
+  .petal{animation:fall var(--t) linear var(--d) infinite}
   .hero .btn:not(.alt){animation:glow 3.2s ease-in-out 1.2s infinite}
   .step .n{animation:drift 5s ease-in-out infinite}
   @supports (animation-timeline:view()){
@@ -364,7 +400,7 @@ footer{border-top:1px solid var(--line); background:#0f0a0d;
     "id",
     "fa"
   ],
-  "description": "Un bot de Telegram para conocer personas con fines matrimoniales: define tus criterios, explora los perfiles compatibles y conversa dentro del bot cuando ambas partes estén de acuerdo. Tu foto permanece difuminada hasta que tú lo autorices.",
+  "description": "Una plataforma para conocer personas con fines matrimoniales en Telegram y en la web: define tus criterios, explora los perfiles compatibles y conversa dentro de la plataforma cuando ambas partes estén de acuerdo. Tu foto permanece difuminada hasta que tú lo autorices.",
   "image": "https://hisnalzawaj.com/og.png",
   "offers": {
     "@type": "Offer",
@@ -388,7 +424,7 @@ footer{border-top:1px solid var(--line); background:#0f0a0d;
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "¿El bot es gratuito?",
+      "name": "¿El servicio es gratuito?",
       "acceptedAnswer": {
         "@type": "Answer",
         "text": "Sí. El registro, la búsqueda, el emparejamiento y el chat tras el interés mutuo son gratuitos. Existe una membresía premium opcional que desbloquea funciones adicionales y se paga con Telegram Stars o con criptomonedas."
@@ -407,7 +443,7 @@ footer{border-top:1px solid var(--line); background:#0f0a0d;
       "name": "¿La otra persona obtiene mi número o mi nombre de usuario?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "No. Los mensajes se transmiten dentro del bot mismo, así que no se intercambia ningún número ni nombre de usuario, salvo que ambos decidáis compartirlo."
+        "text": "No. Los mensajes se transmiten dentro de la plataforma misma — en el bot o en el sitio web —, así que no se intercambia ningún número ni nombre de usuario, salvo que ambos decidáis compartirlo."
       }
     },
     {
@@ -431,7 +467,7 @@ footer{border-top:1px solid var(--line); background:#0f0a0d;
       "name": "¿Qué idiomas admite?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Árabe, inglés, francés, español, indonesio y persa. La interfaz está completa en los seis y puede cambiarse en cualquier momento desde el bot."
+        "text": "Árabe, inglés, francés, español, indonesio y persa. La interfaz está completa en los seis y puede cambiarse en cualquier momento, en el bot o en el sitio web."
       }
     },
     {
@@ -439,7 +475,7 @@ footer{border-top:1px solid var(--line); background:#0f0a0d;
       "name": "¿Cómo empiezo?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Abre el bot en Telegram y pulsa Iniciar. La conversación te guía paso a paso, y tu progreso se guarda si te detienes y vuelves. ¿No tienes Telegram? Regístrate en el sitio web con una cuenta de Google o Facebook."
+        "text": "De dos formas: abre el bot en Telegram y pulsa Iniciar — la conversación te guía paso a paso, y tu progreso se guarda si te detienes y vuelves. O regístrate en el sitio web con una cuenta de Google, Facebook o Telegram y completa tu perfil allí."
       }
     }
   ]
@@ -447,6 +483,7 @@ footer{border-top:1px solid var(--line); background:#0f0a0d;
 </script>
 </head>
 <body>
+<svg class="branch b1" viewBox="0 0 400 300" aria-hidden="true" focusable="false"><g class="sway"><path d="M0 0C50 30 80 90 140 140S250 220 340 250" stroke="#7d4a5f" stroke-width="3.2" fill="none" stroke-linecap="round"/><path d="M140 140C160 100 195 80 240 74" stroke="#7d4a5f" stroke-width="2.4" fill="none" stroke-linecap="round"/><path d="M70 62C60 100 70 130 96 150" stroke="#7d4a5f" stroke-width="2" fill="none" stroke-linecap="round"/><g transform="translate(40 26) rotate(20) scale(1.0)"><path d="M0 0C8-10 26-11 36 0C26 11 8 10 0 0Z" fill="#6e3a52"/><path d="M2 0H30" stroke="#a8567a" stroke-width="1"/></g><g transform="translate(96 104) rotate(-40) scale(0.9)"><path d="M0 0C8-10 26-11 36 0C26 11 8 10 0 0Z" fill="#6e3a52"/><path d="M2 0H30" stroke="#a8567a" stroke-width="1"/></g><g transform="translate(118 124) rotate(60) scale(0.8)"><path d="M0 0C8-10 26-11 36 0C26 11 8 10 0 0Z" fill="#6e3a52"/><path d="M2 0H30" stroke="#a8567a" stroke-width="1"/></g><g transform="translate(190 180) rotate(10) scale(1.0)"><path d="M0 0C8-10 26-11 36 0C26 11 8 10 0 0Z" fill="#6e3a52"/><path d="M2 0H30" stroke="#a8567a" stroke-width="1"/></g><g transform="translate(250 222) rotate(-30) scale(0.85)"><path d="M0 0C8-10 26-11 36 0C26 11 8 10 0 0Z" fill="#6e3a52"/><path d="M2 0H30" stroke="#a8567a" stroke-width="1"/></g><g transform="translate(290 236) rotate(35) scale(0.9)"><path d="M0 0C8-10 26-11 36 0C26 11 8 10 0 0Z" fill="#6e3a52"/><path d="M2 0H30" stroke="#a8567a" stroke-width="1"/></g><g transform="translate(180 96) rotate(-20) scale(0.75)"><path d="M0 0C8-10 26-11 36 0C26 11 8 10 0 0Z" fill="#6e3a52"/><path d="M2 0H30" stroke="#a8567a" stroke-width="1"/></g><g transform="translate(206 84) rotate(40) scale(0.7)"><path d="M0 0C8-10 26-11 36 0C26 11 8 10 0 0Z" fill="#6e3a52"/><path d="M2 0H30" stroke="#a8567a" stroke-width="1"/></g><g transform="translate(66 86) rotate(110) scale(0.7)"><path d="M0 0C8-10 26-11 36 0C26 11 8 10 0 0Z" fill="#6e3a52"/><path d="M2 0H30" stroke="#a8567a" stroke-width="1"/></g><g transform="translate(340 250) scale(1.7)"><g class="bloom"><ellipse cx="0" cy="-10" rx="8.5" ry="11" fill="#a8416b" transform="rotate(0)"/><ellipse cx="0" cy="-10" rx="8.5" ry="11" fill="#a8416b" transform="rotate(72)"/><ellipse cx="0" cy="-10" rx="8.5" ry="11" fill="#a8416b" transform="rotate(144)"/><ellipse cx="0" cy="-10" rx="8.5" ry="11" fill="#a8416b" transform="rotate(216)"/><ellipse cx="0" cy="-10" rx="8.5" ry="11" fill="#a8416b" transform="rotate(288)"/><ellipse cx="0" cy="-6" rx="6" ry="8" fill="#d0628f" transform="rotate(36)"/><ellipse cx="0" cy="-6" rx="6" ry="8" fill="#d0628f" transform="rotate(108)"/><ellipse cx="0" cy="-6" rx="6" ry="8" fill="#d0628f" transform="rotate(180)"/><ellipse cx="0" cy="-6" rx="6" ry="8" fill="#d0628f" transform="rotate(252)"/><ellipse cx="0" cy="-6" rx="6" ry="8" fill="#d0628f" transform="rotate(324)"/><circle r="6.5" fill="#e27fa6"/><path d="M-3.5 1.5C-4.5-2.5-1-5 2-4C5-3 5 1 2 2.5C0 3.5-2 2-1.5 0" stroke="#f7c5d8" stroke-width="1.3" fill="none" stroke-linecap="round"/></g></g><g transform="translate(242 74) scale(1.35)"><g class="bloom"><ellipse cx="0" cy="-10" rx="8.5" ry="11" fill="#a8416b" transform="rotate(0)"/><ellipse cx="0" cy="-10" rx="8.5" ry="11" fill="#a8416b" transform="rotate(72)"/><ellipse cx="0" cy="-10" rx="8.5" ry="11" fill="#a8416b" transform="rotate(144)"/><ellipse cx="0" cy="-10" rx="8.5" ry="11" fill="#a8416b" transform="rotate(216)"/><ellipse cx="0" cy="-10" rx="8.5" ry="11" fill="#a8416b" transform="rotate(288)"/><ellipse cx="0" cy="-6" rx="6" ry="8" fill="#d0628f" transform="rotate(36)"/><ellipse cx="0" cy="-6" rx="6" ry="8" fill="#d0628f" transform="rotate(108)"/><ellipse cx="0" cy="-6" rx="6" ry="8" fill="#d0628f" transform="rotate(180)"/><ellipse cx="0" cy="-6" rx="6" ry="8" fill="#d0628f" transform="rotate(252)"/><ellipse cx="0" cy="-6" rx="6" ry="8" fill="#d0628f" transform="rotate(324)"/><circle r="6.5" fill="#e27fa6"/><path d="M-3.5 1.5C-4.5-2.5-1-5 2-4C5-3 5 1 2 2.5C0 3.5-2 2-1.5 0" stroke="#f7c5d8" stroke-width="1.3" fill="none" stroke-linecap="round"/></g></g><g transform="translate(96 152) scale(1.1)"><g class="bloom"><ellipse cx="0" cy="-10" rx="8.5" ry="11" fill="#a8416b" transform="rotate(0)"/><ellipse cx="0" cy="-10" rx="8.5" ry="11" fill="#a8416b" transform="rotate(72)"/><ellipse cx="0" cy="-10" rx="8.5" ry="11" fill="#a8416b" transform="rotate(144)"/><ellipse cx="0" cy="-10" rx="8.5" ry="11" fill="#a8416b" transform="rotate(216)"/><ellipse cx="0" cy="-10" rx="8.5" ry="11" fill="#a8416b" transform="rotate(288)"/><ellipse cx="0" cy="-6" rx="6" ry="8" fill="#d0628f" transform="rotate(36)"/><ellipse cx="0" cy="-6" rx="6" ry="8" fill="#d0628f" transform="rotate(108)"/><ellipse cx="0" cy="-6" rx="6" ry="8" fill="#d0628f" transform="rotate(180)"/><ellipse cx="0" cy="-6" rx="6" ry="8" fill="#d0628f" transform="rotate(252)"/><ellipse cx="0" cy="-6" rx="6" ry="8" fill="#d0628f" transform="rotate(324)"/><circle r="6.5" fill="#e27fa6"/><path d="M-3.5 1.5C-4.5-2.5-1-5 2-4C5-3 5 1 2 2.5C0 3.5-2 2-1.5 0" stroke="#f7c5d8" stroke-width="1.3" fill="none" stroke-linecap="round"/></g></g><g transform="translate(160 150) scale(1.1)"><path d="M0 6C-6 2-6-6 0-12C6-6 6 2 0 6Z" fill="#ce5c8a"/><path d="M0 6C-3 2-3-5 0-9" stroke="#f2a8c4" stroke-width="1.2" fill="none"/><path d="M0 6-5 10M0 6 5 10" stroke="#7d4a5f" stroke-width="1.6"/></g><g transform="translate(300 226) scale(1.2)"><path d="M0 6C-6 2-6-6 0-12C6-6 6 2 0 6Z" fill="#ce5c8a"/><path d="M0 6C-3 2-3-5 0-9" stroke="#f2a8c4" stroke-width="1.2" fill="none"/><path d="M0 6-5 10M0 6 5 10" stroke="#7d4a5f" stroke-width="1.6"/></g></g></svg><svg class="branch b2" viewBox="0 0 400 300" aria-hidden="true" focusable="false"><g class="sway"><path d="M0 0C50 30 80 90 140 140S250 220 340 250" stroke="#7d4a5f" stroke-width="3.2" fill="none" stroke-linecap="round"/><path d="M140 140C160 100 195 80 240 74" stroke="#7d4a5f" stroke-width="2.4" fill="none" stroke-linecap="round"/><path d="M70 62C60 100 70 130 96 150" stroke="#7d4a5f" stroke-width="2" fill="none" stroke-linecap="round"/><g transform="translate(40 26) rotate(20) scale(1.0)"><path d="M0 0C8-10 26-11 36 0C26 11 8 10 0 0Z" fill="#6e3a52"/><path d="M2 0H30" stroke="#a8567a" stroke-width="1"/></g><g transform="translate(96 104) rotate(-40) scale(0.9)"><path d="M0 0C8-10 26-11 36 0C26 11 8 10 0 0Z" fill="#6e3a52"/><path d="M2 0H30" stroke="#a8567a" stroke-width="1"/></g><g transform="translate(118 124) rotate(60) scale(0.8)"><path d="M0 0C8-10 26-11 36 0C26 11 8 10 0 0Z" fill="#6e3a52"/><path d="M2 0H30" stroke="#a8567a" stroke-width="1"/></g><g transform="translate(190 180) rotate(10) scale(1.0)"><path d="M0 0C8-10 26-11 36 0C26 11 8 10 0 0Z" fill="#6e3a52"/><path d="M2 0H30" stroke="#a8567a" stroke-width="1"/></g><g transform="translate(250 222) rotate(-30) scale(0.85)"><path d="M0 0C8-10 26-11 36 0C26 11 8 10 0 0Z" fill="#6e3a52"/><path d="M2 0H30" stroke="#a8567a" stroke-width="1"/></g><g transform="translate(290 236) rotate(35) scale(0.9)"><path d="M0 0C8-10 26-11 36 0C26 11 8 10 0 0Z" fill="#6e3a52"/><path d="M2 0H30" stroke="#a8567a" stroke-width="1"/></g><g transform="translate(180 96) rotate(-20) scale(0.75)"><path d="M0 0C8-10 26-11 36 0C26 11 8 10 0 0Z" fill="#6e3a52"/><path d="M2 0H30" stroke="#a8567a" stroke-width="1"/></g><g transform="translate(206 84) rotate(40) scale(0.7)"><path d="M0 0C8-10 26-11 36 0C26 11 8 10 0 0Z" fill="#6e3a52"/><path d="M2 0H30" stroke="#a8567a" stroke-width="1"/></g><g transform="translate(66 86) rotate(110) scale(0.7)"><path d="M0 0C8-10 26-11 36 0C26 11 8 10 0 0Z" fill="#6e3a52"/><path d="M2 0H30" stroke="#a8567a" stroke-width="1"/></g><g transform="translate(340 250) scale(1.7)"><g class="bloom"><ellipse cx="0" cy="-10" rx="8.5" ry="11" fill="#a8416b" transform="rotate(0)"/><ellipse cx="0" cy="-10" rx="8.5" ry="11" fill="#a8416b" transform="rotate(72)"/><ellipse cx="0" cy="-10" rx="8.5" ry="11" fill="#a8416b" transform="rotate(144)"/><ellipse cx="0" cy="-10" rx="8.5" ry="11" fill="#a8416b" transform="rotate(216)"/><ellipse cx="0" cy="-10" rx="8.5" ry="11" fill="#a8416b" transform="rotate(288)"/><ellipse cx="0" cy="-6" rx="6" ry="8" fill="#d0628f" transform="rotate(36)"/><ellipse cx="0" cy="-6" rx="6" ry="8" fill="#d0628f" transform="rotate(108)"/><ellipse cx="0" cy="-6" rx="6" ry="8" fill="#d0628f" transform="rotate(180)"/><ellipse cx="0" cy="-6" rx="6" ry="8" fill="#d0628f" transform="rotate(252)"/><ellipse cx="0" cy="-6" rx="6" ry="8" fill="#d0628f" transform="rotate(324)"/><circle r="6.5" fill="#e27fa6"/><path d="M-3.5 1.5C-4.5-2.5-1-5 2-4C5-3 5 1 2 2.5C0 3.5-2 2-1.5 0" stroke="#f7c5d8" stroke-width="1.3" fill="none" stroke-linecap="round"/></g></g><g transform="translate(242 74) scale(1.35)"><g class="bloom"><ellipse cx="0" cy="-10" rx="8.5" ry="11" fill="#a8416b" transform="rotate(0)"/><ellipse cx="0" cy="-10" rx="8.5" ry="11" fill="#a8416b" transform="rotate(72)"/><ellipse cx="0" cy="-10" rx="8.5" ry="11" fill="#a8416b" transform="rotate(144)"/><ellipse cx="0" cy="-10" rx="8.5" ry="11" fill="#a8416b" transform="rotate(216)"/><ellipse cx="0" cy="-10" rx="8.5" ry="11" fill="#a8416b" transform="rotate(288)"/><ellipse cx="0" cy="-6" rx="6" ry="8" fill="#d0628f" transform="rotate(36)"/><ellipse cx="0" cy="-6" rx="6" ry="8" fill="#d0628f" transform="rotate(108)"/><ellipse cx="0" cy="-6" rx="6" ry="8" fill="#d0628f" transform="rotate(180)"/><ellipse cx="0" cy="-6" rx="6" ry="8" fill="#d0628f" transform="rotate(252)"/><ellipse cx="0" cy="-6" rx="6" ry="8" fill="#d0628f" transform="rotate(324)"/><circle r="6.5" fill="#e27fa6"/><path d="M-3.5 1.5C-4.5-2.5-1-5 2-4C5-3 5 1 2 2.5C0 3.5-2 2-1.5 0" stroke="#f7c5d8" stroke-width="1.3" fill="none" stroke-linecap="round"/></g></g><g transform="translate(96 152) scale(1.1)"><g class="bloom"><ellipse cx="0" cy="-10" rx="8.5" ry="11" fill="#a8416b" transform="rotate(0)"/><ellipse cx="0" cy="-10" rx="8.5" ry="11" fill="#a8416b" transform="rotate(72)"/><ellipse cx="0" cy="-10" rx="8.5" ry="11" fill="#a8416b" transform="rotate(144)"/><ellipse cx="0" cy="-10" rx="8.5" ry="11" fill="#a8416b" transform="rotate(216)"/><ellipse cx="0" cy="-10" rx="8.5" ry="11" fill="#a8416b" transform="rotate(288)"/><ellipse cx="0" cy="-6" rx="6" ry="8" fill="#d0628f" transform="rotate(36)"/><ellipse cx="0" cy="-6" rx="6" ry="8" fill="#d0628f" transform="rotate(108)"/><ellipse cx="0" cy="-6" rx="6" ry="8" fill="#d0628f" transform="rotate(180)"/><ellipse cx="0" cy="-6" rx="6" ry="8" fill="#d0628f" transform="rotate(252)"/><ellipse cx="0" cy="-6" rx="6" ry="8" fill="#d0628f" transform="rotate(324)"/><circle r="6.5" fill="#e27fa6"/><path d="M-3.5 1.5C-4.5-2.5-1-5 2-4C5-3 5 1 2 2.5C0 3.5-2 2-1.5 0" stroke="#f7c5d8" stroke-width="1.3" fill="none" stroke-linecap="round"/></g></g><g transform="translate(160 150) scale(1.1)"><path d="M0 6C-6 2-6-6 0-12C6-6 6 2 0 6Z" fill="#ce5c8a"/><path d="M0 6C-3 2-3-5 0-9" stroke="#f2a8c4" stroke-width="1.2" fill="none"/><path d="M0 6-5 10M0 6 5 10" stroke="#7d4a5f" stroke-width="1.6"/></g><g transform="translate(300 226) scale(1.2)"><path d="M0 6C-6 2-6-6 0-12C6-6 6 2 0 6Z" fill="#ce5c8a"/><path d="M0 6C-3 2-3-5 0-9" stroke="#f2a8c4" stroke-width="1.2" fill="none"/><path d="M0 6-5 10M0 6 5 10" stroke="#7d4a5f" stroke-width="1.6"/></g></g></svg><div class="petals" aria-hidden="true"><span class="petal" style="--x:6vw;--d:0s;--t:17s"></span><span class="petal" style="--x:22vw;--d:6s;--t:21s"></span><span class="petal" style="--x:41vw;--d:2s;--t:19s"></span><span class="petal" style="--x:58vw;--d:9s;--t:23s"></span><span class="petal" style="--x:74vw;--d:4s;--t:18s"></span><span class="petal" style="--x:88vw;--d:12s;--t:22s"></span><span class="petal" style="--x:33vw;--d:14s;--t:25s"></span><span class="petal" style="--x:66vw;--d:17s;--t:20s"></span></div>
 
 <header class="top">
   <div class="wrap top-in">
@@ -480,16 +517,15 @@ footer{border-top:1px solid var(--line); background:#0f0a0d;
 <main>
 
   <section class="hero">
-    <svg class="rosette" viewBox="0 0 200 200" fill="none" stroke="currentColor" stroke-width=".7" aria-hidden="true"><circle cx="100" cy="100" r="96"/><circle cx="100" cy="100" r="70"/><circle cx="100" cy="100" r="30"/><rect x="50" y="50" width="100" height="100"/><rect x="50" y="50" width="100" height="100" transform="rotate(45 100 100)"/><rect x="72" y="72" width="56" height="56" transform="rotate(22.5 100 100)"/><rect x="72" y="72" width="56" height="56" transform="rotate(67.5 100 100)"/></svg>
     <div class="wrap">
       <span class="kicker">Telegram y web</span>
       <h1>Presentaciones con fines matrimoniales — en Telegram o en tu navegador</h1>
-      <p class="lead">Registra tus datos y los criterios que buscas en un cónyuge, y el bot te muestra los perfiles compatibles. Sin números de teléfono ni nombres de usuario: los mensajes pasan por el bot cuando ambas partes están de acuerdo.</p>
+      <p class="lead">Registra tus datos y los criterios que buscas en un cónyuge, y la plataforma te muestra los perfiles compatibles. Sin números de teléfono ni nombres de usuario: los mensajes pasan por la plataforma — en el bot o en el sitio web — cuando ambas partes están de acuerdo.</p>
       <div class="ctas"><a class="btn" href="https://t.me/HisnAlzawaj_bot?start=ad_xb79tj" rel="noopener">Abrir en Telegram</a><a class="btn alt" href="https://app.hisnalzawaj.com/" rel="noopener">Regístrate en la web</a></div>
       <p class="note">Gratis para empezar · árabe, inglés, francés, español, indonesio y persa</p>
       <ul class="badges">
         <li><span aria-hidden="true">🌫️</span>Foto difuminada por defecto</li>
-        <li><span aria-hidden="true">💬</span>Chat dentro del bot</li>
+        <li><span aria-hidden="true">💬</span>Chat dentro de la plataforma</li>
         <li><span aria-hidden="true">🔒</span>Tu número no se revela</li>
         <li><span aria-hidden="true">🛡️</span>Verificación opcional</li>
       </ul>
@@ -517,8 +553,8 @@ footer{border-top:1px solid var(--line); background:#0f0a0d;
       </article>
       <article class="card step reveal">
         <div class="n">04</div>
-        <h3>Conversar dentro del bot</h3>
-        <p>Los mensajes los transmite el bot mismo, así que ninguno de los dos ve el número ni el nombre de usuario del otro, salvo que ambos decidan compartirlo.</p>
+        <h3>Conversar dentro de la plataforma</h3>
+        <p>Los mensajes los transmite la plataforma misma — en el bot o en el sitio web —, así que ninguno de los dos ve el número ni el nombre de usuario del otro, salvo que ambos decidan compartirlo.</p>
       </article>
       </div>
     </div>
@@ -547,8 +583,8 @@ footer{border-top:1px solid var(--line); background:#0f0a0d;
       </article>
       <article class="card reveal">
         <span class="ico" aria-hidden="true">💬</span>
-        <h3>Chat dentro del bot</h3>
-        <p>No se intercambian nombres de usuario ni números de teléfono. La conversación permanece dentro del bot todo el tiempo que quieras.</p>
+        <h3>Chat dentro de la plataforma</h3>
+        <p>No se intercambian nombres de usuario ni números de teléfono. La conversación permanece dentro de la plataforma — en el bot o en el sitio web — todo el tiempo que quieras.</p>
       </article>
       <article class="card reveal">
         <span class="ico" aria-hidden="true">🔎</span>
@@ -558,7 +594,7 @@ footer{border-top:1px solid var(--line); background:#0f0a0d;
       <article class="card reveal">
         <span class="ico" aria-hidden="true">🌍</span>
         <h3>Seis idiomas</h3>
-        <p>Árabe, inglés, francés, español, indonesio y persa — una interfaz completa en cada uno, cambiable desde el bot.</p>
+        <p>Árabe, inglés, francés, español, indonesio y persa — una interfaz completa en cada uno, cambiable en el bot o en el sitio web.</p>
       </article>
       </div>
     </div>
@@ -580,7 +616,7 @@ footer{border-top:1px solid var(--line); background:#0f0a0d;
       <h2 class="reveal">Preguntas frecuentes</h2>
       <div class="faq">
       <details class="qa reveal" open>
-        <summary><span>¿El bot es gratuito?</span></summary>
+        <summary><span>¿El servicio es gratuito?</span></summary>
         <p>Sí. El registro, la búsqueda, el emparejamiento y el chat tras el interés mutuo son gratuitos. Existe una membresía premium opcional que desbloquea funciones adicionales y se paga con Telegram Stars o con criptomonedas.</p>
       </details>
       <details class="qa reveal">
@@ -589,7 +625,7 @@ footer{border-top:1px solid var(--line); background:#0f0a0d;
       </details>
       <details class="qa reveal">
         <summary><span>¿La otra persona obtiene mi número o mi nombre de usuario?</span></summary>
-        <p>No. Los mensajes se transmiten dentro del bot mismo, así que no se intercambia ningún número ni nombre de usuario, salvo que ambos decidáis compartirlo.</p>
+        <p>No. Los mensajes se transmiten dentro de la plataforma misma — en el bot o en el sitio web —, así que no se intercambia ningún número ni nombre de usuario, salvo que ambos decidáis compartirlo.</p>
       </details>
       <details class="qa reveal">
         <summary><span>¿Cómo se calcula la puntuación de compatibilidad?</span></summary>
@@ -601,11 +637,11 @@ footer{border-top:1px solid var(--line); background:#0f0a0d;
       </details>
       <details class="qa reveal">
         <summary><span>¿Qué idiomas admite?</span></summary>
-        <p>Árabe, inglés, francés, español, indonesio y persa. La interfaz está completa en los seis y puede cambiarse en cualquier momento desde el bot.</p>
+        <p>Árabe, inglés, francés, español, indonesio y persa. La interfaz está completa en los seis y puede cambiarse en cualquier momento, en el bot o en el sitio web.</p>
       </details>
       <details class="qa reveal">
         <summary><span>¿Cómo empiezo?</span></summary>
-        <p>Abre el bot en Telegram y pulsa Iniciar. La conversación te guía paso a paso, y tu progreso se guarda si te detienes y vuelves. ¿No tienes Telegram? Regístrate en el sitio web con una cuenta de Google o Facebook.</p>
+        <p>De dos formas: abre el bot en Telegram y pulsa Iniciar — la conversación te guía paso a paso, y tu progreso se guarda si te detienes y vuelves. O regístrate en el sitio web con una cuenta de Google, Facebook o Telegram y completa tu perfil allí.</p>
       </details>
       </div>
     </div>
@@ -631,7 +667,7 @@ footer{border-top:1px solid var(--line); background:#0f0a0d;
           <img src="../icon.png" alt="" width="36" height="36">
           <span>Hisn Alzawaj</span>
         </a>
-        <p>Un bot de Telegram para conocer personas con fines matrimoniales: define tus criterios, explora los perfiles compatibles y conversa dentro del bot cuando ambas partes estén de acuerdo. Tu foto permanece difuminada hasta que tú lo autorices.</p>
+        <p>Una plataforma para conocer personas con fines matrimoniales en Telegram y en la web: define tus criterios, explora los perfiles compatibles y conversa dentro de la plataforma cuando ambas partes estén de acuerdo. Tu foto permanece difuminada hasta que tú lo autorices.</p>
       </div>
       <div>
         <h4>Empieza ahora</h4>
