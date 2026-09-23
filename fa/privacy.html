@@ -21,7 +21,7 @@
   <meta property="og:title" content="Hisn Alzawaj — سیاست حریم خصوصی">
   <meta property="og:description" content="چه داده‌هایی جمع می‌کنیم، چرا، چه کسی می‌بیند، چه مدت می‌ماند، و چگونه همه را با یک ضربه پاک می‌کنید.">
   <meta property="og:url" content="https://hisnalzawaj.com/fa/privacy.html">
-  <meta name="theme-color" content="#ce5c8a">
+  <meta name="theme-color" content="#130d11">
   <link rel="icon" href="../favicon.ico" sizes="any">
   <link rel="icon" href="../icon.png" type="image/png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -35,203 +35,282 @@
    يقرأ الناتج بحثاً عن نجمتَي ماركداون فيسقط — وهو يحرس نصّ الوثائق
    أصلاً، فيقع الخطأ في ملفٍّ ويظهر اسم ملفٍّ آخر في رسالة السقوط.
    استعمل ⚠️ وحدها للتوكيد هنا. */
+
+/* ── الهوية: داكن مع وردي حصن الزواج (٢٣ سبتمبر ٢٠٢٦) ──
+   ⚠️ الوردي على الداكن أفتح من وردي الشعار (#ce5c8a): ذاك على خلفيةٍ
+   بنّية داكنة لا يبلغ تباينَ القراءة في النصّ الصغير. فالشعار والزرّ
+   الممتلئ بالأصليّ، والروابط والعناوين الصغيرة بالأفتح. */
 *,*::before,*::after{box-sizing:border-box}
 :root{
-  --rose:#ce5c8a; --rose-deep:#a8416b; --rose-soft:#fdf0f5;
-  --blue:#25557c; --ink:#241a1f; --body:#4a3f45; --muted:#8a7b82;
-  --bg:#fffaf9; --card:#ffffff; --line:#f0dde5; --shadow:14px 22px 48px;
+  --rose:#ce5c8a; --rose-hi:#ec8fb2; --rose-glow:rgba(206,92,138,.35);
+  --bg:#130d11; --bg2:#1a1217; --card:#1f161b; --card-hi:#271b22;
+  --ink:#f7eef2; --body:#cdbcc5; --muted:#907f89;
+  --line:rgba(236,143,178,.14); --line-hi:rgba(236,143,178,.38);
+  color-scheme:dark;
 }
-html{-webkit-text-size-adjust:100%}
+html{-webkit-text-size-adjust:100%; scroll-behavior:smooth}
 body{
-  margin:0; background:var(--bg); color:var(--body);
+  margin:0; color:var(--body); background:var(--bg);
   font-family:'Vazirmatn',system-ui,-apple-system,'Segoe UI',sans-serif;
   font-size:17px; line-height:1.85; -webkit-font-smoothing:antialiased;
+  /* زخرفةٌ هندسية خفيفة — نجمةٌ ثمانية مرسومة لنا، لا منقولة. */
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140' viewBox='0 0 140 140'%3E%3Cg fill='none' stroke='%23ce5c8a' stroke-opacity='.07' stroke-width='1'%3E%3Crect x='42' y='42' width='56' height='56'/%3E%3Crect x='42' y='42' width='56' height='56' transform='rotate(45 70 70)'/%3E%3Ccircle cx='70' cy='70' r='18'/%3E%3C/g%3E%3C/svg%3E");
 }
-h1,h2,h3{color:var(--ink); line-height:1.35; margin:0 0 .6em; font-weight:700}
-h1{font-size:clamp(1.9rem,5.2vw,3.05rem); letter-spacing:-.01em}
-h2{font-size:clamp(1.45rem,3.6vw,2.05rem)}
-h3{font-size:1.1rem; margin-bottom:.35em}
+h1,h2,h3{color:var(--ink); line-height:1.3; margin:0 0 .6em; font-weight:700;
+  font-family:'Vazirmatn','Vazirmatn',serif}
+h1{font-size:clamp(2rem,5.6vw,3.4rem); letter-spacing:-.01em}
+h1 em{font-style:normal; color:var(--rose-hi)}
+h2{font-size:clamp(1.55rem,3.8vw,2.3rem)}
+h3{font-size:1.12rem; margin-bottom:.35em}
 p{margin:0 0 1em}
-a{color:var(--rose-deep)}
-.wrap{max-width:1080px; margin:0 auto; padding:0 22px}
-section{padding:clamp(48px,7vw,84px) 0}
+a{color:var(--rose-hi)}
+.wrap{max-width:1120px; margin:0 auto; padding:0 22px}
+section{padding:clamp(56px,8vw,96px) 0; position:relative}
+.eyebrow{display:block; color:var(--rose-hi); font-size:.82rem; font-weight:600;
+  letter-spacing:.08em; margin-bottom:10px}
+.center{text-align:center}
+.center h2,.center .sub{margin-inline:auto}
+.sub{max-width:60ch; color:var(--muted)}
+
+/* فاصلٌ مزخرف بين الأقسام */
+.sep{display:flex; align-items:center; justify-content:center; gap:14px;
+  padding:0; color:var(--rose)}
+.sep::before,.sep::after{content:''; height:1px; width:min(28vw,220px);
+  background:linear-gradient(90deg,transparent,var(--line-hi),transparent)}
 
 /* ── الترويسة ──
-   ⚠️ ملتصقة، وخلفيّتها على الغلاف لا على `.wrap`. الشريط كان
-   `<header class="wrap top">` — أي أن الخلفية تقف عند ١٠٨٠px بينما
-   الشريط يمتدّ بالعرض كلّه، فيظهر المحتوى منزلقاً من جانبيه على أي
-   شاشة أوسع. فصار الغلاف كامل العرض و`.top-in` هو `.wrap` داخله. */
+   ⚠️ ملتصقة، وخلفيّتها على الغلاف لا على `.wrap`: الخلفية على `.wrap`
+   تقف عند عرضه والشريطُ ممتدّ بالعرض كلّه، فيظهر المحتوى منزلقاً من
+   جانبيه على أي شاشةٍ أوسع. */
 .top{
-  position:sticky; top:0; z-index:20;
-  background:rgba(255,250,249,.86);
-  -webkit-backdrop-filter:saturate(180%) blur(12px);
-  backdrop-filter:saturate(180%) blur(12px);
+  position:sticky; top:0; z-index:30;
+  background:rgba(19,13,17,.78);
+  -webkit-backdrop-filter:saturate(160%) blur(14px);
+  backdrop-filter:saturate(160%) blur(14px);
   border-bottom:1px solid var(--line);
 }
-.top-in{
-  display:flex; align-items:center; justify-content:space-between; gap:16px;
-  padding-block:14px;
-}
+.top-in{display:flex; align-items:center; gap:18px; padding-block:12px}
 /* ⚠️ `flex:none` و`nowrap` على الاسم شرطُ قبولٍ لا تنسيق: «الاسم
-   المعروض على الصفحة» أحدُ المواضع الثلاثة التي رُفضنا بها، ومدقّقٌ
-   يقرأ «Hisn / Alzawaj» على سطرين يقرأ اسماً غير الاسم. وكان يلتوي
-   فعلاً بين ٦٨٠px و١٠٨٠px قبل هذين السطرين — ويلتوي في كل عرضٍ لحظةَ
-   `display=swap` قبل وصول الخطّ، إذ الارتدادُ أعرض من Cairo. */
-.top-in .mark{display:flex; align-items:center; gap:10px; font-weight:700;
-  color:var(--ink); text-decoration:none; font-size:1.06rem; flex:none}
-.top-in .mark span{white-space:nowrap}
-.top-in .mark img{width:34px; height:34px; object-fit:contain}
-.langs{display:flex; gap:6px; flex-wrap:wrap; list-style:none; margin:0; padding:0}
-.langs a{
-  display:block; padding:5px 11px; border-radius:999px; font-size:.86rem;
-  text-decoration:none; color:var(--body); border:1px solid var(--line);
+   المعروض على الصفحة» أحدُ المواضع الثلاثة التي رُفضنا بها عند تيك
+   توك، ومدقّقٌ يقرأ «Hisn / Alzawaj» على سطرين يقرأ اسماً غير الاسم. */
+.mark{display:flex; align-items:center; gap:10px; font-weight:700;
+  color:var(--ink); text-decoration:none; font-size:1.08rem; flex:none}
+.mark span{white-space:nowrap}
+.mark img{width:36px; height:36px; object-fit:contain}
+.snav{display:flex; gap:4px; list-style:none; margin:0; padding:0;
+  margin-inline-start:auto}
+.snav a{display:block; padding:6px 12px; border-radius:10px; font-size:.93rem;
+  text-decoration:none; color:var(--body); transition:color .2s,background .2s}
+.snav a:hover{color:var(--ink); background:var(--card)}
+.top .btn{margin:0; padding:9px 20px; font-size:.95rem; box-shadow:none}
+
+/* ── كرة اللغات ──
+   ⚠️ `<details>` لا جافاسكربت: الموقع ساكن بلا سكربت بقرار. والقائمة
+   تُغلق بنقرةٍ ثانية على الكرة، وتبقى روابطها في DOM فيقرؤها الزاحف
+   كما يقرأ `hreflang` في الرأس. */
+.lang{position:relative}
+.lang summary{
+  display:flex; align-items:center; gap:7px; list-style:none; cursor:pointer;
+  padding:7px 12px; border-radius:999px; border:1px solid var(--line);
+  color:var(--ink); font-size:.92rem; white-space:nowrap;
+  transition:border-color .2s,background .2s;
 }
-.langs a[aria-current]{background:var(--rose); border-color:var(--rose); color:#fff}
-/* ⚠️ التنقّل بين الصفحات لا بين اللغات — قائمتان في ترويسةٍ واحدة،
-   ولكلٍّ منهما aria-label تفرّقها عن الأخرى لقارئ الشاشة. */
-.pages{display:flex; gap:4px; flex-wrap:wrap; list-style:none; margin:0; padding:0}
-.pages a{
-  display:block; padding:5px 10px; border-radius:8px; font-size:.92rem;
-  text-decoration:none; color:var(--body);
+.lang summary::-webkit-details-marker{display:none}
+.lang summary:hover,.lang[open] summary{border-color:var(--line-hi); background:var(--card)}
+.lang summary:focus-visible{outline:2px solid var(--rose); outline-offset:3px}
+.lang svg{width:18px; height:18px; flex:none}
+.lang ul{
+  position:absolute; inset-inline-end:0; top:calc(100% + 8px); z-index:40;
+  min-width:180px; margin:0; padding:6px; list-style:none;
+  background:var(--card-hi); border:1px solid var(--line-hi); border-radius:14px;
+  box-shadow:0 18px 40px rgba(0,0,0,.45);
 }
-.pages a:hover{background:var(--rose-soft); color:var(--rose-deep)}
-.pages a[aria-current]{color:var(--rose-deep); font-weight:600}
-.top-in .navs{display:flex; align-items:center; gap:14px; flex-wrap:wrap}
-/* ⚠️ الترويسة تنكسر عمودياً على الضيّق لا تُزاحَم: العلامة واسمُها
-   `Hisn Alzawaj` تلتفّ على سطرين إن بقيت تتقاسم السطر مع قائمتين —
-   والاسم هو ما يُقاس عليه قبول المنصّة، فلا يُترك ملتوياً. */
-/* ⚠️ ولا التصاق على الضيّق: الترويسة تنكسر هناك إلى عمود — علامةٌ
-   وقائمتان — فتأكل ثلث الشاشة لو بقيت ثابتة فوق كل تمرير. */
-@media (max-width:680px){
-  .top{position:static; -webkit-backdrop-filter:none; backdrop-filter:none}
-  .top-in{flex-direction:column; align-items:flex-start; gap:10px}
-  .top-in .navs{gap:8px}
-  .pages a{padding:4px 9px}
-}
+.lang.up ul{top:auto; bottom:calc(100% + 8px)}
+.lang li a{display:block; padding:8px 12px; border-radius:9px; color:var(--body);
+  text-decoration:none; font-size:.95rem}
+.lang li a:hover{background:var(--card); color:var(--ink)}
+.lang li a[aria-current]{color:var(--rose-hi); font-weight:600}
+
+/* ⚠️ على الضيّق: الاسم والكرة وحدهما في الترويسة. روابط الأقسام في
+   التذييل أيضاً، فإخفاؤها هنا لا يُضيع طريقاً. */
+@media (max-width:820px){ .snav{display:none} .lang{margin-inline-start:auto} }
+@media (max-width:520px){ .top .btn{display:none} }
 
 /* ── البطل ── */
-.hero{
-  padding:clamp(52px,8vw,96px) 0 clamp(44px,6vw,76px);
+.hero{padding:clamp(64px,10vw,120px) 0 clamp(56px,8vw,96px); overflow:hidden;
   background:
-    radial-gradient(120% 90% at 82% -10%, #fce7ef 0%, rgba(252,231,239,0) 62%),
-    radial-gradient(100% 80% at 6% 0%, #eaf1f8 0%, rgba(234,241,248,0) 55%);
-}
+    radial-gradient(70% 60% at 50% 0%, rgba(206,92,138,.20), transparent 70%),
+    radial-gradient(40% 40% at 90% 90%, rgba(206,92,138,.08), transparent 70%)}
+.hero .wrap{position:relative; z-index:1; text-align:center}
+.hero h1,.hero p.lead{margin-inline:auto}
+.hero h1{max-width:18ch}
 .kicker{
-  display:inline-block; font-size:.82rem; font-weight:600; letter-spacing:.06em;
-  text-transform:uppercase; color:var(--rose-deep); background:#fff;
-  border:1px solid var(--line); border-radius:999px; padding:5px 14px;
-  margin-bottom:20px;
+  display:inline-flex; align-items:center; gap:8px; font-size:.84rem;
+  font-weight:600; color:var(--rose-hi); background:rgba(206,92,138,.1);
+  border:1px solid var(--line-hi); border-radius:999px; padding:6px 16px;
+  margin-bottom:24px;
 }
-.hero p.lead{font-size:clamp(1.02rem,2.1vw,1.18rem); max-width:62ch; color:var(--body)}
+.kicker::before{content:''; width:7px; height:7px; border-radius:50%;
+  background:var(--rose-hi); box-shadow:0 0 0 4px rgba(236,143,178,.18)}
+.hero p.lead{font-size:clamp(1.04rem,2.1vw,1.2rem); max-width:62ch}
+.rosette{position:absolute; z-index:0; width:min(92vw,620px); aspect-ratio:1;
+  top:50%; left:50%; transform:translate(-50%,-50%); color:var(--rose);
+  opacity:.16; pointer-events:none}
 .btn{
-  display:inline-block; margin-top:12px; padding:15px 34px; border-radius:14px;
+  display:inline-block; padding:15px 34px; border-radius:14px;
   background:var(--rose); color:#fff; text-decoration:none; font-weight:700;
-  font-size:1.06rem; box-shadow:0 10px 26px rgba(206,92,138,.32);
+  font-size:1.05rem; box-shadow:0 12px 30px var(--rose-glow);
+  transition:transform .2s,box-shadow .2s,background .2s;
 }
-.btn:hover{background:var(--rose-deep)}
+.btn:hover{background:#d96c98; transform:translateY(-2px);
+  box-shadow:0 16px 36px var(--rose-glow)}
 /* الزرّ الثاني — الويب. ⚠️ مفرَّغٌ لا ملوَّن: زرّان بنفس الثقل
    يُربكان العين في أيّهما الطريق، وتيليجرام يبقى الأكمل ميزاتٍ اليوم
    (التوثيق بالفيديو والترقية فيه وحده). */
-.btn.alt{
-  background:#fff; color:var(--rose-deep); box-shadow:none;
-  border:2px solid var(--rose); padding:13px 32px;
-}
-.btn.alt:hover{background:#fdf2f6}
-.ctas{display:flex; flex-wrap:wrap; gap:12px}
-/* ⚠️ `text-align:center` في `.end` لا يوسّط عناصر `flex` — فبدون هذا
-   ينحاز الزرّان إلى طرفٍ تحت عنوانٍ موسَّط. */
-.end .ctas{justify-content:center}
-.ctas .btn{margin-top:12px}
-.note{font-size:.9rem; color:var(--muted); margin:14px 0 0}
-/* ⚠️ تلتفّ ولا تنقلب عموداً. الشارات أربعٌ قصيرة، و`flex-wrap`
-   يرصّها سطرين على الهاتف — أمّا `flex-direction:column` فيعطي عموداً
-   من أربعة أسطر يدفع الخطوات تحت الطيّة في شاشةٍ صغيرة. */
-.badges{
-  display:flex; flex-wrap:wrap; gap:10px; list-style:none;
-  margin:26px 0 0; padding:0;
-}
-.badges li{
-  display:flex; align-items:center; gap:8px; background:#fff;
+.btn.alt{background:transparent; color:var(--ink); box-shadow:none;
+  border:1.5px solid var(--line-hi); padding:13.5px 32px}
+.btn.alt:hover{background:var(--card); border-color:var(--rose-hi)}
+.ctas{display:flex; flex-wrap:wrap; gap:12px; margin-top:30px;
+  justify-content:center}
+.note{font-size:.9rem; color:var(--muted); margin:16px 0 0}
+/* ⚠️ تلتفّ ولا تنقلب عموداً: `flex-direction:column` يعطي عموداً من
+   أربعة أسطر يدفع الخطوات تحت الطيّة في شاشةٍ صغيرة. */
+.badges{display:flex; flex-wrap:wrap; justify-content:center; gap:10px;
+  list-style:none; margin:30px 0 0; padding:0}
+.badges li{display:flex; align-items:center; gap:8px; background:var(--card);
   border:1px solid var(--line); border-radius:999px; padding:8px 15px;
-  font-size:.9rem; color:var(--body); line-height:1.45;
-}
+  font-size:.9rem; line-height:1.45}
 .badges span{font-size:1rem; line-height:1; flex:none}
 
-/* ── الشبكات ── */
-.grid{display:grid; gap:18px; margin-top:34px}
+/* ── الشبكات والبطاقات ── */
+.grid{display:grid; gap:18px; margin-top:40px}
 .g3{grid-template-columns:repeat(auto-fit,minmax(272px,1fr))}
 .g4{grid-template-columns:repeat(auto-fit,minmax(232px,1fr))}
 .card{
-  background:var(--card); border:1px solid var(--line); border-radius:16px;
-  padding:26px 24px;
+  background:linear-gradient(180deg,var(--card-hi),var(--card));
+  border:1px solid var(--line); border-radius:18px; padding:28px 24px;
+  transition:transform .25s,border-color .25s,box-shadow .25s;
 }
+.card:hover{transform:translateY(-4px); border-color:var(--line-hi);
+  box-shadow:0 18px 40px rgba(0,0,0,.35)}
 .card p{margin:0; font-size:.97rem}
 .step .n{
-  display:grid; place-items:center; width:34px; height:34px; border-radius:10px;
-  background:var(--rose-soft); color:var(--rose-deep); font-weight:700;
-  margin-bottom:14px;
+  display:block; font-family:'Vazirmatn','Vazirmatn',serif; font-size:2.1rem;
+  line-height:1; color:var(--rose-hi); opacity:.85; margin-bottom:16px;
 }
-.card .ico{font-size:1.6rem; line-height:1; display:block; margin-bottom:12px}
+.card .ico{display:grid; place-items:center; width:48px; height:48px;
+  border-radius:14px; border:1px solid var(--line-hi); background:rgba(206,92,138,.08);
+  font-size:1.45rem; line-height:1; margin-bottom:16px}
 
 /* ── الخصوصية ── */
-.privacy{background:var(--blue); color:#dfe9f2}
-.privacy h2{color:#fff}
-.privacy p{max-width:70ch; color:#cfdded}
+.privacy .panel{
+  border:1px solid var(--line-hi); border-radius:24px; padding:clamp(28px,5vw,52px);
+  background:
+    radial-gradient(80% 120% at 100% 0%, rgba(206,92,138,.16), transparent 60%),
+    var(--bg2);
+}
+.privacy p{max-width:72ch}
 .privacy p:last-child{margin-bottom:0}
 
-/* ── الأسئلة ── */
-/* ⚠️ `display:flex` على `summary` ليس تنسيقاً بل هو ما يُخفي
-   المثلّث: فايرفوكس يرسمه من `display:list-item`، وسفاري من
-   `::-webkit-details-marker` — فيلزم الثلاثة معاً، ومن أسقط واحداً
-   رأى الصفحة سليمةً في متصفّحه ومثلّثاً زائداً عند غيره. */
-.faq{max-width:820px; margin-top:30px}
-.qa{border-bottom:1px solid var(--line)}
-.qa:first-child{border-top:1px solid var(--line)}
+/* ── الأسئلة ──
+   ⚠️ `display:flex` على `summary` هو ما يُخفي المثلّث: فايرفوكس يرسمه من
+   `display:list-item`، وسفاري من `::-webkit-details-marker` — فيلزم
+   الثلاثة معاً، ومن أسقط واحداً رأى مثلّثاً زائداً عند غيره. */
+.faq{max-width:840px; margin:34px auto 0}
+.qa{border:1px solid var(--line); border-radius:16px; background:var(--card);
+  margin-bottom:12px; padding:0 22px; transition:border-color .2s}
+.qa[open]{border-color:var(--line-hi)}
 .qa summary{
   display:flex; align-items:center; gap:14px; list-style:none;
-  padding:20px 0; cursor:pointer; color:var(--ink); font-weight:700;
-  font-size:1.06rem; line-height:1.5;
+  padding:18px 0; cursor:pointer; color:var(--ink); font-weight:700;
+  font-size:1.04rem; line-height:1.5;
 }
 .qa summary::-webkit-details-marker{display:none}
-.qa summary:hover{color:var(--rose-deep)}
-/* ⚠️ `:focus-visible` لا `:focus`: الثاني يرسم إطاراً عند كل نقرةِ
-   فأرة أيضاً، فيبدو عطلاً بصرياً فيُحذف — ومعه يضيع دليلُ مَن يتنقّل
-   بالمفاتيح وحدها. */
+.qa summary:hover{color:var(--rose-hi)}
+/* ⚠️ `:focus-visible` لا `:focus`: الثاني يرسم إطاراً عند كل نقرة فأرة
+   فيبدو عطلاً فيُحذف — ومعه يضيع دليلُ من يتنقّل بالمفاتيح. */
 .qa summary:focus-visible{outline:2px solid var(--rose); outline-offset:3px}
-/* ⚠️ `margin-inline-start:auto` لا `margin-left`: العلامة تقف آخر
-   السطر في الاتجاهين، و`left` تضعها في وسط السطر العربي والفارسي. */
+/* ⚠️ `margin-inline-start:auto` لا `margin-left`: العلامة آخر السطر في
+   الاتجاهين، و`left` تضعها وسط السطر العربي والفارسي. */
 .qa summary::after{
   content:'+'; margin-inline-start:auto; flex:none;
-  width:26px; height:26px; display:grid; place-items:center;
-  border-radius:8px; background:var(--rose-soft); color:var(--rose-deep);
-  font-size:1.15rem; line-height:1;
+  width:28px; height:28px; display:grid; place-items:center;
+  border-radius:9px; border:1px solid var(--line-hi); color:var(--rose-hi);
+  font-size:1.15rem; line-height:1; transition:transform .25s;
 }
-.qa[open] summary::after{content:'−'}
-.qa p{margin:0 0 22px; font-size:.97rem; max-width:68ch}
+.qa[open] summary::after{content:'−'; transform:rotate(180deg)}
+.qa p{margin:0 0 20px; font-size:.97rem; max-width:68ch}
 
 /* ── الخاتمة ── */
-.end{text-align:center; background:var(--rose-soft)}
+.end .panel{text-align:center; border-radius:28px; padding:clamp(40px,7vw,72px) 22px;
+  border:1px solid var(--line-hi);
+  background:radial-gradient(90% 140% at 50% 0%, rgba(206,92,138,.24), transparent 65%), var(--bg2)}
 .end p{max-width:52ch; margin-inline:auto}
-footer{border-top:1px solid var(--line); padding:30px 0 44px; font-size:.9rem;
-  color:var(--muted)}
-.flinks{display:flex; gap:22px; flex-wrap:wrap; margin:0 0 14px; padding:0;
-  list-style:none}
 
-/* ── وثيقة السياسة ──
-   ⚠️ عرضٌ بوحدة ch لا px: الوثيقة نصٌّ متّصل يُقرأ سطراً سطراً، وقياس
-   السطر المريح عدد حروفٍ لا عدد بكسلات — والفرق يظهر في الفارسية
-   والعربية حيث الحرف أضيق من اللاتيني بالبكسل نفسه. */
+/* ── التذييل ──
+   ⚠️ الوثائق هنا لا في الترويسة، بقرار صاحب المشروع (٢٣ سبتمبر ٢٠٢٦).
+   وقائمة `.pages` هي نفسها التي يفحصها
+   `test_every_page_links_to_every_other_page` — كل صفحةٍ تدلّ على أخواتها. */
+footer{border-top:1px solid var(--line); background:#0f0a0d;
+  padding:56px 0 30px; font-size:.93rem; color:var(--muted)}
+.fcols{display:grid; gap:34px;
+  grid-template-columns:minmax(220px,1.5fr) repeat(3,minmax(150px,1fr))}
+.fcols h4{color:var(--rose-hi); font-size:.84rem; letter-spacing:.06em;
+  margin:0 0 14px; font-weight:600}
+.fcols ul{list-style:none; margin:0; padding:0}
+.fcols li{margin-bottom:8px}
+.fcols a{color:var(--body); text-decoration:none; transition:color .2s}
+.fcols a:hover,.fcols a[aria-current]{color:var(--rose-hi)}
+.fabout p{max-width:40ch; margin:14px 0 0}
+.fbottom{display:flex; flex-wrap:wrap; justify-content:space-between; gap:12px;
+  border-top:1px solid var(--line); margin-top:40px; padding-top:22px;
+  font-size:.85rem}
+@media (max-width:860px){ .fcols{grid-template-columns:1fr 1fr} .fabout{grid-column:1/-1} }
+@media (max-width:480px){ .fcols{grid-template-columns:1fr} }
+
+/* ── الوثائق ──
+   ⚠️ عرضٌ بوحدة ch لا px: قياس السطر المريح عدد حروفٍ لا بكسلات — والفرق
+   يظهر في الفارسية والعربية حيث الحرف أضيق من اللاتيني بالبكسل نفسه. */
 .doc{max-width:74ch; margin-inline:auto}
 .doc .updated{font-size:.9rem; color:var(--muted); margin:0 0 26px}
-.doc .lead{font-size:1.05rem; color:var(--body); margin-bottom:34px}
-.doc h2{font-size:clamp(1.15rem,2.4vw,1.42rem); margin-top:38px;
-  padding-top:22px; border-top:1px solid var(--line)}
+.doc .lead{font-size:1.05rem; margin-bottom:34px}
+.doc h2{font-size:clamp(1.2rem,2.5vw,1.5rem); margin-top:40px;
+  padding-top:24px; border-top:1px solid var(--line)}
 .doc h2:first-of-type{border-top:0; padding-top:0; margin-top:0}
 .doc ul{margin:0 0 1em; padding-inline-start:1.35em}
 .doc li{margin-bottom:.45em}
+.doc li::marker{color:var(--rose-hi)}
+.doc strong{color:var(--ink)}
 .doc .back{display:inline-block; margin-top:38px; font-weight:600}
 
-@media (max-width:560px){ body{font-size:16px} .card{padding:22px 20px} }
+/* ── الحركة ──
+   ⚠️ كلُّها داخل `prefers-reduced-motion:no-preference`، لا خارجها ثم
+   تُلغى: من طلب من جهازه تقليل الحركة (دوارٌ أو صداع) لا يرى أوّل إطار
+   منها أصلاً. وبلا جافاسكربت: الظهور عند التمرير بـ`animation-timeline`
+   حيث يُدعم، وحيث لا يُدعم يظهر المحتوى ثابتاً كما هو — لا يختفي. */
+@keyframes rise{from{opacity:0; transform:translateY(22px)} to{opacity:1; transform:none}}
+@keyframes spin{to{transform:translate(-50%,-50%) rotate(360deg)}}
+@keyframes glow{0%,100%{box-shadow:0 12px 30px var(--rose-glow)}
+  50%{box-shadow:0 12px 44px rgba(206,92,138,.6)}}
+@keyframes drift{0%,100%{transform:translateY(0)} 50%{transform:translateY(-6px)}}
+@media (prefers-reduced-motion:no-preference){
+  .hero .kicker,.hero h1,.hero .lead,.hero .ctas,.hero .note,.hero .badges{
+    animation:rise .9s cubic-bezier(.2,.7,.2,1) both}
+  .hero h1{animation-delay:.08s}
+  .hero .lead{animation-delay:.18s}
+  .hero .ctas{animation-delay:.28s}
+  .hero .note{animation-delay:.36s}
+  .hero .badges{animation-delay:.44s}
+  .rosette{animation:spin 140s linear infinite}
+  .hero .btn:not(.alt){animation:glow 3.2s ease-in-out 1.2s infinite}
+  .step .n{animation:drift 5s ease-in-out infinite}
+  @supports (animation-timeline:view()){
+    .reveal{animation:rise linear both; animation-timeline:view();
+      animation-range:entry 0% cover 22%}
+  }
+}
+
+@media (max-width:560px){ body{font-size:16px} .card{padding:24px 20px} }
 </style>
 </head>
 <body>
@@ -239,29 +318,29 @@ footer{border-top:1px solid var(--line); padding:30px 0 44px; font-size:.9rem;
 <header class="top">
   <div class="wrap top-in">
     <a class="mark" href="https://hisnalzawaj.com/fa/">
-      <img src="../icon.png" alt="" width="34" height="34">
+      <img src="../icon.png" alt="" width="36" height="36">
       <span>Hisn Alzawaj</span>
     </a>
-    <div class="navs">
-      <nav aria-label="صفحه‌های سایت">
-        <ul class="pages">
-          <li><a href="https://hisnalzawaj.com/fa/">صفحهٔ اصلی</a></li>
+    <nav aria-label="صفحه‌های سایت">
+      <ul class="snav">
+        <li><a href="https://hisnalzawaj.com/fa/#how">چگونه کار می‌کند</a></li>
+        <li><a href="https://hisnalzawaj.com/fa/#features">چه ارائه می‌دهد</a></li>
+        <li><a href="https://hisnalzawaj.com/fa/#faq">پرسش‌های پرتکرار</a></li>
         <li><a href="https://hisnalzawaj.com/fa/guide.html">راهنما</a></li>
-        <li><a href="https://hisnalzawaj.com/fa/privacy.html" aria-current="page">حریم خصوصی</a></li>
-        <li><a href="https://hisnalzawaj.com/fa/terms.html">شرایط</a></li>
-        </ul>
-      </nav>
-      <nav aria-label="زبان">
-        <ul class="langs">
+      </ul>
+    </nav>
+    <details class="lang">
+      <summary aria-label="زبان"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.6 2.6 3.9 5.6 3.9 9S14.6 18.4 12 21c-2.6-2.6-3.9-5.6-3.9-9S9.4 5.6 12 3z"/></svg><span>فارسی</span></summary>
+      <ul>
         <li><a href="https://hisnalzawaj.com/privacy.html" lang="ar" hreflang="ar">العربية</a></li>
-      <li><a href="https://hisnalzawaj.com/en/privacy.html" lang="en" hreflang="en">English</a></li>
-      <li><a href="https://hisnalzawaj.com/fr/privacy.html" lang="fr" hreflang="fr">Français</a></li>
-      <li><a href="https://hisnalzawaj.com/es/privacy.html" lang="es" hreflang="es">Español</a></li>
-      <li><a href="https://hisnalzawaj.com/id/privacy.html" lang="id" hreflang="id">Indonesia</a></li>
-      <li><a href="https://hisnalzawaj.com/fa/privacy.html" aria-current="true" lang="fa" hreflang="fa">فارسی</a></li>
-        </ul>
-      </nav>
-    </div>
+        <li><a href="https://hisnalzawaj.com/en/privacy.html" lang="en" hreflang="en">English</a></li>
+        <li><a href="https://hisnalzawaj.com/fr/privacy.html" lang="fr" hreflang="fr">Français</a></li>
+        <li><a href="https://hisnalzawaj.com/es/privacy.html" lang="es" hreflang="es">Español</a></li>
+        <li><a href="https://hisnalzawaj.com/id/privacy.html" lang="id" hreflang="id">Indonesia</a></li>
+        <li><a href="https://hisnalzawaj.com/fa/privacy.html" aria-current="true" lang="fa" hreflang="fa">فارسی</a></li>
+      </ul>
+    </details>
+    <a class="btn" href="https://t.me/HisnAlzawaj_bot?start=ad_xb79tj" rel="noopener">شروع در تلگرام</a>
   </div>
 </header>
 
@@ -382,14 +461,50 @@ footer{border-top:1px solid var(--line); padding:30px 0 44px; font-size:.9rem;
 
 <footer>
   <div class="wrap">
-    <ul class="flinks">
-      <li><a href="https://t.me/HisnAlzawaj_bot?start=ad_xb79tj" rel="noopener">@HisnAlzawaj_bot</a></li>
-      <li><a href="https://t.me/Hisn_Alzawaj" rel="noopener">کانال پروفایل‌ها در تلگرام</a></li>
-      <li><a href="https://hisnalzawaj.com/fa/guide.html">راهنما</a></li>
-      <li><a href="https://hisnalzawaj.com/fa/terms.html">شرایط</a></li>
-      <li><a href="https://hisnalzawaj.com/fa/">بازگشت به صفحهٔ اصلی</a></li>
-    </ul>
-    <p>© حصن الزواج</p>
+    <div class="fcols">
+      <div class="fabout">
+        <a class="mark" href="https://hisnalzawaj.com/fa/">
+          <img src="../icon.png" alt="" width="36" height="36">
+          <span>Hisn Alzawaj</span>
+        </a>
+        <p>ربات تلگرام برای آشنایی با هدف ازدواج: ویژگی‌های مورد نظرتان را ثبت کنید، پروفایل‌های مطابق را ببینید، و پس از موافقت هر دو طرف درون ربات گفت‌وگو کنید. عکس شما تا اجازه‌تان محو می‌ماند.</p>
+      </div>
+      <div>
+        <h4>همین حالا شروع کنید</h4>
+        <ul>
+          <li><a href="https://t.me/HisnAlzawaj_bot?start=ad_xb79tj" rel="noopener">شروع در تلگرام</a></li>
+          <li><a href="https://app.hisnalzawaj.com/" rel="noopener">ثبت‌نام در وب‌سایت</a></li>
+          <li><a href="https://t.me/Hisn_Alzawaj" rel="noopener">کانال پروفایل‌ها در تلگرام</a></li>
+        </ul>
+      </div>
+      <nav aria-label="صفحه‌های سایت">
+        <h4>صفحه‌های سایت</h4>
+        <ul class="pages">
+          <li><a href="https://hisnalzawaj.com/fa/">صفحهٔ اصلی</a></li>
+        <li><a href="https://hisnalzawaj.com/fa/guide.html">راهنما</a></li>
+        <li><a href="https://hisnalzawaj.com/fa/privacy.html" aria-current="page">حریم خصوصی</a></li>
+        <li><a href="https://hisnalzawaj.com/fa/terms.html">شرایط</a></li>
+        </ul>
+      </nav>
+      <div>
+        <h4>زبان</h4>
+        <details class="lang up">
+      <summary aria-label="زبان"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.6 2.6 3.9 5.6 3.9 9S14.6 18.4 12 21c-2.6-2.6-3.9-5.6-3.9-9S9.4 5.6 12 3z"/></svg><span>فارسی</span></summary>
+      <ul>
+        <li><a href="https://hisnalzawaj.com/privacy.html" lang="ar" hreflang="ar">العربية</a></li>
+        <li><a href="https://hisnalzawaj.com/en/privacy.html" lang="en" hreflang="en">English</a></li>
+        <li><a href="https://hisnalzawaj.com/fr/privacy.html" lang="fr" hreflang="fr">Français</a></li>
+        <li><a href="https://hisnalzawaj.com/es/privacy.html" lang="es" hreflang="es">Español</a></li>
+        <li><a href="https://hisnalzawaj.com/id/privacy.html" lang="id" hreflang="id">Indonesia</a></li>
+        <li><a href="https://hisnalzawaj.com/fa/privacy.html" aria-current="true" lang="fa" hreflang="fa">فارسی</a></li>
+      </ul>
+    </details>
+      </div>
+    </div>
+    <div class="fbottom">
+      <span>© حصن الزواج</span>
+      <a href="https://t.me/HisnAlzawaj_bot?start=ad_xb79tj" rel="noopener">@HisnAlzawaj_bot</a>
+    </div>
   </div>
 </footer>
 
