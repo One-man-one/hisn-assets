@@ -129,6 +129,19 @@ section{padding:clamp(48px,7vw,84px) 0}
   font-size:1.06rem; box-shadow:0 10px 26px rgba(206,92,138,.32);
 }
 .btn:hover{background:var(--rose-deep)}
+/* الزرّ الثاني — الويب. ⚠️ مفرَّغٌ لا ملوَّن: زرّان بنفس الثقل
+   يُربكان العين في أيّهما الطريق، وتيليجرام يبقى الأكمل ميزاتٍ اليوم
+   (التوثيق بالفيديو والترقية فيه وحده). */
+.btn.alt{
+  background:#fff; color:var(--rose-deep); box-shadow:none;
+  border:2px solid var(--rose); padding:13px 32px;
+}
+.btn.alt:hover{background:#fdf2f6}
+.ctas{display:flex; flex-wrap:wrap; gap:12px}
+/* ⚠️ `text-align:center` في `.end` لا يوسّط عناصر `flex` — فبدون هذا
+   ينحاز الزرّان إلى طرفٍ تحت عنوانٍ موسَّط. */
+.end .ctas{justify-content:center}
+.ctas .btn{margin-top:12px}
 .note{font-size:.9rem; color:var(--muted); margin:14px 0 0}
 /* ⚠️ تلتفّ ولا تنقلب عموداً. الشارات أربعٌ قصيرة، و`flex-wrap`
    يرصّها سطرين على الهاتف — أمّا `flex-direction:column` فيعطي عموداً
@@ -256,11 +269,11 @@ footer{border-top:1px solid var(--line); padding:30px 0 44px; font-size:.9rem;
   <section>
     <div class="wrap doc">
       <h1>Política de Privacidad</h1>
-      <p class="updated">Última actualización: 29 de agosto de 2026</p>
+      <p class="updated">Última actualización: 23 de septiembre de 2026</p>
       <p class="lead">Este documento describe qué recoge el bot Hisn Alzawaj sobre ti, por qué, quién lo ve, cuánto tiempo permanece y cómo lo eliminas. Está escrito para leerse, no para firmarse: sin redacción jurídica retorcida y sin ninguna promesa que el propio servicio no cumpla.</p>
       <h2>Quiénes somos y qué cubre este documento</h2>
-      <p>Hisn Alzawaj es un servicio para encontrar cónyuge. Funciona por completo dentro de Telegram, a través del bot @HisnAlzawaj_bot.</p>
-      <p>Este documento cubre el bot y esta página de presentación. No cubre Telegram en sí: es una plataforma aparte, con su propia política, que rige lo que ocurre con tu cuenta allí.</p>
+      <p>Hisn Alzawaj es un servicio para encontrar cónyuge. Funciona dentro de Telegram, a través del bot @HisnAlzawaj_bot, y en el navegador, a través de la aplicación web app.hisnalzawaj.com.</p>
+      <p>Este documento cubre el bot, la aplicación web y esta página de presentación. No cubre Telegram en sí: es una plataforma aparte, con su propia política, que rige lo que ocurre con tu cuenta allí.</p>
       <h2>Lo que nos das tú mismo</h2>
       <p>El registro pide lo siguiente. Tú escribes cada respuesta y puedes cambiarla o borrarla en cualquier momento desde «Editar mis datos»:</p>
       <ul>
@@ -276,6 +289,20 @@ footer{border-top:1px solid var(--line); padding:30px 0 44px; font-size:.9rem;
       <h2>Lo que Telegram nos da, y lo que no</h2>
       <p>Telegram nos transmite tres cosas sobre tu cuenta: tu identificador numérico, tu nombre de usuario si lo tienes y el idioma de tu aplicación.</p>
       <p>No nos transmite tu número de teléfono, ni tus contactos, ni tu lista de conversaciones. Telegram no da nada de eso a los bots, así que no lo tenemos aunque quisiéramos.</p>
+      <h2>Si te registras en el sitio web: Google, Facebook y correo</h2>
+      <p>Puedes registrarte en la aplicación web con una cuenta de Google o de Facebook, o con la cuenta de Telegram que usas en el bot. Lo que nos llega en cada caso:</p>
+      <ul>
+        <li>Google: el identificador de tu cuenta de Google, y tu correo electrónico si Google lo ha verificado.</li>
+        <li>Facebook: el identificador de tu cuenta de Facebook, y tu correo electrónico si se comparte con nosotros. Si no, guardamos en su lugar una dirección interna a la que no llega ningún correo.</li>
+        <li>Telegram: nada nuevo; entras con tu cuenta existente del bot, y se le aplica la sección anterior.</li>
+      </ul>
+      <p>No recibimos de Google ni de Facebook tu contraseña, tu foto, tus amigos o contactos, ni tus publicaciones, y no les pedimos nada más de lo indicado.</p>
+      <p>Usamos el identificador de la cuenta para reconocerte cuando vuelves, y el correo para vincular tu cuenta. No le enviamos publicidad ni lo mostramos a ninguna otra persona usuaria.</p>
+      <p>El registro con correo y contraseña solo está disponible por invitación. La contraseña se guarda cifrada con hash, no como texto, así que ni nosotros podemos leerla.</p>
+      <p>Lo que escribas después en «Completa tu perfil» se guarda exactamente como un perfil del bot, y se le aplica todo este documento: difuminado, chat, publicación y eliminación.</p>
+      <p>Al crear una cuenta nueva en el sitio web, tu navegador pasa una comprobación automática que distingue a las personas de los bots, ofrecida por un proveedor de protección especializado. Solo para ese fin ve señales de tu navegador y tu dispositivo; a nosotros solo nos llega el resultado: superada o no.</p>
+      <p>Tu sesión en la aplicación web es un token de acceso guardado en tu navegador. Vale un día y se borra al pulsar «Cerrar sesión». La aplicación web no usa cookies ni herramientas de seguimiento o publicidad.</p>
+      <p>Lo que Google o Facebook hagan con tu cuenta en sus servicios se rige por sus propias políticas, no por este documento.</p>
       <h2>Lo que genera tu uso del servicio</h2>
       <p>Tu última actividad, tus intereses y emparejamientos, las denuncias que envías o que nos llegan sobre ti, y los mensajes intercambiados dentro del bot: estos últimos se eliminan automáticamente a los 30 días, como se detalla más abajo.</p>
       <h2>Tu foto: difuminada hasta que la autorices</h2>
@@ -314,6 +341,7 @@ footer{border-top:1px solid var(--line); padding:30px 0 44px; font-size:.9rem;
       </ul>
       <p>No vendemos tus datos, no los entregamos a anunciantes y no construimos publicidad dirigida con ellos. Nada de eso se te pide a cambio de usar el servicio.</p>
       <p>Google es el único proveedor operativo que nombramos aquí, porque el vídeo de verificación es lo más sensible que pasa por nosotros, y una promesa de no almacenarlo no resulta creíble si no sabes quién lo recibe. Quien pregunte por el nombre de los demás puede escribirnos.</p>
+      <p>Para quien se registra en el sitio web: Google o Facebook, el que elegiste para entrar, sabe que entraste en nuestro servicio, y el proveedor de protección contra bots ve la comprobación al crear la cuenta. Detalles en «Si te registras en el sitio web».</p>
       <h2>Cuánto tiempo permanecen tus datos</h2>
       <p>Permanecen mientras exista tu cuenta, porque el servicio consiste precisamente en mostrar tu perfil a quienes coinciden con lo que buscas.</p>
       <p>Algunos registros limitados sobreviven a la eliminación: las entradas de moderación y el registro de pagos, en la medida necesaria para la contabilidad y para impedir que una cuenta expulsada regrese de inmediato bajo otra.</p>
@@ -326,6 +354,7 @@ footer{border-top:1px solid var(--line); padding:30px 0 44px; font-size:.9rem;
         <li>Tus notificaciones pendientes y tu cola de navegación.</li>
       </ul>
       <p>Al mismo tiempo se retira todo lo publicado sobre ti en nuestro canal y nuestras páginas: eliminar la cuenta es una retirada del consentimiento, y la ficha de quien pidió ser borrado no debe seguir expuesta en público.</p>
+      <p>Desde la aplicación web: el botón «Eliminar mi cuenta» en la pantalla de tu perfil borra todo lo anterior, junto con el vínculo entre tu cuenta y Google o Facebook. Tu cuenta de Google o Facebook en sí queda intacta: está en sus servicios, no en el nuestro.</p>
       <h2>Tus derechos, ejercidos por ti</h2>
       <ul>
         <li>Acceso y rectificación: «Editar mis datos» en el menú.</li>

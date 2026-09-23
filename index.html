@@ -135,6 +135,19 @@ section{padding:clamp(48px,7vw,84px) 0}
   font-size:1.06rem; box-shadow:0 10px 26px rgba(206,92,138,.32);
 }
 .btn:hover{background:var(--rose-deep)}
+/* الزرّ الثاني — الويب. ⚠️ مفرَّغٌ لا ملوَّن: زرّان بنفس الثقل
+   يُربكان العين في أيّهما الطريق، وتيليجرام يبقى الأكمل ميزاتٍ اليوم
+   (التوثيق بالفيديو والترقية فيه وحده). */
+.btn.alt{
+  background:#fff; color:var(--rose-deep); box-shadow:none;
+  border:2px solid var(--rose); padding:13px 32px;
+}
+.btn.alt:hover{background:#fdf2f6}
+.ctas{display:flex; flex-wrap:wrap; gap:12px}
+/* ⚠️ `text-align:center` في `.end` لا يوسّط عناصر `flex` — فبدون هذا
+   ينحاز الزرّان إلى طرفٍ تحت عنوانٍ موسَّط. */
+.end .ctas{justify-content:center}
+.ctas .btn{margin-top:12px}
 .note{font-size:.9rem; color:var(--muted); margin:14px 0 0}
 /* ⚠️ تلتفّ ولا تنقلب عموداً. الشارات أربعٌ قصيرة، و`flex-wrap`
    يرصّها سطرين على الهاتف — أمّا `flex-direction:column` فيعطي عموداً
@@ -347,7 +360,7 @@ footer{border-top:1px solid var(--line); padding:30px 0 44px; font-size:.9rem;
       "name": "كيف أبدأ؟",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "افتح البوت على تليجرام واضغط «ابدأ». المحادثة تأخذك خطوة خطوة، وحالتها محفوظة فلا تفقد ما أدخلته إن توقّفت وعدت."
+        "text": "افتح البوت على تليجرام واضغط «ابدأ». المحادثة تأخذك خطوة خطوة، وحالتها محفوظة فلا تفقد ما أدخلته إن توقّفت وعدت. وإن لم يكن لديك تليجرام، فسجّل من الموقع بحساب جوجل أو فيسبوك."
       }
     }
   ]
@@ -389,10 +402,10 @@ footer{border-top:1px solid var(--line); padding:30px 0 44px; font-size:.9rem;
 
   <section class="hero">
     <div class="wrap">
-      <span class="kicker">بوت تليجرام</span>
-      <h1>تعارف بغرض الزواج — داخل تليجرام وحده</h1>
+      <span class="kicker">تليجرام والويب</span>
+      <h1>تعارف بغرض الزواج — على تليجرام أو من المتصفّح</h1>
       <p class="lead">سجّل بياناتك والمواصفات التي تريدها في شريك حياتك، فيعرض لك البوت الملفات المطابقة. لا تبادُل أرقام ولا معرّفات: المراسلة تجري داخل البوت بعد موافقة الطرفين.</p>
-      <a class="btn" href="https://t.me/HisnAlzawaj_bot?start=ad_xb79tj" rel="noopener">ابدأ على تليجرام</a>
+      <div class="ctas"><a class="btn" href="https://t.me/HisnAlzawaj_bot?start=ad_xb79tj" rel="noopener">ابدأ على تليجرام</a><a class="btn alt" href="https://app.hisnalzawaj.com/" rel="noopener">سجّل من الموقع</a></div>
       <p class="note">مجاني للبدء · بالعربية والإنجليزية والفرنسية والإسبانية والإندونيسية والفارسية</p>
       <ul class="badges">
         <li><span aria-hidden="true">🌫️</span>صورتك مموّهة افتراضياً</li>
@@ -508,7 +521,7 @@ footer{border-top:1px solid var(--line); padding:30px 0 44px; font-size:.9rem;
       </details>
       <details class="qa">
         <summary><span>كيف أبدأ؟</span></summary>
-        <p>افتح البوت على تليجرام واضغط «ابدأ». المحادثة تأخذك خطوة خطوة، وحالتها محفوظة فلا تفقد ما أدخلته إن توقّفت وعدت.</p>
+        <p>افتح البوت على تليجرام واضغط «ابدأ». المحادثة تأخذك خطوة خطوة، وحالتها محفوظة فلا تفقد ما أدخلته إن توقّفت وعدت. وإن لم يكن لديك تليجرام، فسجّل من الموقع بحساب جوجل أو فيسبوك.</p>
       </details>
       </div>
     </div>
@@ -517,8 +530,8 @@ footer{border-top:1px solid var(--line); padding:30px 0 44px; font-size:.9rem;
   <section class="end">
     <div class="wrap">
       <h2>ابدأ الآن</h2>
-      <p>التسجيل داخل تليجرام، ولا يحتاج تطبيقاً آخر ولا حساباً جديداً.</p>
-      <a class="btn" href="https://t.me/HisnAlzawaj_bot?start=ad_xb79tj" rel="noopener">ابدأ على تليجرام</a>
+      <p>سجّل داخل تليجرام، أو من المتصفّح بحساب جوجل أو فيسبوك — بلا تطبيقٍ تثبّته.</p>
+      <div class="ctas"><a class="btn" href="https://t.me/HisnAlzawaj_bot?start=ad_xb79tj" rel="noopener">ابدأ على تليجرام</a><a class="btn alt" href="https://app.hisnalzawaj.com/" rel="noopener">سجّل من الموقع</a></div>
     </div>
   </section>
 

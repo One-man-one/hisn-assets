@@ -135,6 +135,19 @@ section{padding:clamp(48px,7vw,84px) 0}
   font-size:1.06rem; box-shadow:0 10px 26px rgba(206,92,138,.32);
 }
 .btn:hover{background:var(--rose-deep)}
+/* الزرّ الثاني — الويب. ⚠️ مفرَّغٌ لا ملوَّن: زرّان بنفس الثقل
+   يُربكان العين في أيّهما الطريق، وتيليجرام يبقى الأكمل ميزاتٍ اليوم
+   (التوثيق بالفيديو والترقية فيه وحده). */
+.btn.alt{
+  background:#fff; color:var(--rose-deep); box-shadow:none;
+  border:2px solid var(--rose); padding:13px 32px;
+}
+.btn.alt:hover{background:#fdf2f6}
+.ctas{display:flex; flex-wrap:wrap; gap:12px}
+/* ⚠️ `text-align:center` في `.end` لا يوسّط عناصر `flex` — فبدون هذا
+   ينحاز الزرّان إلى طرفٍ تحت عنوانٍ موسَّط. */
+.end .ctas{justify-content:center}
+.ctas .btn{margin-top:12px}
 .note{font-size:.9rem; color:var(--muted); margin:14px 0 0}
 /* ⚠️ تلتفّ ولا تنقلب عموداً. الشارات أربعٌ قصيرة، و`flex-wrap`
    يرصّها سطرين على الهاتف — أمّا `flex-direction:column` فيعطي عموداً
@@ -347,7 +360,7 @@ footer{border-top:1px solid var(--line); padding:30px 0 44px; font-size:.9rem;
       "name": "Comment commencer ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Ouvrez le bot dans Telegram et appuyez sur Démarrer. La conversation vous guide étape par étape, et votre progression est enregistrée si vous vous arrêtez et revenez."
+        "text": "Ouvrez le bot dans Telegram et appuyez sur Démarrer. La conversation vous guide étape par étape, et votre progression est enregistrée si vous vous arrêtez et revenez. Pas de Telegram ? Inscrivez-vous sur le site avec un compte Google ou Facebook."
       }
     }
   ]
@@ -389,10 +402,10 @@ footer{border-top:1px solid var(--line); padding:30px 0 44px; font-size:.9rem;
 
   <section class="hero">
     <div class="wrap">
-      <span class="kicker">Bot Telegram</span>
-      <h1>Des rencontres en vue du mariage — dans Telegram uniquement</h1>
+      <span class="kicker">Telegram et web</span>
+      <h1>Des rencontres en vue du mariage — sur Telegram ou dans votre navigateur</h1>
       <p class="lead">Renseignez votre profil et les critères que vous recherchez chez un conjoint, et le bot vous montre les profils correspondants. Ni numéro de téléphone ni nom d’utilisateur : les messages passent par le bot une fois que les deux parties sont d’accord.</p>
-      <a class="btn" href="https://t.me/HisnAlzawaj_bot?start=ad_xb79tj" rel="noopener">Ouvrir dans Telegram</a>
+      <div class="ctas"><a class="btn" href="https://t.me/HisnAlzawaj_bot?start=ad_xb79tj" rel="noopener">Ouvrir dans Telegram</a><a class="btn alt" href="https://app.hisnalzawaj.com/" rel="noopener">S’inscrire sur le web</a></div>
       <p class="note">Gratuit pour commencer · arabe, anglais, français, espagnol, indonésien et persan</p>
       <ul class="badges">
         <li><span aria-hidden="true">🌫️</span>Photo floutée par défaut</li>
@@ -508,7 +521,7 @@ footer{border-top:1px solid var(--line); padding:30px 0 44px; font-size:.9rem;
       </details>
       <details class="qa">
         <summary><span>Comment commencer ?</span></summary>
-        <p>Ouvrez le bot dans Telegram et appuyez sur Démarrer. La conversation vous guide étape par étape, et votre progression est enregistrée si vous vous arrêtez et revenez.</p>
+        <p>Ouvrez le bot dans Telegram et appuyez sur Démarrer. La conversation vous guide étape par étape, et votre progression est enregistrée si vous vous arrêtez et revenez. Pas de Telegram ? Inscrivez-vous sur le site avec un compte Google ou Facebook.</p>
       </details>
       </div>
     </div>
@@ -517,8 +530,8 @@ footer{border-top:1px solid var(--line); padding:30px 0 44px; font-size:.9rem;
   <section class="end">
     <div class="wrap">
       <h2>Commencer maintenant</h2>
-      <p>L’inscription se fait dans Telegram — aucune autre application et aucun nouveau compte.</p>
-      <a class="btn" href="https://t.me/HisnAlzawaj_bot?start=ad_xb79tj" rel="noopener">Ouvrir dans Telegram</a>
+      <p>Inscrivez-vous dans Telegram, ou dans votre navigateur avec un compte Google ou Facebook — rien à installer.</p>
+      <div class="ctas"><a class="btn" href="https://t.me/HisnAlzawaj_bot?start=ad_xb79tj" rel="noopener">Ouvrir dans Telegram</a><a class="btn alt" href="https://app.hisnalzawaj.com/" rel="noopener">S’inscrire sur le web</a></div>
     </div>
   </section>
 

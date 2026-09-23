@@ -135,6 +135,19 @@ section{padding:clamp(48px,7vw,84px) 0}
   font-size:1.06rem; box-shadow:0 10px 26px rgba(206,92,138,.32);
 }
 .btn:hover{background:var(--rose-deep)}
+/* الزرّ الثاني — الويب. ⚠️ مفرَّغٌ لا ملوَّن: زرّان بنفس الثقل
+   يُربكان العين في أيّهما الطريق، وتيليجرام يبقى الأكمل ميزاتٍ اليوم
+   (التوثيق بالفيديو والترقية فيه وحده). */
+.btn.alt{
+  background:#fff; color:var(--rose-deep); box-shadow:none;
+  border:2px solid var(--rose); padding:13px 32px;
+}
+.btn.alt:hover{background:#fdf2f6}
+.ctas{display:flex; flex-wrap:wrap; gap:12px}
+/* ⚠️ `text-align:center` في `.end` لا يوسّط عناصر `flex` — فبدون هذا
+   ينحاز الزرّان إلى طرفٍ تحت عنوانٍ موسَّط. */
+.end .ctas{justify-content:center}
+.ctas .btn{margin-top:12px}
 .note{font-size:.9rem; color:var(--muted); margin:14px 0 0}
 /* ⚠️ تلتفّ ولا تنقلب عموداً. الشارات أربعٌ قصيرة، و`flex-wrap`
    يرصّها سطرين على الهاتف — أمّا `flex-direction:column` فيعطي عموداً
@@ -347,7 +360,7 @@ footer{border-top:1px solid var(--line); padding:30px 0 44px; font-size:.9rem;
       "name": "Bagaimana cara memulai?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Buka bot di Telegram dan tekan Mulai. Percakapan memandu Anda langkah demi langkah, dan kemajuan Anda tersimpan bila Anda berhenti lalu kembali."
+        "text": "Buka bot di Telegram dan tekan Mulai. Percakapan memandu Anda langkah demi langkah, dan kemajuan Anda tersimpan bila Anda berhenti lalu kembali. Tidak punya Telegram? Daftar di situs web dengan akun Google atau Facebook."
       }
     }
   ]
@@ -389,10 +402,10 @@ footer{border-top:1px solid var(--line); padding:30px 0 44px; font-size:.9rem;
 
   <section class="hero">
     <div class="wrap">
-      <span class="kicker">Bot Telegram</span>
-      <h1>Perkenalan untuk tujuan pernikahan — di dalam Telegram saja</h1>
+      <span class="kicker">Telegram &amp; web</span>
+      <h1>Perkenalan untuk tujuan pernikahan — di Telegram atau di browser</h1>
       <p class="lead">Catat data Anda dan kriteria pasangan yang Anda cari, lalu bot menampilkan profil yang sesuai. Tidak ada pertukaran nomor maupun nama pengguna: pesan berjalan di dalam bot setelah kedua pihak setuju.</p>
-      <a class="btn" href="https://t.me/HisnAlzawaj_bot?start=ad_xb79tj" rel="noopener">Mulai di Telegram</a>
+      <div class="ctas"><a class="btn" href="https://t.me/HisnAlzawaj_bot?start=ad_xb79tj" rel="noopener">Mulai di Telegram</a><a class="btn alt" href="https://app.hisnalzawaj.com/" rel="noopener">Daftar lewat web</a></div>
       <p class="note">Gratis untuk memulai · Arab, Inggris, Prancis, Spanyol, Indonesia dan Persia</p>
       <ul class="badges">
         <li><span aria-hidden="true">🌫️</span>Foto buram secara bawaan</li>
@@ -508,7 +521,7 @@ footer{border-top:1px solid var(--line); padding:30px 0 44px; font-size:.9rem;
       </details>
       <details class="qa">
         <summary><span>Bagaimana cara memulai?</span></summary>
-        <p>Buka bot di Telegram dan tekan Mulai. Percakapan memandu Anda langkah demi langkah, dan kemajuan Anda tersimpan bila Anda berhenti lalu kembali.</p>
+        <p>Buka bot di Telegram dan tekan Mulai. Percakapan memandu Anda langkah demi langkah, dan kemajuan Anda tersimpan bila Anda berhenti lalu kembali. Tidak punya Telegram? Daftar di situs web dengan akun Google atau Facebook.</p>
       </details>
       </div>
     </div>
@@ -517,8 +530,8 @@ footer{border-top:1px solid var(--line); padding:30px 0 44px; font-size:.9rem;
   <section class="end">
     <div class="wrap">
       <h2>Mulai sekarang</h2>
-      <p>Pendaftaran berlangsung di dalam Telegram — tanpa aplikasi lain dan tanpa akun baru.</p>
-      <a class="btn" href="https://t.me/HisnAlzawaj_bot?start=ad_xb79tj" rel="noopener">Mulai di Telegram</a>
+      <p>Daftar di dalam Telegram, atau di browser dengan akun Google atau Facebook — tanpa memasang aplikasi.</p>
+      <div class="ctas"><a class="btn" href="https://t.me/HisnAlzawaj_bot?start=ad_xb79tj" rel="noopener">Mulai di Telegram</a><a class="btn alt" href="https://app.hisnalzawaj.com/" rel="noopener">Daftar lewat web</a></div>
     </div>
   </section>
 

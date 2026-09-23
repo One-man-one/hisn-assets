@@ -129,6 +129,19 @@ section{padding:clamp(48px,7vw,84px) 0}
   font-size:1.06rem; box-shadow:0 10px 26px rgba(206,92,138,.32);
 }
 .btn:hover{background:var(--rose-deep)}
+/* الزرّ الثاني — الويب. ⚠️ مفرَّغٌ لا ملوَّن: زرّان بنفس الثقل
+   يُربكان العين في أيّهما الطريق، وتيليجرام يبقى الأكمل ميزاتٍ اليوم
+   (التوثيق بالفيديو والترقية فيه وحده). */
+.btn.alt{
+  background:#fff; color:var(--rose-deep); box-shadow:none;
+  border:2px solid var(--rose); padding:13px 32px;
+}
+.btn.alt:hover{background:#fdf2f6}
+.ctas{display:flex; flex-wrap:wrap; gap:12px}
+/* ⚠️ `text-align:center` في `.end` لا يوسّط عناصر `flex` — فبدون هذا
+   ينحاز الزرّان إلى طرفٍ تحت عنوانٍ موسَّط. */
+.end .ctas{justify-content:center}
+.ctas .btn{margin-top:12px}
 .note{font-size:.9rem; color:var(--muted); margin:14px 0 0}
 /* ⚠️ تلتفّ ولا تنقلب عموداً. الشارات أربعٌ قصيرة، و`flex-wrap`
    يرصّها سطرين على الهاتف — أمّا `flex-direction:column` فيعطي عموداً
@@ -256,11 +269,11 @@ footer{border-top:1px solid var(--line); padding:30px 0 44px; font-size:.9rem;
   <section>
     <div class="wrap doc">
       <h1>Kebijakan Privasi</h1>
-      <p class="updated">Terakhir diperbarui: 29 Agustus 2026</p>
+      <p class="updated">Terakhir diperbarui: 23 September 2026</p>
       <p class="lead">Dokumen ini menjelaskan data apa yang dikumpulkan bot Hisn Alzawaj tentang Anda, mengapa, siapa yang melihatnya, berapa lama disimpan, dan bagaimana Anda menghapusnya. Ditulis untuk dibaca, bukan untuk ditandatangani: tanpa bahasa hukum yang berbelit, dan tanpa janji yang tidak ditepati oleh layanannya sendiri.</p>
       <h2>Siapa kami dan apa yang dicakup dokumen ini</h2>
-      <p>Hisn Alzawaj adalah layanan perkenalan untuk tujuan menikah, yang berjalan sepenuhnya di dalam Telegram melalui bot @HisnAlzawaj_bot.</p>
-      <p>Dokumen ini mencakup bot dan halaman ini. Tidak mencakup Telegram sendiri — platform terpisah dengan kebijakannya sendiri, yang mengatur apa yang terjadi pada akun Anda di sana.</p>
+      <p>Hisn Alzawaj adalah layanan perkenalan untuk tujuan menikah, yang berjalan di dalam Telegram melalui bot @HisnAlzawaj_bot, dan di browser melalui aplikasi web app.hisnalzawaj.com.</p>
+      <p>Dokumen ini mencakup bot, aplikasi web, dan halaman ini. Tidak mencakup Telegram sendiri — platform terpisah dengan kebijakannya sendiri, yang mengatur apa yang terjadi pada akun Anda di sana.</p>
       <h2>Apa yang Anda berikan sendiri</h2>
       <p>Pendaftaran menanyakan hal-hal berikut. Setiap jawaban Anda ketik sendiri, dan dapat Anda ubah atau kosongkan kapan saja lewat &quot;Ubah data saya&quot;:</p>
       <ul>
@@ -276,6 +289,20 @@ footer{border-top:1px solid var(--line); padding:30px 0 44px; font-size:.9rem;
       <h2>Apa yang Telegram berikan — dan yang tidak</h2>
       <p>Telegram memberi kami tiga hal tentang akun Anda: ID numerik, nama pengguna jika ada, dan bahasa aplikasi Anda.</p>
       <p>Nomor telepon, kontak, dan daftar obrolan Anda tidak sampai kepada kami. Telegram tidak memberikan itu kepada bot, jadi kami memang tidak memilikinya sekalipun menginginkannya.</p>
+      <h2>Jika Anda mendaftar lewat situs web — Google, Facebook, dan email</h2>
+      <p>Anda dapat mendaftar di aplikasi web dengan akun Google atau Facebook, atau dengan akun Telegram yang Anda pakai di bot. Yang sampai kepada kami dalam tiap kasus:</p>
+      <ul>
+        <li>Google: ID akun Google Anda, dan alamat email Anda jika Google telah memverifikasinya.</li>
+        <li>Facebook: ID akun Facebook Anda, dan alamat email Anda jika dibagikan kepada kami. Jika tidak, kami menyimpan alamat internal sebagai gantinya yang tidak dapat dijangkau surat apa pun.</li>
+        <li>Telegram: tidak ada yang baru — Anda masuk dengan akun bot yang sudah ada, dan bagian sebelumnya berlaku untuknya.</li>
+      </ul>
+      <p>Kami tidak menerima kata sandi, foto, teman atau kontak, maupun unggahan Anda dari Google atau Facebook, dan kami tidak meminta lebih dari yang disebut di atas.</p>
+      <p>Kami memakai ID akun untuk mengenali Anda saat kembali, dan alamat email untuk mengaitkan akun Anda. Kami tidak mengirim pemasaran ke alamat itu dan tidak menampilkannya kepada pengguna lain.</p>
+      <p>Pendaftaran dengan email dan kata sandi hanya tersedia lewat undangan. Kata sandi disimpan dalam bentuk hash, bukan teks, sehingga kami sendiri tidak dapat membacanya.</p>
+      <p>Apa yang kemudian Anda tulis di “Lengkapi profil” disimpan persis seperti profil bot, dan seluruh dokumen ini berlaku untuknya: pengaburan, obrolan, penerbitan, dan penghapusan.</p>
+      <p>Saat akun baru dibuat di situs web, browser Anda melewati pemeriksaan otomatis yang membedakan manusia dari bot, yang disediakan oleh penyedia perlindungan khusus. Hanya untuk tujuan itu penyedia tersebut melihat sinyal dari browser dan perangkat Anda; yang sampai kepada kami hanyalah hasilnya: lolos atau tidak.</p>
+      <p>Sesi Anda di aplikasi web adalah token masuk yang disimpan di browser Anda. Token itu berlaku satu hari dan dihapus saat Anda menekan “Keluar”. Aplikasi web tidak memakai cookie maupun alat pelacakan atau iklan.</p>
+      <p>Apa yang dilakukan Google atau Facebook terhadap akun Anda di pihak mereka diatur oleh kebijakan mereka sendiri, bukan oleh dokumen ini.</p>
       <h2>Apa yang timbul dari pemakaian Anda</h2>
       <p>Waktu aktivitas terakhir, suka dan kecocokan, laporan yang Anda kirim atau yang sampai kepada kami tentang Anda, serta pesan obrolan di dalam bot — yang terakhir ini dihapus otomatis setelah 30 hari, dirinci di bawah.</p>
       <h2>Foto Anda — diburamkan sampai Anda mengizinkan</h2>
@@ -314,6 +341,7 @@ footer{border-top:1px solid var(--line); padding:30px 0 44px; font-size:.9rem;
       </ul>
       <p>Kami tidak menjual data Anda, tidak menyerahkannya kepada pengiklan, dan tidak membangun iklan bertarget di atasnya. Tidak ada satu pun dari itu yang diminta sebagai imbalan memakai layanan ini.</p>
       <p>Dari para penyedia teknis, hanya Google yang kami sebut namanya di sini, sebab video verifikasi adalah hal paling sensitif yang melewati kami — dan janji untuk tidak menyimpannya tidak dapat dipercaya jika Anda tidak tahu siapa yang menerimanya. Siapa pun yang menanyakan nama penyedia lainnya dapat menulis kepada kami.</p>
+      <p>Bagi yang mendaftar lewat situs web: Google atau Facebook — mana pun yang Anda pilih untuk masuk — mengetahui bahwa Anda masuk ke layanan kami, dan penyedia perlindungan dari bot melihat pemeriksaan saat akun dibuat. Rinciannya di “Jika Anda mendaftar lewat situs web”.</p>
       <h2>Berapa lama data disimpan</h2>
       <p>Selama akun Anda masih ada — sebab layanan ini pada hakikatnya adalah menampilkan profil Anda kepada mereka yang sesuai dengan kriteria Anda.</p>
       <p>Setelah penghapusan, tersisa catatan terbatas: catatan moderasi dan riwayat pembayaran, sebatas yang diperlukan untuk pembukuan dan mencegah akun yang diblokir langsung kembali dengan akun baru.</p>
@@ -326,6 +354,7 @@ footer{border-top:1px solid var(--line); padding:30px 0 44px; font-size:.9rem;
         <li>Notifikasi tertunda dan antrean penelusuran Anda.</li>
       </ul>
       <p>Pada saat yang sama, apa pun yang telah terbit tentang Anda di kanal dan halaman kami diturunkan — menghapus akun berarti menarik persetujuan, dan kartu orang yang meminta dihapus tidak layak tetap terpampang untuk umum.</p>
+      <p>Dari aplikasi web: tombol “Hapus akun saya” di layar profil menghapus semua yang di atas, beserta tautan antara akun Anda dan Google atau Facebook. Akun Google atau Facebook Anda sendiri tetap utuh — akun itu ada pada mereka, bukan pada kami.</p>
       <h2>Hak Anda, dan cara menggunakannya sendiri</h2>
       <ul>
         <li>Akses dan koreksi: &quot;Ubah data saya&quot; di menu.</li>

@@ -135,6 +135,19 @@ section{padding:clamp(48px,7vw,84px) 0}
   font-size:1.06rem; box-shadow:0 10px 26px rgba(206,92,138,.32);
 }
 .btn:hover{background:var(--rose-deep)}
+/* الزرّ الثاني — الويب. ⚠️ مفرَّغٌ لا ملوَّن: زرّان بنفس الثقل
+   يُربكان العين في أيّهما الطريق، وتيليجرام يبقى الأكمل ميزاتٍ اليوم
+   (التوثيق بالفيديو والترقية فيه وحده). */
+.btn.alt{
+  background:#fff; color:var(--rose-deep); box-shadow:none;
+  border:2px solid var(--rose); padding:13px 32px;
+}
+.btn.alt:hover{background:#fdf2f6}
+.ctas{display:flex; flex-wrap:wrap; gap:12px}
+/* ⚠️ `text-align:center` في `.end` لا يوسّط عناصر `flex` — فبدون هذا
+   ينحاز الزرّان إلى طرفٍ تحت عنوانٍ موسَّط. */
+.end .ctas{justify-content:center}
+.ctas .btn{margin-top:12px}
 .note{font-size:.9rem; color:var(--muted); margin:14px 0 0}
 /* ⚠️ تلتفّ ولا تنقلب عموداً. الشارات أربعٌ قصيرة، و`flex-wrap`
    يرصّها سطرين على الهاتف — أمّا `flex-direction:column` فيعطي عموداً
@@ -347,7 +360,7 @@ footer{border-top:1px solid var(--line); padding:30px 0 44px; font-size:.9rem;
       "name": "¿Cómo empiezo?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Abre el bot en Telegram y pulsa Iniciar. La conversación te guía paso a paso, y tu progreso se guarda si te detienes y vuelves."
+        "text": "Abre el bot en Telegram y pulsa Iniciar. La conversación te guía paso a paso, y tu progreso se guarda si te detienes y vuelves. ¿No tienes Telegram? Regístrate en el sitio web con una cuenta de Google o Facebook."
       }
     }
   ]
@@ -389,10 +402,10 @@ footer{border-top:1px solid var(--line); padding:30px 0 44px; font-size:.9rem;
 
   <section class="hero">
     <div class="wrap">
-      <span class="kicker">Bot de Telegram</span>
-      <h1>Presentaciones con fines matrimoniales — solo dentro de Telegram</h1>
+      <span class="kicker">Telegram y web</span>
+      <h1>Presentaciones con fines matrimoniales — en Telegram o en tu navegador</h1>
       <p class="lead">Registra tus datos y los criterios que buscas en un cónyuge, y el bot te muestra los perfiles compatibles. Sin números de teléfono ni nombres de usuario: los mensajes pasan por el bot cuando ambas partes están de acuerdo.</p>
-      <a class="btn" href="https://t.me/HisnAlzawaj_bot?start=ad_xb79tj" rel="noopener">Abrir en Telegram</a>
+      <div class="ctas"><a class="btn" href="https://t.me/HisnAlzawaj_bot?start=ad_xb79tj" rel="noopener">Abrir en Telegram</a><a class="btn alt" href="https://app.hisnalzawaj.com/" rel="noopener">Regístrate en la web</a></div>
       <p class="note">Gratis para empezar · árabe, inglés, francés, español, indonesio y persa</p>
       <ul class="badges">
         <li><span aria-hidden="true">🌫️</span>Foto difuminada por defecto</li>
@@ -508,7 +521,7 @@ footer{border-top:1px solid var(--line); padding:30px 0 44px; font-size:.9rem;
       </details>
       <details class="qa">
         <summary><span>¿Cómo empiezo?</span></summary>
-        <p>Abre el bot en Telegram y pulsa Iniciar. La conversación te guía paso a paso, y tu progreso se guarda si te detienes y vuelves.</p>
+        <p>Abre el bot en Telegram y pulsa Iniciar. La conversación te guía paso a paso, y tu progreso se guarda si te detienes y vuelves. ¿No tienes Telegram? Regístrate en el sitio web con una cuenta de Google o Facebook.</p>
       </details>
       </div>
     </div>
@@ -517,8 +530,8 @@ footer{border-top:1px solid var(--line); padding:30px 0 44px; font-size:.9rem;
   <section class="end">
     <div class="wrap">
       <h2>Empieza ahora</h2>
-      <p>El registro ocurre dentro de Telegram — sin otra aplicación y sin una cuenta nueva.</p>
-      <a class="btn" href="https://t.me/HisnAlzawaj_bot?start=ad_xb79tj" rel="noopener">Abrir en Telegram</a>
+      <p>Regístrate dentro de Telegram, o en tu navegador con una cuenta de Google o Facebook — sin instalar nada.</p>
+      <div class="ctas"><a class="btn" href="https://t.me/HisnAlzawaj_bot?start=ad_xb79tj" rel="noopener">Abrir en Telegram</a><a class="btn alt" href="https://app.hisnalzawaj.com/" rel="noopener">Regístrate en la web</a></div>
     </div>
   </section>
 

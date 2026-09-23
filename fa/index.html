@@ -135,6 +135,19 @@ section{padding:clamp(48px,7vw,84px) 0}
   font-size:1.06rem; box-shadow:0 10px 26px rgba(206,92,138,.32);
 }
 .btn:hover{background:var(--rose-deep)}
+/* الزرّ الثاني — الويب. ⚠️ مفرَّغٌ لا ملوَّن: زرّان بنفس الثقل
+   يُربكان العين في أيّهما الطريق، وتيليجرام يبقى الأكمل ميزاتٍ اليوم
+   (التوثيق بالفيديو والترقية فيه وحده). */
+.btn.alt{
+  background:#fff; color:var(--rose-deep); box-shadow:none;
+  border:2px solid var(--rose); padding:13px 32px;
+}
+.btn.alt:hover{background:#fdf2f6}
+.ctas{display:flex; flex-wrap:wrap; gap:12px}
+/* ⚠️ `text-align:center` في `.end` لا يوسّط عناصر `flex` — فبدون هذا
+   ينحاز الزرّان إلى طرفٍ تحت عنوانٍ موسَّط. */
+.end .ctas{justify-content:center}
+.ctas .btn{margin-top:12px}
 .note{font-size:.9rem; color:var(--muted); margin:14px 0 0}
 /* ⚠️ تلتفّ ولا تنقلب عموداً. الشارات أربعٌ قصيرة، و`flex-wrap`
    يرصّها سطرين على الهاتف — أمّا `flex-direction:column` فيعطي عموداً
@@ -347,7 +360,7 @@ footer{border-top:1px solid var(--line); padding:30px 0 44px; font-size:.9rem;
       "name": "چگونه شروع کنم؟",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "ربات را در تلگرام باز کنید و دکمهٔ شروع را بزنید. گفت‌وگو گام‌به‌گام راهنمایتان می‌کند و وضعیتتان ذخیره می‌شود."
+        "text": "ربات را در تلگرام باز کنید و دکمهٔ شروع را بزنید. گفت‌وگو گام‌به‌گام راهنمایتان می‌کند و وضعیتتان ذخیره می‌شود. اگر تلگرام ندارید، در وب‌سایت با حساب گوگل یا فیس‌بوک ثبت‌نام کنید."
       }
     }
   ]
@@ -389,10 +402,10 @@ footer{border-top:1px solid var(--line); padding:30px 0 44px; font-size:.9rem;
 
   <section class="hero">
     <div class="wrap">
-      <span class="kicker">ربات تلگرام</span>
-      <h1>آشنایی با هدف ازدواج — فقط درون تلگرام</h1>
+      <span class="kicker">تلگرام و وب</span>
+      <h1>آشنایی با هدف ازدواج — در تلگرام یا در مرورگر</h1>
       <p class="lead">اطلاعات خود و ویژگی‌های مورد نظرتان در همسر آینده را ثبت کنید تا ربات پروفایل‌های مطابق را نشان دهد. نه شماره‌ای رد و بدل می‌شود نه شناسه‌ای: پیام‌ها پس از موافقت هر دو طرف درون ربات جریان می‌یابند.</p>
-      <a class="btn" href="https://t.me/HisnAlzawaj_bot?start=ad_xb79tj" rel="noopener">شروع در تلگرام</a>
+      <div class="ctas"><a class="btn" href="https://t.me/HisnAlzawaj_bot?start=ad_xb79tj" rel="noopener">شروع در تلگرام</a><a class="btn alt" href="https://app.hisnalzawaj.com/" rel="noopener">ثبت‌نام در وب‌سایت</a></div>
       <p class="note">شروع رایگان · عربی، انگلیسی، فرانسوی، اسپانیایی، اندونزیایی و فارسی</p>
       <ul class="badges">
         <li><span aria-hidden="true">🌫️</span>عکس شما به‌صورت پیش‌فرض تار است</li>
@@ -508,7 +521,7 @@ footer{border-top:1px solid var(--line); padding:30px 0 44px; font-size:.9rem;
       </details>
       <details class="qa">
         <summary><span>چگونه شروع کنم؟</span></summary>
-        <p>ربات را در تلگرام باز کنید و دکمهٔ شروع را بزنید. گفت‌وگو گام‌به‌گام راهنمایتان می‌کند و وضعیتتان ذخیره می‌شود.</p>
+        <p>ربات را در تلگرام باز کنید و دکمهٔ شروع را بزنید. گفت‌وگو گام‌به‌گام راهنمایتان می‌کند و وضعیتتان ذخیره می‌شود. اگر تلگرام ندارید، در وب‌سایت با حساب گوگل یا فیس‌بوک ثبت‌نام کنید.</p>
       </details>
       </div>
     </div>
@@ -517,8 +530,8 @@ footer{border-top:1px solid var(--line); padding:30px 0 44px; font-size:.9rem;
   <section class="end">
     <div class="wrap">
       <h2>همین حالا شروع کنید</h2>
-      <p>ثبت‌نام درون تلگرام انجام می‌شود — نه برنامهٔ دیگری لازم است نه حساب تازه‌ای.</p>
-      <a class="btn" href="https://t.me/HisnAlzawaj_bot?start=ad_xb79tj" rel="noopener">شروع در تلگرام</a>
+      <p>درون تلگرام ثبت‌نام کنید، یا در مرورگر با حساب گوگل یا فیس‌بوک — بدون نصب برنامه.</p>
+      <div class="ctas"><a class="btn" href="https://t.me/HisnAlzawaj_bot?start=ad_xb79tj" rel="noopener">شروع در تلگرام</a><a class="btn alt" href="https://app.hisnalzawaj.com/" rel="noopener">ثبت‌نام در وب‌سایت</a></div>
     </div>
   </section>
 

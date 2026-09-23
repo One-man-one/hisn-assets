@@ -129,6 +129,19 @@ section{padding:clamp(48px,7vw,84px) 0}
   font-size:1.06rem; box-shadow:0 10px 26px rgba(206,92,138,.32);
 }
 .btn:hover{background:var(--rose-deep)}
+/* الزرّ الثاني — الويب. ⚠️ مفرَّغٌ لا ملوَّن: زرّان بنفس الثقل
+   يُربكان العين في أيّهما الطريق، وتيليجرام يبقى الأكمل ميزاتٍ اليوم
+   (التوثيق بالفيديو والترقية فيه وحده). */
+.btn.alt{
+  background:#fff; color:var(--rose-deep); box-shadow:none;
+  border:2px solid var(--rose); padding:13px 32px;
+}
+.btn.alt:hover{background:#fdf2f6}
+.ctas{display:flex; flex-wrap:wrap; gap:12px}
+/* ⚠️ `text-align:center` في `.end` لا يوسّط عناصر `flex` — فبدون هذا
+   ينحاز الزرّان إلى طرفٍ تحت عنوانٍ موسَّط. */
+.end .ctas{justify-content:center}
+.ctas .btn{margin-top:12px}
 .note{font-size:.9rem; color:var(--muted); margin:14px 0 0}
 /* ⚠️ تلتفّ ولا تنقلب عموداً. الشارات أربعٌ قصيرة، و`flex-wrap`
    يرصّها سطرين على الهاتف — أمّا `flex-direction:column` فيعطي عموداً
@@ -256,11 +269,11 @@ footer{border-top:1px solid var(--line); padding:30px 0 44px; font-size:.9rem;
   <section>
     <div class="wrap doc">
       <h1>Privacy Policy</h1>
-      <p class="updated">Last updated: 29 August 2026</p>
+      <p class="updated">Last updated: 23 September 2026</p>
       <p class="lead">This document describes what the Hisn Alzawaj bot collects about you, why, who sees it, how long it stays, and how you delete it. It is written to be read, not signed: no twisted legal phrasing, and no promise that the service itself does not keep.</p>
       <h2>Who we are and what this covers</h2>
-      <p>Hisn Alzawaj is a service for finding a marriage partner. It runs entirely inside Telegram, through the bot @HisnAlzawaj_bot.</p>
-      <p>This document covers the bot and this landing page. It does not cover Telegram itself — a separate platform with its own policy, which governs what happens to your account there.</p>
+      <p>Hisn Alzawaj is a service for finding a marriage partner. It runs inside Telegram, through the bot @HisnAlzawaj_bot, and in the browser, through the web app app.hisnalzawaj.com.</p>
+      <p>This document covers the bot, the web app and this landing page. It does not cover Telegram itself — a separate platform with its own policy, which governs what happens to your account there.</p>
       <h2>What you give us yourself</h2>
       <p>Registration asks for the following. You type every answer, and you can change or clear it at any time from &quot;Edit my data&quot;:</p>
       <ul>
@@ -276,6 +289,20 @@ footer{border-top:1px solid var(--line); padding:30px 0 44px; font-size:.9rem;
       <h2>What Telegram gives us — and what it does not</h2>
       <p>Telegram passes us three things about your account: your numeric ID, your username if you have one, and your app language.</p>
       <p>It does not pass us your phone number, your contacts, or your chat list. Telegram gives bots none of that, so we do not hold it even if we wanted to.</p>
+      <h2>If you sign up on the website — Google, Facebook and email</h2>
+      <p>You can sign up to the web app with a Google or Facebook account, or with the Telegram account you use in the bot. What reaches us in each case:</p>
+      <ul>
+        <li>Google: your Google account ID, and your email address if Google has verified it.</li>
+        <li>Facebook: your Facebook account ID, and your email address if it is shared with us. If it is not, we store an internal address in its place that no mail can reach.</li>
+        <li>Telegram: nothing new — you sign in with your existing bot account, and the previous section applies to it.</li>
+      </ul>
+      <p>We do not receive your password, your photo, your friends or contacts, or your posts from Google or Facebook, and we ask them for nothing beyond the above.</p>
+      <p>We use the account ID to recognise you when you come back, and the email address to tie your account to it. We send it no marketing, and we show it to no other user.</p>
+      <p>Signing up with an email and password is available by invitation only. The password is stored hashed, not as text, so we cannot read it ourselves.</p>
+      <p>What you then write under “Complete your profile” is stored exactly like a bot profile, and everything in this document applies to it: blurring, chat, publishing and deletion.</p>
+      <p>When a new account is created on the website, your browser goes through an automated check that tells people from bots, provided by a specialised protection provider. For that purpose alone it sees signals from your browser and device; all that reaches us is the result: passed or not.</p>
+      <p>Your web app session is a sign-in token kept in your browser. It is valid for one day and is erased when you press “Sign out”. The web app uses no cookies and no tracking or advertising tools.</p>
+      <p>What Google or Facebook do with your account on their side is governed by their own policies, not by this document.</p>
       <h2>What your use of the service creates</h2>
       <p>Your last-active time, your likes and matches, reports you send or that reach us about you, and the chat messages exchanged inside the bot — the last of these are deleted automatically after 30 days, detailed below.</p>
       <h2>Your photo — blurred until you allow it</h2>
@@ -314,6 +341,7 @@ footer{border-top:1px solid var(--line); padding:30px 0 44px; font-size:.9rem;
       </ul>
       <p>We do not sell your data, do not hand it to advertisers, and do not build targeted advertising on it. None of that is asked of you in exchange for using the service.</p>
       <p>Google is the one operational provider we name here, because the verification video is the most sensitive thing that passes through us — and a promise not to store it is not credible if you do not know who receives it. Anyone who asks for the names of the others may write to us.</p>
+      <p>For those who sign up on the website: Google or Facebook — whichever you chose to sign in with — knows that you signed in to us, and the bot-protection provider sees the check when an account is created. Details under “If you sign up on the website”.</p>
       <h2>How long your data stays</h2>
       <p>It stays as long as your account does — because the service itself is showing your profile to those who match what you are looking for.</p>
       <p>Limited records survive deletion: moderation entries and the payment log, to the extent needed for accounting and to keep a banned account from returning immediately under a new one.</p>
@@ -326,6 +354,7 @@ footer{border-top:1px solid var(--line); padding:30px 0 44px; font-size:.9rem;
         <li>Your pending notifications and your browsing queue.</li>
       </ul>
       <p>At the same time, whatever was published about you on our channel and pages is taken down — deleting the account is a withdrawal of consent, and the card of someone who asked to be erased must not stay on public display.</p>
+      <p>From the web app: the “Delete my account” button on your profile screen erases all of the above, together with the link between your account and Google or Facebook. Your Google or Facebook account itself stays as it is — it lives with them, not with us.</p>
       <h2>Your rights, exercised by you</h2>
       <ul>
         <li>Access and correction: &quot;Edit my data&quot; in the menu.</li>

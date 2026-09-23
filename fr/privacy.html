@@ -129,6 +129,19 @@ section{padding:clamp(48px,7vw,84px) 0}
   font-size:1.06rem; box-shadow:0 10px 26px rgba(206,92,138,.32);
 }
 .btn:hover{background:var(--rose-deep)}
+/* الزرّ الثاني — الويب. ⚠️ مفرَّغٌ لا ملوَّن: زرّان بنفس الثقل
+   يُربكان العين في أيّهما الطريق، وتيليجرام يبقى الأكمل ميزاتٍ اليوم
+   (التوثيق بالفيديو والترقية فيه وحده). */
+.btn.alt{
+  background:#fff; color:var(--rose-deep); box-shadow:none;
+  border:2px solid var(--rose); padding:13px 32px;
+}
+.btn.alt:hover{background:#fdf2f6}
+.ctas{display:flex; flex-wrap:wrap; gap:12px}
+/* ⚠️ `text-align:center` في `.end` لا يوسّط عناصر `flex` — فبدون هذا
+   ينحاز الزرّان إلى طرفٍ تحت عنوانٍ موسَّط. */
+.end .ctas{justify-content:center}
+.ctas .btn{margin-top:12px}
 .note{font-size:.9rem; color:var(--muted); margin:14px 0 0}
 /* ⚠️ تلتفّ ولا تنقلب عموداً. الشارات أربعٌ قصيرة، و`flex-wrap`
    يرصّها سطرين على الهاتف — أمّا `flex-direction:column` فيعطي عموداً
@@ -256,11 +269,11 @@ footer{border-top:1px solid var(--line); padding:30px 0 44px; font-size:.9rem;
   <section>
     <div class="wrap doc">
       <h1>Politique de confidentialité</h1>
-      <p class="updated">Dernière mise à jour : 29 août 2026</p>
+      <p class="updated">Dernière mise à jour : 23 septembre 2026</p>
       <p class="lead">Ce document décrit ce que le bot Hisn Alzawaj collecte à votre sujet, pourquoi, qui le voit, combien de temps cela reste, et comment vous le supprimez. Il est écrit pour être lu, non pour être signé : pas de formulation juridique tortueuse, et aucune promesse que le service lui-même ne tient pas.</p>
       <h2>Qui nous sommes et ce que ce document couvre</h2>
-      <p>Hisn Alzawaj est un service destiné à trouver un conjoint. Il fonctionne entièrement dans Telegram, par le bot @HisnAlzawaj_bot.</p>
-      <p>Ce document couvre le bot et cette page de présentation. Il ne couvre pas Telegram lui-même — une plateforme distincte, avec sa propre politique, qui régit ce qu’il advient de votre compte là-bas.</p>
+      <p>Hisn Alzawaj est un service destiné à trouver un conjoint. Il fonctionne dans Telegram, par le bot @HisnAlzawaj_bot, et dans le navigateur, par l’application web app.hisnalzawaj.com.</p>
+      <p>Ce document couvre le bot, l’application web et cette page de présentation. Il ne couvre pas Telegram lui-même — une plateforme distincte, avec sa propre politique, qui régit ce qu’il advient de votre compte là-bas.</p>
       <h2>Ce que vous nous donnez vous-même</h2>
       <p>L’inscription demande ce qui suit. Vous saisissez chaque réponse, et vous pouvez la modifier ou l’effacer à tout moment depuis « Modifier mes données » :</p>
       <ul>
@@ -276,6 +289,20 @@ footer{border-top:1px solid var(--line); padding:30px 0 44px; font-size:.9rem;
       <h2>Ce que Telegram nous donne — et ce qu’il ne donne pas</h2>
       <p>Telegram nous transmet trois choses au sujet de votre compte : votre identifiant numérique, votre nom d’utilisateur si vous en avez un, et la langue de votre application.</p>
       <p>Il ne nous transmet ni votre numéro de téléphone, ni vos contacts, ni la liste de vos conversations. Telegram ne donne rien de tout cela aux bots : nous ne le détenons donc pas, même si nous le voulions.</p>
+      <h2>Si vous vous inscrivez sur le site — Google, Facebook et e-mail</h2>
+      <p>Vous pouvez vous inscrire à l’application web avec un compte Google ou Facebook, ou avec le compte Telegram que vous utilisez dans le bot. Ce qui nous parvient dans chaque cas :</p>
+      <ul>
+        <li>Google : l’identifiant de votre compte Google, et votre adresse e-mail si Google l’a vérifiée.</li>
+        <li>Facebook : l’identifiant de votre compte Facebook, et votre adresse e-mail si elle nous est communiquée. Sinon, nous conservons à sa place une adresse interne qu’aucun courrier ne peut atteindre.</li>
+        <li>Telegram : rien de nouveau — vous vous connectez avec votre compte existant du bot, et la section précédente s’y applique.</li>
+      </ul>
+      <p>Nous ne recevons de Google ou de Facebook ni votre mot de passe, ni votre photo, ni vos amis ou contacts, ni vos publications, et nous ne leur demandons rien de plus que ce qui précède.</p>
+      <p>Nous utilisons l’identifiant du compte pour vous reconnaître à votre retour, et l’adresse e-mail pour y rattacher votre compte. Nous n’y envoyons aucun message commercial et ne la montrons à aucun autre utilisateur.</p>
+      <p>L’inscription par e-mail et mot de passe n’est ouverte que sur invitation. Le mot de passe est conservé sous forme hachée, non en clair : nous ne pouvons pas le lire nous-mêmes.</p>
+      <p>Ce que vous écrivez ensuite dans « Compléter votre profil » est conservé exactement comme un profil du bot, et tout ce document s’y applique : floutage, discussion, publication et suppression.</p>
+      <p>Lors de la création d’un nouveau compte sur le site, votre navigateur passe un contrôle automatisé qui distingue les personnes des robots, fourni par un prestataire de protection spécialisé. À cette seule fin, il voit des signaux de votre navigateur et de votre appareil ; seul le résultat nous parvient : réussi ou non.</p>
+      <p>Votre session dans l’application web est un jeton de connexion conservé dans votre navigateur. Il est valable un jour et effacé lorsque vous appuyez sur « Déconnexion ». L’application web n’utilise ni cookies ni outils de suivi ou de publicité.</p>
+      <p>Ce que Google ou Facebook font de votre compte chez eux relève de leurs propres politiques, et non de ce document.</p>
       <h2>Ce que votre usage du service produit</h2>
       <p>Votre dernière activité, vos intérêts et vos mises en relation, les signalements que vous envoyez ou qui nous parviennent à votre sujet, et les messages échangés dans le bot — ces derniers sont supprimés automatiquement au bout de 30 jours, comme détaillé plus bas.</p>
       <h2>Votre photo — floutée jusqu’à ce que vous l’autorisiez</h2>
@@ -314,6 +341,7 @@ footer{border-top:1px solid var(--line); padding:30px 0 44px; font-size:.9rem;
       </ul>
       <p>Nous ne vendons pas vos données, ne les remettons pas à des annonceurs et ne construisons pas de publicité ciblée dessus. Rien de tout cela ne vous est demandé en échange de l’usage du service.</p>
       <p>Google est le seul prestataire opérationnel que nous nommons ici, parce que la vidéo de vérification est la chose la plus sensible qui transite par nous — et une promesse de ne pas la conserver n’est pas crédible si vous ignorez qui la reçoit. Quiconque demande le nom des autres peut nous écrire.</p>
+      <p>Pour qui s’inscrit sur le site : Google ou Facebook — celui que vous avez choisi pour vous connecter — sait que vous vous êtes connecté chez nous, et le prestataire de protection contre les robots voit le contrôle lors de la création du compte. Détails dans « Si vous vous inscrivez sur le site ».</p>
       <h2>Combien de temps vos données restent</h2>
       <p>Elles restent aussi longtemps que votre compte — parce que le service consiste précisément à montrer votre profil à celles et ceux qui correspondent à ce que vous recherchez.</p>
       <p>Des enregistrements limités survivent à la suppression : les entrées de modération et le journal des paiements, dans la mesure nécessaire à la comptabilité et pour empêcher un compte banni de revenir aussitôt sous un autre nom.</p>
@@ -326,6 +354,7 @@ footer{border-top:1px solid var(--line); padding:30px 0 44px; font-size:.9rem;
         <li>Vos notifications en attente et votre file de consultation.</li>
       </ul>
       <p>Au même moment, tout ce qui a été publié à votre sujet sur notre canal et nos pages est retiré — supprimer le compte est un retrait du consentement, et la fiche de quelqu’un qui a demandé son effacement ne doit pas rester exposée en public.</p>
+      <p>Depuis l’application web : le bouton « Supprimer mon compte » sur l’écran de votre profil efface tout ce qui précède, ainsi que le lien entre votre compte et Google ou Facebook. Votre compte Google ou Facebook lui-même reste intact — il est chez eux, pas chez nous.</p>
       <h2>Vos droits, exercés par vous</h2>
       <ul>
         <li>Accès et rectification : « Modifier mes données » dans le menu.</li>

@@ -135,6 +135,19 @@ section{padding:clamp(48px,7vw,84px) 0}
   font-size:1.06rem; box-shadow:0 10px 26px rgba(206,92,138,.32);
 }
 .btn:hover{background:var(--rose-deep)}
+/* الزرّ الثاني — الويب. ⚠️ مفرَّغٌ لا ملوَّن: زرّان بنفس الثقل
+   يُربكان العين في أيّهما الطريق، وتيليجرام يبقى الأكمل ميزاتٍ اليوم
+   (التوثيق بالفيديو والترقية فيه وحده). */
+.btn.alt{
+  background:#fff; color:var(--rose-deep); box-shadow:none;
+  border:2px solid var(--rose); padding:13px 32px;
+}
+.btn.alt:hover{background:#fdf2f6}
+.ctas{display:flex; flex-wrap:wrap; gap:12px}
+/* ⚠️ `text-align:center` في `.end` لا يوسّط عناصر `flex` — فبدون هذا
+   ينحاز الزرّان إلى طرفٍ تحت عنوانٍ موسَّط. */
+.end .ctas{justify-content:center}
+.ctas .btn{margin-top:12px}
 .note{font-size:.9rem; color:var(--muted); margin:14px 0 0}
 /* ⚠️ تلتفّ ولا تنقلب عموداً. الشارات أربعٌ قصيرة، و`flex-wrap`
    يرصّها سطرين على الهاتف — أمّا `flex-direction:column` فيعطي عموداً
@@ -347,7 +360,7 @@ footer{border-top:1px solid var(--line); padding:30px 0 44px; font-size:.9rem;
       "name": "How do I start?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Open the bot in Telegram and press Start. The conversation guides you step by step, and your progress is saved if you stop and come back."
+        "text": "Open the bot in Telegram and press Start. The conversation guides you step by step, and your progress is saved if you stop and come back. No Telegram? Sign up on the website with a Google or Facebook account."
       }
     }
   ]
@@ -389,10 +402,10 @@ footer{border-top:1px solid var(--line); padding:30px 0 44px; font-size:.9rem;
 
   <section class="hero">
     <div class="wrap">
-      <span class="kicker">Telegram bot</span>
-      <h1>Marriage-focused introductions — inside Telegram alone</h1>
+      <span class="kicker">Telegram &amp; web</span>
+      <h1>Marriage-focused introductions — on Telegram or in your browser</h1>
       <p class="lead">Record your details and the criteria you are looking for in a spouse, and the bot shows you matching profiles. No phone numbers, no usernames: messages go through the bot after both sides agree.</p>
-      <a class="btn" href="https://t.me/HisnAlzawaj_bot?start=ad_xb79tj" rel="noopener">Open in Telegram</a>
+      <div class="ctas"><a class="btn" href="https://t.me/HisnAlzawaj_bot?start=ad_xb79tj" rel="noopener">Open in Telegram</a><a class="btn alt" href="https://app.hisnalzawaj.com/" rel="noopener">Sign up on the web</a></div>
       <p class="note">Free to start · Arabic, English, French, Spanish, Indonesian and Persian</p>
       <ul class="badges">
         <li><span aria-hidden="true">🌫️</span>Photo blurred by default</li>
@@ -508,7 +521,7 @@ footer{border-top:1px solid var(--line); padding:30px 0 44px; font-size:.9rem;
       </details>
       <details class="qa">
         <summary><span>How do I start?</span></summary>
-        <p>Open the bot in Telegram and press Start. The conversation guides you step by step, and your progress is saved if you stop and come back.</p>
+        <p>Open the bot in Telegram and press Start. The conversation guides you step by step, and your progress is saved if you stop and come back. No Telegram? Sign up on the website with a Google or Facebook account.</p>
       </details>
       </div>
     </div>
@@ -517,8 +530,8 @@ footer{border-top:1px solid var(--line); padding:30px 0 44px; font-size:.9rem;
   <section class="end">
     <div class="wrap">
       <h2>Start now</h2>
-      <p>Registration happens inside Telegram — no other app and no new account.</p>
-      <a class="btn" href="https://t.me/HisnAlzawaj_bot?start=ad_xb79tj" rel="noopener">Open in Telegram</a>
+      <p>Sign up inside Telegram, or in your browser with a Google or Facebook account — nothing to install.</p>
+      <div class="ctas"><a class="btn" href="https://t.me/HisnAlzawaj_bot?start=ad_xb79tj" rel="noopener">Open in Telegram</a><a class="btn alt" href="https://app.hisnalzawaj.com/" rel="noopener">Sign up on the web</a></div>
     </div>
   </section>
 
