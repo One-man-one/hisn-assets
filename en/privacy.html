@@ -94,6 +94,11 @@ section{padding:clamp(56px,8vw,96px) 0; position:relative}
 .mark{display:flex; align-items:center; gap:10px; font-weight:700;
   color:var(--ink); text-decoration:none; font-size:1.08rem; flex:none}
 .mark span{white-space:nowrap}
+/* الاسمان معاً: اللاتيني أوّلاً وبحجمه (هو المقروء عند المدقّق)، والعربي
+   تحته أصغر — لا بدلاً منه. راجع `_wordmark`. */
+.mark .names{display:flex; flex-direction:column; align-items:flex-start;
+  line-height:1.15}
+.mark .ar{font-size:.78em; font-weight:600; color:var(--body)}
 .mark img{width:36px; height:36px; object-fit:contain}
 .snav{display:flex; gap:4px; list-style:none; margin:0; padding:0;
   margin-inline-start:auto}
@@ -474,7 +479,7 @@ main,footer{position:relative; z-index:1}
   <div class="wrap top-in">
     <a class="mark" href="https://hisnalzawaj.com/en/">
       <img src="../icon.png" alt="" width="36" height="36">
-      <span>Hisn Alzawaj</span>
+      <span class="names"><span>Hisn Alzawaj</span><span class="ar" lang="ar" dir="rtl">حصن الزواج</span></span>
     </a>
     <nav aria-label="Site pages">
       <ul class="snav">
@@ -503,7 +508,7 @@ main,footer{position:relative; z-index:1}
   <section>
     <div class="wrap doc">
       <h1>Privacy Policy</h1>
-      <p class="updated">Last updated: 23 September 2026</p>
+      <p class="updated">Last updated: 24 September 2026</p>
       <p class="lead">This document describes what the Hisn Alzawaj bot collects about you, why, who sees it, how long it stays, and how you delete it. It is written to be read, not signed: no twisted legal phrasing, and no promise that the service itself does not keep.</p>
       <h2>Who we are and what this covers</h2>
       <p>Hisn Alzawaj is a service for finding a marriage partner. It runs inside Telegram, through the bot @HisnAlzawaj_bot, and in the browser, through the web app app.hisnalzawaj.com.</p>
@@ -543,9 +548,10 @@ main,footer{position:relative; z-index:1}
       <p>Your photo is not shown clearly to anyone until you allow that person, request by request. The default everyone sees is a blurred version.</p>
       <p>Permission can be temporary, with a viewing window that starts at the first actual opening rather than at the moment you approve — an approval given at 3 a.m. while the requester sleeps must not expire before they see it. Photos shown through a temporary window are deleted from the viewer’s chat once it ends.</p>
       <p>You may withdraw permission at any time. Changing your photo revokes every previous permission at once, without your having to ask.</p>
-      <h2>Identity verification — the video is never stored</h2>
+      <h2>Identity verification — the video is not kept</h2>
       <p>Verification is entirely optional. You send a short video in which you perform a gesture and show a code issued to you at that moment.</p>
-      <p>The video is not stored with us in any form: it is downloaded into working memory, sent for automated analysis, then released. Neither the video nor its Telegram identifier is written to our database.</p>
+      <p>In the bot, the video is not stored with us in any form: it is downloaded into working memory, sent for automated analysis, then released. Neither the video nor its Telegram identifier is written to our database.</p>
+      <p>On the website one thing differs: a browser can only hand the video over for analysis through our server, so it is held in our database temporarily until it is analysed — usually seconds, and at most half an hour if analysis fails — and then deleted. The website never shows it to anyone, you included. If the decision needs human review, it is sent to the moderator alone before it is deleted.</p>
       <p>What remains is the decision alone: approved, referred to human review, or rejected — with its reason and its time.</p>
       <h2>The card published on our pages</h2>
       <p>To help you reach a partner sooner, we publish an introductory card about you on our channel and official pages. It carries:</p>
@@ -568,7 +574,7 @@ main,footer{position:relative; z-index:1}
         <li>Other users: what appears on your profile and in search results.</li>
         <li>Service moderators: on a report, a verification review, or a complaint.</li>
         <li>Telegram: the platform the whole service runs on.</li>
-        <li>Google: automated analysis of the verification video — with no storage on our side, as described above.</li>
+        <li>Google: automated analysis of the verification video — not kept on our side after the check, as described above.</li>
         <li>A machine translation service: translating your bio when someone views it in another language, and when your card is published to an English destination.</li>
         <li>A cloud hosting provider: running the server and the database.</li>
         <li>Publishing platforms — Telegram, Facebook, Instagram, Threads, YouTube and TikTok: only the card described above, and only for those who have not switched publishing off.</li>
@@ -603,7 +609,7 @@ main,footer{position:relative; z-index:1}
       <p>The service is for those aged 18 and over. Any account we find to belong to someone younger is deleted.</p>
       <h2>Security — and what we do not promise</h2>
       <p>Connections to our servers are encrypted, and administrative access to data is limited to those who need it for their work.</p>
-      <p>No system is perfectly secure, so we will not promise what we cannot guarantee. What we do guarantee is twofold: that we do not collect what we do not need, and that the most sensitive thing that ever passes through us — your verification video — is never stored at all.</p>
+      <p>No system is perfectly secure, so we will not promise what we cannot guarantee. What we do guarantee is twofold: that we do not collect what we do not need, and that the most sensitive thing that ever passes through us — your verification video — is not kept after it is checked.</p>
       <h2>Changes to this document</h2>
       <p>If what we do changes, we change this document and update the date at its top. A material change is announced on our channel, not slipped in here quietly.</p>
       <h2>Contact</h2>
@@ -620,7 +626,7 @@ main,footer{position:relative; z-index:1}
       <div class="fabout">
         <a class="mark" href="https://hisnalzawaj.com/en/">
           <img src="../icon.png" alt="" width="36" height="36">
-          <span>Hisn Alzawaj</span>
+          <span class="names"><span>Hisn Alzawaj</span><span class="ar" lang="ar" dir="rtl">حصن الزواج</span></span>
         </a>
         <p>A marriage-focused introductions platform on Telegram and the web: set your criteria, browse matching profiles, and talk inside the platform after both sides agree. Your photo stays blurred until you allow it.</p>
       </div>

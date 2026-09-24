@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Hisn Alzawaj</title>
-  <meta name="description" content="منصّة تعارف بغرض الزواج على تليجرام والويب: سجّل مواصفاتك، تصفّح الملفات المطابقة، وتواصل داخل المنصّة بعد موافقة الطرفين. صورتك مموّهة حتى تأذن أنت.">
+  <meta name="description" content="حصن الزواج — منصّة تعارف بغرض الزواج على تليجرام والويب: سجّل مواصفاتك، تصفّح الملفات المطابقة، وتواصل داخل المنصّة بعد موافقة الطرفين. صورتك مموّهة حتى تأذن أنت.">
   <meta name="keywords" content="بوت زواج, زواج تليجرام, تعارف بغرض الزواج, زواج شرعي, بوت تعارف, البحث عن شريك حياة, حصن الزواج">
   <link rel="canonical" href="https://hisnalzawaj.com/">
   <link rel="alternate" hreflang="ar" href="https://hisnalzawaj.com/">
@@ -20,7 +20,7 @@
   <meta property="og:site_name" content="Hisn Alzawaj">
   <meta property="og:locale" content="ar_AR">
   <meta property="og:title" content="Hisn Alzawaj">
-  <meta property="og:description" content="منصّة تعارف بغرض الزواج على تليجرام والويب: سجّل مواصفاتك، تصفّح الملفات المطابقة، وتواصل داخل المنصّة بعد موافقة الطرفين. صورتك مموّهة حتى تأذن أنت.">
+  <meta property="og:description" content="حصن الزواج — منصّة تعارف بغرض الزواج على تليجرام والويب: سجّل مواصفاتك، تصفّح الملفات المطابقة، وتواصل داخل المنصّة بعد موافقة الطرفين. صورتك مموّهة حتى تأذن أنت.">
   <meta property="og:url" content="https://hisnalzawaj.com/">
   <meta property="og:image" content="https://hisnalzawaj.com/og.png">
   <meta property="og:image:width" content="1200">
@@ -100,6 +100,11 @@ section{padding:clamp(56px,8vw,96px) 0; position:relative}
 .mark{display:flex; align-items:center; gap:10px; font-weight:700;
   color:var(--ink); text-decoration:none; font-size:1.08rem; flex:none}
 .mark span{white-space:nowrap}
+/* الاسمان معاً: اللاتيني أوّلاً وبحجمه (هو المقروء عند المدقّق)، والعربي
+   تحته أصغر — لا بدلاً منه. راجع `_wordmark`. */
+.mark .names{display:flex; flex-direction:column; align-items:flex-start;
+  line-height:1.15}
+.mark .ar{font-size:.78em; font-weight:600; color:var(--body)}
 .mark img{width:36px; height:36px; object-fit:contain}
 .snav{display:flex; gap:4px; list-style:none; margin:0; padding:0;
   margin-inline-start:auto}
@@ -518,7 +523,7 @@ main,footer{position:relative; z-index:1}
     "id",
     "fa"
   ],
-  "description": "منصّة تعارف بغرض الزواج على تليجرام والويب: سجّل مواصفاتك، تصفّح الملفات المطابقة، وتواصل داخل المنصّة بعد موافقة الطرفين. صورتك مموّهة حتى تأذن أنت.",
+  "description": "حصن الزواج — منصّة تعارف بغرض الزواج على تليجرام والويب: سجّل مواصفاتك، تصفّح الملفات المطابقة، وتواصل داخل المنصّة بعد موافقة الطرفين. صورتك مموّهة حتى تأذن أنت.",
   "image": "https://hisnalzawaj.com/og.png",
   "offers": {
     "@type": "Offer",
@@ -607,7 +612,7 @@ main,footer{position:relative; z-index:1}
   <div class="wrap top-in">
     <a class="mark" href="https://hisnalzawaj.com/">
       <img src="icon.png" alt="" width="36" height="36">
-      <span>Hisn Alzawaj</span>
+      <span class="names"><span>Hisn Alzawaj</span><span class="ar" lang="ar" dir="rtl">حصن الزواج</span></span>
     </a>
     <nav aria-label="صفحات الموقع">
       <ul class="snav">
@@ -637,7 +642,7 @@ main,footer{position:relative; z-index:1}
   <section class="hero">
     <div class="wrap">
       <span class="kicker">تليجرام والويب</span>
-      <h1>تعارف بغرض الزواج — على تليجرام أو من المتصفّح</h1>
+      <h1>حصن الزواج: طريقك إلى زواجٍ شرعيّ، بخصوصيةٍ تحفظك</h1>
       <p class="lead">سجّل بياناتك والمواصفات التي تريدها في شريك حياتك، فتعرض لك المنصّة الملفات المطابقة. لا تبادُل أرقام ولا معرّفات: المراسلة تجري داخل المنصّة — في البوت أو الموقع — بعد موافقة الطرفين.</p>
       <div class="ctas"><a class="btn" href="https://app.hisnalzawaj.com/" rel="noopener">سجّل مباشرة من الموقع</a><a class="btn alt" href="https://t.me/HisnAlzawaj_bot?start=ad_xb79tj" rel="noopener">أو عبر بوت تيليجرام</a></div><p class="cta-hint">لا يلزمك تيليجرام: سجّل من المتصفّح مباشرةً بحساب جوجل أو فيسبوك — أو من بوت حصن الزواج على تيليجرام إن كنت تفضّله.</p>
       <p class="note">مجاني للبدء · بالعربية والإنجليزية والفرنسية والإسبانية والإندونيسية والفارسية</p>
@@ -839,9 +844,9 @@ main,footer{position:relative; z-index:1}
       <div class="fabout">
         <a class="mark" href="https://hisnalzawaj.com/">
           <img src="icon.png" alt="" width="36" height="36">
-          <span>Hisn Alzawaj</span>
+          <span class="names"><span>Hisn Alzawaj</span><span class="ar" lang="ar" dir="rtl">حصن الزواج</span></span>
         </a>
-        <p>منصّة تعارف بغرض الزواج على تليجرام والويب: سجّل مواصفاتك، تصفّح الملفات المطابقة، وتواصل داخل المنصّة بعد موافقة الطرفين. صورتك مموّهة حتى تأذن أنت.</p>
+        <p>حصن الزواج — منصّة تعارف بغرض الزواج على تليجرام والويب: سجّل مواصفاتك، تصفّح الملفات المطابقة، وتواصل داخل المنصّة بعد موافقة الطرفين. صورتك مموّهة حتى تأذن أنت.</p>
       </div>
       <div>
         <h4>ابدأ الآن</h4>

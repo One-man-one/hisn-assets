@@ -94,6 +94,11 @@ section{padding:clamp(56px,8vw,96px) 0; position:relative}
 .mark{display:flex; align-items:center; gap:10px; font-weight:700;
   color:var(--ink); text-decoration:none; font-size:1.08rem; flex:none}
 .mark span{white-space:nowrap}
+/* الاسمان معاً: اللاتيني أوّلاً وبحجمه (هو المقروء عند المدقّق)، والعربي
+   تحته أصغر — لا بدلاً منه. راجع `_wordmark`. */
+.mark .names{display:flex; flex-direction:column; align-items:flex-start;
+  line-height:1.15}
+.mark .ar{font-size:.78em; font-weight:600; color:var(--body)}
 .mark img{width:36px; height:36px; object-fit:contain}
 .snav{display:flex; gap:4px; list-style:none; margin:0; padding:0;
   margin-inline-start:auto}
@@ -474,7 +479,7 @@ main,footer{position:relative; z-index:1}
   <div class="wrap top-in">
     <a class="mark" href="https://hisnalzawaj.com/id/">
       <img src="../icon.png" alt="" width="36" height="36">
-      <span>Hisn Alzawaj</span>
+      <span class="names"><span>Hisn Alzawaj</span><span class="ar" lang="ar" dir="rtl">حصن الزواج</span></span>
     </a>
     <nav aria-label="Halaman situs">
       <ul class="snav">
@@ -503,7 +508,7 @@ main,footer{position:relative; z-index:1}
   <section>
     <div class="wrap doc">
       <h1>Kebijakan Privasi</h1>
-      <p class="updated">Terakhir diperbarui: 23 September 2026</p>
+      <p class="updated">Terakhir diperbarui: 24 September 2026</p>
       <p class="lead">Dokumen ini menjelaskan data apa yang dikumpulkan bot Hisn Alzawaj tentang Anda, mengapa, siapa yang melihatnya, berapa lama disimpan, dan bagaimana Anda menghapusnya. Ditulis untuk dibaca, bukan untuk ditandatangani: tanpa bahasa hukum yang berbelit, dan tanpa janji yang tidak ditepati oleh layanannya sendiri.</p>
       <h2>Siapa kami dan apa yang dicakup dokumen ini</h2>
       <p>Hisn Alzawaj adalah layanan perkenalan untuk tujuan menikah, yang berjalan di dalam Telegram melalui bot @HisnAlzawaj_bot, dan di browser melalui aplikasi web app.hisnalzawaj.com.</p>
@@ -543,9 +548,10 @@ main,footer{position:relative; z-index:1}
       <p>Foto Anda tidak ditampilkan jelas kepada siapa pun sampai Anda mengizinkannya, permintaan demi permintaan. Bawaannya adalah versi buram yang dilihat semua orang.</p>
       <p>Izin dapat bersifat sementara, dengan jendela tampil yang dimulai dari pembukaan pertama yang sesungguhnya, bukan dari saat Anda menyetujui — persetujuan pukul tiga pagi saat peminta sedang tidur tidak boleh habis sebelum ia melihatnya. Foto yang ditampilkan lewat jendela sementara dihapus dari obrolan penonton setelah jendela itu berakhir.</p>
       <p>Anda dapat menarik izin kapan saja. Dan mengganti foto Anda membatalkan seluruh izin sebelumnya sekaligus, tanpa perlu Anda minta.</p>
-      <h2>Verifikasi identitas — videonya tidak pernah disimpan</h2>
+      <h2>Verifikasi identitas — videonya tidak disimpan</h2>
       <p>Verifikasi sepenuhnya opsional. Anda mengirim video pendek sambil melakukan satu gerakan dan menunjukkan kode yang diberikan saat itu juga.</p>
-      <p>Video itu tidak disimpan pada kami dalam bentuk apa pun: diunduh ke memori kerja, dikirim untuk analisis otomatis, lalu dilepaskan. Baik videonya maupun pengenalnya di Telegram tidak ditulis ke basis data kami.</p>
+      <p>Di bot, video itu tidak disimpan pada kami dalam bentuk apa pun: diunduh ke memori kerja, dikirim untuk analisis otomatis, lalu dilepaskan. Baik videonya maupun pengenalnya di Telegram tidak ditulis ke basis data kami.</p>
+      <p>Di situs web ada satu hal yang berbeda: browser hanya dapat menyerahkan video untuk dianalisis melalui server kami, jadi video disimpan sementara di basis data kami sampai dianalisis — biasanya beberapa detik, dan paling lama setengah jam jika analisis gagal — lalu dihapus. Situs web tidak menampilkannya kepada siapa pun, termasuk Anda. Jika keputusan memerlukan peninjauan manusia, video dikirim hanya kepada moderator sebelum dihapus.</p>
       <p>Yang tersisa hanyalah keputusannya: diterima, dirujuk ke peninjauan manusia, atau ditolak — beserta alasan dan waktunya.</p>
       <h2>Kartu yang diterbitkan di halaman kami</h2>
       <p>Agar Anda lebih cepat menemukan pasangan, kami menerbitkan kartu perkenalan tentang Anda di kanal dan halaman resmi kami. Isinya:</p>
@@ -568,7 +574,7 @@ main,footer{position:relative; z-index:1}
         <li>Pengguna lain: apa yang tampil di profil dan hasil pencarian.</li>
         <li>Moderator layanan: saat ada laporan, peninjauan verifikasi, atau keluhan.</li>
         <li>Telegram: platform tempat seluruh layanan berjalan.</li>
-        <li>Google: analisis otomatis video verifikasi — tanpa penyimpanan di sisi kami, seperti dijelaskan di atas.</li>
+        <li>Google: analisis otomatis video verifikasi — tidak disimpan di sisi kami setelah diperiksa, seperti dijelaskan di atas.</li>
         <li>Sebuah layanan terjemahan mesin: menerjemahkan deskripsi Anda saat dilihat dalam bahasa lain, dan saat kartu Anda diterbitkan ke tujuan berbahasa Inggris.</li>
         <li>Sebuah penyedia hosting awan: menjalankan server dan basis data.</li>
         <li>Platform penerbitan — Telegram, Facebook, Instagram, Threads, YouTube, dan TikTok: hanya kartu yang dijelaskan di atas, dan hanya bagi yang tidak mematikan penerbitan.</li>
@@ -603,7 +609,7 @@ main,footer{position:relative; z-index:1}
       <p>Layanan ini untuk yang berusia 18 tahun ke atas. Akun yang kami dapati milik orang yang lebih muda akan dihapus.</p>
       <h2>Keamanan — dan apa yang tidak kami janjikan</h2>
       <p>Koneksi ke server kami terenkripsi, dan akses administratif ke data terbatas pada yang memerlukannya untuk pekerjaannya.</p>
-      <p>Tidak ada sistem yang sepenuhnya kebal, maka kami tidak akan menjanjikan apa yang tidak dapat kami jamin. Yang kami jamin ada dua: kami tidak mengumpulkan apa yang tidak kami perlukan, dan hal paling sensitif yang pernah melewati kami — video verifikasi Anda — sama sekali tidak disimpan.</p>
+      <p>Tidak ada sistem yang sepenuhnya kebal, maka kami tidak akan menjanjikan apa yang tidak dapat kami jamin. Yang kami jamin ada dua: kami tidak mengumpulkan apa yang tidak kami perlukan, dan hal paling sensitif yang pernah melewati kami — video verifikasi Anda — tidak disimpan setelah diperiksa.</p>
       <h2>Perubahan dokumen ini</h2>
       <p>Jika yang kami lakukan berubah, kami mengubah dokumen ini dan memperbarui tanggal di atasnya. Perubahan mendasar diumumkan di kanal kami, bukan diselipkan diam-diam di sini.</p>
       <h2>Kontak</h2>
@@ -620,7 +626,7 @@ main,footer{position:relative; z-index:1}
       <div class="fabout">
         <a class="mark" href="https://hisnalzawaj.com/id/">
           <img src="../icon.png" alt="" width="36" height="36">
-          <span>Hisn Alzawaj</span>
+          <span class="names"><span>Hisn Alzawaj</span><span class="ar" lang="ar" dir="rtl">حصن الزواج</span></span>
         </a>
         <p>Platform perkenalan untuk tujuan pernikahan di Telegram dan web: catat kriteria Anda, telusuri profil yang sesuai, dan berkomunikasi di dalam platform setelah kedua pihak setuju. Foto Anda tetap buram sampai Anda mengizinkannya.</p>
       </div>

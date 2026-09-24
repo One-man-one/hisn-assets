@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Hisn Alzawaj — دليل الاستخدام</title>
+  <title>Hisn Alzawaj — دليل استخدام حصن الزواج</title>
   <meta name="description" content="دليل استخدام حصن الزواج خطوةً خطوة: التسجيل، والبحث ودرجة التوافق، والدردشة داخل البوت، وخصوصية الصورة، والتوثيق، والبلاغات، والعضوية المميزة، وحذف الحساب.">
   <link rel="canonical" href="https://hisnalzawaj.com/guide.html">
   <link rel="alternate" hreflang="ar" href="https://hisnalzawaj.com/guide.html">
@@ -18,7 +18,7 @@
   <meta property="og:type" content="article">
   <meta property="og:site_name" content="Hisn Alzawaj">
   <meta property="og:locale" content="ar_AR">
-  <meta property="og:title" content="Hisn Alzawaj — دليل الاستخدام">
+  <meta property="og:title" content="Hisn Alzawaj — دليل استخدام حصن الزواج">
   <meta property="og:description" content="دليل استخدام حصن الزواج خطوةً خطوة: التسجيل، والبحث ودرجة التوافق، والدردشة داخل البوت، وخصوصية الصورة، والتوثيق، والبلاغات، والعضوية المميزة، وحذف الحساب.">
   <meta property="og:url" content="https://hisnalzawaj.com/guide.html">
   <meta name="theme-color" content="#130d11">
@@ -94,6 +94,11 @@ section{padding:clamp(56px,8vw,96px) 0; position:relative}
 .mark{display:flex; align-items:center; gap:10px; font-weight:700;
   color:var(--ink); text-decoration:none; font-size:1.08rem; flex:none}
 .mark span{white-space:nowrap}
+/* الاسمان معاً: اللاتيني أوّلاً وبحجمه (هو المقروء عند المدقّق)، والعربي
+   تحته أصغر — لا بدلاً منه. راجع `_wordmark`. */
+.mark .names{display:flex; flex-direction:column; align-items:flex-start;
+  line-height:1.15}
+.mark .ar{font-size:.78em; font-weight:600; color:var(--body)}
 .mark img{width:36px; height:36px; object-fit:contain}
 .snav{display:flex; gap:4px; list-style:none; margin:0; padding:0;
   margin-inline-start:auto}
@@ -474,7 +479,7 @@ main,footer{position:relative; z-index:1}
   <div class="wrap top-in">
     <a class="mark" href="https://hisnalzawaj.com/">
       <img src="icon.png" alt="" width="36" height="36">
-      <span>Hisn Alzawaj</span>
+      <span class="names"><span>Hisn Alzawaj</span><span class="ar" lang="ar" dir="rtl">حصن الزواج</span></span>
     </a>
     <nav aria-label="صفحات الموقع">
       <ul class="snav">
@@ -502,7 +507,7 @@ main,footer{position:relative; z-index:1}
 <main>
   <section>
     <div class="wrap doc">
-      <h1>دليل الاستخدام</h1>
+      <h1>دليل استخدام حصن الزواج</h1>
       <p class="updated">آخر تحديث: ٢٣ سبتمبر ٢٠٢٦</p>
       <p class="lead">هذه الصفحة تشرح الخدمة كما يراها المستخدم: ماذا يحدث في كل خطوة، وما الذي تقرّره أنت، وما الذي لا نفعله ببياناتك. وهي وصفٌ لما يعمل اليوم لا وعدٌ بما سيأتي.</p>
       <h2>قبل أن تبدأ</h2>
@@ -577,9 +582,9 @@ main,footer{position:relative; z-index:1}
       <div class="fabout">
         <a class="mark" href="https://hisnalzawaj.com/">
           <img src="icon.png" alt="" width="36" height="36">
-          <span>Hisn Alzawaj</span>
+          <span class="names"><span>Hisn Alzawaj</span><span class="ar" lang="ar" dir="rtl">حصن الزواج</span></span>
         </a>
-        <p>منصّة تعارف بغرض الزواج على تليجرام والويب: سجّل مواصفاتك، تصفّح الملفات المطابقة، وتواصل داخل المنصّة بعد موافقة الطرفين. صورتك مموّهة حتى تأذن أنت.</p>
+        <p>حصن الزواج — منصّة تعارف بغرض الزواج على تليجرام والويب: سجّل مواصفاتك، تصفّح الملفات المطابقة، وتواصل داخل المنصّة بعد موافقة الطرفين. صورتك مموّهة حتى تأذن أنت.</p>
       </div>
       <div>
         <h4>ابدأ الآن</h4>

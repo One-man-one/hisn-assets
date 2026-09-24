@@ -100,6 +100,11 @@ section{padding:clamp(56px,8vw,96px) 0; position:relative}
 .mark{display:flex; align-items:center; gap:10px; font-weight:700;
   color:var(--ink); text-decoration:none; font-size:1.08rem; flex:none}
 .mark span{white-space:nowrap}
+/* الاسمان معاً: اللاتيني أوّلاً وبحجمه (هو المقروء عند المدقّق)، والعربي
+   تحته أصغر — لا بدلاً منه. راجع `_wordmark`. */
+.mark .names{display:flex; flex-direction:column; align-items:flex-start;
+  line-height:1.15}
+.mark .ar{font-size:.78em; font-weight:600; color:var(--body)}
 .mark img{width:36px; height:36px; object-fit:contain}
 .snav{display:flex; gap:4px; list-style:none; margin:0; padding:0;
   margin-inline-start:auto}
@@ -607,7 +612,7 @@ main,footer{position:relative; z-index:1}
   <div class="wrap top-in">
     <a class="mark" href="https://hisnalzawaj.com/id/">
       <img src="../icon.png" alt="" width="36" height="36">
-      <span>Hisn Alzawaj</span>
+      <span class="names"><span>Hisn Alzawaj</span><span class="ar" lang="ar" dir="rtl">حصن الزواج</span></span>
     </a>
     <nav aria-label="Halaman situs">
       <ul class="snav">
@@ -839,7 +844,7 @@ main,footer{position:relative; z-index:1}
       <div class="fabout">
         <a class="mark" href="https://hisnalzawaj.com/id/">
           <img src="../icon.png" alt="" width="36" height="36">
-          <span>Hisn Alzawaj</span>
+          <span class="names"><span>Hisn Alzawaj</span><span class="ar" lang="ar" dir="rtl">حصن الزواج</span></span>
         </a>
         <p>Platform perkenalan untuk tujuan pernikahan di Telegram dan web: catat kriteria Anda, telusuri profil yang sesuai, dan berkomunikasi di dalam platform setelah kedua pihak setuju. Foto Anda tetap buram sampai Anda mengizinkannya.</p>
       </div>

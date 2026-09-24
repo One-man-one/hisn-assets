@@ -94,6 +94,11 @@ section{padding:clamp(56px,8vw,96px) 0; position:relative}
 .mark{display:flex; align-items:center; gap:10px; font-weight:700;
   color:var(--ink); text-decoration:none; font-size:1.08rem; flex:none}
 .mark span{white-space:nowrap}
+/* الاسمان معاً: اللاتيني أوّلاً وبحجمه (هو المقروء عند المدقّق)، والعربي
+   تحته أصغر — لا بدلاً منه. راجع `_wordmark`. */
+.mark .names{display:flex; flex-direction:column; align-items:flex-start;
+  line-height:1.15}
+.mark .ar{font-size:.78em; font-weight:600; color:var(--body)}
 .mark img{width:36px; height:36px; object-fit:contain}
 .snav{display:flex; gap:4px; list-style:none; margin:0; padding:0;
   margin-inline-start:auto}
@@ -474,7 +479,7 @@ main,footer{position:relative; z-index:1}
   <div class="wrap top-in">
     <a class="mark" href="https://hisnalzawaj.com/es/">
       <img src="../icon.png" alt="" width="36" height="36">
-      <span>Hisn Alzawaj</span>
+      <span class="names"><span>Hisn Alzawaj</span><span class="ar" lang="ar" dir="rtl">حصن الزواج</span></span>
     </a>
     <nav aria-label="Páginas del sitio">
       <ul class="snav">
@@ -503,7 +508,7 @@ main,footer{position:relative; z-index:1}
   <section>
     <div class="wrap doc">
       <h1>Política de Privacidad</h1>
-      <p class="updated">Última actualización: 23 de septiembre de 2026</p>
+      <p class="updated">Última actualización: 24 de septiembre de 2026</p>
       <p class="lead">Este documento describe qué recoge el bot Hisn Alzawaj sobre ti, por qué, quién lo ve, cuánto tiempo permanece y cómo lo eliminas. Está escrito para leerse, no para firmarse: sin redacción jurídica retorcida y sin ninguna promesa que el propio servicio no cumpla.</p>
       <h2>Quiénes somos y qué cubre este documento</h2>
       <p>Hisn Alzawaj es un servicio para encontrar cónyuge. Funciona dentro de Telegram, a través del bot @HisnAlzawaj_bot, y en el navegador, a través de la aplicación web app.hisnalzawaj.com.</p>
@@ -543,9 +548,10 @@ main,footer{position:relative; z-index:1}
       <p>Tu foto no se muestra con nitidez a nadie mientras no lo autorices para esa persona, solicitud por solicitud. Lo que todo el mundo ve de forma predeterminada es una versión difuminada.</p>
       <p>La autorización puede ser temporal, con una ventana de visualización que empieza en la primera apertura real y no en el momento en que la concedes: una autorización dada a las 3 de la madrugada mientras quien la pidió duerme no debe caducar antes de que la vea. Las fotos mostradas mediante una ventana temporal se eliminan del chat de quien las mira en cuanto esta termina.</p>
       <p>Puedes retirar la autorización en cualquier momento. Cambiar de foto revoca de golpe todas las autorizaciones anteriores, sin que tengas que pedirlo.</p>
-      <h2>Verificación de identidad: el vídeo nunca se almacena</h2>
+      <h2>Verificación de identidad: el vídeo no se conserva</h2>
       <p>La verificación es totalmente opcional. Envías un vídeo corto en el que realizas un gesto y muestras un código que se te entrega en ese momento.</p>
-      <p>El vídeo no se almacena con nosotros de ninguna forma: se descarga en memoria de trabajo, se envía para un análisis automatizado y después se libera. Ni el vídeo ni su identificador de Telegram se escriben en nuestra base de datos.</p>
+      <p>En el bot, el vídeo no se almacena con nosotros de ninguna forma: se descarga en memoria de trabajo, se envía para un análisis automatizado y después se libera. Ni el vídeo ni su identificador de Telegram se escriben en nuestra base de datos.</p>
+      <p>En el sitio web cambia una cosa: un navegador solo puede entregar el vídeo para su análisis a través de nuestro servidor, así que se guarda temporalmente en nuestra base de datos hasta analizarlo — normalmente segundos, y como mucho media hora si el análisis falla — y después se borra. El sitio no se lo muestra a nadie, ni siquiera a ti. Si la decisión requiere revisión humana, se envía solo al moderador antes de borrarlo.</p>
       <p>Lo que queda es únicamente la decisión: aprobada, remitida a revisión humana o rechazada, con su motivo y su hora.</p>
       <h2>La ficha publicada en nuestras páginas</h2>
       <p>Para ayudarte a encontrar cónyuge antes, publicamos una ficha de presentación sobre ti en nuestro canal y en nuestras páginas oficiales. Lleva:</p>
@@ -568,7 +574,7 @@ main,footer{position:relative; z-index:1}
         <li>Otras personas usuarias: lo que aparece en tu perfil y en los resultados de búsqueda.</li>
         <li>Los moderadores del servicio: ante una denuncia, una revisión de verificación o una reclamación.</li>
         <li>Telegram: la plataforma sobre la que funciona todo el servicio.</li>
-        <li>Google: el análisis automatizado del vídeo de verificación, sin almacenamiento por nuestra parte, como se describe más arriba.</li>
+        <li>Google: el análisis automatizado del vídeo de verificación, que no conservamos tras el análisis, como se describe más arriba.</li>
         <li>Un servicio de traducción automática: la traducción de tu presentación cuando alguien la consulta en otro idioma, y cuando tu ficha se publica en un destino en inglés.</li>
         <li>Un proveedor de alojamiento en la nube: la ejecución del servidor y la base de datos.</li>
         <li>Las plataformas de publicación — Telegram, Facebook, Instagram, Threads, YouTube y TikTok: únicamente la ficha descrita más arriba, y solo para quienes no hayan desactivado la publicación.</li>
@@ -603,7 +609,7 @@ main,footer{position:relative; z-index:1}
       <p>El servicio es para personas de 18 años en adelante. Cualquier cuenta que constatemos que pertenece a alguien más joven se elimina.</p>
       <h2>Seguridad, y lo que no prometemos</h2>
       <p>Las conexiones a nuestros servidores están cifradas, y el acceso administrativo a los datos se limita a quienes lo necesitan para su trabajo.</p>
-      <p>Ningún sistema es perfectamente seguro, así que no prometeremos lo que no podemos garantizar. Lo que sí garantizamos es doble: no recogemos lo que no necesitamos, y lo más sensible que pasa por nosotros — tu vídeo de verificación — no se almacena en ningún momento.</p>
+      <p>Ningún sistema es perfectamente seguro, así que no prometeremos lo que no podemos garantizar. Lo que sí garantizamos es doble: no recogemos lo que no necesitamos, y lo más sensible que pasa por nosotros — tu vídeo de verificación — no se conserva tras el análisis.</p>
       <h2>Cambios en este documento</h2>
       <p>Si cambia lo que hacemos, cambiamos este documento y actualizamos la fecha de su encabezado. Un cambio sustancial se anuncia en nuestro canal, no se cuela aquí en silencio.</p>
       <h2>Contacto</h2>
@@ -620,7 +626,7 @@ main,footer{position:relative; z-index:1}
       <div class="fabout">
         <a class="mark" href="https://hisnalzawaj.com/es/">
           <img src="../icon.png" alt="" width="36" height="36">
-          <span>Hisn Alzawaj</span>
+          <span class="names"><span>Hisn Alzawaj</span><span class="ar" lang="ar" dir="rtl">حصن الزواج</span></span>
         </a>
         <p>Una plataforma para conocer personas con fines matrimoniales en Telegram y en la web: define tus criterios, explora los perfiles compatibles y conversa dentro de la plataforma cuando ambas partes estén de acuerdo. Tu foto permanece difuminada hasta que tú lo autorices.</p>
       </div>
