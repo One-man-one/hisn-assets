@@ -108,7 +108,7 @@ section{padding:clamp(56px,8vw,96px) 0; position:relative}
 .top .btn{margin:0; padding:9px 20px; font-size:.95rem; box-shadow:none}
 
 /* ── كرة اللغات ──
-   ⚠️ `<details>` لا جافاسكربت: الموقع ساكن بلا سكربت بقرار. والقائمة
+   ⚠️ `<details>` لا جافاسكربت: الموقع ساكن بقرار، وسكربتُه الوحيد إسنادُ الحملة (`_ad_script`). والقائمة
    تُغلق بنقرةٍ ثانية على الكرة، وتبقى روابطها في DOM فيقرؤها الزاحف
    كما يقرأ `hreflang` في الرأس. */
 .lang{position:relative}
@@ -508,7 +508,7 @@ main,footer{position:relative; z-index:1}
   <section>
     <div class="wrap doc">
       <h1>Términos de Uso</h1>
-      <p class="updated">Última actualización: 23 de septiembre de 2026</p>
+      <p class="updated">Última actualización: 26 de septiembre de 2026</p>
       <p class="lead">Este documento describe tus derechos y obligaciones en Hisn Alzawaj. Está escrito para leerse, no para firmarse: sin redacción jurídica enrevesada y sin ninguna cláusula que el propio servicio no cumpla. Léelo junto a nuestra Política de Privacidad: aquella dice qué hacemos con tus datos, este dice qué ocurre entre tú, nosotros y las demás personas miembros.</p>
       <h2>Quiénes somos y qué aceptas</h2>
       <p>Hisn Alzawaj es un servicio de emparejamiento para el matrimonio islámico. Funciona dentro de Telegram, a través del bot @HisnAlzawaj_bot, y en el navegador, a través de la aplicación web app.hisnalzawaj.com.</p>
@@ -553,7 +553,7 @@ main,footer{position:relative; z-index:1}
       <p>La transacción ocurre en Telegram o en el proveedor de pago, no con nosotros, así que nunca vemos los datos de tu tarjeta ni de tu monedero. Conservamos el identificador de la transacción, su importe y su fecha, que es lo que hace posible una solicitud de reembolso cuando procede.</p>
       <p>Los reembolsos pasan por el propio proveedor de pago y siguen su política. Quien sea expulsado por una falta no recibe reembolso.</p>
       <h2>Fin del servicio y eliminación de tu cuenta</h2>
-      <p>Puedes eliminar tu cuenta en cualquier momento desde dentro del bot. La eliminación es en cascada: borra tu perfil, tus intereses, tus emparejamientos y tus mensajes, y retira lo que se hubiera publicado sobre ti.</p>
+      <p>Puedes eliminar tu cuenta en cualquier momento desde dentro del bot. La eliminación oculta tu cuenta al instante y retira lo que se hubiera publicado sobre ti; la cuenta se guarda treinta días, en los que puedes recuperarla tal como la dejaste. Después se borra en cascada: tu perfil, tus intereses, tus emparejamientos y tus mensajes.</p>
       <p>Una cuenta que queda inactiva mucho tiempo puede eliminarse tras un periodo conocido, para proteger a quienes buscan de perfiles detrás de los cuales ya no hay nadie.</p>
       <p>Podemos suspender una cuenta, poner fin al servicio o cambiar sus funciones. Si suspendemos una cuenta que no cometió falta alguna, todo importe pagado por un plazo aún no transcurrido se reconsidera con equidad.</p>
       <h2>Cambios en estos términos, y contacto</h2>
@@ -613,5 +613,29 @@ main,footer{position:relative; z-index:1}
   </div>
 </footer>
 
+<script id="ad-attribution">
+(function () {
+  try {
+    var re = /^[a-z0-9_-]{1,32}$/, key = 'hisn_ad';
+    var code = (new URLSearchParams(location.search).get('ad') || '').trim().toLowerCase();
+    if (re.test(code)) sessionStorage.setItem(key, code);
+    else code = sessionStorage.getItem(key) || '';
+    if (!re.test(code)) return;
+    var bot = "https://t.me/HisnAlzawaj_bot", web = "https://app.hisnalzawaj.com";
+    document.querySelectorAll('a[href]').forEach(function (a) {
+      var href = a.getAttribute('href');
+      // ⚠️ مطابقةٌ تامّة لا بادئة: `t.me/HisnAlzawaj_bot` بادئةٌ لـ`…_bot_en`
+      // أيضاً، فقناةٌ باسمٍ يبدأ به كانت تصير رابطَ حملةٍ إلى البوت.
+      if (href === bot || href.indexOf(bot + '?') === 0) {
+        a.setAttribute('href', bot + '?start=ad_' + code);
+      } else if (web && (href === web || href.indexOf(web + '/') === 0)) {
+        var u = new URL(href);
+        u.searchParams.set('ad', code);
+        a.setAttribute('href', u.href);
+      }
+    });
+  } catch (e) { /* يضيع الإسناد وحده، والروابط الأصلية تعمل */ }
+})();
+</script>
 </body>
 </html>

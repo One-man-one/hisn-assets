@@ -108,7 +108,7 @@ section{padding:clamp(56px,8vw,96px) 0; position:relative}
 .top .btn{margin:0; padding:9px 20px; font-size:.95rem; box-shadow:none}
 
 /* ── كرة اللغات ──
-   ⚠️ `<details>` لا جافاسكربت: الموقع ساكن بلا سكربت بقرار. والقائمة
+   ⚠️ `<details>` لا جافاسكربت: الموقع ساكن بقرار، وسكربتُه الوحيد إسنادُ الحملة (`_ad_script`). والقائمة
    تُغلق بنقرةٍ ثانية على الكرة، وتبقى روابطها في DOM فيقرؤها الزاحف
    كما يقرأ `hreflang` في الرأس. */
 .lang{position:relative}
@@ -508,7 +508,7 @@ main,footer{position:relative; z-index:1}
   <section>
     <div class="wrap doc">
       <h1>Conditions d’utilisation</h1>
-      <p class="updated">Dernière mise à jour : 23 septembre 2026</p>
+      <p class="updated">Dernière mise à jour : 26 septembre 2026</p>
       <p class="lead">Ce document décrit vos droits et vos obligations sur Hisn Alzawaj. Il est écrit pour être lu, non pour être signé : pas de rédaction juridique alambiquée, et aucune clause que le service lui-même n’honore pas. Lisez-le avec notre Politique de confidentialité — celle-ci dit ce que nous faisons de vos données, celui-là dit ce qui se passe entre vous, nous et les autres membres.</p>
       <h2>Qui nous sommes, et ce que vous acceptez</h2>
       <p>Hisn Alzawaj est un service de mise en relation en vue du mariage islamique. Il fonctionne dans Telegram, par le bot @HisnAlzawaj_bot, et dans le navigateur, par l’application web app.hisnalzawaj.com.</p>
@@ -553,7 +553,7 @@ main,footer{position:relative; z-index:1}
       <p>La transaction a lieu chez Telegram ou chez le prestataire de paiement, non chez nous : nous ne voyons donc jamais vos données de carte ou de portefeuille. Nous conservons l’identifiant de la transaction, son montant et sa date — ce qui rend possible une demande de remboursement lorsqu’il y a lieu.</p>
       <p>Les remboursements passent par le prestataire de paiement lui-même et suivent sa politique. Quiconque est banni pour un manquement n’est pas remboursé.</p>
       <h2>Fin du service, et suppression de votre compte</h2>
-      <p>Vous pouvez supprimer votre compte à tout moment depuis le bot. La suppression est une cascade : elle efface votre profil, vos intérêts, vos mises en relation et vos messages, et retire ce qui a été publié à votre sujet.</p>
+      <p>Vous pouvez supprimer votre compte à tout moment depuis le bot. La suppression masque aussitôt votre compte et retire ce qui a été publié à votre sujet ; le compte est conservé trente jours, pendant lesquels vous pouvez le retrouver tel quel. Ensuite il est effacé en cascade : votre profil, vos intérêts, vos mises en relation et vos messages.</p>
       <p>Un compte laissé dormant longtemps peut être supprimé après une durée connue — afin de protéger celles et ceux qui cherchent contre des profils derrière lesquels il n’y a plus personne.</p>
       <p>Nous pouvons suspendre un compte, mettre fin au service ou en modifier les fonctionnalités. Si nous suspendons un compte qui n’a commis aucun manquement, tout montant payé pour une période non encore écoulée est réexaminé équitablement.</p>
       <h2>Modifications de ces conditions, et contact</h2>
@@ -613,5 +613,29 @@ main,footer{position:relative; z-index:1}
   </div>
 </footer>
 
+<script id="ad-attribution">
+(function () {
+  try {
+    var re = /^[a-z0-9_-]{1,32}$/, key = 'hisn_ad';
+    var code = (new URLSearchParams(location.search).get('ad') || '').trim().toLowerCase();
+    if (re.test(code)) sessionStorage.setItem(key, code);
+    else code = sessionStorage.getItem(key) || '';
+    if (!re.test(code)) return;
+    var bot = "https://t.me/HisnAlzawaj_bot", web = "https://app.hisnalzawaj.com";
+    document.querySelectorAll('a[href]').forEach(function (a) {
+      var href = a.getAttribute('href');
+      // ⚠️ مطابقةٌ تامّة لا بادئة: `t.me/HisnAlzawaj_bot` بادئةٌ لـ`…_bot_en`
+      // أيضاً، فقناةٌ باسمٍ يبدأ به كانت تصير رابطَ حملةٍ إلى البوت.
+      if (href === bot || href.indexOf(bot + '?') === 0) {
+        a.setAttribute('href', bot + '?start=ad_' + code);
+      } else if (web && (href === web || href.indexOf(web + '/') === 0)) {
+        var u = new URL(href);
+        u.searchParams.set('ad', code);
+        a.setAttribute('href', u.href);
+      }
+    });
+  } catch (e) { /* يضيع الإسناد وحده، والروابط الأصلية تعمل */ }
+})();
+</script>
 </body>
 </html>

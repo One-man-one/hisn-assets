@@ -108,7 +108,7 @@ section{padding:clamp(56px,8vw,96px) 0; position:relative}
 .top .btn{margin:0; padding:9px 20px; font-size:.95rem; box-shadow:none}
 
 /* ── كرة اللغات ──
-   ⚠️ `<details>` لا جافاسكربت: الموقع ساكن بلا سكربت بقرار. والقائمة
+   ⚠️ `<details>` لا جافاسكربت: الموقع ساكن بقرار، وسكربتُه الوحيد إسنادُ الحملة (`_ad_script`). والقائمة
    تُغلق بنقرةٍ ثانية على الكرة، وتبقى روابطها في DOM فيقرؤها الزاحف
    كما يقرأ `hreflang` في الرأس. */
 .lang{position:relative}
@@ -541,7 +541,7 @@ main,footer{position:relative; z-index:1}
       <h2>Ketertarikan timbal balik dan obrolan</h2>
       <p>Ketika sebuah profil menarik bagi Anda, Anda menyatakannya. Pihak lain tidak diberi tahu kecuali dia juga sudah menyatakan tertarik kepada Anda — dan saat itulah obrolan terbuka untuk kalian berdua sekaligus. Ia tidak pernah terbuka atas kehendak satu pihak saja.</p>
       <p>Pesan berjalan melalui bot itu sendiri: ia mengantar pesan Anda kepadanya dan pesannya kepada Anda. Tidak ada yang melihat nomor, nama pengguna, atau akun Telegram yang lain — kecuali kalian berdua memutuskan menuliskannya sendiri dalam pesan.</p>
-      <p>Pesan obrolan dihapus 30 hari setelah dikirim, dan masing-masing pihak dapat mengakhiri percakapan kapan saja.</p>
+      <p>Pesan obrolan dihapus 30 hari setelah dikirim. Keluar dari percakapan tidak mengakhirinya — percakapan tetap ada di daftar Anda untuk dilanjutkan. Masing-masing pihak dapat mengakhirinya untuk selamanya kapan saja dengan memblokir pihak lain.</p>
       <p>Setiap percakapan memiliki tombol laporan, sebagaimana setiap kartu.</p>
       <h2>Privasi foto — bawaan, bukan pengaturan yang harus dicari</h2>
       <p>Foto Anda diburamkan bagi semua orang sejak awal. Tidak ada sakelar yang bisa Anda lupakan lalu terekspos: buram adalah aturannya, dan terbuka adalah pengecualian yang terjadi dengan permintaan tegas darinya dan persetujuan tegas dari Anda.</p>
@@ -560,7 +560,7 @@ main,footer{position:relative; z-index:1}
       <h2>Keamanan dan pelaporan</h2>
       <p>Setiap kartu dan setiap percakapan memiliki tombol laporan yang sampai ke peninjau manusia, bukan penyaring otomatis. Anda tidak perlu membuktikan apa pun untuk melapor.</p>
       <p>Pelanggaran dijawab dengan peringatan yang sampai kepada pelakunya, dan setelah 3 peringatan akun diblokir. Kasus berat diblokir sejak pelanggaran pertama tanpa tahapan.</p>
-      <p>Yang paling cepat dapat Anda lakukan sendiri: akhiri percakapan, lalu laporkan. Jangan bagikan nomor atau akun Anda di tempat lain sebelum Anda merasa tenang — bot tidak pernah memintanya, dan siapa pun yang mendesak Anda sedang mengatakan sesuatu tentang dirinya.</p>
+      <p>Yang paling cepat dapat Anda lakukan sendiri: blokir, lalu laporkan. Jangan bagikan nomor atau akun Anda di tempat lain sebelum Anda merasa tenang — bot tidak pernah memintanya, dan siapa pun yang mendesak Anda sedang mengatakan sesuatu tentang dirinya.</p>
       <p>Kami tidak pernah meminta kata sandi atau kode masuk Telegram Anda, dan tidak pernah meminta uang di luar layar pembayaran di dalam bot.</p>
       <h2>Keanggotaan premium</h2>
       <p>Layanan intinya gratis: pendaftaran, pencarian, pencocokan dan obrolan setelah ketertarikan timbal balik, semuanya tanpa biaya.</p>
@@ -625,5 +625,29 @@ main,footer{position:relative; z-index:1}
   </div>
 </footer>
 
+<script id="ad-attribution">
+(function () {
+  try {
+    var re = /^[a-z0-9_-]{1,32}$/, key = 'hisn_ad';
+    var code = (new URLSearchParams(location.search).get('ad') || '').trim().toLowerCase();
+    if (re.test(code)) sessionStorage.setItem(key, code);
+    else code = sessionStorage.getItem(key) || '';
+    if (!re.test(code)) return;
+    var bot = "https://t.me/HisnAlzawaj_bot", web = "https://app.hisnalzawaj.com";
+    document.querySelectorAll('a[href]').forEach(function (a) {
+      var href = a.getAttribute('href');
+      // ⚠️ مطابقةٌ تامّة لا بادئة: `t.me/HisnAlzawaj_bot` بادئةٌ لـ`…_bot_en`
+      // أيضاً، فقناةٌ باسمٍ يبدأ به كانت تصير رابطَ حملةٍ إلى البوت.
+      if (href === bot || href.indexOf(bot + '?') === 0) {
+        a.setAttribute('href', bot + '?start=ad_' + code);
+      } else if (web && (href === web || href.indexOf(web + '/') === 0)) {
+        var u = new URL(href);
+        u.searchParams.set('ad', code);
+        a.setAttribute('href', u.href);
+      }
+    });
+  } catch (e) { /* يضيع الإسناد وحده، والروابط الأصلية تعمل */ }
+})();
+</script>
 </body>
 </html>

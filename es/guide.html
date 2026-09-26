@@ -108,7 +108,7 @@ section{padding:clamp(56px,8vw,96px) 0; position:relative}
 .top .btn{margin:0; padding:9px 20px; font-size:.95rem; box-shadow:none}
 
 /* ── كرة اللغات ──
-   ⚠️ `<details>` لا جافاسكربت: الموقع ساكن بلا سكربت بقرار. والقائمة
+   ⚠️ `<details>` لا جافاسكربت: الموقع ساكن بقرار، وسكربتُه الوحيد إسنادُ الحملة (`_ad_script`). والقائمة
    تُغلق بنقرةٍ ثانية على الكرة، وتبقى روابطها في DOM فيقرؤها الزاحف
    كما يقرأ `hreflang` في الرأس. */
 .lang{position:relative}
@@ -541,7 +541,7 @@ main,footer{position:relative; z-index:1}
       <h2>Interés mutuo y chat</h2>
       <p>Cuando un perfil te interesa, lo indicas. La otra parte no recibe aviso salvo que también haya manifestado interés por ti, y entonces el chat se abre para ambos a la vez. Nunca se abre por el deseo de un solo lado.</p>
       <p>Los mensajes viajan a través del bot mismo: lleva los tuyos a la otra persona y los suyos a ti. Ninguno de los dos ve el número, el nombre de usuario ni la cuenta de Telegram del otro, salvo que ambos decidáis escribirlo vosotros mismos en un mensaje.</p>
-      <p>Los mensajes del chat se eliminan 30 días después de enviarse, y cualquiera de las dos partes puede terminar la conversación en cualquier momento.</p>
+      <p>Los mensajes del chat se eliminan 30 días después de enviarse. Salir de una conversación no la termina: sigue en tu lista para volver a ella. Cualquiera de las dos partes puede terminarla para siempre en cualquier momento bloqueando a la otra.</p>
       <p>Cada conversación lleva un botón de denuncia, igual que cada ficha.</p>
       <h2>Privacidad de la foto: lo predeterminado, no un ajuste que haya que buscar</h2>
       <p>Tu foto está difuminada para todos desde el primer momento. No hay ningún interruptor que puedas olvidar y que te exponga: difuminar es la regla, y mostrar es la excepción, que exige una solicitud explícita de la otra parte y un consentimiento explícito tuyo.</p>
@@ -560,7 +560,7 @@ main,footer{position:relative; z-index:1}
       <h2>Seguridad y denuncias</h2>
       <p>Cada ficha y cada conversación lleva un botón de denuncia que llega a un moderador humano, no a un filtro automático. No necesitas demostrar nada para denunciar.</p>
       <p>Una infracción recibe una advertencia que llega a la persona, y tras 3 advertencias la cuenta queda expulsada. Los casos graves se expulsan a la primera, sin pasos graduales.</p>
-      <p>Lo más rápido que está en tu mano: terminar la conversación y denunciar. No compartas tu número ni tus cuentas de otros servicios antes de tener confianza: el bot nunca te lo pide, y quien te apremia a hacerlo te está diciendo algo sobre sí mismo.</p>
+      <p>Lo más rápido que está en tu mano: bloquear y denunciar. No compartas tu número ni tus cuentas de otros servicios antes de tener confianza: el bot nunca te lo pide, y quien te apremia a hacerlo te está diciendo algo sobre sí mismo.</p>
       <p>Nunca te pediremos una contraseña ni un código de acceso de Telegram, y nunca te pediremos dinero fuera de las pantallas de pago que están dentro del bot.</p>
       <h2>Membresía premium</h2>
       <p>El servicio esencial es gratuito: registrarse, buscar, ser emparejado y conversar tras el interés mutuo no cuesta nada.</p>
@@ -625,5 +625,29 @@ main,footer{position:relative; z-index:1}
   </div>
 </footer>
 
+<script id="ad-attribution">
+(function () {
+  try {
+    var re = /^[a-z0-9_-]{1,32}$/, key = 'hisn_ad';
+    var code = (new URLSearchParams(location.search).get('ad') || '').trim().toLowerCase();
+    if (re.test(code)) sessionStorage.setItem(key, code);
+    else code = sessionStorage.getItem(key) || '';
+    if (!re.test(code)) return;
+    var bot = "https://t.me/HisnAlzawaj_bot", web = "https://app.hisnalzawaj.com";
+    document.querySelectorAll('a[href]').forEach(function (a) {
+      var href = a.getAttribute('href');
+      // ⚠️ مطابقةٌ تامّة لا بادئة: `t.me/HisnAlzawaj_bot` بادئةٌ لـ`…_bot_en`
+      // أيضاً، فقناةٌ باسمٍ يبدأ به كانت تصير رابطَ حملةٍ إلى البوت.
+      if (href === bot || href.indexOf(bot + '?') === 0) {
+        a.setAttribute('href', bot + '?start=ad_' + code);
+      } else if (web && (href === web || href.indexOf(web + '/') === 0)) {
+        var u = new URL(href);
+        u.searchParams.set('ad', code);
+        a.setAttribute('href', u.href);
+      }
+    });
+  } catch (e) { /* يضيع الإسناد وحده، والروابط الأصلية تعمل */ }
+})();
+</script>
 </body>
 </html>

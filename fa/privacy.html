@@ -108,7 +108,7 @@ section{padding:clamp(56px,8vw,96px) 0; position:relative}
 .top .btn{margin:0; padding:9px 20px; font-size:.95rem; box-shadow:none}
 
 /* ── كرة اللغات ──
-   ⚠️ `<details>` لا جافاسكربت: الموقع ساكن بلا سكربت بقرار. والقائمة
+   ⚠️ `<details>` لا جافاسكربت: الموقع ساكن بقرار، وسكربتُه الوحيد إسنادُ الحملة (`_ad_script`). والقائمة
    تُغلق بنقرةٍ ثانية على الكرة، وتبقى روابطها في DOM فيقرؤها الزاحف
    كما يقرأ `hreflang` في الرأس. */
 .lang{position:relative}
@@ -508,7 +508,7 @@ main,footer{position:relative; z-index:1}
   <section>
     <div class="wrap doc">
       <h1>سیاست حریم خصوصی</h1>
-      <p class="updated">آخرین به‌روزرسانی: ۲۴ سپتامبر ۲۰۲۶</p>
+      <p class="updated">آخرین به‌روزرسانی: ۲۶ سپتامبر ۲۰۲۶</p>
       <p class="lead">این سند توضیح می‌دهد ربات «حصن الزواج» چه داده‌هایی از شما جمع می‌کند، چرا، چه کسی آن را می‌بیند، چه مدت می‌ماند و چگونه آن را حذف می‌کنید. برای خوانده‌شدن نوشته شده است نه برای امضا: بدون عبارت‌های حقوقی پیچیده، و بدون وعده‌ای که خودِ سرویس به آن پایبند نباشد.</p>
       <h2>ما که هستیم و این سند چه چیزی را پوشش می‌دهد</h2>
       <p>حصن الزواج سرویسی برای آشنایی به قصد ازدواج است و داخل تلگرام از طریق ربات @HisnAlzawaj_bot، و در مرورگر از طریق برنامهٔ وب app.hisnalzawaj.com کار می‌کند.</p>
@@ -585,8 +585,8 @@ main,footer{position:relative; z-index:1}
       <h2>داده‌ها چه مدت می‌مانند</h2>
       <p>تا زمانی که حساب شما هست — چون خودِ سرویس یعنی نمایش پروفایل شما به کسانی که با خواستهٔ شما می‌خوانند.</p>
       <p>پس از حذف، سوابقی محدود می‌ماند: ثبت‌های نظارتی و سیاههٔ پرداخت‌ها، به همان اندازه که برای حسابداری و جلوگیری از بازگشت فوری حساب مسدودشده لازم است.</p>
-      <h2>حذف حساب — پاک‌کردن، نه پنهان‌کردن</h2>
-      <p>فرمان /delete یا دکمهٔ «حذف حساب من» در صفحهٔ پروفایل. پس از تأیید شما بی‌درنگ پاک می‌شود:</p>
+      <h2>حذف حساب — سی روز مهلت، سپس پاک‌کردن</h2>
+      <p>فرمان /delete یا دکمهٔ «حذف حساب من» در صفحهٔ پروفایل. پس از تأیید شما حسابتان بی‌درنگ از همه پنهان می‌شود و سی روز نگه داشته می‌شود: اگر در این مدت به ربات برگردید یا وارد وب‌سایت شوید، آن را همان‌طور که گذاشتید می‌یابید، بی‌نیاز از ثبت‌نام دوباره. پس از آن این موارد برای همیشه پاک می‌شود:</p>
       <ul>
         <li>همهٔ پروفایل، همراه با عکس و شرح.</li>
         <li>پسندها، تطابق‌ها، گفت‌وگوها و پیام‌هایشان.</li>
@@ -669,5 +669,29 @@ main,footer{position:relative; z-index:1}
   </div>
 </footer>
 
+<script id="ad-attribution">
+(function () {
+  try {
+    var re = /^[a-z0-9_-]{1,32}$/, key = 'hisn_ad';
+    var code = (new URLSearchParams(location.search).get('ad') || '').trim().toLowerCase();
+    if (re.test(code)) sessionStorage.setItem(key, code);
+    else code = sessionStorage.getItem(key) || '';
+    if (!re.test(code)) return;
+    var bot = "https://t.me/HisnAlzawaj_bot", web = "https://app.hisnalzawaj.com";
+    document.querySelectorAll('a[href]').forEach(function (a) {
+      var href = a.getAttribute('href');
+      // ⚠️ مطابقةٌ تامّة لا بادئة: `t.me/HisnAlzawaj_bot` بادئةٌ لـ`…_bot_en`
+      // أيضاً، فقناةٌ باسمٍ يبدأ به كانت تصير رابطَ حملةٍ إلى البوت.
+      if (href === bot || href.indexOf(bot + '?') === 0) {
+        a.setAttribute('href', bot + '?start=ad_' + code);
+      } else if (web && (href === web || href.indexOf(web + '/') === 0)) {
+        var u = new URL(href);
+        u.searchParams.set('ad', code);
+        a.setAttribute('href', u.href);
+      }
+    });
+  } catch (e) { /* يضيع الإسناد وحده، والروابط الأصلية تعمل */ }
+})();
+</script>
 </body>
 </html>

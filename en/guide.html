@@ -108,7 +108,7 @@ section{padding:clamp(56px,8vw,96px) 0; position:relative}
 .top .btn{margin:0; padding:9px 20px; font-size:.95rem; box-shadow:none}
 
 /* ── كرة اللغات ──
-   ⚠️ `<details>` لا جافاسكربت: الموقع ساكن بلا سكربت بقرار. والقائمة
+   ⚠️ `<details>` لا جافاسكربت: الموقع ساكن بقرار، وسكربتُه الوحيد إسنادُ الحملة (`_ad_script`). والقائمة
    تُغلق بنقرةٍ ثانية على الكرة، وتبقى روابطها في DOM فيقرؤها الزاحف
    كما يقرأ `hreflang` في الرأس. */
 .lang{position:relative}
@@ -541,7 +541,7 @@ main,footer{position:relative; z-index:1}
       <h2>Mutual interest and chat</h2>
       <p>When a profile interests you, you say so. The other side is not notified unless they have expressed interest in you as well — and then the chat opens for both of you at once. It never opens on one side’s wish alone.</p>
       <p>Messages travel through the bot itself: it carries yours to them and theirs to you. Neither of you sees the other’s number, username or Telegram account — unless the two of you decide to put it in a message yourselves.</p>
-      <p>Chat messages are deleted 30 days after they are sent, and either side can end the conversation at any moment.</p>
+      <p>Chat messages are deleted 30 days after they are sent. Leaving a conversation does not end it — it stays in your list to come back to. Either side can end it for good at any moment by blocking the other.</p>
       <p>Every conversation carries a report button, as does every card.</p>
       <h2>Photo privacy — the default, not a setting you hunt for</h2>
       <p>Your photo is blurred for everyone from the first moment. There is no switch you can forget and be exposed by: blurring is the rule, and revealing is the exception that takes an explicit request from them and an explicit consent from you.</p>
@@ -560,7 +560,7 @@ main,footer{position:relative; z-index:1}
       <h2>Safety and reporting</h2>
       <p>Every card and every conversation carries a report button that reaches a human reviewer, not an automated filter. You do not need to prove anything in order to report.</p>
       <p>A violation is met with a warning that reaches the person, and after 3 warnings the account is banned. Serious cases are banned on the first offence with no gradual steps.</p>
-      <p>The fastest things you can do yourself: end the conversation, and report. Do not share your number or your accounts elsewhere before you are comfortable — the bot never asks you to, and anyone rushing you to is telling you something about themselves.</p>
+      <p>The fastest things you can do yourself: block them, and report. Do not share your number or your accounts elsewhere before you are comfortable — the bot never asks you to, and anyone rushing you to is telling you something about themselves.</p>
       <p>We will never ask you for a password or a Telegram login code, and never ask for money outside the payment screens inside the bot.</p>
       <h2>Premium membership</h2>
       <p>The core service is free: registering, searching, matching and chatting after mutual interest all cost nothing.</p>
@@ -625,5 +625,29 @@ main,footer{position:relative; z-index:1}
   </div>
 </footer>
 
+<script id="ad-attribution">
+(function () {
+  try {
+    var re = /^[a-z0-9_-]{1,32}$/, key = 'hisn_ad';
+    var code = (new URLSearchParams(location.search).get('ad') || '').trim().toLowerCase();
+    if (re.test(code)) sessionStorage.setItem(key, code);
+    else code = sessionStorage.getItem(key) || '';
+    if (!re.test(code)) return;
+    var bot = "https://t.me/HisnAlzawaj_bot", web = "https://app.hisnalzawaj.com";
+    document.querySelectorAll('a[href]').forEach(function (a) {
+      var href = a.getAttribute('href');
+      // ⚠️ مطابقةٌ تامّة لا بادئة: `t.me/HisnAlzawaj_bot` بادئةٌ لـ`…_bot_en`
+      // أيضاً، فقناةٌ باسمٍ يبدأ به كانت تصير رابطَ حملةٍ إلى البوت.
+      if (href === bot || href.indexOf(bot + '?') === 0) {
+        a.setAttribute('href', bot + '?start=ad_' + code);
+      } else if (web && (href === web || href.indexOf(web + '/') === 0)) {
+        var u = new URL(href);
+        u.searchParams.set('ad', code);
+        a.setAttribute('href', u.href);
+      }
+    });
+  } catch (e) { /* يضيع الإسناد وحده، والروابط الأصلية تعمل */ }
+})();
+</script>
 </body>
 </html>

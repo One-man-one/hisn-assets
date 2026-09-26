@@ -108,7 +108,7 @@ section{padding:clamp(56px,8vw,96px) 0; position:relative}
 .top .btn{margin:0; padding:9px 20px; font-size:.95rem; box-shadow:none}
 
 /* ── كرة اللغات ──
-   ⚠️ `<details>` لا جافاسكربت: الموقع ساكن بلا سكربت بقرار. والقائمة
+   ⚠️ `<details>` لا جافاسكربت: الموقع ساكن بقرار، وسكربتُه الوحيد إسنادُ الحملة (`_ad_script`). والقائمة
    تُغلق بنقرةٍ ثانية على الكرة، وتبقى روابطها في DOM فيقرؤها الزاحف
    كما يقرأ `hreflang` في الرأس. */
 .lang{position:relative}
@@ -508,7 +508,7 @@ main,footer{position:relative; z-index:1}
   <section>
     <div class="wrap doc">
       <h1>Terms of Service</h1>
-      <p class="updated">Last updated: 23 September 2026</p>
+      <p class="updated">Last updated: 26 September 2026</p>
       <p class="lead">This document describes your rights and obligations on Hisn Alzawaj. It is written to be read, not signed: no convoluted legal drafting, and no clause that the service itself does not honour. Read it alongside our Privacy Policy — that one says what we do with your data, this one says what happens between you, us, and other members.</p>
       <h2>Who we are, and what you agree to</h2>
       <p>Hisn Alzawaj is a matchmaking service for Islamic marriage. It runs inside Telegram, through the bot @HisnAlzawaj_bot, and in the browser, through the web app app.hisnalzawaj.com.</p>
@@ -553,7 +553,7 @@ main,footer{position:relative; z-index:1}
       <p>The transaction happens at Telegram or at the payment provider, not with us, so we never see your card or wallet details. We keep the transaction identifier, its amount and its date — which is what makes a refund request possible when one is due.</p>
       <p>Refunds go through the payment provider itself and follow its policy. Anyone banned for a breach is not refunded.</p>
       <h2>Ending the service, and deleting your account</h2>
-      <p>You may delete your account at any moment from inside the bot. Deletion is a cascade: it erases your profile, likes, matches and messages, and withdraws what was published about you.</p>
+      <p>You may delete your account at any moment from inside the bot. Deletion hides your account at once and withdraws what was published about you; the account is kept for thirty days, during which you can return to it as you left it. Then it is erased as a cascade: your profile, likes, matches and messages.</p>
       <p>An account left dormant for a long time may be deleted after a known period — to protect searchers from profiles with nobody behind them.</p>
       <p>We may suspend an account, end the service, or change its features. If we suspend an account that committed no breach, anything paid for a term not yet elapsed is reconsidered fairly.</p>
       <h2>Changes to these terms, and contact</h2>
@@ -613,5 +613,29 @@ main,footer{position:relative; z-index:1}
   </div>
 </footer>
 
+<script id="ad-attribution">
+(function () {
+  try {
+    var re = /^[a-z0-9_-]{1,32}$/, key = 'hisn_ad';
+    var code = (new URLSearchParams(location.search).get('ad') || '').trim().toLowerCase();
+    if (re.test(code)) sessionStorage.setItem(key, code);
+    else code = sessionStorage.getItem(key) || '';
+    if (!re.test(code)) return;
+    var bot = "https://t.me/HisnAlzawaj_bot", web = "https://app.hisnalzawaj.com";
+    document.querySelectorAll('a[href]').forEach(function (a) {
+      var href = a.getAttribute('href');
+      // ⚠️ مطابقةٌ تامّة لا بادئة: `t.me/HisnAlzawaj_bot` بادئةٌ لـ`…_bot_en`
+      // أيضاً، فقناةٌ باسمٍ يبدأ به كانت تصير رابطَ حملةٍ إلى البوت.
+      if (href === bot || href.indexOf(bot + '?') === 0) {
+        a.setAttribute('href', bot + '?start=ad_' + code);
+      } else if (web && (href === web || href.indexOf(web + '/') === 0)) {
+        var u = new URL(href);
+        u.searchParams.set('ad', code);
+        a.setAttribute('href', u.href);
+      }
+    });
+  } catch (e) { /* يضيع الإسناد وحده، والروابط الأصلية تعمل */ }
+})();
+</script>
 </body>
 </html>

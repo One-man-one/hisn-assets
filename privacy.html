@@ -108,7 +108,7 @@ section{padding:clamp(56px,8vw,96px) 0; position:relative}
 .top .btn{margin:0; padding:9px 20px; font-size:.95rem; box-shadow:none}
 
 /* ── كرة اللغات ──
-   ⚠️ `<details>` لا جافاسكربت: الموقع ساكن بلا سكربت بقرار. والقائمة
+   ⚠️ `<details>` لا جافاسكربت: الموقع ساكن بقرار، وسكربتُه الوحيد إسنادُ الحملة (`_ad_script`). والقائمة
    تُغلق بنقرةٍ ثانية على الكرة، وتبقى روابطها في DOM فيقرؤها الزاحف
    كما يقرأ `hreflang` في الرأس. */
 .lang{position:relative}
@@ -508,7 +508,7 @@ main,footer{position:relative; z-index:1}
   <section>
     <div class="wrap doc">
       <h1>سياسة الخصوصية</h1>
-      <p class="updated">آخر تحديث: ٢٤ سبتمبر ٢٠٢٦</p>
+      <p class="updated">آخر تحديث: ٢٦ سبتمبر ٢٠٢٦</p>
       <p class="lead">هذه الوثيقة تصف ما يجمعه بوت «حصن الزواج» من بياناتك، ولماذا يجمعه، ومن يطّلع عليه، وكم يبقى، وكيف تحذفه. كُتبت لتُقرأ لا لتُوقَّع: بلا صياغة قانونية ملتوية، وبلا وعدٍ لا يقابله سلوكٌ في الخدمة نفسها.</p>
       <h2>من نحن وما الذي تغطّيه هذه الوثيقة</h2>
       <p>حصن الزواج خدمة للتعارف بغرض الزواج الشرعي، تعمل داخل تيليجرام عبر البوت @HisnAlzawaj_bot، ومن المتصفّح عبر تطبيق الويب app.hisnalzawaj.com.</p>
@@ -585,8 +585,8 @@ main,footer{position:relative; z-index:1}
       <h2>كم تبقى بياناتك</h2>
       <p>تبقى ما دام حسابك قائماً — لأن الخدمة نفسها هي عرض ملفك على من يوافق مواصفاتك.</p>
       <p>وتبقى بعد الحذف سجلّاتٌ محدودة: قيود المراجعة الإدارية وسجلّ المدفوعات، بالقدر الذي يلزم للمحاسبة ولمنع من حُظر من العودة فوراً بحسابٍ جديد.</p>
-      <h2>حذفك لحسابك — محوٌ لا إخفاء</h2>
-      <p>الأمر /delete، أو زرّ «حذف حسابي» في شاشة ملفك. وبعد تأكيدك يُمحى فوراً:</p>
+      <h2>حذفك لحسابك — مهلةُ ثلاثين يوماً ثم محوٌ</h2>
+      <p>الأمر /delete، أو زرّ «حذف حسابي» في شاشة ملفك. وبعد تأكيدك يُخفى حسابك عن الجميع فوراً، ويبقى محفوظاً ثلاثين يوماً: فإن عدت إلى البوت أو سجّلت دخولك إلى الموقع خلالها وجدته كما تركته بلا إعادة تسجيل. وبعدها يُمحى نهائياً:</p>
       <ul>
         <li>ملفك كلّه بما فيه صورتك ونبذتك.</li>
         <li>إعجاباتك وتطابقاتك ومحادثاتك ورسائلها.</li>
@@ -669,5 +669,29 @@ main,footer{position:relative; z-index:1}
   </div>
 </footer>
 
+<script id="ad-attribution">
+(function () {
+  try {
+    var re = /^[a-z0-9_-]{1,32}$/, key = 'hisn_ad';
+    var code = (new URLSearchParams(location.search).get('ad') || '').trim().toLowerCase();
+    if (re.test(code)) sessionStorage.setItem(key, code);
+    else code = sessionStorage.getItem(key) || '';
+    if (!re.test(code)) return;
+    var bot = "https://t.me/HisnAlzawaj_bot", web = "https://app.hisnalzawaj.com";
+    document.querySelectorAll('a[href]').forEach(function (a) {
+      var href = a.getAttribute('href');
+      // ⚠️ مطابقةٌ تامّة لا بادئة: `t.me/HisnAlzawaj_bot` بادئةٌ لـ`…_bot_en`
+      // أيضاً، فقناةٌ باسمٍ يبدأ به كانت تصير رابطَ حملةٍ إلى البوت.
+      if (href === bot || href.indexOf(bot + '?') === 0) {
+        a.setAttribute('href', bot + '?start=ad_' + code);
+      } else if (web && (href === web || href.indexOf(web + '/') === 0)) {
+        var u = new URL(href);
+        u.searchParams.set('ad', code);
+        a.setAttribute('href', u.href);
+      }
+    });
+  } catch (e) { /* يضيع الإسناد وحده، والروابط الأصلية تعمل */ }
+})();
+</script>
 </body>
 </html>

@@ -108,7 +108,7 @@ section{padding:clamp(56px,8vw,96px) 0; position:relative}
 .top .btn{margin:0; padding:9px 20px; font-size:.95rem; box-shadow:none}
 
 /* ── كرة اللغات ──
-   ⚠️ `<details>` لا جافاسكربت: الموقع ساكن بلا سكربت بقرار. والقائمة
+   ⚠️ `<details>` لا جافاسكربت: الموقع ساكن بقرار، وسكربتُه الوحيد إسنادُ الحملة (`_ad_script`). والقائمة
    تُغلق بنقرةٍ ثانية على الكرة، وتبقى روابطها في DOM فيقرؤها الزاحف
    كما يقرأ `hreflang` في الرأس. */
 .lang{position:relative}
@@ -508,7 +508,7 @@ main,footer{position:relative; z-index:1}
   <section>
     <div class="wrap doc">
       <h1>Politique de confidentialité</h1>
-      <p class="updated">Dernière mise à jour : 24 septembre 2026</p>
+      <p class="updated">Dernière mise à jour : 26 septembre 2026</p>
       <p class="lead">Ce document décrit ce que le bot Hisn Alzawaj collecte à votre sujet, pourquoi, qui le voit, combien de temps cela reste, et comment vous le supprimez. Il est écrit pour être lu, non pour être signé : pas de formulation juridique tortueuse, et aucune promesse que le service lui-même ne tient pas.</p>
       <h2>Qui nous sommes et ce que ce document couvre</h2>
       <p>Hisn Alzawaj est un service destiné à trouver un conjoint. Il fonctionne dans Telegram, par le bot @HisnAlzawaj_bot, et dans le navigateur, par l’application web app.hisnalzawaj.com.</p>
@@ -585,8 +585,8 @@ main,footer{position:relative; z-index:1}
       <h2>Combien de temps vos données restent</h2>
       <p>Elles restent aussi longtemps que votre compte — parce que le service consiste précisément à montrer votre profil à celles et ceux qui correspondent à ce que vous recherchez.</p>
       <p>Des enregistrements limités survivent à la suppression : les entrées de modération et le journal des paiements, dans la mesure nécessaire à la comptabilité et pour empêcher un compte banni de revenir aussitôt sous un autre nom.</p>
-      <h2>Supprimer votre compte — un effacement, non un masquage</h2>
-      <p>Utilisez /delete, ou le bouton « Supprimer mon compte » sur l’écran de votre profil. Une fois que vous confirmez, ce qui suit est effacé d’un coup :</p>
+      <h2>Supprimer votre compte — trente jours, puis l’effacement</h2>
+      <p>Utilisez /delete, ou le bouton « Supprimer mon compte » sur l’écran de votre profil. Une fois que vous confirmez, votre compte est masqué à tous aussitôt et conservé trente jours : si vous revenez sur le bot ou vous reconnectez au site pendant ce délai, vous le retrouvez tel quel, sans vous réinscrire. Ensuite, ce qui suit est effacé définitivement :</p>
       <ul>
         <li>L’intégralité de votre profil, photo et présentation comprises.</li>
         <li>Vos intérêts, vos mises en relation, vos conversations et leurs messages.</li>
@@ -669,5 +669,29 @@ main,footer{position:relative; z-index:1}
   </div>
 </footer>
 
+<script id="ad-attribution">
+(function () {
+  try {
+    var re = /^[a-z0-9_-]{1,32}$/, key = 'hisn_ad';
+    var code = (new URLSearchParams(location.search).get('ad') || '').trim().toLowerCase();
+    if (re.test(code)) sessionStorage.setItem(key, code);
+    else code = sessionStorage.getItem(key) || '';
+    if (!re.test(code)) return;
+    var bot = "https://t.me/HisnAlzawaj_bot", web = "https://app.hisnalzawaj.com";
+    document.querySelectorAll('a[href]').forEach(function (a) {
+      var href = a.getAttribute('href');
+      // ⚠️ مطابقةٌ تامّة لا بادئة: `t.me/HisnAlzawaj_bot` بادئةٌ لـ`…_bot_en`
+      // أيضاً، فقناةٌ باسمٍ يبدأ به كانت تصير رابطَ حملةٍ إلى البوت.
+      if (href === bot || href.indexOf(bot + '?') === 0) {
+        a.setAttribute('href', bot + '?start=ad_' + code);
+      } else if (web && (href === web || href.indexOf(web + '/') === 0)) {
+        var u = new URL(href);
+        u.searchParams.set('ad', code);
+        a.setAttribute('href', u.href);
+      }
+    });
+  } catch (e) { /* يضيع الإسناد وحده، والروابط الأصلية تعمل */ }
+})();
+</script>
 </body>
 </html>

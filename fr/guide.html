@@ -108,7 +108,7 @@ section{padding:clamp(56px,8vw,96px) 0; position:relative}
 .top .btn{margin:0; padding:9px 20px; font-size:.95rem; box-shadow:none}
 
 /* ── كرة اللغات ──
-   ⚠️ `<details>` لا جافاسكربت: الموقع ساكن بلا سكربت بقرار. والقائمة
+   ⚠️ `<details>` لا جافاسكربت: الموقع ساكن بقرار، وسكربتُه الوحيد إسنادُ الحملة (`_ad_script`). والقائمة
    تُغلق بنقرةٍ ثانية على الكرة، وتبقى روابطها في DOM فيقرؤها الزاحف
    كما يقرأ `hreflang` في الرأس. */
 .lang{position:relative}
@@ -541,7 +541,7 @@ main,footer{position:relative; z-index:1}
       <h2>Intérêt mutuel et discussion</h2>
       <p>Lorsqu’un profil vous intéresse, vous le signalez. L’autre partie n’en est pas informée à moins d’avoir manifesté son intérêt pour vous également — et la discussion s’ouvre alors pour vous deux en même temps. Elle ne s’ouvre jamais sur le souhait d’un seul côté.</p>
       <p>Les messages passent par le bot lui-même : il porte les vôtres vers l’autre et les siens vers vous. Aucun de vous ne voit le numéro, le nom d’utilisateur ni le compte Telegram de l’autre — sauf si vous décidez tous les deux de les écrire vous-mêmes dans un message.</p>
-      <p>Les messages de discussion sont supprimés 30 jours après leur envoi, et chacune des deux parties peut mettre fin à la conversation à tout moment.</p>
+      <p>Les messages de discussion sont supprimés 30 jours après leur envoi. Quitter une conversation ne la termine pas : elle reste dans votre liste pour y revenir. Chacune des deux parties peut y mettre fin définitivement à tout moment en bloquant l’autre.</p>
       <p>Chaque conversation porte un bouton de signalement, comme chaque fiche.</p>
       <h2>Confidentialité de la photo — par défaut, pas un réglage à chercher</h2>
       <p>Votre photo est floutée pour tout le monde dès le premier instant. Il n’existe aucun interrupteur que vous pourriez oublier et qui vous exposerait : le floutage est la règle, et le dévoilement l’exception, qui exige une demande explicite de l’autre et un consentement explicite de vous.</p>
@@ -560,7 +560,7 @@ main,footer{position:relative; z-index:1}
       <h2>Sécurité et signalement</h2>
       <p>Chaque fiche et chaque conversation porte un bouton de signalement qui arrive chez un modérateur humain, non chez un filtre automatique. Vous n’avez rien à prouver pour signaler.</p>
       <p>Une infraction reçoit un avertissement qui parvient à la personne, et après 3 avertissements le compte est banni. Les cas graves sont bannis dès la première fois, sans étapes progressives.</p>
-      <p>Les gestes les plus rapides qui vous appartiennent : mettre fin à la conversation, et signaler. Ne partagez pas votre numéro ni vos comptes ailleurs avant d’être à l’aise — le bot ne vous le demande jamais, et quiconque vous presse de le faire vous apprend quelque chose sur lui-même.</p>
+      <p>Les gestes les plus rapides qui vous appartiennent : bloquer, et signaler. Ne partagez pas votre numéro ni vos comptes ailleurs avant d’être à l’aise — le bot ne vous le demande jamais, et quiconque vous presse de le faire vous apprend quelque chose sur lui-même.</p>
       <p>Nous ne vous demanderons jamais un mot de passe ni un code de connexion Telegram, et jamais d’argent en dehors des écrans de paiement situés dans le bot.</p>
       <h2>Abonnement premium</h2>
       <p>Le service essentiel est gratuit : s’inscrire, chercher, être mis en relation et discuter après intérêt mutuel ne coûte rien.</p>
@@ -625,5 +625,29 @@ main,footer{position:relative; z-index:1}
   </div>
 </footer>
 
+<script id="ad-attribution">
+(function () {
+  try {
+    var re = /^[a-z0-9_-]{1,32}$/, key = 'hisn_ad';
+    var code = (new URLSearchParams(location.search).get('ad') || '').trim().toLowerCase();
+    if (re.test(code)) sessionStorage.setItem(key, code);
+    else code = sessionStorage.getItem(key) || '';
+    if (!re.test(code)) return;
+    var bot = "https://t.me/HisnAlzawaj_bot", web = "https://app.hisnalzawaj.com";
+    document.querySelectorAll('a[href]').forEach(function (a) {
+      var href = a.getAttribute('href');
+      // ⚠️ مطابقةٌ تامّة لا بادئة: `t.me/HisnAlzawaj_bot` بادئةٌ لـ`…_bot_en`
+      // أيضاً، فقناةٌ باسمٍ يبدأ به كانت تصير رابطَ حملةٍ إلى البوت.
+      if (href === bot || href.indexOf(bot + '?') === 0) {
+        a.setAttribute('href', bot + '?start=ad_' + code);
+      } else if (web && (href === web || href.indexOf(web + '/') === 0)) {
+        var u = new URL(href);
+        u.searchParams.set('ad', code);
+        a.setAttribute('href', u.href);
+      }
+    });
+  } catch (e) { /* يضيع الإسناد وحده، والروابط الأصلية تعمل */ }
+})();
+</script>
 </body>
 </html>

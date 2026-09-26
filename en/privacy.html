@@ -108,7 +108,7 @@ section{padding:clamp(56px,8vw,96px) 0; position:relative}
 .top .btn{margin:0; padding:9px 20px; font-size:.95rem; box-shadow:none}
 
 /* ── كرة اللغات ──
-   ⚠️ `<details>` لا جافاسكربت: الموقع ساكن بلا سكربت بقرار. والقائمة
+   ⚠️ `<details>` لا جافاسكربت: الموقع ساكن بقرار، وسكربتُه الوحيد إسنادُ الحملة (`_ad_script`). والقائمة
    تُغلق بنقرةٍ ثانية على الكرة، وتبقى روابطها في DOM فيقرؤها الزاحف
    كما يقرأ `hreflang` في الرأس. */
 .lang{position:relative}
@@ -508,7 +508,7 @@ main,footer{position:relative; z-index:1}
   <section>
     <div class="wrap doc">
       <h1>Privacy Policy</h1>
-      <p class="updated">Last updated: 24 September 2026</p>
+      <p class="updated">Last updated: 26 September 2026</p>
       <p class="lead">This document describes what the Hisn Alzawaj bot collects about you, why, who sees it, how long it stays, and how you delete it. It is written to be read, not signed: no twisted legal phrasing, and no promise that the service itself does not keep.</p>
       <h2>Who we are and what this covers</h2>
       <p>Hisn Alzawaj is a service for finding a marriage partner. It runs inside Telegram, through the bot @HisnAlzawaj_bot, and in the browser, through the web app app.hisnalzawaj.com.</p>
@@ -585,8 +585,8 @@ main,footer{position:relative; z-index:1}
       <h2>How long your data stays</h2>
       <p>It stays as long as your account does — because the service itself is showing your profile to those who match what you are looking for.</p>
       <p>Limited records survive deletion: moderation entries and the payment log, to the extent needed for accounting and to keep a banned account from returning immediately under a new one.</p>
-      <h2>Deleting your account — erasure, not hiding</h2>
-      <p>Use /delete, or the &quot;Delete my account&quot; button on your profile screen. Once you confirm, the following is erased at once:</p>
+      <h2>Deleting your account — thirty days, then erasure</h2>
+      <p>Use /delete, or the &quot;Delete my account&quot; button on your profile screen. Once you confirm, your account is hidden from everyone at once and kept for thirty days: if you come back to the bot or sign in to the website within them, you find it as you left it, with no need to register again. After that, the following is erased for good:</p>
       <ul>
         <li>Your entire profile, photo and bio included.</li>
         <li>Your likes, matches, conversations and their messages.</li>
@@ -669,5 +669,29 @@ main,footer{position:relative; z-index:1}
   </div>
 </footer>
 
+<script id="ad-attribution">
+(function () {
+  try {
+    var re = /^[a-z0-9_-]{1,32}$/, key = 'hisn_ad';
+    var code = (new URLSearchParams(location.search).get('ad') || '').trim().toLowerCase();
+    if (re.test(code)) sessionStorage.setItem(key, code);
+    else code = sessionStorage.getItem(key) || '';
+    if (!re.test(code)) return;
+    var bot = "https://t.me/HisnAlzawaj_bot", web = "https://app.hisnalzawaj.com";
+    document.querySelectorAll('a[href]').forEach(function (a) {
+      var href = a.getAttribute('href');
+      // ⚠️ مطابقةٌ تامّة لا بادئة: `t.me/HisnAlzawaj_bot` بادئةٌ لـ`…_bot_en`
+      // أيضاً، فقناةٌ باسمٍ يبدأ به كانت تصير رابطَ حملةٍ إلى البوت.
+      if (href === bot || href.indexOf(bot + '?') === 0) {
+        a.setAttribute('href', bot + '?start=ad_' + code);
+      } else if (web && (href === web || href.indexOf(web + '/') === 0)) {
+        var u = new URL(href);
+        u.searchParams.set('ad', code);
+        a.setAttribute('href', u.href);
+      }
+    });
+  } catch (e) { /* يضيع الإسناد وحده، والروابط الأصلية تعمل */ }
+})();
+</script>
 </body>
 </html>

@@ -108,7 +108,7 @@ section{padding:clamp(56px,8vw,96px) 0; position:relative}
 .top .btn{margin:0; padding:9px 20px; font-size:.95rem; box-shadow:none}
 
 /* ── كرة اللغات ──
-   ⚠️ `<details>` لا جافاسكربت: الموقع ساكن بلا سكربت بقرار. والقائمة
+   ⚠️ `<details>` لا جافاسكربت: الموقع ساكن بقرار، وسكربتُه الوحيد إسنادُ الحملة (`_ad_script`). والقائمة
    تُغلق بنقرةٍ ثانية على الكرة، وتبقى روابطها في DOM فيقرؤها الزاحف
    كما يقرأ `hreflang` في الرأس. */
 .lang{position:relative}
@@ -508,7 +508,7 @@ main,footer{position:relative; z-index:1}
   <section>
     <div class="wrap doc">
       <h1>Ketentuan Layanan</h1>
-      <p class="updated">Terakhir diperbarui: 23 September 2026</p>
+      <p class="updated">Terakhir diperbarui: 26 September 2026</p>
       <p class="lead">Dokumen ini menjelaskan hak dan kewajiban Anda di Hisn Alzawaj. Ditulis untuk dibaca, bukan untuk ditandatangani: tanpa bahasa hukum yang berbelit, dan tanpa satu pun ketentuan yang tidak dijalankan oleh layanan itu sendiri. Bacalah bersama Kebijakan Privasi — dokumen itu menyatakan apa yang kami lakukan dengan data Anda, dokumen ini menyatakan apa yang berlaku antara Anda, kami, dan anggota lain.</p>
       <h2>Siapa kami, dan apa yang Anda setujui</h2>
       <p>Hisn Alzawaj adalah layanan perkenalan untuk tujuan pernikahan secara syar’i, berjalan di dalam Telegram melalui bot @HisnAlzawaj_bot, dan di browser melalui aplikasi web app.hisnalzawaj.com.</p>
@@ -553,7 +553,7 @@ main,footer{position:relative; z-index:1}
       <p>Transaksi terjadi di Telegram atau di penyedia pembayaran, bukan pada kami, sehingga kami tidak pernah melihat data kartu atau dompet Anda. Kami menyimpan pengenal transaksi, jumlah, dan tanggalnya — dan itulah yang membuat permohonan pengembalian dana mungkin bila memang berhak.</p>
       <p>Pengembalian dana ditempuh melalui penyedia pembayaran sendiri dan tunduk pada kebijakannya. Dan yang diblokir karena pelanggaran tidak memperoleh pengembalian.</p>
       <h2>Mengakhiri layanan, dan menghapus akun Anda</h2>
-      <p>Anda boleh menghapus akun kapan saja dari dalam bot. Penghapusan bersifat berantai: menghapus profil, suka, kecocokan, dan pesan Anda, serta menarik apa yang telah diterbitkan tentang Anda.</p>
+      <p>Anda boleh menghapus akun kapan saja dari dalam bot. Penghapusan langsung menyembunyikan akun Anda dan menarik apa yang telah diterbitkan tentang Anda; akun disimpan tiga puluh hari, dan selama itu Anda bisa kembali kepadanya seperti semula. Setelah itu dihapus berantai: profil, suka, kecocokan, dan pesan Anda.</p>
       <p>Akun yang lama tidak aktif dapat dihapus setelah tenggang yang ditetapkan — demi melindungi para pencari dari profil yang tak berpenghuni.</p>
       <p>Kami dapat menangguhkan sebuah akun, mengakhiri layanan, atau mengubah fiturnya. Dan jika kami menangguhkan akun yang tidak melakukan pelanggaran, apa yang telah dibayar untuk masa yang belum terpakai ditinjau ulang secara adil.</p>
       <h2>Perubahan ketentuan ini, dan kontak</h2>
@@ -613,5 +613,29 @@ main,footer{position:relative; z-index:1}
   </div>
 </footer>
 
+<script id="ad-attribution">
+(function () {
+  try {
+    var re = /^[a-z0-9_-]{1,32}$/, key = 'hisn_ad';
+    var code = (new URLSearchParams(location.search).get('ad') || '').trim().toLowerCase();
+    if (re.test(code)) sessionStorage.setItem(key, code);
+    else code = sessionStorage.getItem(key) || '';
+    if (!re.test(code)) return;
+    var bot = "https://t.me/HisnAlzawaj_bot", web = "https://app.hisnalzawaj.com";
+    document.querySelectorAll('a[href]').forEach(function (a) {
+      var href = a.getAttribute('href');
+      // ⚠️ مطابقةٌ تامّة لا بادئة: `t.me/HisnAlzawaj_bot` بادئةٌ لـ`…_bot_en`
+      // أيضاً، فقناةٌ باسمٍ يبدأ به كانت تصير رابطَ حملةٍ إلى البوت.
+      if (href === bot || href.indexOf(bot + '?') === 0) {
+        a.setAttribute('href', bot + '?start=ad_' + code);
+      } else if (web && (href === web || href.indexOf(web + '/') === 0)) {
+        var u = new URL(href);
+        u.searchParams.set('ad', code);
+        a.setAttribute('href', u.href);
+      }
+    });
+  } catch (e) { /* يضيع الإسناد وحده، والروابط الأصلية تعمل */ }
+})();
+</script>
 </body>
 </html>

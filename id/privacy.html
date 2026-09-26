@@ -108,7 +108,7 @@ section{padding:clamp(56px,8vw,96px) 0; position:relative}
 .top .btn{margin:0; padding:9px 20px; font-size:.95rem; box-shadow:none}
 
 /* ── كرة اللغات ──
-   ⚠️ `<details>` لا جافاسكربت: الموقع ساكن بلا سكربت بقرار. والقائمة
+   ⚠️ `<details>` لا جافاسكربت: الموقع ساكن بقرار، وسكربتُه الوحيد إسنادُ الحملة (`_ad_script`). والقائمة
    تُغلق بنقرةٍ ثانية على الكرة، وتبقى روابطها في DOM فيقرؤها الزاحف
    كما يقرأ `hreflang` في الرأس. */
 .lang{position:relative}
@@ -508,7 +508,7 @@ main,footer{position:relative; z-index:1}
   <section>
     <div class="wrap doc">
       <h1>Kebijakan Privasi</h1>
-      <p class="updated">Terakhir diperbarui: 24 September 2026</p>
+      <p class="updated">Terakhir diperbarui: 26 September 2026</p>
       <p class="lead">Dokumen ini menjelaskan data apa yang dikumpulkan bot Hisn Alzawaj tentang Anda, mengapa, siapa yang melihatnya, berapa lama disimpan, dan bagaimana Anda menghapusnya. Ditulis untuk dibaca, bukan untuk ditandatangani: tanpa bahasa hukum yang berbelit, dan tanpa janji yang tidak ditepati oleh layanannya sendiri.</p>
       <h2>Siapa kami dan apa yang dicakup dokumen ini</h2>
       <p>Hisn Alzawaj adalah layanan perkenalan untuk tujuan menikah, yang berjalan di dalam Telegram melalui bot @HisnAlzawaj_bot, dan di browser melalui aplikasi web app.hisnalzawaj.com.</p>
@@ -585,8 +585,8 @@ main,footer{position:relative; z-index:1}
       <h2>Berapa lama data disimpan</h2>
       <p>Selama akun Anda masih ada — sebab layanan ini pada hakikatnya adalah menampilkan profil Anda kepada mereka yang sesuai dengan kriteria Anda.</p>
       <p>Setelah penghapusan, tersisa catatan terbatas: catatan moderasi dan riwayat pembayaran, sebatas yang diperlukan untuk pembukuan dan mencegah akun yang diblokir langsung kembali dengan akun baru.</p>
-      <h2>Menghapus akun — pemusnahan, bukan penyembunyian</h2>
-      <p>Gunakan /delete, atau tombol &quot;Hapus akun saya&quot; di layar profil. Setelah Anda konfirmasi, yang berikut langsung dimusnahkan:</p>
+      <h2>Menghapus akun — tiga puluh hari, lalu pemusnahan</h2>
+      <p>Gunakan /delete, atau tombol &quot;Hapus akun saya&quot; di layar profil. Setelah Anda konfirmasi, akun Anda langsung disembunyikan dari semua orang dan disimpan tiga puluh hari: jika Anda kembali ke bot atau masuk ke situs dalam masa itu, akun Anda masih seperti semula tanpa perlu mendaftar lagi. Setelah itu, yang berikut dimusnahkan selamanya:</p>
       <ul>
         <li>Seluruh profil Anda, termasuk foto dan deskripsi.</li>
         <li>Suka, kecocokan, percakapan, dan pesan-pesannya.</li>
@@ -669,5 +669,29 @@ main,footer{position:relative; z-index:1}
   </div>
 </footer>
 
+<script id="ad-attribution">
+(function () {
+  try {
+    var re = /^[a-z0-9_-]{1,32}$/, key = 'hisn_ad';
+    var code = (new URLSearchParams(location.search).get('ad') || '').trim().toLowerCase();
+    if (re.test(code)) sessionStorage.setItem(key, code);
+    else code = sessionStorage.getItem(key) || '';
+    if (!re.test(code)) return;
+    var bot = "https://t.me/HisnAlzawaj_bot", web = "https://app.hisnalzawaj.com";
+    document.querySelectorAll('a[href]').forEach(function (a) {
+      var href = a.getAttribute('href');
+      // ⚠️ مطابقةٌ تامّة لا بادئة: `t.me/HisnAlzawaj_bot` بادئةٌ لـ`…_bot_en`
+      // أيضاً، فقناةٌ باسمٍ يبدأ به كانت تصير رابطَ حملةٍ إلى البوت.
+      if (href === bot || href.indexOf(bot + '?') === 0) {
+        a.setAttribute('href', bot + '?start=ad_' + code);
+      } else if (web && (href === web || href.indexOf(web + '/') === 0)) {
+        var u = new URL(href);
+        u.searchParams.set('ad', code);
+        a.setAttribute('href', u.href);
+      }
+    });
+  } catch (e) { /* يضيع الإسناد وحده، والروابط الأصلية تعمل */ }
+})();
+</script>
 </body>
 </html>
