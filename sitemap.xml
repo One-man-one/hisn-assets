@@ -9,6 +9,7 @@
     <xhtml:link rel="alternate" hreflang="es" href="https://hisnalzawaj.com/es/"/>
     <xhtml:link rel="alternate" hreflang="id" href="https://hisnalzawaj.com/id/"/>
     <xhtml:link rel="alternate" hreflang="fa" href="https://hisnalzawaj.com/fa/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://hisnalzawaj.com/ru/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://hisnalzawaj.com/"/>
     <changefreq>weekly</changefreq>
   </url>
@@ -20,6 +21,7 @@
     <xhtml:link rel="alternate" hreflang="es" href="https://hisnalzawaj.com/es/"/>
     <xhtml:link rel="alternate" hreflang="id" href="https://hisnalzawaj.com/id/"/>
     <xhtml:link rel="alternate" hreflang="fa" href="https://hisnalzawaj.com/fa/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://hisnalzawaj.com/ru/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://hisnalzawaj.com/"/>
     <changefreq>weekly</changefreq>
   </url>
@@ -31,6 +33,7 @@
     <xhtml:link rel="alternate" hreflang="es" href="https://hisnalzawaj.com/es/"/>
     <xhtml:link rel="alternate" hreflang="id" href="https://hisnalzawaj.com/id/"/>
     <xhtml:link rel="alternate" hreflang="fa" href="https://hisnalzawaj.com/fa/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://hisnalzawaj.com/ru/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://hisnalzawaj.com/"/>
     <changefreq>weekly</changefreq>
   </url>
@@ -42,6 +45,7 @@
     <xhtml:link rel="alternate" hreflang="es" href="https://hisnalzawaj.com/es/"/>
     <xhtml:link rel="alternate" hreflang="id" href="https://hisnalzawaj.com/id/"/>
     <xhtml:link rel="alternate" hreflang="fa" href="https://hisnalzawaj.com/fa/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://hisnalzawaj.com/ru/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://hisnalzawaj.com/"/>
     <changefreq>weekly</changefreq>
   </url>
@@ -53,6 +57,7 @@
     <xhtml:link rel="alternate" hreflang="es" href="https://hisnalzawaj.com/es/"/>
     <xhtml:link rel="alternate" hreflang="id" href="https://hisnalzawaj.com/id/"/>
     <xhtml:link rel="alternate" hreflang="fa" href="https://hisnalzawaj.com/fa/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://hisnalzawaj.com/ru/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://hisnalzawaj.com/"/>
     <changefreq>weekly</changefreq>
   </url>
@@ -64,6 +69,19 @@
     <xhtml:link rel="alternate" hreflang="es" href="https://hisnalzawaj.com/es/"/>
     <xhtml:link rel="alternate" hreflang="id" href="https://hisnalzawaj.com/id/"/>
     <xhtml:link rel="alternate" hreflang="fa" href="https://hisnalzawaj.com/fa/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://hisnalzawaj.com/ru/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://hisnalzawaj.com/"/>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://hisnalzawaj.com/ru/</loc>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://hisnalzawaj.com/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://hisnalzawaj.com/en/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://hisnalzawaj.com/fr/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://hisnalzawaj.com/es/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://hisnalzawaj.com/id/"/>
+    <xhtml:link rel="alternate" hreflang="fa" href="https://hisnalzawaj.com/fa/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://hisnalzawaj.com/ru/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://hisnalzawaj.com/"/>
     <changefreq>weekly</changefreq>
   </url>
@@ -75,6 +93,7 @@
     <xhtml:link rel="alternate" hreflang="es" href="https://hisnalzawaj.com/es/guide.html"/>
     <xhtml:link rel="alternate" hreflang="id" href="https://hisnalzawaj.com/id/guide.html"/>
     <xhtml:link rel="alternate" hreflang="fa" href="https://hisnalzawaj.com/fa/guide.html"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://hisnalzawaj.com/ru/guide.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://hisnalzawaj.com/guide.html"/>
     <changefreq>monthly</changefreq>
   </url>
@@ -86,6 +105,7 @@
     <xhtml:link rel="alternate" hreflang="es" href="https://hisnalzawaj.com/es/guide.html"/>
     <xhtml:link rel="alternate" hreflang="id" href="https://hisnalzawaj.com/id/guide.html"/>
     <xhtml:link rel="alternate" hreflang="fa" href="https://hisnalzawaj.com/fa/guide.html"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://hisnalzawaj.com/ru/guide.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://hisnalzawaj.com/guide.html"/>
     <changefreq>monthly</changefreq>
   </url>
@@ -97,6 +117,7 @@
     <xhtml:link rel="alternate" hreflang="es" href="https://hisnalzawaj.com/es/guide.html"/>
     <xhtml:link rel="alternate" hreflang="id" href="https://hisnalzawaj.com/id/guide.html"/>
     <xhtml:link rel="alternate" hreflang="fa" href="https://hisnalzawaj.com/fa/guide.html"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://hisnalzawaj.com/ru/guide.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://hisnalzawaj.com/guide.html"/>
     <changefreq>monthly</changefreq>
   </url>
@@ -108,6 +129,7 @@
     <xhtml:link rel="alternate" hreflang="es" href="https://hisnalzawaj.com/es/guide.html"/>
     <xhtml:link rel="alternate" hreflang="id" href="https://hisnalzawaj.com/id/guide.html"/>
     <xhtml:link rel="alternate" hreflang="fa" href="https://hisnalzawaj.com/fa/guide.html"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://hisnalzawaj.com/ru/guide.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://hisnalzawaj.com/guide.html"/>
     <changefreq>monthly</changefreq>
   </url>
@@ -119,6 +141,7 @@
     <xhtml:link rel="alternate" hreflang="es" href="https://hisnalzawaj.com/es/guide.html"/>
     <xhtml:link rel="alternate" hreflang="id" href="https://hisnalzawaj.com/id/guide.html"/>
     <xhtml:link rel="alternate" hreflang="fa" href="https://hisnalzawaj.com/fa/guide.html"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://hisnalzawaj.com/ru/guide.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://hisnalzawaj.com/guide.html"/>
     <changefreq>monthly</changefreq>
   </url>
@@ -130,6 +153,19 @@
     <xhtml:link rel="alternate" hreflang="es" href="https://hisnalzawaj.com/es/guide.html"/>
     <xhtml:link rel="alternate" hreflang="id" href="https://hisnalzawaj.com/id/guide.html"/>
     <xhtml:link rel="alternate" hreflang="fa" href="https://hisnalzawaj.com/fa/guide.html"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://hisnalzawaj.com/ru/guide.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://hisnalzawaj.com/guide.html"/>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://hisnalzawaj.com/ru/guide.html</loc>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://hisnalzawaj.com/guide.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://hisnalzawaj.com/en/guide.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://hisnalzawaj.com/fr/guide.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://hisnalzawaj.com/es/guide.html"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://hisnalzawaj.com/id/guide.html"/>
+    <xhtml:link rel="alternate" hreflang="fa" href="https://hisnalzawaj.com/fa/guide.html"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://hisnalzawaj.com/ru/guide.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://hisnalzawaj.com/guide.html"/>
     <changefreq>monthly</changefreq>
   </url>
@@ -141,6 +177,7 @@
     <xhtml:link rel="alternate" hreflang="es" href="https://hisnalzawaj.com/es/privacy.html"/>
     <xhtml:link rel="alternate" hreflang="id" href="https://hisnalzawaj.com/id/privacy.html"/>
     <xhtml:link rel="alternate" hreflang="fa" href="https://hisnalzawaj.com/fa/privacy.html"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://hisnalzawaj.com/ru/privacy.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://hisnalzawaj.com/privacy.html"/>
     <changefreq>yearly</changefreq>
   </url>
@@ -152,6 +189,7 @@
     <xhtml:link rel="alternate" hreflang="es" href="https://hisnalzawaj.com/es/privacy.html"/>
     <xhtml:link rel="alternate" hreflang="id" href="https://hisnalzawaj.com/id/privacy.html"/>
     <xhtml:link rel="alternate" hreflang="fa" href="https://hisnalzawaj.com/fa/privacy.html"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://hisnalzawaj.com/ru/privacy.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://hisnalzawaj.com/privacy.html"/>
     <changefreq>yearly</changefreq>
   </url>
@@ -163,6 +201,7 @@
     <xhtml:link rel="alternate" hreflang="es" href="https://hisnalzawaj.com/es/privacy.html"/>
     <xhtml:link rel="alternate" hreflang="id" href="https://hisnalzawaj.com/id/privacy.html"/>
     <xhtml:link rel="alternate" hreflang="fa" href="https://hisnalzawaj.com/fa/privacy.html"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://hisnalzawaj.com/ru/privacy.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://hisnalzawaj.com/privacy.html"/>
     <changefreq>yearly</changefreq>
   </url>
@@ -174,6 +213,7 @@
     <xhtml:link rel="alternate" hreflang="es" href="https://hisnalzawaj.com/es/privacy.html"/>
     <xhtml:link rel="alternate" hreflang="id" href="https://hisnalzawaj.com/id/privacy.html"/>
     <xhtml:link rel="alternate" hreflang="fa" href="https://hisnalzawaj.com/fa/privacy.html"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://hisnalzawaj.com/ru/privacy.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://hisnalzawaj.com/privacy.html"/>
     <changefreq>yearly</changefreq>
   </url>
@@ -185,6 +225,7 @@
     <xhtml:link rel="alternate" hreflang="es" href="https://hisnalzawaj.com/es/privacy.html"/>
     <xhtml:link rel="alternate" hreflang="id" href="https://hisnalzawaj.com/id/privacy.html"/>
     <xhtml:link rel="alternate" hreflang="fa" href="https://hisnalzawaj.com/fa/privacy.html"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://hisnalzawaj.com/ru/privacy.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://hisnalzawaj.com/privacy.html"/>
     <changefreq>yearly</changefreq>
   </url>
@@ -196,6 +237,19 @@
     <xhtml:link rel="alternate" hreflang="es" href="https://hisnalzawaj.com/es/privacy.html"/>
     <xhtml:link rel="alternate" hreflang="id" href="https://hisnalzawaj.com/id/privacy.html"/>
     <xhtml:link rel="alternate" hreflang="fa" href="https://hisnalzawaj.com/fa/privacy.html"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://hisnalzawaj.com/ru/privacy.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://hisnalzawaj.com/privacy.html"/>
+    <changefreq>yearly</changefreq>
+  </url>
+  <url>
+    <loc>https://hisnalzawaj.com/ru/privacy.html</loc>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://hisnalzawaj.com/privacy.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://hisnalzawaj.com/en/privacy.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://hisnalzawaj.com/fr/privacy.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://hisnalzawaj.com/es/privacy.html"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://hisnalzawaj.com/id/privacy.html"/>
+    <xhtml:link rel="alternate" hreflang="fa" href="https://hisnalzawaj.com/fa/privacy.html"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://hisnalzawaj.com/ru/privacy.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://hisnalzawaj.com/privacy.html"/>
     <changefreq>yearly</changefreq>
   </url>
@@ -207,6 +261,7 @@
     <xhtml:link rel="alternate" hreflang="es" href="https://hisnalzawaj.com/es/terms.html"/>
     <xhtml:link rel="alternate" hreflang="id" href="https://hisnalzawaj.com/id/terms.html"/>
     <xhtml:link rel="alternate" hreflang="fa" href="https://hisnalzawaj.com/fa/terms.html"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://hisnalzawaj.com/ru/terms.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://hisnalzawaj.com/terms.html"/>
     <changefreq>yearly</changefreq>
   </url>
@@ -218,6 +273,7 @@
     <xhtml:link rel="alternate" hreflang="es" href="https://hisnalzawaj.com/es/terms.html"/>
     <xhtml:link rel="alternate" hreflang="id" href="https://hisnalzawaj.com/id/terms.html"/>
     <xhtml:link rel="alternate" hreflang="fa" href="https://hisnalzawaj.com/fa/terms.html"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://hisnalzawaj.com/ru/terms.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://hisnalzawaj.com/terms.html"/>
     <changefreq>yearly</changefreq>
   </url>
@@ -229,6 +285,7 @@
     <xhtml:link rel="alternate" hreflang="es" href="https://hisnalzawaj.com/es/terms.html"/>
     <xhtml:link rel="alternate" hreflang="id" href="https://hisnalzawaj.com/id/terms.html"/>
     <xhtml:link rel="alternate" hreflang="fa" href="https://hisnalzawaj.com/fa/terms.html"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://hisnalzawaj.com/ru/terms.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://hisnalzawaj.com/terms.html"/>
     <changefreq>yearly</changefreq>
   </url>
@@ -240,6 +297,7 @@
     <xhtml:link rel="alternate" hreflang="es" href="https://hisnalzawaj.com/es/terms.html"/>
     <xhtml:link rel="alternate" hreflang="id" href="https://hisnalzawaj.com/id/terms.html"/>
     <xhtml:link rel="alternate" hreflang="fa" href="https://hisnalzawaj.com/fa/terms.html"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://hisnalzawaj.com/ru/terms.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://hisnalzawaj.com/terms.html"/>
     <changefreq>yearly</changefreq>
   </url>
@@ -251,6 +309,7 @@
     <xhtml:link rel="alternate" hreflang="es" href="https://hisnalzawaj.com/es/terms.html"/>
     <xhtml:link rel="alternate" hreflang="id" href="https://hisnalzawaj.com/id/terms.html"/>
     <xhtml:link rel="alternate" hreflang="fa" href="https://hisnalzawaj.com/fa/terms.html"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://hisnalzawaj.com/ru/terms.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://hisnalzawaj.com/terms.html"/>
     <changefreq>yearly</changefreq>
   </url>
@@ -262,6 +321,19 @@
     <xhtml:link rel="alternate" hreflang="es" href="https://hisnalzawaj.com/es/terms.html"/>
     <xhtml:link rel="alternate" hreflang="id" href="https://hisnalzawaj.com/id/terms.html"/>
     <xhtml:link rel="alternate" hreflang="fa" href="https://hisnalzawaj.com/fa/terms.html"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://hisnalzawaj.com/ru/terms.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://hisnalzawaj.com/terms.html"/>
+    <changefreq>yearly</changefreq>
+  </url>
+  <url>
+    <loc>https://hisnalzawaj.com/ru/terms.html</loc>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://hisnalzawaj.com/terms.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://hisnalzawaj.com/en/terms.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://hisnalzawaj.com/fr/terms.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://hisnalzawaj.com/es/terms.html"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://hisnalzawaj.com/id/terms.html"/>
+    <xhtml:link rel="alternate" hreflang="fa" href="https://hisnalzawaj.com/fa/terms.html"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://hisnalzawaj.com/ru/terms.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://hisnalzawaj.com/terms.html"/>
     <changefreq>yearly</changefreq>
   </url>

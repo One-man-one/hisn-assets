@@ -1,0 +1,919 @@
+<!doctype html>
+<html lang="ru" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Hisn Alzawaj</title>
+  <meta name="description" content="Платформа знакомств с целью брака в Telegram и на сайте: укажите свои критерии, просматривайте подходящие анкеты и общайтесь внутри платформы после взаимного согласия. Ваше фото остаётся размытым, пока вы не разрешите его показать.">
+  <meta name="keywords" content="бот для никаха, знакомства для никаха, мусульманские знакомства, халяль знакомства, найти мужа, найти жену, никах в telegram, Hisn Alzawaj">
+  <link rel="canonical" href="https://hisnalzawaj.com/ru/">
+  <link rel="alternate" hreflang="ar" href="https://hisnalzawaj.com/">
+  <link rel="alternate" hreflang="en" href="https://hisnalzawaj.com/en/">
+  <link rel="alternate" hreflang="fr" href="https://hisnalzawaj.com/fr/">
+  <link rel="alternate" hreflang="es" href="https://hisnalzawaj.com/es/">
+  <link rel="alternate" hreflang="id" href="https://hisnalzawaj.com/id/">
+  <link rel="alternate" hreflang="fa" href="https://hisnalzawaj.com/fa/">
+  <link rel="alternate" hreflang="ru" href="https://hisnalzawaj.com/ru/">
+  <link rel="alternate" hreflang="x-default" href="https://hisnalzawaj.com/">
+  <meta name="robots" content="index,follow,max-image-preview:large">
+  <meta name="google-site-verification" content="PZJUV_-inCgSV00em7TFB2Vp03PtsSfxsREUZm9Bjq8">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Hisn Alzawaj">
+  <meta property="og:locale" content="ru_RU">
+  <meta property="og:title" content="Hisn Alzawaj">
+  <meta property="og:description" content="Платформа знакомств с целью брака в Telegram и на сайте: укажите свои критерии, просматривайте подходящие анкеты и общайтесь внутри платформы после взаимного согласия. Ваше фото остаётся размытым, пока вы не разрешите его показать.">
+  <meta property="og:url" content="https://hisnalzawaj.com/ru/">
+  <meta property="og:image" content="https://hisnalzawaj.com/og.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="theme-color" content="#130d11">
+  <link rel="icon" href="../favicon.ico" sizes="any">
+  <link rel="icon" href="../icon.png" type="image/png">
+  <link rel="apple-touch-icon" href="../icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Playfair+Display:wght@600;700&display=swap">
+  <style>
+/* ⚠️ لا نجمتَي توكيد في تعليقات هذه الكتلة، خلافاً لبقية المستودع:
+   هذه الكتلة تُضمَّن في `<style>` داخل كل صفحة، فما يُكتب هنا يُنشَر
+   مع الصفحة لا يبقى في المصدر. و`test_no_markup_marker_reaches_the_page`
+   يقرأ الناتج بحثاً عن نجمتَي ماركداون فيسقط — وهو يحرس نصّ الوثائق
+   أصلاً، فيقع الخطأ في ملفٍّ ويظهر اسم ملفٍّ آخر في رسالة السقوط.
+   استعمل ⚠️ وحدها للتوكيد هنا. */
+
+/* ── الهوية: داكن مع وردي حصن الزواج (٢٣ سبتمبر ٢٠٢٦) ──
+   ⚠️ الوردي على الداكن أفتح من وردي الشعار (#ce5c8a): ذاك على خلفيةٍ
+   بنّية داكنة لا يبلغ تباينَ القراءة في النصّ الصغير. فالشعار والزرّ
+   الممتلئ بالأصليّ، والروابط والعناوين الصغيرة بالأفتح. */
+*,*::before,*::after{box-sizing:border-box}
+:root{
+  --rose:#ce5c8a; --rose-hi:#ec8fb2; --rose-glow:rgba(206,92,138,.35);
+  --bg:#130d11; --bg2:#1a1217; --card:#1f161b; --card-hi:#271b22;
+  --ink:#f7eef2; --body:#cdbcc5; --muted:#907f89;
+  --line:rgba(236,143,178,.14); --line-hi:rgba(236,143,178,.38);
+  color-scheme:dark;
+}
+html{-webkit-text-size-adjust:100%; scroll-behavior:smooth}
+body{
+  margin:0; color:var(--body); background:var(--bg);
+  font-family:'Inter',system-ui,-apple-system,'Segoe UI',sans-serif;
+  font-size:17px; line-height:1.85; -webkit-font-smoothing:antialiased;
+}
+h1,h2,h3{color:var(--ink); line-height:1.3; margin:0 0 .6em; font-weight:700;
+  font-family:'Playfair Display','Inter',serif}
+h1{font-size:clamp(2rem,5.6vw,3.4rem); letter-spacing:-.01em}
+h1 em{font-style:normal; color:var(--rose-hi)}
+h2{font-size:clamp(1.55rem,3.8vw,2.3rem)}
+h3{font-size:1.12rem; margin-bottom:.35em}
+p{margin:0 0 1em}
+a{color:var(--rose-hi)}
+.wrap{max-width:1120px; margin:0 auto; padding:0 22px}
+section{padding:clamp(56px,8vw,96px) 0; position:relative}
+.eyebrow{display:block; color:var(--rose-hi); font-size:.82rem; font-weight:600;
+  letter-spacing:.08em; margin-bottom:10px}
+.center{text-align:center}
+.center h2,.center .sub{margin-inline:auto}
+.sub{max-width:60ch; color:var(--muted)}
+
+/* فاصلٌ مزخرف بين الأقسام */
+.sep{display:flex; align-items:center; justify-content:center; gap:14px;
+  padding:0; color:var(--rose)}
+.sep::before,.sep::after{content:''; height:1px; width:min(28vw,220px);
+  background:linear-gradient(90deg,transparent,var(--line-hi),transparent)}
+
+/* ── الترويسة ──
+   ⚠️ ملتصقة، وخلفيّتها على الغلاف لا على `.wrap`: الخلفية على `.wrap`
+   تقف عند عرضه والشريطُ ممتدّ بالعرض كلّه، فيظهر المحتوى منزلقاً من
+   جانبيه على أي شاشةٍ أوسع. */
+.top{
+  position:sticky; top:0; z-index:30;
+  background:rgba(19,13,17,.78);
+  -webkit-backdrop-filter:saturate(160%) blur(14px);
+  backdrop-filter:saturate(160%) blur(14px);
+  border-bottom:1px solid var(--line);
+}
+.top-in{display:flex; align-items:center; gap:18px; padding-block:12px}
+/* ⚠️ `flex:none` و`nowrap` على الاسم شرطُ قبولٍ لا تنسيق: «الاسم
+   المعروض على الصفحة» أحدُ المواضع الثلاثة التي رُفضنا بها عند تيك
+   توك، ومدقّقٌ يقرأ «Hisn / Alzawaj» على سطرين يقرأ اسماً غير الاسم. */
+.mark{display:flex; align-items:center; gap:10px; font-weight:700;
+  color:var(--ink); text-decoration:none; font-size:1.08rem; flex:none}
+.mark span{white-space:nowrap}
+/* الاسمان معاً: اللاتيني أوّلاً وبحجمه (هو المقروء عند المدقّق)، والعربي
+   تحته أصغر — لا بدلاً منه. راجع `_wordmark`. */
+.mark .names{display:flex; flex-direction:column; align-items:flex-start;
+  line-height:1.15}
+.mark .ar{font-size:.78em; font-weight:600; color:var(--body)}
+.mark img{width:36px; height:36px; object-fit:contain}
+.snav{display:flex; gap:4px; list-style:none; margin:0; padding:0;
+  margin-inline-start:auto}
+.snav a{display:block; padding:6px 12px; border-radius:10px; font-size:.93rem;
+  text-decoration:none; color:var(--body); transition:color .2s,background .2s}
+.snav a:hover{color:var(--ink); background:var(--card)}
+.top .btn{margin:0; padding:9px 20px; font-size:.95rem; box-shadow:none}
+
+/* ── كرة اللغات ──
+   ⚠️ `<details>` لا جافاسكربت: الموقع ساكن بقرار، وسكربتُه الوحيد إسنادُ الحملة (`_ad_script`). والقائمة
+   تُغلق بنقرةٍ ثانية على الكرة، وتبقى روابطها في DOM فيقرؤها الزاحف
+   كما يقرأ `hreflang` في الرأس. */
+.lang{position:relative}
+.lang summary{
+  display:flex; align-items:center; gap:7px; list-style:none; cursor:pointer;
+  padding:7px 12px; border-radius:999px; border:1px solid var(--line);
+  color:var(--ink); font-size:.92rem; white-space:nowrap;
+  transition:border-color .2s,background .2s;
+}
+.lang summary::-webkit-details-marker{display:none}
+.lang summary:hover,.lang[open] summary{border-color:var(--line-hi); background:var(--card)}
+.lang summary:focus-visible{outline:2px solid var(--rose); outline-offset:3px}
+.lang svg{width:18px; height:18px; flex:none}
+.lang ul{
+  position:absolute; inset-inline-end:0; top:calc(100% + 8px); z-index:40;
+  min-width:180px; margin:0; padding:6px; list-style:none;
+  background:var(--card-hi); border:1px solid var(--line-hi); border-radius:14px;
+  box-shadow:0 18px 40px rgba(0,0,0,.45);
+}
+.lang.up ul{top:auto; bottom:calc(100% + 8px)}
+.lang li a{display:block; padding:8px 12px; border-radius:9px; color:var(--body);
+  text-decoration:none; font-size:.95rem}
+.lang li a:hover{background:var(--card); color:var(--ink)}
+.lang li a[aria-current]{color:var(--rose-hi); font-weight:600}
+
+/* ⚠️ على الضيّق: الاسم والكرة وحدهما في الترويسة. روابط الأقسام في
+   التذييل أيضاً، فإخفاؤها هنا لا يُضيع طريقاً. */
+@media (max-width:820px){ .snav{display:none} .lang{margin-inline-start:auto} }
+@media (max-width:520px){ .top .btn{display:none} }
+
+/* ── البطل ── */
+.hero{padding:clamp(64px,10vw,120px) 0 clamp(56px,8vw,96px); overflow:hidden;
+  background:
+    radial-gradient(70% 60% at 50% 0%, rgba(206,92,138,.20), transparent 70%),
+    radial-gradient(40% 40% at 90% 90%, rgba(206,92,138,.08), transparent 70%)}
+.hero .wrap{position:relative; z-index:1; text-align:center}
+.hero h1,.hero p.lead{margin-inline:auto}
+.hero h1{max-width:18ch}
+.kicker{
+  display:inline-flex; align-items:center; gap:8px; font-size:.84rem;
+  font-weight:600; color:var(--rose-hi); background:rgba(206,92,138,.1);
+  border:1px solid var(--line-hi); border-radius:999px; padding:6px 16px;
+  margin-bottom:24px;
+}
+.kicker::before{content:''; width:7px; height:7px; border-radius:50%;
+  background:var(--rose-hi); box-shadow:0 0 0 4px rgba(236,143,178,.18)}
+.hero p.lead{font-size:clamp(1.04rem,2.1vw,1.2rem); max-width:62ch}
+.btn{
+  display:inline-block; padding:15px 34px; border-radius:14px;
+  background:var(--rose); color:#fff; text-decoration:none; font-weight:700;
+  font-size:1.05rem; box-shadow:0 12px 30px var(--rose-glow);
+  transition:transform .2s,box-shadow .2s,background .2s;
+}
+.btn:hover{background:#d96c98; transform:translateY(-2px);
+  box-shadow:0 16px 36px var(--rose-glow)}
+/* الزرّ الثاني — الويب. ⚠️ مفرَّغٌ لا ملوَّن: زرّان بنفس الثقل
+   يُربكان العين في أيّهما الطريق، وتيليجرام يبقى الأكمل ميزاتٍ اليوم
+   (التوثيق بالفيديو والترقية فيه وحده). */
+.btn.alt{background:transparent; color:var(--ink); box-shadow:none;
+  border:1.5px solid var(--line-hi); padding:13.5px 32px}
+.btn.alt:hover{background:var(--card); border-color:var(--rose-hi)}
+.cta-hint{max-width:46ch; margin:14px auto 0; color:var(--body); font-size:.92rem}
+.ctas{display:flex; flex-wrap:wrap; gap:12px; margin-top:30px;
+  justify-content:center}
+.note{font-size:.9rem; color:var(--muted); margin:16px 0 0}
+/* ⚠️ تلتفّ ولا تنقلب عموداً: `flex-direction:column` يعطي عموداً من
+   أربعة أسطر يدفع الخطوات تحت الطيّة في شاشةٍ صغيرة. */
+.badges{display:flex; flex-wrap:wrap; justify-content:center; gap:10px;
+  list-style:none; margin:30px 0 0; padding:0}
+.badges li{display:flex; align-items:center; gap:8px; background:var(--card);
+  border:1px solid var(--line); border-radius:999px; padding:8px 15px;
+  font-size:.9rem; line-height:1.45}
+.badges span{font-size:1rem; line-height:1; flex:none}
+
+/* ── الشبكات والبطاقات ── */
+.grid{display:grid; gap:18px; margin-top:40px}
+.g3{grid-template-columns:repeat(auto-fit,minmax(272px,1fr))}
+.g4{grid-template-columns:repeat(auto-fit,minmax(232px,1fr))}
+.card{
+  background:linear-gradient(180deg,var(--card-hi),var(--card));
+  border:1px solid var(--line); border-radius:18px; padding:28px 24px;
+  transition:transform .25s,border-color .25s,box-shadow .25s;
+}
+.card:hover{transform:translateY(-4px); border-color:var(--line-hi);
+  box-shadow:0 18px 40px rgba(0,0,0,.35)}
+.card p{margin:0; font-size:.97rem}
+.step .n{
+  display:block; font-family:'Playfair Display','Inter',serif; font-size:2.1rem;
+  line-height:1; color:var(--rose-hi); opacity:.85; margin-bottom:16px;
+}
+.card .ico{display:grid; place-items:center; width:48px; height:48px;
+  border-radius:14px; border:1px solid var(--line-hi); background:rgba(206,92,138,.08);
+  font-size:1.45rem; line-height:1; margin-bottom:16px}
+
+/* ── الخصوصية ── */
+.privacy .panel{
+  border:1px solid var(--line-hi); border-radius:24px; padding:clamp(28px,5vw,52px);
+  background:
+    radial-gradient(80% 120% at 100% 0%, rgba(206,92,138,.16), transparent 60%),
+    var(--bg2);
+}
+.privacy p{max-width:72ch}
+.privacy p:last-child{margin-bottom:0}
+
+/* ── الأسئلة ──
+   ⚠️ `display:flex` على `summary` هو ما يُخفي المثلّث: فايرفوكس يرسمه من
+   `display:list-item`، وسفاري من `::-webkit-details-marker` — فيلزم
+   الثلاثة معاً، ومن أسقط واحداً رأى مثلّثاً زائداً عند غيره. */
+.faq{max-width:840px; margin:34px auto 0}
+.qa{border:1px solid var(--line); border-radius:16px; background:var(--card);
+  margin-bottom:12px; padding:0 22px; transition:border-color .2s}
+.qa[open]{border-color:var(--line-hi)}
+.qa summary{
+  display:flex; align-items:center; gap:14px; list-style:none;
+  padding:18px 0; cursor:pointer; color:var(--ink); font-weight:700;
+  font-size:1.04rem; line-height:1.5;
+}
+.qa summary::-webkit-details-marker{display:none}
+.qa summary:hover{color:var(--rose-hi)}
+/* ⚠️ `:focus-visible` لا `:focus`: الثاني يرسم إطاراً عند كل نقرة فأرة
+   فيبدو عطلاً فيُحذف — ومعه يضيع دليلُ من يتنقّل بالمفاتيح. */
+.qa summary:focus-visible{outline:2px solid var(--rose); outline-offset:3px}
+/* ⚠️ `margin-inline-start:auto` لا `margin-left`: العلامة آخر السطر في
+   الاتجاهين، و`left` تضعها وسط السطر العربي والفارسي. */
+.qa summary::after{
+  content:'+'; margin-inline-start:auto; flex:none;
+  width:28px; height:28px; display:grid; place-items:center;
+  border-radius:9px; border:1px solid var(--line-hi); color:var(--rose-hi);
+  font-size:1.15rem; line-height:1; transition:transform .25s;
+}
+.qa[open] summary::after{content:'−'; transform:rotate(180deg)}
+.qa p{margin:0 0 20px; font-size:.97rem; max-width:68ch}
+
+/* ── الخاتمة ── */
+.end .panel{text-align:center; border-radius:28px; padding:clamp(40px,7vw,72px) 22px;
+  border:1px solid var(--line-hi);
+  background:radial-gradient(90% 140% at 50% 0%, rgba(206,92,138,.24), transparent 65%), var(--bg2)}
+.end p{max-width:52ch; margin-inline:auto}
+
+/* ── التذييل ──
+   ⚠️ الوثائق هنا لا في الترويسة، بقرار صاحب المشروع (٢٣ سبتمبر ٢٠٢٦).
+   وقائمة `.pages` هي نفسها التي يفحصها
+   `test_every_page_links_to_every_other_page` — كل صفحةٍ تدلّ على أخواتها. */
+footer{border-top:1px solid var(--line); background:#0f0a0d;
+  padding:56px 0 30px; font-size:.93rem; color:var(--muted)}
+.fcols{display:grid; gap:34px;
+  grid-template-columns:minmax(220px,1.5fr) repeat(3,minmax(150px,1fr))}
+.fcols h4{color:var(--rose-hi); font-size:.84rem; letter-spacing:.06em;
+  margin:0 0 14px; font-weight:600}
+.fcols ul{list-style:none; margin:0; padding:0}
+.fcols li{margin-bottom:8px}
+.fcols a{color:var(--body); text-decoration:none; transition:color .2s}
+.fcols a:hover,.fcols a[aria-current]{color:var(--rose-hi)}
+.fabout p{max-width:40ch; margin:14px 0 0}
+.fbottom{display:flex; flex-wrap:wrap; justify-content:space-between; gap:12px;
+  border-top:1px solid var(--line); margin-top:40px; padding-top:22px;
+  font-size:.85rem}
+@media (max-width:860px){ .fcols{grid-template-columns:1fr 1fr} .fabout{grid-column:1/-1} }
+@media (max-width:480px){ .fcols{grid-template-columns:1fr} }
+
+/* ── الوثائق ──
+   ⚠️ عرضٌ بوحدة ch لا px: قياس السطر المريح عدد حروفٍ لا بكسلات — والفرق
+   يظهر في الفارسية والعربية حيث الحرف أضيق من اللاتيني بالبكسل نفسه. */
+.doc{max-width:74ch; margin-inline:auto}
+.doc .updated{font-size:.9rem; color:var(--muted); margin:0 0 26px}
+.doc .lead{font-size:1.05rem; margin-bottom:34px}
+.doc h2{font-size:clamp(1.2rem,2.5vw,1.5rem); margin-top:40px;
+  padding-top:24px; border-top:1px solid var(--line)}
+.doc h2:first-of-type{border-top:0; padding-top:0; margin-top:0}
+.doc ul{margin:0 0 1em; padding-inline-start:1.35em}
+.doc li{margin-bottom:.45em}
+.doc li::marker{color:var(--rose-hi)}
+.doc strong{color:var(--ink)}
+.doc .back{display:inline-block; margin-top:38px; font-weight:600}
+
+/* ── أغصان الورد ──
+   ⚠️ مرسومةٌ لنا في `build.py` (`_branch`) — لا صورةٌ ولا خطّ أيقونات،
+   وحلّت محلّ الزخرفة المربّعة بطلب صاحب المشروع (٢٣ سبتمبر ٢٠٢٦):
+   «الخلفية المربّعة غير مريحة». ثابتةٌ خلف المحتوى لا تلتقط نقرة، وكلُّ
+   ما فوقها في `main` و`footer` بطبقةٍ أعلى.
+
+   ⚠️ والغصن مرسومٌ من الزاوية العليا اليسرى، فيُعكس بـ`scaleX(-1)` في
+   الاتجاه من اليمين: بلا ذلك ينبت الغصن في العربية والفارسية من الزاوية
+   المقابلة للنصّ، فيبدو مقلوباً عن الصفحة. */
+main,footer{position:relative; z-index:1}
+/* ⚠️ عرضٌ صغير وشفافيةٌ خافتة بقرار: الغصن زينةُ زاوية لا لوحة. كان
+   بعرض ٤٤٠px وشفافية .5 فمرّت وردةٌ فوق سطور الشروط وبجوار العنوان —
+   والنصّ هنا يُقرأ لا يُزيَّن. */
+.branch{position:fixed; z-index:0; pointer-events:none;
+  width:min(22vw,290px); height:auto; opacity:.4}
+.branch.b1{top:56px; left:0}
+.branch.b2{bottom:0; right:0; transform:rotate(180deg)}
+[dir=rtl] .branch.b1{left:auto; right:0; transform:scaleX(-1)}
+[dir=rtl] .branch.b2{right:auto; left:0; transform:rotate(180deg) scaleX(-1)}
+.branch .sway{transform-box:view-box; transform-origin:0 0}
+.branch .bloom{transform-box:fill-box; transform-origin:center}
+@media (max-width:680px){ .branch{width:46vw; opacity:.24} }
+
+/* البتلات المتساقطة — مخفيّةٌ إلا حيث تُسمح الحركة (أسفل). */
+.petals{display:none; position:fixed; inset:0; z-index:0; overflow:hidden;
+  pointer-events:none}
+.petal{position:absolute; top:-6vh; left:var(--x); width:13px; height:17px;
+  border-radius:70% 0 70% 0; opacity:.55;
+  background:radial-gradient(circle at 30% 30%, #f4b3cb, #ce5c8a 70%)}
+
+/* ── الحركة ──
+   ⚠️ كلُّها داخل `prefers-reduced-motion:no-preference`، لا خارجها ثم
+   تُلغى: من طلب من جهازه تقليل الحركة (دوارٌ أو صداع) لا يرى أوّل إطار
+   منها أصلاً. وبلا جافاسكربت: الظهور عند التمرير بـ`animation-timeline`
+   حيث يُدعم، وحيث لا يُدعم يظهر المحتوى ثابتاً كما هو — لا يختفي. */
+@keyframes rise{from{opacity:0; transform:translateY(22px)} to{opacity:1; transform:none}}
+@keyframes glow{0%,100%{box-shadow:0 12px 30px var(--rose-glow)}
+  50%{box-shadow:0 12px 44px rgba(206,92,138,.6)}}
+@keyframes sway{0%,100%{transform:rotate(-1.6deg)} 50%{transform:rotate(1.8deg)}}
+@keyframes breathe{0%,100%{transform:scale(1)} 50%{transform:scale(1.06)}}
+@keyframes fall{
+  0%{transform:translate(0,0) rotate(0); opacity:0}
+  8%{opacity:.55}
+  50%{transform:translate(9vw,55vh) rotate(200deg)}
+  92%{opacity:.45}
+  100%{transform:translate(-4vw,112vh) rotate(400deg); opacity:0}}
+@keyframes drift{0%,100%{transform:translateY(0)} 50%{transform:translateY(-6px)}}
+@media (prefers-reduced-motion:no-preference){
+  .hero .kicker,.hero h1,.hero .lead,.hero .ctas,.hero .note,.hero .badges{
+    animation:rise .9s cubic-bezier(.2,.7,.2,1) both}
+  .hero h1{animation-delay:.08s}
+  .hero .lead{animation-delay:.18s}
+  .hero .ctas{animation-delay:.28s}
+  .hero .note{animation-delay:.36s}
+  .hero .badges{animation-delay:.44s}
+  .branch .sway{animation:sway 11s ease-in-out infinite}
+  .branch.b2 .sway{animation-duration:13s; animation-delay:-4s}
+  .branch .bloom{animation:breathe 6s ease-in-out infinite}
+  .petals{display:block}
+  .petal{animation:fall var(--t) linear var(--d) infinite}
+  .hero .btn:not(.alt){animation:glow 3.2s ease-in-out 1.2s infinite}
+  .step .n{animation:drift 5s ease-in-out infinite}
+  @supports (animation-timeline:view()){
+    .reveal{animation:rise linear both; animation-timeline:view();
+      animation-range:entry 0% cover 22%}
+  }
+}
+
+@media (max-width:560px){ body{font-size:16px} .card{padding:24px 20px} }
+
+/* ── جولة داخل التطبيق: هاتفٌ بشاشاتٍ مصطنعة ──
+   ⚠️ التبويبات أزرارُ اختيارٍ مخفيّة (radio) لا جافاسكربت: الصفحة
+   ساكنة بلا سكربتٍ واحد، والاختيار يُظهر شاشته بمحدِّد :checked.
+   والأزرار نفسها تستقبل لوحة المفاتيح (الأسهم) بلا سطر كود. */
+.demo{position:relative; margin-top:28px}
+.demo-r{position:absolute; opacity:0; pointer-events:none}
+.demo-tabs{display:flex; flex-wrap:wrap; justify-content:center; gap:10px;
+  margin-bottom:26px}
+.demo-tabs label{cursor:pointer; padding:9px 18px; border-radius:999px;
+  border:1px solid var(--line-hi); color:var(--body); font-weight:600;
+  font-size:.95rem; transition:background .2s,color .2s,box-shadow .2s}
+.demo-tabs label:hover{color:var(--ink)}
+#demo-1:checked ~ .demo-tabs [for=demo-1],
+#demo-2:checked ~ .demo-tabs [for=demo-2],
+#demo-3:checked ~ .demo-tabs [for=demo-3],
+#demo-4:checked ~ .demo-tabs [for=demo-4]{background:var(--rose); color:#fff;
+  border-color:var(--rose); box-shadow:0 6px 22px var(--rose-glow)}
+#demo-1:focus-visible ~ .demo-tabs [for=demo-1],
+#demo-2:focus-visible ~ .demo-tabs [for=demo-2],
+#demo-3:focus-visible ~ .demo-tabs [for=demo-3],
+#demo-4:focus-visible ~ .demo-tabs [for=demo-4]{outline:2px solid var(--rose-hi);
+  outline-offset:3px}
+.phone{width:min(340px,100%); margin:0 auto; padding:12px; border-radius:44px;
+  background:linear-gradient(160deg,#2a1d24,#150e12);
+  border:1px solid var(--line-hi); box-shadow:0 30px 80px rgba(0,0,0,.55),
+  0 0 0 1px rgba(0,0,0,.4) inset}
+.phone-in{position:relative; height:600px; overflow:hidden; border-radius:34px;
+  background:var(--bg); text-align:start}
+.phone-in::before{content:''; position:absolute; top:10px; left:50%;
+  width:96px; height:24px; margin-left:-48px; border-radius:14px;
+  background:#000; z-index:5}
+.scr{display:none; position:absolute; inset:0; padding:48px 14px 14px}
+#demo-1:checked ~ .phone .s1,#demo-2:checked ~ .phone .s2,
+#demo-3:checked ~ .phone .s3,#demo-4:checked ~ .phone .s4{display:block}
+.scr-h{color:var(--ink); font-weight:700; font-size:1.05rem; margin:0 4px 12px}
+.demo-note{margin:18px auto 0; color:var(--muted); font-size:.85rem; max-width:44ch}
+
+/* بطاقة التصفّح — شكلُ بطاقة التطبيق نفسه */
+.dstack{position:relative; height:430px}
+.dcard{position:absolute; inset:0; background:var(--card); border:1px solid var(--line);
+  border-radius:20px; padding:14px 16px; font-size:.82rem; line-height:1.6}
+.dcard.b2{transform:scale(.9) translateY(18px); opacity:.35}
+.dcard.b1{transform:scale(.95) translateY(9px); opacity:.65}
+.dcard.front{box-shadow:0 10px 34px rgba(0,0,0,.45)}
+.dhead{display:flex; justify-content:space-between; align-items:flex-start}
+.dcode{color:var(--rose-hi); font-weight:700; font-size:.8rem}
+.dscore{color:var(--muted); font-size:.74rem}
+.dbadge{display:inline-block; margin-top:4px; padding:0 8px; border-radius:10px;
+  font-size:.7rem; color:#4fc08a; background:rgba(79,192,138,.14)}
+.dface{width:62px; height:62px; border-radius:50%; border:2px solid var(--rose);
+  display:grid; place-items:center; font-size:30px; background:var(--bg)}
+.dname{text-align:center; color:var(--rose-hi); font-weight:800; font-size:1.12rem;
+  margin:8px 0 0}
+.dplace{text-align:center; font-weight:600; color:var(--ink); margin-bottom:6px}
+.drow{display:flex; justify-content:space-between; gap:10px; padding:5px 0;
+  border-bottom:1px solid var(--line)}
+.drow span:first-child{color:var(--muted)}
+.drow b{color:var(--ink); font-weight:600}
+.dbio{margin-top:8px; padding:7px 10px; border-radius:10px; background:var(--bg);
+  border-inline-start:3px solid var(--rose); font-size:.76rem}
+.dstamp{position:absolute; top:112px; padding:2px 10px; border:3px solid;
+  border-radius:10px; font-weight:800; font-size:.95rem; opacity:0;
+  background:var(--card)}
+.dstamp.yes{left:14px; color:#4fc08a; transform:rotate(-12deg)}
+.dswipe{display:flex; direction:ltr; justify-content:center; gap:26px; margin-top:14px}
+.dswipe span{width:52px; height:52px; border-radius:50%; display:grid;
+  place-items:center; font-size:22px; border:2px solid}
+.dswipe .no{color:#ef5b5b; border-color:#ef5b5b}
+.dswipe .yes{color:#4fc08a; border-color:#4fc08a; width:58px; height:58px}
+
+/* قوائم: المطابقات والإشعارات */
+.drow2{display:flex; align-items:center; gap:10px; padding:10px 12px;
+  margin-bottom:8px; border:1px solid var(--line); border-radius:14px;
+  background:var(--card); font-size:.82rem; line-height:1.5}
+.drow2.new{border-color:var(--line-hi)}
+.drow2 .dface{width:42px; height:42px; font-size:20px; flex:none}
+.drow2 .main{flex:1; min-width:0}
+.drow2 .who{color:var(--rose-hi); font-weight:700}
+.drow2 .muted{color:var(--muted); font-size:.74rem}
+.drow2 .txt{color:var(--ink); font-weight:600}
+.dgo{position:relative; font-size:1.2rem; flex:none}
+.dn{position:absolute; top:-8px; inset-inline-end:-10px; min-width:18px; height:18px;
+  padding:0 5px; border-radius:9px; background:var(--rose); color:#fff;
+  font-size:.66rem; font-weight:700; line-height:18px; text-align:center}
+.dn.inl{position:static; display:inline-block; margin-inline-start:6px}
+
+/* المحادثة */
+.dchat-h{display:flex; align-items:center; gap:8px; color:var(--ink); font-weight:700;
+  font-size:.86rem; padding:0 4px 10px; border-bottom:1px solid var(--line)}
+.dlog{display:flex; flex-direction:column; gap:8px; padding:12px 2px}
+.dmsg{max-width:78%; padding:8px 12px; border-radius:16px; font-size:.8rem;
+  line-height:1.55; background:var(--card); color:var(--ink);
+  border:1px solid var(--line); align-self:flex-end}
+.dmsg.mine{align-self:flex-start; background:var(--rose); border-color:var(--rose);
+  color:#fff}
+.dcompose{position:absolute; left:14px; right:14px; bottom:16px; display:flex; gap:8px}
+.dcompose span{flex:1; padding:9px 14px; border-radius:22px; border:1px solid var(--line-hi);
+  color:var(--muted); font-size:.8rem}
+.dcompose b{width:40px; height:40px; border-radius:50%; background:var(--rose);
+  color:#fff; display:grid; place-items:center}
+
+@media (prefers-reduced-motion:no-preference){
+  /* البطاقة تميل يميناً ويظهر ختمُ الإعجاب ثم تعود — تُري الحركة بلا يد. */
+  .dcard.front{animation:demo-sway 5.5s ease-in-out 1s infinite}
+  .dstamp.yes{animation:demo-stamp 5.5s ease-in-out 1s infinite}
+  .dmsg{animation:rise .5s cubic-bezier(.2,.7,.2,1) both}
+  .dmsg:nth-child(2){animation-delay:.25s}
+  .dmsg:nth-child(3){animation-delay:.5s}
+  .dmsg:nth-child(4){animation-delay:.75s}
+}
+@keyframes demo-sway{
+  0%,55%,100%{transform:none; box-shadow:0 10px 34px rgba(0,0,0,.45)}
+  70%,78%{transform:translate(38px,2px) rotate(5deg);
+    box-shadow:0 0 30px rgba(79,192,138,.55)}
+}
+@keyframes demo-stamp{0%,58%,92%,100%{opacity:0} 70%,78%{opacity:1}}
+</style>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": "https://hisnalzawaj.com/#organization",
+  "name": "Hisn Alzawaj",
+  "alternateName": "حصن الزواج",
+  "url": "https://hisnalzawaj.com/",
+  "logo": "https://hisnalzawaj.com/logo.png",
+  "sameAs": [
+    "https://t.me/HisnAlzawaj_bot",
+    "https://t.me/Hisn_Alzawaj"
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": "https://hisnalzawaj.com/#website",
+  "name": "حصن الزواج",
+  "alternateName": "Hisn Alzawaj",
+  "url": "https://hisnalzawaj.com/",
+  "inLanguage": "ru",
+  "publisher": {
+    "@id": "https://hisnalzawaj.com/#organization"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Hisn Alzawaj",
+  "alternateName": "Hisn Alzawaj",
+  "url": "https://hisnalzawaj.com/ru/",
+  "applicationCategory": "SocialNetworkingApplication",
+  "operatingSystem": "Telegram",
+  "inLanguage": [
+    "ar",
+    "en",
+    "fr",
+    "es",
+    "id",
+    "fa",
+    "ru"
+  ],
+  "description": "Платформа знакомств с целью брака в Telegram и на сайте: укажите свои критерии, просматривайте подходящие анкеты и общайтесь внутри платформы после взаимного согласия. Ваше фото остаётся размытым, пока вы не разрешите его показать.",
+  "image": "https://hisnalzawaj.com/og.png",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "sameAs": [
+    "https://t.me/HisnAlzawaj_bot",
+    "https://t.me/Hisn_Alzawaj"
+  ],
+  "publisher": {
+    "@id": "https://hisnalzawaj.com/#organization"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "inLanguage": "ru",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Сервис бесплатный?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Да. Регистрация, поиск, подбор и переписка после взаимного интереса бесплатны. Есть необязательная премиум-подписка с дополнительными возможностями — она оплачивается звёздами Telegram или криптовалютой."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Могут ли другие видеть моё фото?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Нет. По умолчанию ваше фото размыто для всех. Оно открывается, только если другая сторона попросит об этом и вы явно согласитесь, — на выбранный вами срок, и это разрешение можно отозвать в любой момент."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Получит ли собеседник мой номер телефона или имя пользователя?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Нет. Сообщения передаются внутри самой платформы — в боте или на сайте, — поэтому ни номер, ни имя пользователя не передаются, пока вы оба не решите ими поделиться."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Как рассчитывается оценка совместимости?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "По взаимным предпочтениям: качества каждой стороны сопоставляются с тем, что ищет другая, — а не по желаниям одной стороны. И того, кого вам уже показали, больше не покажут."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Это только для брака?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Да. Сервис предназначен исключительно для знакомств с целью брака. В каждой анкете есть кнопка жалобы, которая попадает к живому модератору, а нарушивших это правило блокируют."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Какие языки поддерживаются?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Арабский, английский, французский, испанский, индонезийский, персидский и русский. Интерфейс полностью переведён на все семь, и язык можно сменить в любой момент — в боте или на сайте."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "С чего начать?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Есть два пути: откройте бот в Telegram и нажмите «Запустить» — диалог проведёт вас шаг за шагом, а прогресс сохранится, если вы прервётесь и вернётесь. Или зарегистрируйтесь на сайте через аккаунт Google, Facebook или Telegram и заполните анкету там."
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<svg class="branch b1" viewBox="0 0 400 300" aria-hidden="true" focusable="false"><g class="sway"><path d="M0 0C50 30 80 90 140 140S250 220 340 250" stroke="#7d4a5f" stroke-width="3.2" fill="none" stroke-linecap="round"/><path d="M140 140C160 100 195 80 240 74" stroke="#7d4a5f" stroke-width="2.4" fill="none" stroke-linecap="round"/><path d="M70 62C60 100 70 130 96 150" stroke="#7d4a5f" stroke-width="2" fill="none" stroke-linecap="round"/><g transform="translate(40 26) rotate(20) scale(1.0)"><path d="M0 0C8-10 26-11 36 0C26 11 8 10 0 0Z" fill="#6e3a52"/><path d="M2 0H30" stroke="#a8567a" stroke-width="1"/></g><g transform="translate(96 104) rotate(-40) scale(0.9)"><path d="M0 0C8-10 26-11 36 0C26 11 8 10 0 0Z" fill="#6e3a52"/><path d="M2 0H30" stroke="#a8567a" stroke-width="1"/></g><g transform="translate(118 124) rotate(60) scale(0.8)"><path d="M0 0C8-10 26-11 36 0C26 11 8 10 0 0Z" fill="#6e3a52"/><path d="M2 0H30" stroke="#a8567a" stroke-width="1"/></g><g transform="translate(190 180) rotate(10) scale(1.0)"><path d="M0 0C8-10 26-11 36 0C26 11 8 10 0 0Z" fill="#6e3a52"/><path d="M2 0H30" stroke="#a8567a" stroke-width="1"/></g><g transform="translate(250 222) rotate(-30) scale(0.85)"><path d="M0 0C8-10 26-11 36 0C26 11 8 10 0 0Z" fill="#6e3a52"/><path d="M2 0H30" stroke="#a8567a" stroke-width="1"/></g><g transform="translate(290 236) rotate(35) scale(0.9)"><path d="M0 0C8-10 26-11 36 0C26 11 8 10 0 0Z" fill="#6e3a52"/><path d="M2 0H30" stroke="#a8567a" stroke-width="1"/></g><g transform="translate(180 96) rotate(-20) scale(0.75)"><path d="M0 0C8-10 26-11 36 0C26 11 8 10 0 0Z" fill="#6e3a52"/><path d="M2 0H30" stroke="#a8567a" stroke-width="1"/></g><g transform="translate(206 84) rotate(40) scale(0.7)"><path d="M0 0C8-10 26-11 36 0C26 11 8 10 0 0Z" fill="#6e3a52"/><path d="M2 0H30" stroke="#a8567a" stroke-width="1"/></g><g transform="translate(66 86) rotate(110) scale(0.7)"><path d="M0 0C8-10 26-11 36 0C26 11 8 10 0 0Z" fill="#6e3a52"/><path d="M2 0H30" stroke="#a8567a" stroke-width="1"/></g><g transform="translate(340 250) scale(1.7)"><g class="bloom"><ellipse cx="0" cy="-10" rx="8.5" ry="11" fill="#a8416b" transform="rotate(0)"/><ellipse cx="0" cy="-10" rx="8.5" ry="11" fill="#a8416b" transform="rotate(72)"/><ellipse cx="0" cy="-10" rx="8.5" ry="11" fill="#a8416b" transform="rotate(144)"/><ellipse cx="0" cy="-10" rx="8.5" ry="11" fill="#a8416b" transform="rotate(216)"/><ellipse cx="0" cy="-10" rx="8.5" ry="11" fill="#a8416b" transform="rotate(288)"/><ellipse cx="0" cy="-6" rx="6" ry="8" fill="#d0628f" transform="rotate(36)"/><ellipse cx="0" cy="-6" rx="6" ry="8" fill="#d0628f" transform="rotate(108)"/><ellipse cx="0" cy="-6" rx="6" ry="8" fill="#d0628f" transform="rotate(180)"/><ellipse cx="0" cy="-6" rx="6" ry="8" fill="#d0628f" transform="rotate(252)"/><ellipse cx="0" cy="-6" rx="6" ry="8" fill="#d0628f" transform="rotate(324)"/><circle r="6.5" fill="#e27fa6"/><path d="M-3.5 1.5C-4.5-2.5-1-5 2-4C5-3 5 1 2 2.5C0 3.5-2 2-1.5 0" stroke="#f7c5d8" stroke-width="1.3" fill="none" stroke-linecap="round"/></g></g><g transform="translate(242 74) scale(1.35)"><g class="bloom"><ellipse cx="0" cy="-10" rx="8.5" ry="11" fill="#a8416b" transform="rotate(0)"/><ellipse cx="0" cy="-10" rx="8.5" ry="11" fill="#a8416b" transform="rotate(72)"/><ellipse cx="0" cy="-10" rx="8.5" ry="11" fill="#a8416b" transform="rotate(144)"/><ellipse cx="0" cy="-10" rx="8.5" ry="11" fill="#a8416b" transform="rotate(216)"/><ellipse cx="0" cy="-10" rx="8.5" ry="11" fill="#a8416b" transform="rotate(288)"/><ellipse cx="0" cy="-6" rx="6" ry="8" fill="#d0628f" transform="rotate(36)"/><ellipse cx="0" cy="-6" rx="6" ry="8" fill="#d0628f" transform="rotate(108)"/><ellipse cx="0" cy="-6" rx="6" ry="8" fill="#d0628f" transform="rotate(180)"/><ellipse cx="0" cy="-6" rx="6" ry="8" fill="#d0628f" transform="rotate(252)"/><ellipse cx="0" cy="-6" rx="6" ry="8" fill="#d0628f" transform="rotate(324)"/><circle r="6.5" fill="#e27fa6"/><path d="M-3.5 1.5C-4.5-2.5-1-5 2-4C5-3 5 1 2 2.5C0 3.5-2 2-1.5 0" stroke="#f7c5d8" stroke-width="1.3" fill="none" stroke-linecap="round"/></g></g><g transform="translate(96 152) scale(1.1)"><g class="bloom"><ellipse cx="0" cy="-10" rx="8.5" ry="11" fill="#a8416b" transform="rotate(0)"/><ellipse cx="0" cy="-10" rx="8.5" ry="11" fill="#a8416b" transform="rotate(72)"/><ellipse cx="0" cy="-10" rx="8.5" ry="11" fill="#a8416b" transform="rotate(144)"/><ellipse cx="0" cy="-10" rx="8.5" ry="11" fill="#a8416b" transform="rotate(216)"/><ellipse cx="0" cy="-10" rx="8.5" ry="11" fill="#a8416b" transform="rotate(288)"/><ellipse cx="0" cy="-6" rx="6" ry="8" fill="#d0628f" transform="rotate(36)"/><ellipse cx="0" cy="-6" rx="6" ry="8" fill="#d0628f" transform="rotate(108)"/><ellipse cx="0" cy="-6" rx="6" ry="8" fill="#d0628f" transform="rotate(180)"/><ellipse cx="0" cy="-6" rx="6" ry="8" fill="#d0628f" transform="rotate(252)"/><ellipse cx="0" cy="-6" rx="6" ry="8" fill="#d0628f" transform="rotate(324)"/><circle r="6.5" fill="#e27fa6"/><path d="M-3.5 1.5C-4.5-2.5-1-5 2-4C5-3 5 1 2 2.5C0 3.5-2 2-1.5 0" stroke="#f7c5d8" stroke-width="1.3" fill="none" stroke-linecap="round"/></g></g><g transform="translate(160 150) scale(1.1)"><path d="M0 6C-6 2-6-6 0-12C6-6 6 2 0 6Z" fill="#ce5c8a"/><path d="M0 6C-3 2-3-5 0-9" stroke="#f2a8c4" stroke-width="1.2" fill="none"/><path d="M0 6-5 10M0 6 5 10" stroke="#7d4a5f" stroke-width="1.6"/></g><g transform="translate(300 226) scale(1.2)"><path d="M0 6C-6 2-6-6 0-12C6-6 6 2 0 6Z" fill="#ce5c8a"/><path d="M0 6C-3 2-3-5 0-9" stroke="#f2a8c4" stroke-width="1.2" fill="none"/><path d="M0 6-5 10M0 6 5 10" stroke="#7d4a5f" stroke-width="1.6"/></g></g></svg><svg class="branch b2" viewBox="0 0 400 300" aria-hidden="true" focusable="false"><g class="sway"><path d="M0 0C50 30 80 90 140 140S250 220 340 250" stroke="#7d4a5f" stroke-width="3.2" fill="none" stroke-linecap="round"/><path d="M140 140C160 100 195 80 240 74" stroke="#7d4a5f" stroke-width="2.4" fill="none" stroke-linecap="round"/><path d="M70 62C60 100 70 130 96 150" stroke="#7d4a5f" stroke-width="2" fill="none" stroke-linecap="round"/><g transform="translate(40 26) rotate(20) scale(1.0)"><path d="M0 0C8-10 26-11 36 0C26 11 8 10 0 0Z" fill="#6e3a52"/><path d="M2 0H30" stroke="#a8567a" stroke-width="1"/></g><g transform="translate(96 104) rotate(-40) scale(0.9)"><path d="M0 0C8-10 26-11 36 0C26 11 8 10 0 0Z" fill="#6e3a52"/><path d="M2 0H30" stroke="#a8567a" stroke-width="1"/></g><g transform="translate(118 124) rotate(60) scale(0.8)"><path d="M0 0C8-10 26-11 36 0C26 11 8 10 0 0Z" fill="#6e3a52"/><path d="M2 0H30" stroke="#a8567a" stroke-width="1"/></g><g transform="translate(190 180) rotate(10) scale(1.0)"><path d="M0 0C8-10 26-11 36 0C26 11 8 10 0 0Z" fill="#6e3a52"/><path d="M2 0H30" stroke="#a8567a" stroke-width="1"/></g><g transform="translate(250 222) rotate(-30) scale(0.85)"><path d="M0 0C8-10 26-11 36 0C26 11 8 10 0 0Z" fill="#6e3a52"/><path d="M2 0H30" stroke="#a8567a" stroke-width="1"/></g><g transform="translate(290 236) rotate(35) scale(0.9)"><path d="M0 0C8-10 26-11 36 0C26 11 8 10 0 0Z" fill="#6e3a52"/><path d="M2 0H30" stroke="#a8567a" stroke-width="1"/></g><g transform="translate(180 96) rotate(-20) scale(0.75)"><path d="M0 0C8-10 26-11 36 0C26 11 8 10 0 0Z" fill="#6e3a52"/><path d="M2 0H30" stroke="#a8567a" stroke-width="1"/></g><g transform="translate(206 84) rotate(40) scale(0.7)"><path d="M0 0C8-10 26-11 36 0C26 11 8 10 0 0Z" fill="#6e3a52"/><path d="M2 0H30" stroke="#a8567a" stroke-width="1"/></g><g transform="translate(66 86) rotate(110) scale(0.7)"><path d="M0 0C8-10 26-11 36 0C26 11 8 10 0 0Z" fill="#6e3a52"/><path d="M2 0H30" stroke="#a8567a" stroke-width="1"/></g><g transform="translate(340 250) scale(1.7)"><g class="bloom"><ellipse cx="0" cy="-10" rx="8.5" ry="11" fill="#a8416b" transform="rotate(0)"/><ellipse cx="0" cy="-10" rx="8.5" ry="11" fill="#a8416b" transform="rotate(72)"/><ellipse cx="0" cy="-10" rx="8.5" ry="11" fill="#a8416b" transform="rotate(144)"/><ellipse cx="0" cy="-10" rx="8.5" ry="11" fill="#a8416b" transform="rotate(216)"/><ellipse cx="0" cy="-10" rx="8.5" ry="11" fill="#a8416b" transform="rotate(288)"/><ellipse cx="0" cy="-6" rx="6" ry="8" fill="#d0628f" transform="rotate(36)"/><ellipse cx="0" cy="-6" rx="6" ry="8" fill="#d0628f" transform="rotate(108)"/><ellipse cx="0" cy="-6" rx="6" ry="8" fill="#d0628f" transform="rotate(180)"/><ellipse cx="0" cy="-6" rx="6" ry="8" fill="#d0628f" transform="rotate(252)"/><ellipse cx="0" cy="-6" rx="6" ry="8" fill="#d0628f" transform="rotate(324)"/><circle r="6.5" fill="#e27fa6"/><path d="M-3.5 1.5C-4.5-2.5-1-5 2-4C5-3 5 1 2 2.5C0 3.5-2 2-1.5 0" stroke="#f7c5d8" stroke-width="1.3" fill="none" stroke-linecap="round"/></g></g><g transform="translate(242 74) scale(1.35)"><g class="bloom"><ellipse cx="0" cy="-10" rx="8.5" ry="11" fill="#a8416b" transform="rotate(0)"/><ellipse cx="0" cy="-10" rx="8.5" ry="11" fill="#a8416b" transform="rotate(72)"/><ellipse cx="0" cy="-10" rx="8.5" ry="11" fill="#a8416b" transform="rotate(144)"/><ellipse cx="0" cy="-10" rx="8.5" ry="11" fill="#a8416b" transform="rotate(216)"/><ellipse cx="0" cy="-10" rx="8.5" ry="11" fill="#a8416b" transform="rotate(288)"/><ellipse cx="0" cy="-6" rx="6" ry="8" fill="#d0628f" transform="rotate(36)"/><ellipse cx="0" cy="-6" rx="6" ry="8" fill="#d0628f" transform="rotate(108)"/><ellipse cx="0" cy="-6" rx="6" ry="8" fill="#d0628f" transform="rotate(180)"/><ellipse cx="0" cy="-6" rx="6" ry="8" fill="#d0628f" transform="rotate(252)"/><ellipse cx="0" cy="-6" rx="6" ry="8" fill="#d0628f" transform="rotate(324)"/><circle r="6.5" fill="#e27fa6"/><path d="M-3.5 1.5C-4.5-2.5-1-5 2-4C5-3 5 1 2 2.5C0 3.5-2 2-1.5 0" stroke="#f7c5d8" stroke-width="1.3" fill="none" stroke-linecap="round"/></g></g><g transform="translate(96 152) scale(1.1)"><g class="bloom"><ellipse cx="0" cy="-10" rx="8.5" ry="11" fill="#a8416b" transform="rotate(0)"/><ellipse cx="0" cy="-10" rx="8.5" ry="11" fill="#a8416b" transform="rotate(72)"/><ellipse cx="0" cy="-10" rx="8.5" ry="11" fill="#a8416b" transform="rotate(144)"/><ellipse cx="0" cy="-10" rx="8.5" ry="11" fill="#a8416b" transform="rotate(216)"/><ellipse cx="0" cy="-10" rx="8.5" ry="11" fill="#a8416b" transform="rotate(288)"/><ellipse cx="0" cy="-6" rx="6" ry="8" fill="#d0628f" transform="rotate(36)"/><ellipse cx="0" cy="-6" rx="6" ry="8" fill="#d0628f" transform="rotate(108)"/><ellipse cx="0" cy="-6" rx="6" ry="8" fill="#d0628f" transform="rotate(180)"/><ellipse cx="0" cy="-6" rx="6" ry="8" fill="#d0628f" transform="rotate(252)"/><ellipse cx="0" cy="-6" rx="6" ry="8" fill="#d0628f" transform="rotate(324)"/><circle r="6.5" fill="#e27fa6"/><path d="M-3.5 1.5C-4.5-2.5-1-5 2-4C5-3 5 1 2 2.5C0 3.5-2 2-1.5 0" stroke="#f7c5d8" stroke-width="1.3" fill="none" stroke-linecap="round"/></g></g><g transform="translate(160 150) scale(1.1)"><path d="M0 6C-6 2-6-6 0-12C6-6 6 2 0 6Z" fill="#ce5c8a"/><path d="M0 6C-3 2-3-5 0-9" stroke="#f2a8c4" stroke-width="1.2" fill="none"/><path d="M0 6-5 10M0 6 5 10" stroke="#7d4a5f" stroke-width="1.6"/></g><g transform="translate(300 226) scale(1.2)"><path d="M0 6C-6 2-6-6 0-12C6-6 6 2 0 6Z" fill="#ce5c8a"/><path d="M0 6C-3 2-3-5 0-9" stroke="#f2a8c4" stroke-width="1.2" fill="none"/><path d="M0 6-5 10M0 6 5 10" stroke="#7d4a5f" stroke-width="1.6"/></g></g></svg><div class="petals" aria-hidden="true"><span class="petal" style="--x:6vw;--d:0s;--t:17s"></span><span class="petal" style="--x:22vw;--d:6s;--t:21s"></span><span class="petal" style="--x:41vw;--d:2s;--t:19s"></span><span class="petal" style="--x:58vw;--d:9s;--t:23s"></span><span class="petal" style="--x:74vw;--d:4s;--t:18s"></span><span class="petal" style="--x:88vw;--d:12s;--t:22s"></span><span class="petal" style="--x:33vw;--d:14s;--t:25s"></span><span class="petal" style="--x:66vw;--d:17s;--t:20s"></span></div>
+
+<header class="top">
+  <div class="wrap top-in">
+    <a class="mark" href="https://hisnalzawaj.com/ru/">
+      <img src="../icon.png" alt="" width="36" height="36">
+      <span class="names"><span>Hisn Alzawaj</span><span class="ar" lang="ar" dir="rtl">حصن الزواج</span></span>
+    </a>
+    <nav aria-label="Страницы сайта">
+      <ul class="snav">
+        <li><a href="#how">Как это работает</a></li>
+        <li><a href="#features">Что вы получаете</a></li>
+        <li><a href="#faq">Частые вопросы</a></li>
+        <li><a href="https://hisnalzawaj.com/ru/guide.html">Руководство</a></li>
+      </ul>
+    </nav>
+    <details class="lang">
+      <summary aria-label="Язык"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.6 2.6 3.9 5.6 3.9 9S14.6 18.4 12 21c-2.6-2.6-3.9-5.6-3.9-9S9.4 5.6 12 3z"/></svg><span>Русский</span></summary>
+      <ul>
+        <li><a href="https://hisnalzawaj.com/" lang="ar" hreflang="ar">العربية</a></li>
+        <li><a href="https://hisnalzawaj.com/en/" lang="en" hreflang="en">English</a></li>
+        <li><a href="https://hisnalzawaj.com/fr/" lang="fr" hreflang="fr">Français</a></li>
+        <li><a href="https://hisnalzawaj.com/es/" lang="es" hreflang="es">Español</a></li>
+        <li><a href="https://hisnalzawaj.com/id/" lang="id" hreflang="id">Indonesia</a></li>
+        <li><a href="https://hisnalzawaj.com/fa/" lang="fa" hreflang="fa">فارسی</a></li>
+        <li><a href="https://hisnalzawaj.com/ru/" aria-current="true" lang="ru" hreflang="ru">Русский</a></li>
+      </ul>
+    </details>
+    <a class="btn" href="https://t.me/HisnAlzawaj_bot?start=ad_xb79tj" rel="noopener">Открыть в Telegram</a>
+  </div>
+</header>
+
+<main>
+
+  <section class="hero">
+    <div class="wrap">
+      <span class="kicker">Telegram и сайт</span>
+      <h1>Hisn Alzawaj: ваш путь к халяльному браку — с конфиденциальностью, которая вас защищает</h1>
+      <p class="lead">Расскажите о себе и о том, каким вы видите будущего супруга или супругу, — и платформа покажет вам подходящие анкеты. Никаких номеров телефона и имён пользователей: сообщения идут через платформу — в боте или на сайте — после взаимного согласия.</p>
+      <div class="ctas"><a class="btn" href="https://app.hisnalzawaj.com/" rel="noopener">Зарегистрироваться на сайте</a><a class="btn alt" href="https://t.me/HisnAlzawaj_bot?start=ad_xb79tj" rel="noopener">Или воспользуйтесь нашим ботом в Telegram</a></div><p class="cta-hint">Telegram не обязателен: зарегистрируйтесь прямо в браузере через Google или Facebook — или через бот Hisn Alzawaj в Telegram, если вам так удобнее.</p>
+      <p class="note">Начать можно бесплатно · арабский, английский, французский, испанский, индонезийский, персидский и русский</p>
+      <ul class="badges">
+        <li><span aria-hidden="true">🌫️</span>Фото размыто по умолчанию</li>
+        <li><span aria-hidden="true">💬</span>Переписка внутри платформы</li>
+        <li><span aria-hidden="true">🔒</span>Ваш номер скрыт</li>
+        <li><span aria-hidden="true">🛡️</span>Добровольная верификация</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="demo">
+    <div class="wrap center">
+      <h2 class="reveal">Взгляд изнутри</h2>
+      <p class="sub">Так выглядит Hisn Alzawaj изнутри — в боте и на сайте.</p>
+      <div class="demo">
+        <input class="demo-r" type="radio" name="demo" id="demo-1" checked><input class="demo-r" type="radio" name="demo" id="demo-2"><input class="demo-r" type="radio" name="demo" id="demo-3"><input class="demo-r" type="radio" name="demo" id="demo-4">
+        <div class="demo-tabs"><label for="demo-1"><span aria-hidden="true">🔎</span> Обзор</label><label for="demo-2"><span aria-hidden="true">💚</span> Мои пары</label><label for="demo-3"><span aria-hidden="true">💬</span> Чат</label><label for="demo-4"><span aria-hidden="true">🔔</span> Уведомления</label></div>
+        <div class="phone" role="img" aria-label="Демонстрация с вымышленными данными — без реальных людей и без фото."><div class="phone-in">
+        <div class="scr s1">
+          <div class="dstack">
+            <div class="dcard b2"></div><div class="dcard b1"></div>
+            <div class="dcard front">
+              <div class="dhead">
+                <div><div class="dcode">HS-DEMO27</div>
+                  <div class="dscore">Совместимость 86%</div>
+                  <span class="dbadge">Проверена</span></div>
+                <div class="dface" aria-hidden="true">🧕</div>
+              </div>
+              <div class="dname">Сара (27 лет)</div>
+              <div class="dplace">Джидда, Саудовская Аравия</div>
+              <div class="drow"><span>📏 Рост</span><b>165 см</b></div><div class="drow"><span>🎓 Образование</span><b>Бакалавр</b></div><div class="drow"><span>💼 Работа</span><b>Учитель</b></div><div class="drow"><span>💍 Статус</span><b>Не замужем</b></div>
+              <div class="dbio">Люблю чтение и путешествия, ищу серьёзного спутника жизни, для которого важна семья.</div>
+              <span class="dstamp yes" aria-hidden="true">♥ Нравится</span>
+            </div>
+          </div>
+          <div class="dswipe" aria-hidden="true"><span class="no">✕</span><span class="yes">♥</span></div>
+        </div>
+        <div class="scr s2"><div class="scr-h">Мои пары</div><div class="drow2"><div class="dface" aria-hidden="true">🧕</div>
+            <div class="main"><div class="who">Сара (27) · HS-DEMO27</div>
+            <div class="muted">Проверена · Джидда</div></div>
+            <span class="dgo" aria-hidden="true">💬<span class="dn">3</span></span></div><div class="drow2"><div class="dface" aria-hidden="true">🧕</div>
+            <div class="main"><div class="who">Хинд (31) · HS-DEMO31</div>
+            <div class="muted">Эр-Рияд</div></div>
+            <span class="dgo" aria-hidden="true">💬</span></div><div class="drow2"><div class="dface" aria-hidden="true">🧕</div>
+            <div class="main"><div class="who">Рим (25) · HS-DEMO25</div>
+            <div class="muted">Дубай</div></div>
+            <span class="dgo" aria-hidden="true">💬<span class="dn">1</span></span></div></div>
+        <div class="scr s3"><div class="dchat-h">Сара (27) · HS-DEMO27</div>
+          <div class="dlog"><div class="dmsg mine">Ассаляму алейкум</div><div class="dmsg">Ва алейкум ассалям</div><div class="dmsg">Я прочитала вашу анкету — вы серьёзно настроены на никах?</div><div class="dmsg mine">Да, иншаАллах, и я хотел бы познакомиться с вашей семьёй</div></div>
+          <div class="dcompose" aria-hidden="true"><span>Напишите сообщение…</span><b>➤</b></div></div>
+        <div class="scr s4"><div class="scr-h">Уведомления</div><div class="drow2 new"><span class="dgo" aria-hidden="true">🎉</span>
+            <div class="main"><div class="txt">Взаимная симпатия</div>
+            <div class="who">Сара (27) · HS-DEMO27</div></div>
+            <span class="muted">сейчас</span></div><div class="drow2 new"><span class="dgo" aria-hidden="true">💬</span>
+            <div class="main"><div class="txt">Сара: вы серьёзно настроены на никах?</div>
+            <div class="who">Сара (27) · HS-DEMO27</div></div>
+            <span class="muted">1 мин назад<span class="dn inl">2</span></span></div><div class="drow2 new"><span class="dgo" aria-hidden="true">❤️</span>
+            <div class="main"><div class="txt">Новая симпатия</div>
+            <div class="who">Рим (25) · HS-DEMO25</div></div>
+            <span class="muted">1 ч назад</span></div></div>
+        </div></div>
+        <p class="demo-note">Демонстрация с вымышленными данными — без реальных людей и без фото.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="how">
+    <div class="wrap center">
+      <h2 class="reveal">Как это работает</h2>
+      <div class="grid g4">
+      <article class="card step reveal">
+        <div class="n">01</div>
+        <h3>Регистрация</h3>
+        <p>Пошаговый диалог: основные сведения, внешность, образ жизни, какой брак вы ищете, а затем критерии, важные для вас в будущем супруге. Ваш прогресс сохраняется, поэтому ничего не потеряется, если вы прервётесь и вернётесь позже.</p>
+      </article>
+      <article class="card step reveal">
+        <div class="n">02</div>
+        <h3>Подходящие анкеты</h3>
+        <p>Оценка совместимости рассчитывается по предпочтениям обеих сторон, а не одной. Тех, кого вы уже видели, вам больше не покажут.</p>
+      </article>
+      <article class="card step reveal">
+        <div class="n">03</div>
+        <h3>Взаимный интерес</h3>
+        <p>Переписка открывается, только когда каждый из вас проявил интерес к другому. До этого ни с одной из сторон не связываются.</p>
+      </article>
+      <article class="card step reveal">
+        <div class="n">04</div>
+        <h3>Общение внутри платформы</h3>
+        <p>Сообщения передаёт сама платформа — в боте или на сайте, — поэтому никто из вас не видит номер или имя пользователя другого, пока вы оба не решите ими поделиться.</p>
+      </article>
+      </div>
+    </div>
+  </section>
+
+  <div class="sep" aria-hidden="true">✦</div>
+
+  <section id="features">
+    <div class="wrap center">
+      <h2 class="reveal">Что вы получаете</h2>
+      <div class="grid g3">
+      <article class="card reveal">
+        <span class="ico" aria-hidden="true">🎯</span>
+        <h3>Оценка совместимости</h3>
+        <p>Оценка строится на взаимных предпочтениях — что вы ищете в человеке и что он ищет в вас, — а не на одном общем списке для всех.</p>
+      </article>
+      <article class="card reveal">
+        <span class="ico" aria-hidden="true">🌫️</span>
+        <h3>Конфиденциальность фото</h3>
+        <p>По умолчанию ваше фото размыто для всех. Чтобы его открыть, нужны явный запрос и ваше явное согласие — на выбранный вами срок, и его можно отозвать в любой момент.</p>
+      </article>
+      <article class="card reveal">
+        <span class="ico" aria-hidden="true">🛡️</span>
+        <h3>Добровольная верификация</h3>
+        <p>Фотопроверка подтверждает, что за анкетой стоит реальный человек, и её результат виден другой стороне. Полностью по желанию.</p>
+      </article>
+      <article class="card reveal">
+        <span class="ico" aria-hidden="true">💬</span>
+        <h3>Переписка на платформе</h3>
+        <p>Никто не обменивается именами пользователей и номерами телефонов. Разговор остаётся внутри платформы — в боте или на сайте — столько, сколько вы захотите.</p>
+      </article>
+      <article class="card reveal">
+        <span class="ico" aria-hidden="true">🔎</span>
+        <h3>Поиск по-вашему</h3>
+        <p>Быстрый поиск, поиск по одному критерию или полный поиск по нескольким критериям, когда вы точно знаете, кого ищете.</p>
+      </article>
+      <article class="card reveal">
+        <span class="ico" aria-hidden="true">🌍</span>
+        <h3>Семь языков</h3>
+        <p>Арабский, английский, французский, испанский, индонезийский, персидский и русский — полноценный интерфейс на каждом, переключается в боте или на сайте.</p>
+      </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="privacy">
+    <div class="wrap">
+      <div class="panel reveal">
+        <h2>Конфиденциальность по умолчанию, а не настройка, которую нужно искать</h2>
+        <p>Ваше фото размыто для всех с первой минуты. Нет переключателя, о котором можно забыть и тем самым раскрыть себя; всё наоборот — фото открывается только по явному запросу другой стороны и с вашего явного согласия, на выбранный вами срок (пять минут, сутки или бессрочно), и вы можете отозвать его в любой момент.</p>
+      <p>Анкеты, публикуемые в нашем канале и на страницах в соцсетях, содержат только имя и нарисованный аватар. Настоящее фото пользователя никогда не публикуется.</p>
+      <p>Вы можете в любой момент изменить свои данные или полностью скрыть анкету, а в каждой анкете есть кнопка жалобы, которая попадает к живому модератору.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="faq">
+    <div class="wrap center">
+      <h2 class="reveal">Частые вопросы</h2>
+      <div class="faq">
+      <details class="qa reveal" open>
+        <summary><span>Сервис бесплатный?</span></summary>
+        <p>Да. Регистрация, поиск, подбор и переписка после взаимного интереса бесплатны. Есть необязательная премиум-подписка с дополнительными возможностями — она оплачивается звёздами Telegram или криптовалютой.</p>
+      </details>
+      <details class="qa reveal">
+        <summary><span>Могут ли другие видеть моё фото?</span></summary>
+        <p>Нет. По умолчанию ваше фото размыто для всех. Оно открывается, только если другая сторона попросит об этом и вы явно согласитесь, — на выбранный вами срок, и это разрешение можно отозвать в любой момент.</p>
+      </details>
+      <details class="qa reveal">
+        <summary><span>Получит ли собеседник мой номер телефона или имя пользователя?</span></summary>
+        <p>Нет. Сообщения передаются внутри самой платформы — в боте или на сайте, — поэтому ни номер, ни имя пользователя не передаются, пока вы оба не решите ими поделиться.</p>
+      </details>
+      <details class="qa reveal">
+        <summary><span>Как рассчитывается оценка совместимости?</span></summary>
+        <p>По взаимным предпочтениям: качества каждой стороны сопоставляются с тем, что ищет другая, — а не по желаниям одной стороны. И того, кого вам уже показали, больше не покажут.</p>
+      </details>
+      <details class="qa reveal">
+        <summary><span>Это только для брака?</span></summary>
+        <p>Да. Сервис предназначен исключительно для знакомств с целью брака. В каждой анкете есть кнопка жалобы, которая попадает к живому модератору, а нарушивших это правило блокируют.</p>
+      </details>
+      <details class="qa reveal">
+        <summary><span>Какие языки поддерживаются?</span></summary>
+        <p>Арабский, английский, французский, испанский, индонезийский, персидский и русский. Интерфейс полностью переведён на все семь, и язык можно сменить в любой момент — в боте или на сайте.</p>
+      </details>
+      <details class="qa reveal">
+        <summary><span>С чего начать?</span></summary>
+        <p>Есть два пути: откройте бот в Telegram и нажмите «Запустить» — диалог проведёт вас шаг за шагом, а прогресс сохранится, если вы прервётесь и вернётесь. Или зарегистрируйтесь на сайте через аккаунт Google, Facebook или Telegram и заполните анкету там.</p>
+      </details>
+      </div>
+    </div>
+  </section>
+
+  <section class="end">
+    <div class="wrap">
+      <div class="panel reveal">
+        <h2>Начните сейчас</h2>
+        <p>Зарегистрируйтесь в Telegram или в браузере через аккаунт Google или Facebook — ничего устанавливать не нужно.</p>
+        <div class="ctas"><a class="btn" href="https://app.hisnalzawaj.com/" rel="noopener">Зарегистрироваться на сайте</a><a class="btn alt" href="https://t.me/HisnAlzawaj_bot?start=ad_xb79tj" rel="noopener">Или воспользуйтесь нашим ботом в Telegram</a></div><p class="cta-hint">Telegram не обязателен: зарегистрируйтесь прямо в браузере через Google или Facebook — или через бот Hisn Alzawaj в Telegram, если вам так удобнее.</p>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="fcols">
+      <div class="fabout">
+        <a class="mark" href="https://hisnalzawaj.com/ru/">
+          <img src="../icon.png" alt="" width="36" height="36">
+          <span class="names"><span>Hisn Alzawaj</span><span class="ar" lang="ar" dir="rtl">حصن الزواج</span></span>
+        </a>
+        <p>Платформа знакомств с целью брака в Telegram и на сайте: укажите свои критерии, просматривайте подходящие анкеты и общайтесь внутри платформы после взаимного согласия. Ваше фото остаётся размытым, пока вы не разрешите его показать.</p>
+      </div>
+      <div>
+        <h4>Начните сейчас</h4>
+        <ul>
+          <li><a href="https://t.me/HisnAlzawaj_bot?start=ad_xb79tj" rel="noopener">Открыть в Telegram</a></li>
+          <li><a href="https://app.hisnalzawaj.com/" rel="noopener">Зарегистрироваться на сайте</a></li>
+          <li><a href="https://t.me/Hisn_Alzawaj" rel="noopener">Канал анкет в Telegram</a></li>
+        </ul>
+      </div>
+      <nav aria-label="Страницы сайта">
+        <h4>Страницы сайта</h4>
+        <ul class="pages">
+          <li><a href="https://hisnalzawaj.com/ru/" aria-current="page">Главная</a></li>
+        <li><a href="https://hisnalzawaj.com/ru/guide.html">Руководство</a></li>
+        <li><a href="https://hisnalzawaj.com/ru/privacy.html">Конфиденциальность</a></li>
+        <li><a href="https://hisnalzawaj.com/ru/terms.html">Условия</a></li>
+        </ul>
+      </nav>
+      <div>
+        <h4>Язык</h4>
+        <details class="lang up">
+      <summary aria-label="Язык"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.6 2.6 3.9 5.6 3.9 9S14.6 18.4 12 21c-2.6-2.6-3.9-5.6-3.9-9S9.4 5.6 12 3z"/></svg><span>Русский</span></summary>
+      <ul>
+        <li><a href="https://hisnalzawaj.com/" lang="ar" hreflang="ar">العربية</a></li>
+        <li><a href="https://hisnalzawaj.com/en/" lang="en" hreflang="en">English</a></li>
+        <li><a href="https://hisnalzawaj.com/fr/" lang="fr" hreflang="fr">Français</a></li>
+        <li><a href="https://hisnalzawaj.com/es/" lang="es" hreflang="es">Español</a></li>
+        <li><a href="https://hisnalzawaj.com/id/" lang="id" hreflang="id">Indonesia</a></li>
+        <li><a href="https://hisnalzawaj.com/fa/" lang="fa" hreflang="fa">فارسی</a></li>
+        <li><a href="https://hisnalzawaj.com/ru/" aria-current="true" lang="ru" hreflang="ru">Русский</a></li>
+      </ul>
+    </details>
+      </div>
+    </div>
+    <div class="fbottom">
+      <span>© Hisn Alzawaj</span>
+      <a href="https://t.me/HisnAlzawaj_bot?start=ad_xb79tj" rel="noopener">@HisnAlzawaj_bot</a>
+    </div>
+  </div>
+</footer>
+
+<script id="ad-attribution">
+(function () {
+  try {
+    var re = /^[a-z0-9_-]{1,32}$/, key = 'hisn_ad';
+    var code = (new URLSearchParams(location.search).get('ad') || '').trim().toLowerCase();
+    if (re.test(code)) sessionStorage.setItem(key, code);
+    else code = sessionStorage.getItem(key) || '';
+    if (!re.test(code)) return;
+    var bot = "https://t.me/HisnAlzawaj_bot", web = "https://app.hisnalzawaj.com";
+    document.querySelectorAll('a[href]').forEach(function (a) {
+      var href = a.getAttribute('href');
+      // ⚠️ مطابقةٌ تامّة لا بادئة: `t.me/HisnAlzawaj_bot` بادئةٌ لـ`…_bot_en`
+      // أيضاً، فقناةٌ باسمٍ يبدأ به كانت تصير رابطَ حملةٍ إلى البوت.
+      if (href === bot || href.indexOf(bot + '?') === 0) {
+        a.setAttribute('href', bot + '?start=ad_' + code);
+      } else if (web && (href === web || href.indexOf(web + '/') === 0)) {
+        var u = new URL(href);
+        u.searchParams.set('ad', code);
+        a.setAttribute('href', u.href);
+      }
+    });
+  } catch (e) { /* يضيع الإسناد وحده، والروابط الأصلية تعمل */ }
+})();
+</script>
+</body>
+</html>
