@@ -894,21 +894,27 @@ main,footer{position:relative; z-index:1}
 <script id="ad-attribution">
 (function () {
   try {
-    var re = /^[a-z0-9_-]{1,32}$/, key = 'hisn_ad';
-    var code = (new URLSearchParams(location.search).get('ad') || '').trim().toLowerCase();
-    if (re.test(code)) sessionStorage.setItem(key, code);
-    else code = sessionStorage.getItem(key) || '';
-    if (!re.test(code)) return;
+    var params = new URLSearchParams(location.search);
+    function pick(name, re, key, norm) {
+      var code = norm((params.get(name) || '').trim());
+      if (re.test(code)) sessionStorage.setItem(key, code);
+      else code = sessionStorage.getItem(key) || '';
+      return re.test(code) ? code : '';
+    }
+    var ad = pick('ad', /^[a-z0-9_-]{1,32}$/, 'hisn_ad', function (c) { return c.toLowerCase(); });
+    var ref = pick('ref', /^[A-Z0-9]{4,16}$/, 'hisn_ref', function (c) { return c.toUpperCase(); });
+    if (!ad && !ref) return;
     var bot = "https://t.me/HisnAlzawaj_bot", web = "https://app.hisnalzawaj.com";
     document.querySelectorAll('a[href]').forEach(function (a) {
       var href = a.getAttribute('href');
       // ⚠️ مطابقةٌ تامّة لا بادئة: `t.me/HisnAlzawaj_bot` بادئةٌ لـ`…_bot_en`
       // أيضاً، فقناةٌ باسمٍ يبدأ به كانت تصير رابطَ حملةٍ إلى البوت.
       if (href === bot || href.indexOf(bot + '?') === 0) {
-        a.setAttribute('href', bot + '?start=ad_' + code);
+        a.setAttribute('href', bot + '?start=' + (ref ? 'ref_' + ref : 'ad_' + ad));
       } else if (web && (href === web || href.indexOf(web + '/') === 0)) {
         var u = new URL(href);
-        u.searchParams.set('ad', code);
+        if (ad) u.searchParams.set('ad', ad);
+        if (ref) u.searchParams.set('ref', ref);
         a.setAttribute('href', u.href);
       }
     });
