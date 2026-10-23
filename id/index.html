@@ -188,7 +188,8 @@ section{padding:clamp(56px,8vw,96px) 0; position:relative}
 .badges li{display:flex; align-items:center; gap:8px; background:var(--card);
   border:1px solid var(--line); border-radius:999px; padding:8px 15px;
   font-size:.9rem; line-height:1.45}
-.badges span{font-size:1rem; line-height:1; flex:none}
+.badges span{display:grid; flex:none}
+.badges .i{width:22px; height:22px}
 
 /* ── الشبكات والبطاقات ── */
 .grid{display:grid; gap:18px; margin-top:40px}
@@ -206,9 +207,8 @@ section{padding:clamp(56px,8vw,96px) 0; position:relative}
   display:block; font-family:'Playfair Display','Inter',serif; font-size:2.1rem;
   line-height:1; color:var(--rose-hi); opacity:.85; margin-bottom:16px;
 }
-.card .ico{display:grid; place-items:center; width:48px; height:48px;
-  border-radius:14px; border:1px solid var(--line-hi); background:rgba(206,92,138,.08);
-  font-size:1.45rem; line-height:1; margin-bottom:16px}
+.card .ico{display:grid; place-items:center; width:56px; height:56px; margin-bottom:12px}
+.card .ico .i{width:56px; height:56px; filter:drop-shadow(0 8px 14px rgba(0,0,0,.35))}
 
 /* ── الخصوصية ── */
 .privacy .panel{
@@ -388,6 +388,18 @@ main,footer{position:relative; z-index:1}
 }
 
 @media (max-width:560px){ body{font-size:16px} .card{padding:24px 20px} }
+/* ✅ المزايا صفوفٌ على الهاتف لا بطاقاتٌ طويلة (٢٣ أكتوبر ٢٠٢٦): ستُّ
+   بطاقاتٍ بأيقونةٍ فوق العنوان كانت تأخذ نحو ١٢٠٠ بكسل لستّ جمل. فالأيقونةُ
+   بجانب النصّ، والحاسوبُ يبقى شبكةً كما هو. */
+@media (max-width:560px){
+  #features .grid{gap:10px; margin-top:28px}
+  #features .card{display:grid; grid-template-columns:44px minmax(0,1fr); column-gap:14px;
+    align-items:start; padding:16px; text-align:start}
+  #features .card .ico{grid-row:span 2; width:44px; height:44px; margin:0}
+  #features .card .ico .i{width:44px; height:44px}
+  #features .card h3{margin:0 0 4px; font-size:1rem}
+  #features .card p{font-size:.9rem; line-height:1.7}
+}
 
 /* ── جولة داخل التطبيق: هاتفٌ بشاشاتٍ مصطنعة ──
    ⚠️ التبويبات أزرارُ اختيارٍ مخفيّة (radio) لا جافاسكربت: الصفحة
@@ -678,10 +690,10 @@ main,footer{position:relative; z-index:1}
       <div class="ctas"><a class="btn" href="https://app.hisnalzawaj.com/" rel="noopener">Daftar langsung di situs</a><a class="btn alt" href="https://t.me/HisnAlzawaj_bot?start=ad_xb79tj" rel="noopener">Atau lewat bot Telegram</a></div><p class="cta-hint">Tidak perlu Telegram: daftar langsung di browser dengan Google atau Facebook — atau lewat bot Hisn Alzawaj di Telegram jika kamu lebih suka.</p>
       <p class="note">Gratis untuk memulai · Arab, Inggris, Prancis, Spanyol, Indonesia, Persia dan Rusia</p>
       <ul class="badges">
-        <li><span aria-hidden="true">🌫️</span>Foto buram secara bawaan</li>
-        <li><span aria-hidden="true">💬</span>Obrolan di dalam platform</li>
-        <li><span aria-hidden="true">🔒</span>Nomormu tidak dibagikan</li>
-        <li><span aria-hidden="true">🛡️</span>Verifikasi opsional</li>
+        <li><span aria-hidden="true"><img class="i" src="../ico-eye.webp" alt="" width="56" height="56" loading="lazy" decoding="async"></span>Foto buram secara bawaan</li>
+        <li><span aria-hidden="true"><img class="i" src="../ico-chat.webp" alt="" width="56" height="56" loading="lazy" decoding="async"></span>Obrolan di dalam platform</li>
+        <li><span aria-hidden="true"><img class="i" src="../ico-lock.webp" alt="" width="56" height="56" loading="lazy" decoding="async"></span>Nomormu tidak dibagikan</li>
+        <li><span aria-hidden="true"><img class="i" src="../ico-shield.webp" alt="" width="56" height="56" loading="lazy" decoding="async"></span>Verifikasi opsional</li>
       </ul>
     </div>
   </section>
@@ -706,7 +718,7 @@ main,footer{position:relative; z-index:1}
               </div>
               <div class="dname">Sarah (27 tahun)</div>
               <div class="dplace">Jeddah, Arab Saudi</div>
-              <div class="drow"><span>📏 Tinggi</span><b>165 cm</b></div><div class="drow"><span>🎓 Pendidikan</span><b>Sarjana</b></div><div class="drow"><span>💼 Pekerjaan</span><b>Guru</b></div><div class="drow"><span>💍 Status</span><b>Lajang</b></div>
+              <div class="drow"><span>📏 Tinggi</span><b>165 cm</b></div><div class="drow"><span>🎓 Pendidikan</span><b>Sarjana</b></div><div class="drow"><span>💼 Pekerjaan</span><b>Guru</b></div><div class="drow"><span>💍 Status</span><b>Lajang</b></div><div class="drow"><span>🕌 Agama</span><b>Muslim</b></div><div class="drow"><span>🗣️ Bahasa</span><b>Arab, Inggris</b></div>
               <div class="dbio">Saya suka membaca dan bepergian, dan mencari pasangan serius yang menghargai keluarga.</div>
               <span class="dstamp yes" aria-hidden="true">♥ Suka</span>
             </div>
@@ -777,32 +789,32 @@ main,footer{position:relative; z-index:1}
       <h2 class="reveal">Apa yang ditawarkan</h2>
       <div class="grid g3">
       <article class="card reveal">
-        <span class="ico" aria-hidden="true">🎯</span>
+        <span class="ico" aria-hidden="true"><img class="i" src="../ico-rings.webp" alt="" width="56" height="56" loading="lazy" decoding="async"></span>
         <h3>Skor kecocokan</h3>
         <p>Skor berasal dari preferensi timbal balik — apa yang Anda cari padanya dan apa yang dia cari pada Anda — bukan satu daftar umum untuk semua orang.</p>
       </article>
       <article class="card reveal">
-        <span class="ico" aria-hidden="true">🌫️</span>
+        <span class="ico" aria-hidden="true"><img class="i" src="../ico-eye.webp" alt="" width="56" height="56" loading="lazy" decoding="async"></span>
         <h3>Privasi foto</h3>
         <p>Foto Anda buram bagi semua orang secara bawaan. Menampilkannya memerlukan permintaan tegas dan persetujuan tegas dari Anda, untuk durasi pilihan Anda, dan dapat dicabut kapan saja.</p>
       </article>
       <article class="card reveal">
-        <span class="ico" aria-hidden="true">🛡️</span>
+        <span class="ico" aria-hidden="true"><img class="i" src="../ico-shield.webp" alt="" width="56" height="56" loading="lazy" decoding="async"></span>
         <h3>Verifikasi opsional</h3>
         <p>Tantangan berfoto memastikan ada manusia nyata di balik profil, dan hasilnya terlihat oleh pihak lain. Sepenuhnya opsional.</p>
       </article>
       <article class="card reveal">
-        <span class="ico" aria-hidden="true">💬</span>
+        <span class="ico" aria-hidden="true"><img class="i" src="../ico-chat.webp" alt="" width="56" height="56" loading="lazy" decoding="async"></span>
         <h3>Obrolan di dalam platform</h3>
         <p>Tidak ada nama pengguna maupun nomor telepon yang berpindah tangan. Percakapan tetap di dalam platform — di bot atau di situs web — selama Anda menghendaki.</p>
       </article>
       <article class="card reveal">
-        <span class="ico" aria-hidden="true">🔎</span>
+        <span class="ico" aria-hidden="true"><img class="i" src="../ico-search.webp" alt="" width="56" height="56" loading="lazy" decoding="async"></span>
         <h3>Pencarian sesuai cara Anda</h3>
         <p>Pencarian cepat, pencarian satu kriteria, atau pencarian penuh multikriteria bila Anda tahu persis apa yang dicari.</p>
       </article>
       <article class="card reveal">
-        <span class="ico" aria-hidden="true">🌍</span>
+        <span class="ico" aria-hidden="true"><img class="i" src="../ico-globe.webp" alt="" width="56" height="56" loading="lazy" decoding="async"></span>
         <h3>Tujuh bahasa</h3>
         <p>Arab, Inggris, Prancis, Spanyol, Indonesia, Persia dan Rusia — antarmuka lengkap di ketujuhnya, dapat diganti di bot atau di situs web.</p>
       </article>
