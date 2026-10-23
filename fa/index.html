@@ -188,7 +188,8 @@ section{padding:clamp(56px,8vw,96px) 0; position:relative}
 .badges li{display:flex; align-items:center; gap:8px; background:var(--card);
   border:1px solid var(--line); border-radius:999px; padding:8px 15px;
   font-size:.9rem; line-height:1.45}
-.badges span{font-size:1rem; line-height:1; flex:none}
+.badges span{display:grid; flex:none}
+.badges .i{width:22px; height:22px}
 
 /* ── الشبكات والبطاقات ── */
 .grid{display:grid; gap:18px; margin-top:40px}
@@ -206,9 +207,8 @@ section{padding:clamp(56px,8vw,96px) 0; position:relative}
   display:block; font-family:'Vazirmatn','Vazirmatn',serif; font-size:2.1rem;
   line-height:1; color:var(--rose-hi); opacity:.85; margin-bottom:16px;
 }
-.card .ico{display:grid; place-items:center; width:48px; height:48px;
-  border-radius:14px; border:1px solid var(--line-hi); background:rgba(206,92,138,.08);
-  font-size:1.45rem; line-height:1; margin-bottom:16px}
+.card .ico{display:grid; place-items:center; width:56px; height:56px; margin-bottom:12px}
+.card .ico .i{width:56px; height:56px; filter:drop-shadow(0 8px 14px rgba(0,0,0,.35))}
 
 /* ── الخصوصية ── */
 .privacy .panel{
@@ -388,6 +388,18 @@ main,footer{position:relative; z-index:1}
 }
 
 @media (max-width:560px){ body{font-size:16px} .card{padding:24px 20px} }
+/* ✅ المزايا صفوفٌ على الهاتف لا بطاقاتٌ طويلة (٢٣ أكتوبر ٢٠٢٦): ستُّ
+   بطاقاتٍ بأيقونةٍ فوق العنوان كانت تأخذ نحو ١٢٠٠ بكسل لستّ جمل. فالأيقونةُ
+   بجانب النصّ، والحاسوبُ يبقى شبكةً كما هو. */
+@media (max-width:560px){
+  #features .grid{gap:10px; margin-top:28px}
+  #features .card{display:grid; grid-template-columns:44px minmax(0,1fr); column-gap:14px;
+    align-items:start; padding:16px; text-align:start}
+  #features .card .ico{grid-row:span 2; width:44px; height:44px; margin:0}
+  #features .card .ico .i{width:44px; height:44px}
+  #features .card h3{margin:0 0 4px; font-size:1rem}
+  #features .card p{font-size:.9rem; line-height:1.7}
+}
 
 /* ── جولة داخل التطبيق: هاتفٌ بشاشاتٍ مصطنعة ──
    ⚠️ التبويبات أزرارُ اختيارٍ مخفيّة (radio) لا جافاسكربت: الصفحة
@@ -678,10 +690,10 @@ main,footer{position:relative; z-index:1}
       <div class="ctas"><a class="btn" href="https://app.hisnalzawaj.com/" rel="noopener">ثبت‌نام مستقیم در وب‌سایت</a><a class="btn alt" href="https://t.me/HisnAlzawaj_bot?start=ad_xb79tj" rel="noopener">یا از طریق ربات تلگرام</a></div><p class="cta-hint">به تلگرام نیازی نیست: مستقیم در مرورگر با گوگل یا فیس‌بوک ثبت‌نام کنید — یا اگر ترجیح می‌دهید، از طریق ربات حصن الزواج در تلگرام.</p>
       <p class="note">شروع رایگان · عربی، انگلیسی، فرانسوی، اسپانیایی، اندونزیایی، فارسی و روسی</p>
       <ul class="badges">
-        <li><span aria-hidden="true">🌫️</span>عکس شما به‌صورت پیش‌فرض تار است</li>
-        <li><span aria-hidden="true">💬</span>گفتگو داخل سکو</li>
-        <li><span aria-hidden="true">🔒</span>شمارهٔ شما فاش نمی‌شود</li>
-        <li><span aria-hidden="true">🛡️</span>احراز هویت اختیاری</li>
+        <li><span aria-hidden="true"><img class="i" src="../ico-eye.webp" alt="" width="56" height="56" loading="lazy" decoding="async"></span>عکس شما به‌صورت پیش‌فرض تار است</li>
+        <li><span aria-hidden="true"><img class="i" src="../ico-chat.webp" alt="" width="56" height="56" loading="lazy" decoding="async"></span>گفتگو داخل سکو</li>
+        <li><span aria-hidden="true"><img class="i" src="../ico-lock.webp" alt="" width="56" height="56" loading="lazy" decoding="async"></span>شمارهٔ شما فاش نمی‌شود</li>
+        <li><span aria-hidden="true"><img class="i" src="../ico-shield.webp" alt="" width="56" height="56" loading="lazy" decoding="async"></span>احراز هویت اختیاری</li>
       </ul>
     </div>
   </section>
@@ -706,7 +718,7 @@ main,footer{position:relative; z-index:1}
               </div>
               <div class="dname">سارا (۲۷ ساله)</div>
               <div class="dplace">جده، عربستان سعودی</div>
-              <div class="drow"><span>📏 قد</span><b>۱۶۵ سانتی‌متر</b></div><div class="drow"><span>🎓 تحصیلات</span><b>کارشناسی</b></div><div class="drow"><span>💼 شغل</span><b>معلم</b></div><div class="drow"><span>💍 وضعیت</span><b>مجرد</b></div>
+              <div class="drow"><span>📏 قد</span><b>۱۶۵ سانتی‌متر</b></div><div class="drow"><span>🎓 تحصیلات</span><b>کارشناسی</b></div><div class="drow"><span>💼 شغل</span><b>معلم</b></div><div class="drow"><span>💍 وضعیت</span><b>مجرد</b></div><div class="drow"><span>🕌 دین</span><b>مسلمان</b></div><div class="drow"><span>🗣️ زبان‌ها</span><b>عربی، انگلیسی</b></div>
               <div class="dbio">به مطالعه و سفر علاقه دارم و به دنبال همسری جدی هستم که خانواده برایش ارزش دارد.</div>
               <span class="dstamp yes" aria-hidden="true">♥ پسند</span>
             </div>
@@ -747,22 +759,22 @@ main,footer{position:relative; z-index:1}
       <h2 class="reveal">چگونه کار می‌کند</h2>
       <div class="grid g4">
       <article class="card step reveal">
-        <div class="n">01</div>
+        <div class="n">۱</div>
         <h3>ثبت‌نام</h3>
         <p>گفت‌وگویی گام‌به‌گام: اطلاعات پایه، ظاهر، سبک زندگی، نوع ازدواج مورد نظر، و سپس ویژگی‌هایی که در همسر آینده می‌خواهید. وضعیت شما ذخیره می‌شود، پس اگر متوقف شدید و بازگشتید چیزی از دست نمی‌رود.</p>
       </article>
       <article class="card step reveal">
-        <div class="n">02</div>
+        <div class="n">۲</div>
         <h3>دیدن پروفایل‌های مطابق</h3>
         <p>امتیاز تطابق از ترجیحات هر دو طرف محاسبه می‌شود نه یک طرف. و هر کسی را یک بار دیده باشید دوباره به شما نشان داده نمی‌شود.</p>
       </article>
       <article class="card step reveal">
-        <div class="n">03</div>
+        <div class="n">۳</div>
         <h3>علاقهٔ دوطرفه</h3>
         <p>گفت‌وگو تنها زمانی باز می‌شود که هر دو به یکدیگر ابراز علاقه کرده باشید. پیش از آن به هیچ‌کدام پیامی نمی‌رسد.</p>
       </article>
       <article class="card step reveal">
-        <div class="n">04</div>
+        <div class="n">۴</div>
         <h3>گفت‌وگو درون سکو</h3>
         <p>پیام‌ها را خود سکو منتقل می‌کند — در ربات یا وب‌سایت — پس هیچ‌یک شمارهٔ دیگری یا شناسه‌اش را نمی‌بیند مگر آنکه خودتان تصمیم بگیرید.</p>
       </article>
@@ -777,32 +789,32 @@ main,footer{position:relative; z-index:1}
       <h2 class="reveal">چه ارائه می‌دهد</h2>
       <div class="grid g3">
       <article class="card reveal">
-        <span class="ico" aria-hidden="true">🎯</span>
+        <span class="ico" aria-hidden="true"><img class="i" src="../ico-rings.webp" alt="" width="56" height="56" loading="lazy" decoding="async"></span>
         <h3>امتیاز تطابق</h3>
         <p>امتیاز از ترجیحات متقابل می‌آید — آنچه شما در او می‌خواهید و آنچه او در شما می‌خواهد — نه فهرستی عمومی برای همه.</p>
       </article>
       <article class="card reveal">
-        <span class="ico" aria-hidden="true">🌫️</span>
+        <span class="ico" aria-hidden="true"><img class="i" src="../ico-eye.webp" alt="" width="56" height="56" loading="lazy" decoding="async"></span>
         <h3>حریم خصوصی عکس</h3>
         <p>عکس شما به‌طور پیش‌فرض برای همه محو است. نمایش آن نیازمند درخواست صریح و رضایت صریح شماست، برای مدتی که خودتان برمی‌گزینید و هر زمان قابل پس‌گرفتن است.</p>
       </article>
       <article class="card reveal">
-        <span class="ico" aria-hidden="true">🛡️</span>
+        <span class="ico" aria-hidden="true"><img class="i" src="../ico-shield.webp" alt="" width="56" height="56" loading="lazy" decoding="async"></span>
         <h3>احراز هویت اختیاری</h3>
         <p>یک چالش تصویری تأیید می‌کند که پشت پروفایل انسانی واقعی است، و نتیجه برای طرف مقابل دیده می‌شود. کاملاً اختیاری.</p>
       </article>
       <article class="card reveal">
-        <span class="ico" aria-hidden="true">💬</span>
+        <span class="ico" aria-hidden="true"><img class="i" src="../ico-chat.webp" alt="" width="56" height="56" loading="lazy" decoding="async"></span>
         <h3>گفت‌وگو درون سکو</h3>
         <p>نه شناسه‌ای رد و بدل می‌شود نه شمارهٔ تلفنی. گفت‌وگو تا هر وقت بخواهید درون سکو — در ربات یا وب‌سایت — می‌ماند.</p>
       </article>
       <article class="card reveal">
-        <span class="ico" aria-hidden="true">🔎</span>
+        <span class="ico" aria-hidden="true"><img class="i" src="../ico-search.webp" alt="" width="56" height="56" loading="lazy" decoding="async"></span>
         <h3>جست‌وجو به شیوهٔ شما</h3>
         <p>جست‌وجوی سریع، جست‌وجو با یک معیار، یا جست‌وجوی کامل چندمعیاره وقتی دقیقاً می‌دانید دنبال چه هستید.</p>
       </article>
       <article class="card reveal">
-        <span class="ico" aria-hidden="true">🌍</span>
+        <span class="ico" aria-hidden="true"><img class="i" src="../ico-globe.webp" alt="" width="56" height="56" loading="lazy" decoding="async"></span>
         <h3>هفت زبان</h3>
         <p>عربی، انگلیسی، فرانسوی، اسپانیایی، اندونزیایی، فارسی و روسی — رابط کامل در هر هفت زبان، قابل تغییر در ربات یا وب‌سایت.</p>
       </article>

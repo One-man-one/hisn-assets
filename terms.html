@@ -182,7 +182,8 @@ section{padding:clamp(56px,8vw,96px) 0; position:relative}
 .badges li{display:flex; align-items:center; gap:8px; background:var(--card);
   border:1px solid var(--line); border-radius:999px; padding:8px 15px;
   font-size:.9rem; line-height:1.45}
-.badges span{font-size:1rem; line-height:1; flex:none}
+.badges span{display:grid; flex:none}
+.badges .i{width:22px; height:22px}
 
 /* ── الشبكات والبطاقات ── */
 .grid{display:grid; gap:18px; margin-top:40px}
@@ -200,9 +201,8 @@ section{padding:clamp(56px,8vw,96px) 0; position:relative}
   display:block; font-family:'El Messiri','Cairo',serif; font-size:2.1rem;
   line-height:1; color:var(--rose-hi); opacity:.85; margin-bottom:16px;
 }
-.card .ico{display:grid; place-items:center; width:48px; height:48px;
-  border-radius:14px; border:1px solid var(--line-hi); background:rgba(206,92,138,.08);
-  font-size:1.45rem; line-height:1; margin-bottom:16px}
+.card .ico{display:grid; place-items:center; width:56px; height:56px; margin-bottom:12px}
+.card .ico .i{width:56px; height:56px; filter:drop-shadow(0 8px 14px rgba(0,0,0,.35))}
 
 /* ── الخصوصية ── */
 .privacy .panel{
@@ -382,6 +382,18 @@ main,footer{position:relative; z-index:1}
 }
 
 @media (max-width:560px){ body{font-size:16px} .card{padding:24px 20px} }
+/* ✅ المزايا صفوفٌ على الهاتف لا بطاقاتٌ طويلة (٢٣ أكتوبر ٢٠٢٦): ستُّ
+   بطاقاتٍ بأيقونةٍ فوق العنوان كانت تأخذ نحو ١٢٠٠ بكسل لستّ جمل. فالأيقونةُ
+   بجانب النصّ، والحاسوبُ يبقى شبكةً كما هو. */
+@media (max-width:560px){
+  #features .grid{gap:10px; margin-top:28px}
+  #features .card{display:grid; grid-template-columns:44px minmax(0,1fr); column-gap:14px;
+    align-items:start; padding:16px; text-align:start}
+  #features .card .ico{grid-row:span 2; width:44px; height:44px; margin:0}
+  #features .card .ico .i{width:44px; height:44px}
+  #features .card h3{margin:0 0 4px; font-size:1rem}
+  #features .card p{font-size:.9rem; line-height:1.7}
+}
 
 /* ── جولة داخل التطبيق: هاتفٌ بشاشاتٍ مصطنعة ──
    ⚠️ التبويبات أزرارُ اختيارٍ مخفيّة (radio) لا جافاسكربت: الصفحة

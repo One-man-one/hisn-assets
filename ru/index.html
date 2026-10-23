@@ -188,7 +188,8 @@ section{padding:clamp(56px,8vw,96px) 0; position:relative}
 .badges li{display:flex; align-items:center; gap:8px; background:var(--card);
   border:1px solid var(--line); border-radius:999px; padding:8px 15px;
   font-size:.9rem; line-height:1.45}
-.badges span{font-size:1rem; line-height:1; flex:none}
+.badges span{display:grid; flex:none}
+.badges .i{width:22px; height:22px}
 
 /* ── الشبكات والبطاقات ── */
 .grid{display:grid; gap:18px; margin-top:40px}
@@ -206,9 +207,8 @@ section{padding:clamp(56px,8vw,96px) 0; position:relative}
   display:block; font-family:'Playfair Display','Inter',serif; font-size:2.1rem;
   line-height:1; color:var(--rose-hi); opacity:.85; margin-bottom:16px;
 }
-.card .ico{display:grid; place-items:center; width:48px; height:48px;
-  border-radius:14px; border:1px solid var(--line-hi); background:rgba(206,92,138,.08);
-  font-size:1.45rem; line-height:1; margin-bottom:16px}
+.card .ico{display:grid; place-items:center; width:56px; height:56px; margin-bottom:12px}
+.card .ico .i{width:56px; height:56px; filter:drop-shadow(0 8px 14px rgba(0,0,0,.35))}
 
 /* ── الخصوصية ── */
 .privacy .panel{
@@ -388,6 +388,18 @@ main,footer{position:relative; z-index:1}
 }
 
 @media (max-width:560px){ body{font-size:16px} .card{padding:24px 20px} }
+/* ✅ المزايا صفوفٌ على الهاتف لا بطاقاتٌ طويلة (٢٣ أكتوبر ٢٠٢٦): ستُّ
+   بطاقاتٍ بأيقونةٍ فوق العنوان كانت تأخذ نحو ١٢٠٠ بكسل لستّ جمل. فالأيقونةُ
+   بجانب النصّ، والحاسوبُ يبقى شبكةً كما هو. */
+@media (max-width:560px){
+  #features .grid{gap:10px; margin-top:28px}
+  #features .card{display:grid; grid-template-columns:44px minmax(0,1fr); column-gap:14px;
+    align-items:start; padding:16px; text-align:start}
+  #features .card .ico{grid-row:span 2; width:44px; height:44px; margin:0}
+  #features .card .ico .i{width:44px; height:44px}
+  #features .card h3{margin:0 0 4px; font-size:1rem}
+  #features .card p{font-size:.9rem; line-height:1.7}
+}
 
 /* ── جولة داخل التطبيق: هاتفٌ بشاشاتٍ مصطنعة ──
    ⚠️ التبويبات أزرارُ اختيارٍ مخفيّة (radio) لا جافاسكربت: الصفحة
@@ -678,10 +690,10 @@ main,footer{position:relative; z-index:1}
       <div class="ctas"><a class="btn" href="https://app.hisnalzawaj.com/" rel="noopener">Зарегистрироваться на сайте</a><a class="btn alt" href="https://t.me/HisnAlzawaj_bot?start=ad_xb79tj" rel="noopener">Или воспользуйтесь нашим ботом в Telegram</a></div><p class="cta-hint">Telegram не обязателен: зарегистрируйтесь прямо в браузере через Google или Facebook — или через бот Hisn Alzawaj в Telegram, если вам так удобнее.</p>
       <p class="note">Начать можно бесплатно · арабский, английский, французский, испанский, индонезийский, персидский и русский</p>
       <ul class="badges">
-        <li><span aria-hidden="true">🌫️</span>Фото размыто по умолчанию</li>
-        <li><span aria-hidden="true">💬</span>Переписка внутри платформы</li>
-        <li><span aria-hidden="true">🔒</span>Ваш номер скрыт</li>
-        <li><span aria-hidden="true">🛡️</span>Добровольная верификация</li>
+        <li><span aria-hidden="true"><img class="i" src="../ico-eye.webp" alt="" width="56" height="56" loading="lazy" decoding="async"></span>Фото размыто по умолчанию</li>
+        <li><span aria-hidden="true"><img class="i" src="../ico-chat.webp" alt="" width="56" height="56" loading="lazy" decoding="async"></span>Переписка внутри платформы</li>
+        <li><span aria-hidden="true"><img class="i" src="../ico-lock.webp" alt="" width="56" height="56" loading="lazy" decoding="async"></span>Ваш номер скрыт</li>
+        <li><span aria-hidden="true"><img class="i" src="../ico-shield.webp" alt="" width="56" height="56" loading="lazy" decoding="async"></span>Добровольная верификация</li>
       </ul>
     </div>
   </section>
@@ -706,7 +718,7 @@ main,footer{position:relative; z-index:1}
               </div>
               <div class="dname">Сара (27 лет)</div>
               <div class="dplace">Джидда, Саудовская Аравия</div>
-              <div class="drow"><span>📏 Рост</span><b>165 см</b></div><div class="drow"><span>🎓 Образование</span><b>Бакалавр</b></div><div class="drow"><span>💼 Работа</span><b>Учитель</b></div><div class="drow"><span>💍 Статус</span><b>Не замужем</b></div>
+              <div class="drow"><span>📏 Рост</span><b>165 см</b></div><div class="drow"><span>🎓 Образование</span><b>Бакалавр</b></div><div class="drow"><span>💼 Работа</span><b>Учитель</b></div><div class="drow"><span>💍 Статус</span><b>Не замужем</b></div><div class="drow"><span>🕌 Религия</span><b>Ислам</b></div><div class="drow"><span>🗣️ Языки</span><b>Арабский, английский</b></div>
               <div class="dbio">Люблю чтение и путешествия, ищу серьёзного спутника жизни, для которого важна семья.</div>
               <span class="dstamp yes" aria-hidden="true">♥ Нравится</span>
             </div>
@@ -777,32 +789,32 @@ main,footer{position:relative; z-index:1}
       <h2 class="reveal">Что вы получаете</h2>
       <div class="grid g3">
       <article class="card reveal">
-        <span class="ico" aria-hidden="true">🎯</span>
+        <span class="ico" aria-hidden="true"><img class="i" src="../ico-rings.webp" alt="" width="56" height="56" loading="lazy" decoding="async"></span>
         <h3>Оценка совместимости</h3>
         <p>Оценка строится на взаимных предпочтениях — что вы ищете в человеке и что он ищет в вас, — а не на одном общем списке для всех.</p>
       </article>
       <article class="card reveal">
-        <span class="ico" aria-hidden="true">🌫️</span>
+        <span class="ico" aria-hidden="true"><img class="i" src="../ico-eye.webp" alt="" width="56" height="56" loading="lazy" decoding="async"></span>
         <h3>Конфиденциальность фото</h3>
         <p>По умолчанию ваше фото размыто для всех. Чтобы его открыть, нужны явный запрос и ваше явное согласие — на выбранный вами срок, и его можно отозвать в любой момент.</p>
       </article>
       <article class="card reveal">
-        <span class="ico" aria-hidden="true">🛡️</span>
+        <span class="ico" aria-hidden="true"><img class="i" src="../ico-shield.webp" alt="" width="56" height="56" loading="lazy" decoding="async"></span>
         <h3>Добровольная верификация</h3>
         <p>Фотопроверка подтверждает, что за анкетой стоит реальный человек, и её результат виден другой стороне. Полностью по желанию.</p>
       </article>
       <article class="card reveal">
-        <span class="ico" aria-hidden="true">💬</span>
+        <span class="ico" aria-hidden="true"><img class="i" src="../ico-chat.webp" alt="" width="56" height="56" loading="lazy" decoding="async"></span>
         <h3>Переписка на платформе</h3>
         <p>Никто не обменивается именами пользователей и номерами телефонов. Разговор остаётся внутри платформы — в боте или на сайте — столько, сколько вы захотите.</p>
       </article>
       <article class="card reveal">
-        <span class="ico" aria-hidden="true">🔎</span>
+        <span class="ico" aria-hidden="true"><img class="i" src="../ico-search.webp" alt="" width="56" height="56" loading="lazy" decoding="async"></span>
         <h3>Поиск по-вашему</h3>
         <p>Быстрый поиск, поиск по одному критерию или полный поиск по нескольким критериям, когда вы точно знаете, кого ищете.</p>
       </article>
       <article class="card reveal">
-        <span class="ico" aria-hidden="true">🌍</span>
+        <span class="ico" aria-hidden="true"><img class="i" src="../ico-globe.webp" alt="" width="56" height="56" loading="lazy" decoding="async"></span>
         <h3>Семь языков</h3>
         <p>Арабский, английский, французский, испанский, индонезийский, персидский и русский — полноценный интерфейс на каждом, переключается в боте или на сайте.</p>
       </article>
