@@ -219,6 +219,34 @@ section{padding:clamp(56px,8vw,96px) 0; position:relative}
 }
 .privacy p{max-width:72ch}
 .privacy p:last-child{margin-bottom:0}
+.privacy .panel{display:grid; grid-template-columns:minmax(0,1fr) auto; gap:clamp(28px,5vw,56px);
+  align-items:center}
+@media (max-width:760px){ .privacy .panel{grid-template-columns:1fr} }
+
+/* الصورةُ المموّهة — الشرح عند `_blur_demo`. الدورةُ ثماني ثوانٍ:
+   مموّهةٌ ← طلبٌ ← موافقةٌ (واضحة) ← انتهت المدّة (مموّهةٌ ثانيةً). */
+.blurdemo{margin:0; width:min(250px,100%); justify-self:center; display:grid; gap:14px}
+.bd-photo{aspect-ratio:5/6; border-radius:20px; overflow:hidden; border:1px solid var(--line-hi);
+  box-shadow:0 20px 50px -24px var(--rose-glow)}
+.bd-photo img{display:block; width:100%; height:100%; object-fit:cover; filter:blur(16px); transform:scale(1.12)}
+.bd-steps{list-style:none; margin:0; padding:0; text-align:center; color:var(--ink);
+  font-weight:600; line-height:1.5}
+.bd-steps li+li{margin-top:6px}
+.blurdemo figcaption{text-align:center; color:var(--muted); font-size:.82rem}
+@media (prefers-reduced-motion:no-preference){
+  .bd-photo img{animation:bd-blur 8s ease-in-out infinite}
+  .bd-steps{position:relative; min-height:3em}
+  .bd-steps li{position:absolute; inset:0; margin:0; opacity:0; animation:8s linear infinite}
+  .bd-steps li:nth-child(1){animation-name:bd-s1}
+  .bd-steps li:nth-child(2){animation-name:bd-s2}
+  .bd-steps li:nth-child(3){animation-name:bd-s3; color:var(--rose-hi)}
+  .bd-steps li:nth-child(4){animation-name:bd-s4}
+}
+@keyframes bd-blur{0%,40%{filter:blur(16px); transform:scale(1.12)} 52%,80%{filter:blur(0); transform:scale(1)} 92%,100%{filter:blur(16px); transform:scale(1.12)}}
+@keyframes bd-s1{0%,26%{opacity:1} 30%,96%{opacity:0} 100%{opacity:1}}
+@keyframes bd-s2{0%,28%{opacity:0} 31%,41%{opacity:1} 44%,100%{opacity:0}}
+@keyframes bd-s3{0%,43%{opacity:0} 46%,78%{opacity:1} 81%,100%{opacity:0}}
+@keyframes bd-s4{0%,80%{opacity:0} 83%,95%{opacity:1} 98%,100%{opacity:0}}
 
 /* ── الأسئلة ──
    ⚠️ `display:flex` على `summary` هو ما يُخفي المثلّث: فايرفوكس يرسمه من
@@ -636,7 +664,7 @@ main,footer{position:relative; z-index:1}
         <li><a href="https://hisnalzawaj.com/ru/" lang="ru" hreflang="ru">Русский</a></li>
       </ul>
     </details>
-    <a class="btn" href="https://t.me/HisnAlzawaj_bot?start=ad_xb79tj" rel="noopener">Abrir en Telegram</a>
+    <a class="btn" href="https://app.hisnalzawaj.com/" rel="noopener">Regístrate</a>
   </div>
 </header>
 
@@ -785,10 +813,22 @@ main,footer{position:relative; z-index:1}
   <section class="privacy">
     <div class="wrap">
       <div class="panel reveal">
+        <div class="ptext">
         <h2>La privacidad es lo predeterminado, no un ajuste que haya que buscar</h2>
         <p>Tu foto está difuminada para todos desde el primer momento. No hay ningún interruptor que puedas olvidar y que te exponga; ocurre lo contrario: solo se muestra tras una solicitud explícita de la otra parte y tu consentimiento explícito, por el tiempo que elijas (cinco minutos, un día o sin límite), y puedes revocarlo en cualquier momento.</p>
       <p>Los perfiles publicados en nuestro canal y en nuestras páginas sociales llevan solo un nombre de pila y un avatar dibujado. Nunca se publica una foto real de una persona usuaria.</p>
       <p>Puedes editar tus datos u ocultar tu perfil por completo en cualquier momento, y cada perfil lleva un botón de denuncia que llega a un moderador humano.</p>
+        </div>
+        <figure class="blurdemo" role="img" aria-label="Tu foto está difuminada para todos. Alguien pide verla. Lo permites, durante el tiempo que elijas. Se acaba el tiempo: vuelve a difuminarse">
+          <div class="bd-photo"><img src="../blur_demo.webp" alt="" width="250" height="300" loading="lazy" decoding="async"></div>
+          <ol class="bd-steps">
+          <li>Tu foto está difuminada para todos</li>
+          <li>Alguien pide verla</li>
+          <li>Lo permites, durante el tiempo que elijas</li>
+          <li>Se acaba el tiempo: vuelve a difuminarse</li>
+          </ol>
+          <figcaption>Imagen generada por IA, no una persona real</figcaption>
+        </figure>
       </div>
     </div>
   </section>
@@ -854,8 +894,8 @@ main,footer{position:relative; z-index:1}
       <div>
         <h4>Empieza ahora</h4>
         <ul>
-          <li><a href="https://t.me/HisnAlzawaj_bot?start=ad_xb79tj" rel="noopener">Abrir en Telegram</a></li>
           <li><a href="https://app.hisnalzawaj.com/" rel="noopener">Regístrate en la web</a></li>
+          <li><a href="https://t.me/HisnAlzawaj_bot?start=ad_xb79tj" rel="noopener">Abrir en Telegram</a></li>
           <li><a href="https://t.me/Hisn_Alzawaj" rel="noopener">Canal de perfiles en Telegram</a></li>
         </ul>
       </div>
@@ -886,7 +926,10 @@ main,footer{position:relative; z-index:1}
     </div>
     <div class="fbottom">
       <span>© Hisn Alzawaj</span>
-      <a href="https://t.me/HisnAlzawaj_bot?start=ad_xb79tj" rel="noopener">@HisnAlzawaj_bot</a>
+      <!-- ⚠️ `dir="ltr"` شرطٌ لا زينة: المعرّفُ لاتينيٌّ في سطرٍ يمينيّ،
+           و`@` محايدةٌ في خوارزمية الاتجاه فتنتقل إلى آخره
+           («HisnAlzawaj_bot@») — معرّفٌ لا يجده من يكتبه في تيليجرام. -->
+      <a href="https://t.me/HisnAlzawaj_bot?start=ad_xb79tj" rel="noopener" dir="ltr">@HisnAlzawaj_bot</a>
     </div>
   </div>
 </footer>
